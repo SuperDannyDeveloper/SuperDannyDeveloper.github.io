@@ -303,13 +303,6 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/07/25/Swift-Series-Introduction/</loc>
-    
-    <lastmod>2016-11-30T01:56:54.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/2015/07/27/Swift-Series-CollectionType/</loc>
     
     <lastmod>2016-11-30T01:56:54.000Z</lastmod>
@@ -317,9 +310,9 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/12/24/Software-development-documentation/</loc>
+    <loc>superdanny.link/2015/07/25/Swift-Series-Introduction/</loc>
     
-    <lastmod>2016-11-30T01:56:53.000Z</lastmod>
+    <lastmod>2016-11-30T01:56:54.000Z</lastmod>
     
   </url>
   
@@ -331,9 +324,9 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2014/08/21/Quickly-master-objective-c-grammar/</loc>
+    <loc>superdanny.link/2015/12/24/Software-development-documentation/</loc>
     
-    <lastmod>2016-11-30T01:56:52.000Z</lastmod>
+    <lastmod>2016-11-30T01:56:53.000Z</lastmod>
     
   </url>
   
@@ -345,14 +338,21 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/21/KVC:KVO/</loc>
+    <loc>superdanny.link/2014/08/21/Quickly-master-objective-c-grammar/</loc>
+    
+    <lastmod>2016-11-30T01:56:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/09/10/MacOSX-show-and-hide-file/</loc>
     
     <lastmod>2016-11-30T01:56:51.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/10/MacOSX-show-and-hide-file/</loc>
+    <loc>superdanny.link/2015/09/21/KVC:KVO/</loc>
     
     <lastmod>2016-11-30T01:56:51.000Z</lastmod>
     
@@ -366,14 +366,14 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/17/iOS9-http-change/</loc>
+    <loc>superdanny.link/2015/09/18/iOS9-about-enterprise-certificate/</loc>
     
     <lastmod>2016-11-30T01:56:49.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/18/iOS9-about-enterprise-certificate/</loc>
+    <loc>superdanny.link/2015/09/17/iOS9-http-change/</loc>
     
     <lastmod>2016-11-30T01:56:49.000Z</lastmod>
     
@@ -394,14 +394,14 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/10/10/iOS-UIKeyboardType/</loc>
+    <loc>superdanny.link/2016/01/12/iOS-UIWebView-add-customView/</loc>
     
     <lastmod>2016-11-30T01:56:47.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2016/01/12/iOS-UIWebView-add-customView/</loc>
+    <loc>superdanny.link/2015/10/10/iOS-UIKeyboardType/</loc>
     
     <lastmod>2016-11-30T01:56:47.000Z</lastmod>
     
@@ -541,6 +541,13 @@
   </url>
   
   <url>
+    <loc>superdanny.link/love/loveForever/jscex-async.min.js</loc>
+    
+    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>superdanny.link/love/loveForever/jscex-jit.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
@@ -549,20 +556,6 @@
   
   <url>
     <loc>superdanny.link/love/loveForever/jscex.min.js</loc>
-    
-    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveForever/jscex-builderbase.min.js</loc>
-    
-    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveForever/jscex-parser.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
     
@@ -583,7 +576,7 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveForever/jscex-async.min.js</loc>
+    <loc>superdanny.link/love/loveForever/jscex-parser.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
     
@@ -591,6 +584,13 @@
   
   <url>
     <loc>superdanny.link/love/loveForever/jscex-async-powerpack.min.js</loc>
+    
+    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveForever/jscex-builderbase.min.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
     
@@ -674,7 +674,7 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveMaggie/CanvasRenderer.js</loc>
+    <loc>superdanny.link/love/loveMaggie/Sparks.js</loc>
     
     <lastmod>2015-04-20T23:01:40.000Z</lastmod>
     
@@ -688,7 +688,7 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveMaggie/Sparks.js</loc>
+    <loc>superdanny.link/love/loveMaggie/CanvasRenderer.js</loc>
     
     <lastmod>2015-04-20T23:01:40.000Z</lastmod>
     
