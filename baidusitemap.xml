@@ -4,6 +4,65 @@
 
     
   <url>
+    <loc>superdanny.link/2017/03/10/iOS-UITableView-UICollectionView-Skill/</loc>
+    <lastmod>2017-03-17T02:12:15.000Z</lastmod>
+    <data>
+        <display>
+        <title>UITableView/UICollectionView使用技巧</title>
+        <pubTime>2017-03-10T08:42:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/07/21/About-me/</loc>
+    <lastmod>2017-03-13T08:44:35.000Z</lastmod>
+    <data>
+        <display>
+        <title>About Me</title>
+        <pubTime>2015-07-21T08:44:00.000Z</pubTime>
+        
+        <tag>简历</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/09/17/Bug-record/</loc>
+    <lastmod>2017-03-10T08:18:29.000Z</lastmod>
+    <data>
+        <display>
+        <title>BUG记录</title>
+        <pubTime>2015-09-17T02:42:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>BUG</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2017/03/07/iOS-In-App-Purchase/</loc>
     <lastmod>2017-03-07T07:56:38.000Z</lastmod>
     <data>
@@ -361,23 +420,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/07/21/About-me/</loc>
-    <lastmod>2016-12-05T03:48:19.000Z</lastmod>
-    <data>
-        <display>
-        <title>About Me</title>
-        <pubTime>2015-07-21T08:44:00.000Z</pubTime>
-        
-        <tag>简历</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2016/12/04/CocoaPods-update-gem-and-repo/</loc>
     <lastmod>2016-12-04T08:08:25.000Z</lastmod>
     <data>
@@ -720,28 +762,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/07/08/Update-Xcode-Plug-in/</loc>
-    <lastmod>2016-11-30T01:56:56.000Z</lastmod>
-    <data>
-        <display>
-        <title>关于Xcode更新之后插件失效以及安装失败详解</title>
-        <pubTime>2015-07-08T14:44:00.000Z</pubTime>
-        
-        <tag>Xcode</tag>
-         
-        <tag>插件</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2015/09/09/Using-shell-script-to-automatic-packaging/</loc>
     <lastmod>2016-11-30T01:56:56.000Z</lastmod>
     <data>
@@ -757,6 +777,28 @@
            
              
               <breadCrumb title="自动打包" url="superdanny.link/categories/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/07/08/Update-Xcode-Plug-in/</loc>
+    <lastmod>2016-11-30T01:56:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>关于Xcode更新之后插件失效以及安装失败详解</title>
+        <pubTime>2015-07-08T14:44:00.000Z</pubTime>
+        
+        <tag>Xcode</tag>
+         
+        <tag>插件</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -844,6 +886,26 @@
 
     
   <url>
+    <loc>superdanny.link/2015/12/24/Software-development-documentation/</loc>
+    <lastmod>2016-11-30T01:56:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>软件开发的过程中，这些文档你都用到了吗（转）</title>
+        <pubTime>2015-12-24T02:24:00.000Z</pubTime>
+        
+        <tag>开发文档</tag>
+         
+         
+           
+             
+              <breadCrumb title="项目管理" url="superdanny.link/categories/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2015/08/18/Storyboard/</loc>
     <lastmod>2016-11-30T01:56:53.000Z</lastmod>
     <data>
@@ -864,19 +926,19 @@
 
     
   <url>
-    <loc>superdanny.link/2015/12/24/Software-development-documentation/</loc>
-    <lastmod>2016-11-30T01:56:53.000Z</lastmod>
+    <loc>superdanny.link/2014/08/21/Quickly-master-objective-c-grammar/</loc>
+    <lastmod>2016-11-30T01:56:52.000Z</lastmod>
     <data>
         <display>
-        <title>软件开发的过程中，这些文档你都用到了吗（转）</title>
-        <pubTime>2015-12-24T02:24:00.000Z</pubTime>
+        <title>十分钟让你明白Objective-C的语法（和Java、C++的对比）</title>
+        <pubTime>2014-08-21T05:46:00.000Z</pubTime>
         
-        <tag>开发文档</tag>
+        <tag>iOS</tag>
          
          
            
              
-              <breadCrumb title="项目管理" url="superdanny.link/categories/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -906,19 +968,21 @@
 
     
   <url>
-    <loc>superdanny.link/2014/08/21/Quickly-master-objective-c-grammar/</loc>
-    <lastmod>2016-11-30T01:56:52.000Z</lastmod>
+    <loc>superdanny.link/2015/09/10/MacOSX-show-and-hide-file/</loc>
+    <lastmod>2016-11-30T01:56:51.000Z</lastmod>
     <data>
         <display>
-        <title>十分钟让你明白Objective-C的语法（和Java、C++的对比）</title>
-        <pubTime>2014-08-21T05:46:00.000Z</pubTime>
+        <title>MacOS X隐藏和显示隐藏文件</title>
+        <pubTime>2015-09-09T19:02:00.000Z</pubTime>
         
-        <tag>iOS</tag>
+        <tag>文件操作</tag>
+         
+        <tag>Mac</tag>
          
          
            
              
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -943,28 +1007,6 @@
            
              
               <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2015/09/10/MacOSX-show-and-hide-file/</loc>
-    <lastmod>2016-11-30T01:56:51.000Z</lastmod>
-    <data>
-        <display>
-        <title>MacOS X隐藏和显示隐藏文件</title>
-        <pubTime>2015-09-09T19:02:00.000Z</pubTime>
-        
-        <tag>文件操作</tag>
-         
-        <tag>Mac</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -1324,6 +1366,28 @@
 
     
   <url>
+    <loc>superdanny.link/2015/09/19/Improve-the-efficiency-of-iOS-development/</loc>
+    <lastmod>2016-11-30T01:56:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>提高iOS开发效率的方法和工具（转）</title>
+        <pubTime>2015-09-19T11:19:00.000Z</pubTime>
+        
+        <tag>Xcode</tag>
+         
+        <tag>工具</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2015/09/24/iOS-about-certification-guide/</loc>
     <lastmod>2016-11-30T01:56:41.000Z</lastmod>
     <data>
@@ -1353,28 +1417,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/19/Improve-the-efficiency-of-iOS-development/</loc>
-    <lastmod>2016-11-30T01:56:41.000Z</lastmod>
-    <data>
-        <display>
-        <title>提高iOS开发效率的方法和工具（转）</title>
-        <pubTime>2015-09-19T11:19:00.000Z</pubTime>
-        
-        <tag>Xcode</tag>
-         
-        <tag>工具</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2015/07/15/Grand-Central-Dispatch/</loc>
     <lastmod>2016-11-30T01:56:40.000Z</lastmod>
     <data>
@@ -1385,26 +1427,6 @@
         <tag>iOS</tag>
          
         <tag>GCD</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
-    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>关于开发中遇到问题处理思路</title>
-        <pubTime>2015-09-18T05:56:00.000Z</pubTime>
-        
-        <tag>解决方式</tag>
          
          
            
@@ -1430,6 +1452,26 @@
            
              
               <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
+    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>关于开发中遇到问题处理思路</title>
+        <pubTime>2015-09-18T05:56:00.000Z</pubTime>
+        
+        <tag>解决方式</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -1514,28 +1556,6 @@
            
              
               <breadCrumb title="项目管理" url="superdanny.link/categories/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2015/09/17/Bug-record/</loc>
-    <lastmod>2016-11-30T01:56:36.000Z</lastmod>
-    <data>
-        <display>
-        <title>BUG系列</title>
-        <pubTime>2015-09-17T02:42:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-        <tag>BUG</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
           
         </display>
     </data>

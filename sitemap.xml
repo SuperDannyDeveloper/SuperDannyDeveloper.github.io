@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>superdanny.link/2017/03/10/iOS-UITableView-UICollectionView-Skill/</loc>
+    
+    <lastmod>2017-03-17T02:12:15.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/07/21/About-me/</loc>
+    
+    <lastmod>2017-03-13T08:44:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/09/17/Bug-record/</loc>
+    
+    <lastmod>2017-03-10T08:18:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>superdanny.link/2017/03/07/iOS-In-App-Purchase/</loc>
     
     <lastmod>2017-03-07T07:56:38.000Z</lastmod>
@@ -156,13 +177,6 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/07/21/About-me/</loc>
-    
-    <lastmod>2016-12-05T03:48:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/2016/12/04/CocoaPods-update-gem-and-repo/</loc>
     
     <lastmod>2016-12-04T08:08:25.000Z</lastmod>
@@ -177,14 +191,14 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2016/01/18/Remove-CocoaPods-from-project/</loc>
+    <loc>superdanny.link/2016/03/09/Swift-Getting-to-Know-Enums-Structs-and-Classes/</loc>
     
     <lastmod>2016-11-30T01:57:39.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2016/03/09/Swift-Getting-to-Know-Enums-Structs-and-Classes/</loc>
+    <loc>superdanny.link/2016/01/18/Remove-CocoaPods-from-project/</loc>
     
     <lastmod>2016-11-30T01:57:39.000Z</lastmod>
     
@@ -205,14 +219,14 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2016/09/16/How-to-use-Xcode8-or-iOS10_SDK/</loc>
+    <loc>superdanny.link/2015/09/06/Interview-questions/</loc>
     
     <lastmod>2016-11-30T01:57:34.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/06/Interview-questions/</loc>
+    <loc>superdanny.link/2016/09/16/How-to-use-Xcode8-or-iOS10_SDK/</loc>
     
     <lastmod>2016-11-30T01:57:34.000Z</lastmod>
     
@@ -380,14 +394,14 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2014/10/10/iOS8-TabBarItem-setting-custom-image/</loc>
+    <loc>superdanny.link/2015/12/31/iOS-xcode-snippet/</loc>
     
     <lastmod>2016-11-30T01:56:48.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/12/31/iOS-xcode-snippet/</loc>
+    <loc>superdanny.link/2014/10/10/iOS8-TabBarItem-setting-custom-image/</loc>
     
     <lastmod>2016-11-30T01:56:48.000Z</lastmod>
     
@@ -408,13 +422,6 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/10/10/iOS-recording-In-House/</loc>
-    
-    <lastmod>2016-11-30T01:56:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/2015/12/26/iOS-UIDocumentInteractionController/</loc>
     
     <lastmod>2016-11-30T01:56:46.000Z</lastmod>
@@ -422,14 +429,21 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/08/13/iOS-null-data/</loc>
+    <loc>superdanny.link/2015/10/10/iOS-recording-In-House/</loc>
+    
+    <lastmod>2016-11-30T01:56:46.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2016/01/15/iOS-iTunes_Connect_2-App-Statuses/</loc>
     
     <lastmod>2016-11-30T01:56:45.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2016/01/15/iOS-iTunes_Connect_2-App-Statuses/</loc>
+    <loc>superdanny.link/2015/08/13/iOS-null-data/</loc>
     
     <lastmod>2016-11-30T01:56:45.000Z</lastmod>
     
@@ -464,14 +478,14 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/19/Improve-the-efficiency-of-iOS-development/</loc>
+    <loc>superdanny.link/2015/09/24/iOS-about-certification-guide/</loc>
     
     <lastmod>2016-11-30T01:56:41.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/24/iOS-about-certification-guide/</loc>
+    <loc>superdanny.link/2015/09/19/Improve-the-efficiency-of-iOS-development/</loc>
     
     <lastmod>2016-11-30T01:56:41.000Z</lastmod>
     
@@ -485,13 +499,6 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/17/Fix-svn-directory-is-out-of-date/</loc>
-    
-    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
     
     <lastmod>2016-11-30T01:56:39.000Z</lastmod>
@@ -499,14 +506,21 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/16/Custom-UITextField-and-UITextView-function/</loc>
+    <loc>superdanny.link/2015/09/17/Fix-svn-directory-is-out-of-date/</loc>
+    
+    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/08/20/Custom-UIView-fillet/</loc>
     
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/08/20/Custom-UIView-fillet/</loc>
+    <loc>superdanny.link/2015/09/16/Custom-UITextField-and-UITextView-function/</loc>
     
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     
@@ -527,13 +541,6 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/17/Bug-record/</loc>
-    
-    <lastmod>2016-11-30T01:56:36.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/2015/09/07/Array-sorting-and-grouping/</loc>
     
     <lastmod>2016-11-30T01:56:35.000Z</lastmod>
@@ -541,21 +548,7 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveForever/jscex-async.min.js</loc>
-    
-    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveForever/jscex-jit.js</loc>
-    
-    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveForever/jscex.min.js</loc>
+    <loc>superdanny.link/love/loveForever/jscex-builderbase.min.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
     
@@ -583,14 +576,28 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveForever/jscex-async-powerpack.min.js</loc>
+    <loc>superdanny.link/love/loveForever/jscex.min.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveForever/jscex-builderbase.min.js</loc>
+    <loc>superdanny.link/love/loveForever/jscex-jit.js</loc>
+    
+    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveForever/jscex-async.min.js</loc>
+    
+    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveForever/jscex-async-powerpack.min.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
     
@@ -674,6 +681,13 @@
   </url>
   
   <url>
+    <loc>superdanny.link/love/loveMaggie/CanvasRenderer.js</loc>
+    
+    <lastmod>2015-04-20T23:01:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>superdanny.link/love/loveMaggie/Sparks.js</loc>
     
     <lastmod>2015-04-20T23:01:40.000Z</lastmod>
@@ -682,13 +696,6 @@
   
   <url>
     <loc>superdanny.link/love/loveMaggie/Projector.js</loc>
-    
-    <lastmod>2015-04-20T23:01:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveMaggie/CanvasRenderer.js</loc>
     
     <lastmod>2015-04-20T23:01:40.000Z</lastmod>
     

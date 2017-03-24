@@ -6,24 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="superdanny.link">
-  <title>升级CocoaPods后存在的问题 | 皮卡丘♪～(´ε｀　)</title>
+  <title>UITableView/UICollectionView使用技巧 | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题今天由于需要，去升级了CocoaPods的版本，更新版本完成之后，在执行pod install指令时出现了问题。
-12[!] The dependency `AFNetworking` is not used in any concrete target.The dependency `SDWebImage` is not used in any concrete target.
-根据提示，是">
+  <meta name="description" content="Header/Footer高度、悬停设置高度设置有时候我们需要设置 TableView 的头部和尾部的间距，如果 TableView 的 Style 是 UITableViewStylePlain 的话，头部尾部的高度只需要在代理里面设置高度就行。
+但如果是 UITableViewStyleGrouped 类型，这个时候 TableView 是的头部以及尾部高度的设置需要麻烦一些。因为单纯在代理里">
 <meta property="og:type" content="article">
-<meta property="og:title" content="升级CocoaPods后存在的问题">
-<meta property="og:url" content="superdanny.link/2016/05/16/CocoaPods-concrete-target/index.html">
+<meta property="og:title" content="UITableView/UICollectionView使用技巧">
+<meta property="og:url" content="superdanny.link/2017/03/10/iOS-UITableView-UICollectionView-Skill/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
-<meta property="og:description" content="问题今天由于需要，去升级了CocoaPods的版本，更新版本完成之后，在执行pod install指令时出现了问题。
-12[!] The dependency `AFNetworking` is not used in any concrete target.The dependency `SDWebImage` is not used in any concrete target.
-根据提示，是">
-<meta property="og:updated_time" content="2016-12-04T07:40:30.000Z">
+<meta property="og:description" content="Header/Footer高度、悬停设置高度设置有时候我们需要设置 TableView 的头部和尾部的间距，如果 TableView 的 Style 是 UITableViewStylePlain 的话，头部尾部的高度只需要在代理里面设置高度就行。
+但如果是 UITableViewStyleGrouped 类型，这个时候 TableView 是的头部以及尾部高度的设置需要麻烦一些。因为单纯在代理里">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/81f8a509gy1fdhw91vcc9g207p0dukae.gif">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/81f8a509gy1fdhw8vcx4gg207p0duqq5.gif">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/81f8a509gy1fdhw9ck7ijg207p0due81.gif">
+<meta property="og:updated_time" content="2017-03-17T02:12:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="升级CocoaPods后存在的问题">
-<meta name="twitter:description" content="问题今天由于需要，去升级了CocoaPods的版本，更新版本完成之后，在执行pod install指令时出现了问题。
-12[!] The dependency `AFNetworking` is not used in any concrete target.The dependency `SDWebImage` is not used in any concrete target.
-根据提示，是">
+<meta name="twitter:title" content="UITableView/UICollectionView使用技巧">
+<meta name="twitter:description" content="Header/Footer高度、悬停设置高度设置有时候我们需要设置 TableView 的头部和尾部的间距，如果 TableView 的 Style 是 UITableViewStylePlain 的话，头部尾部的高度只需要在代理里面设置高度就行。
+但如果是 UITableViewStyleGrouped 类型，这个时候 TableView 是的头部以及尾部高度的设置需要麻烦一些。因为单纯在代理里">
+<meta name="twitter:image" content="http://wx2.sinaimg.cn/mw690/81f8a509gy1fdhw91vcc9g207p0dukae.gif">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
@@ -175,20 +176,20 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CocoaPods-concrete-target" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-iOS-UITableView-UICollectionView-Skill" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      升级CocoaPods后存在的问题
+      UITableView/UICollectionView使用技巧
     </h1>
   
 
         
-        <a href="/2016/05/16/CocoaPods-concrete-target/" class="archive-article-date">
-  	<time datetime="2016-05-16T06:19:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-16</time>
+        <a href="/2017/03/10/iOS-UITableView-UICollectionView-Skill/" class="archive-article-date">
+  	<time datetime="2017-03-10T08:42:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-10</time>
 </a>
 
         
@@ -196,15 +197,42 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>今天由于需要，去升级了CocoaPods的版本，更新版本完成之后，在执行<code>pod install</code>指令时出现了问题。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[!] The dependency `AFNetworking` is not used <span class="keyword">in</span> any concrete target.</div><div class="line">The dependency `SDWebImage` is not used <span class="keyword">in</span> any concrete target.</div></pre></td></tr></table></figure>
-<p>根据提示，是说我没有给这些第三方库指明对应的target。<code>Podfile</code>升级之后到最新版本，pod里的内容必须明确指出所用第三方库的target，否则会出现<strong>The dependency `` is not used in any concrete target</strong>这样的错误。</p>
-<a id="more"></a>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>原本我工程里面<code>Podfile</code>是这样写的：</p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">platform</span> :ios, <span class="string">'8.0'</span></div><div class="line">use_frameworks!</div><div class="line">pod <span class="string">'AFNetworking'</span></div><div class="line">pod <span class="string">'SDWebImage'</span></div></pre></td></tr></table></figure>
-<p>现在需要修改<code>Podfile</code>的写法：</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">platform <span class="symbol">:ios</span>, <span class="string">'8.0'</span></div><div class="line">use_frameworks!</div><div class="line">target <span class="string">"Project target"</span> <span class="keyword">do</span></div><div class="line">pod <span class="string">'AFNetworking'</span></div><div class="line">pod <span class="string">'SDWebImage'</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>这样再运行<code>pod install</code>指令就会成功了。</p>
+        <h2 id="Header-Footer高度、悬停设置"><a href="#Header-Footer高度、悬停设置" class="headerlink" title="Header/Footer高度、悬停设置"></a>Header/Footer高度、悬停设置</h2><h3 id="高度设置"><a href="#高度设置" class="headerlink" title="高度设置"></a>高度设置</h3><p>有时候我们需要设置 TableView 的头部和尾部的间距，如果 TableView 的 <code>Style</code> 是 <code>UITableViewStylePlain</code> 的话，头部尾部的高度只需要在代理里面设置高度就行。</p>
+<p>但如果是 <code>UITableViewStyleGrouped</code> 类型，这个时候 TableView 是的头部以及尾部高度的设置需要麻烦一些。因为单纯在代理里面设置高度是无效的。<br>实现代码如下：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">CGFloat</span>)tableView:(<span class="built_in">UITableView</span> *)tableView heightForHeaderInSection:(<span class="built_in">NSInteger</span>)section &#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">0.01</span>f;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="built_in">UIView</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView viewForHeaderInSection:(<span class="built_in">NSInteger</span>)section &#123;</div><div class="line">    <span class="built_in">UIView</span> *view = [[<span class="built_in">UIView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, kScreenWidth, <span class="number">1</span>)];</div><div class="line">    view.backgroundColor = [<span class="built_in">UIColor</span> clearColor];</div><div class="line">    <span class="keyword">return</span> view;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="built_in">CGFloat</span>)tableView:(<span class="built_in">UITableView</span> *)tableView heightForFooterInSection:(<span class="built_in">NSInteger</span>)section &#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">10</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="built_in">UIView</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView viewForFooterInSection:(<span class="built_in">NSInteger</span>)section &#123;</div><div class="line">    <span class="built_in">UIView</span> *view = [[<span class="built_in">UIView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, kScreenWidth, <span class="number">1</span>)];</div><div class="line">    view.backgroundColor = [<span class="built_in">UIColor</span> clearColor];</div><div class="line">    <span class="keyword">return</span> view;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>通过上面的代码我们就可以正确的设置高度，同时需要注意的是，<code>UITableViewStyleGrouped</code>时，不能设置 TableView 的<code>tableFooterView</code>、<code>tableHeaderView</code>，不然高度设置会无效。</p>
+<h3 id="悬停"><a href="#悬停" class="headerlink" title="悬停"></a>悬停</h3><p>TableView的悬停功能只有在 <code>Style</code> 是 <code>UITableViewStylePlain</code> 的时候才有。如果有这么一种需求，就是需要有Header悬停，同时每个section之间需要有间隔。<br>效果如下：</p>
+<p><img src="http://wx2.sinaimg.cn/mw690/81f8a509gy1fdhw91vcc9g207p0dukae.gif" alt="TableView悬停"></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">CGFloat</span>)tableView:(<span class="built_in">UITableView</span> *)tableView heightForHeaderInSection:(<span class="built_in">NSInteger</span>)section &#123;</div><div class="line">    <span class="keyword">return</span> kHeaderHeight+<span class="number">9</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="built_in">UIView</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView viewForHeaderInSection:(<span class="built_in">NSInteger</span>)section &#123;</div><div class="line">    BillListModel *model = _sectionArr[section];</div><div class="line">    </div><div class="line">    <span class="built_in">UIView</span> *header = (&#123;</div><div class="line">        <span class="built_in">UIView</span> *bgView = [[<span class="built_in">UIView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, KScreenWidth, kHeaderHeight+<span class="number">9</span>)];</div><div class="line">        bgView.backgroundColor = [<span class="built_in">UIColorTools</span> colorWithTheme:<span class="built_in">UIColorThemeAppBgColor</span>];</div><div class="line">        </div><div class="line">        <span class="built_in">UILabel</span> *titleLab = [[<span class="built_in">UILabel</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">9</span>, KScreenWidth, kHeaderHeight)];</div><div class="line">        titleLab.backgroundColor = [<span class="built_in">UIColorTools</span> colorWithTheme:<span class="built_in">UIColorThemeWhite</span>];</div><div class="line">        titleLab.textColor = [<span class="built_in">UIColorTools</span> colorWithTheme:<span class="built_in">UIColorThemeBlack</span>];</div><div class="line">        titleLab.text = model.time;</div><div class="line">        [bgView addSubview:titleLab];</div><div class="line">        </div><div class="line">        <span class="built_in">UIImageView</span> *lineHBottom = [[<span class="built_in">UIImageView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0.0</span>, titleLab.mj_max_y - <span class="number">0.5</span>, KScreenWidth, <span class="number">0.5</span>)];</div><div class="line">        lineHBottom.backgroundColor = [<span class="built_in">UIColorTools</span> colorWithTheme:<span class="built_in">UIColorThemeSeparatorColor</span>];</div><div class="line">        [bgView addSubview:lineHBottom];</div><div class="line">        </div><div class="line">        bgView;</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> header;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)scrollViewDidScroll:(<span class="built_in">UIScrollView</span> *)scrollView  &#123;</div><div class="line">    <span class="keyword">if</span> (scrollView == _tableView) &#123;</div><div class="line">        <span class="built_in">UITableView</span> *tableview = (<span class="built_in">UITableView</span> *)scrollView;</div><div class="line">        <span class="built_in">CGFloat</span> sectionHeaderHeight = kHeaderHeight;</div><div class="line">        <span class="built_in">CGFloat</span> sectionFooterHeight = <span class="number">9</span>;</div><div class="line">        <span class="built_in">CGFloat</span> offsetY = tableview.contentOffset.y;</div><div class="line">        <span class="keyword">if</span> (offsetY &gt;= <span class="number">0</span> &amp;&amp; offsetY &lt;= sectionFooterHeight) &#123;</div><div class="line">            tableview.contentInset = <span class="built_in">UIEdgeInsetsMake</span>(-offsetY, <span class="number">0</span>, -sectionHeaderHeight, <span class="number">0</span>);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (offsetY &gt;= sectionFooterHeight &amp;&amp; offsetY &lt;= tableview.contentSize.height - tableview.frame.size.height - sectionHeaderHeight) &#123;</div><div class="line">            tableview.contentInset = <span class="built_in">UIEdgeInsetsMake</span>(-sectionFooterHeight, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (offsetY &gt;= <span class="number">0</span> &amp;&amp; tableview.contentSize.height &gt;= tableview.contentSize.height) &#123;</div><div class="line">            tableview.contentInset = <span class="built_in">UIEdgeInsetsMake</span>(-sectionFooterHeight, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>CollectionView的悬停功能只有在 <code>Style</code> 是 <code>UITableViewStylePlain</code> 的时候才有。如果有这么一种需求，就是需要有Header悬停，同时每个section之间需要有间隔。<br>效果如下：</p>
+<p><img src="http://wx1.sinaimg.cn/mw690/81f8a509gy1fdhw8vcx4gg207p0duqq5.gif" alt="CollectionView悬停"></p>
+<h2 id="滚动监听"><a href="#滚动监听" class="headerlink" title="滚动监听"></a>滚动监听</h2><p><img src="http://wx4.sinaimg.cn/mw690/81f8a509gy1fdhw9ck7ijg207p0due81.gif" alt="滚动监听"></p>
+<p>1.UIScrollView 减速</p>
+<p>可能通过decelerationRate的属性来设置，它的值域是（0.0，1.0）,当decelerationRate设置为0.1时，当手指touch up时就会很慢的停下来。</p>
+<p>2.UIScrollView 如何判断停止滑动</p>
+<p>这里停止滑动的意思要明确一下，有两种，</p>
+<p>第一指手指停止滑动，因为手指停止滑动ScrollView。</p>
+<p>当手指停止滑动时,iOS会调UIScrollView的delegate</p>
+<ul>
+<li>(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate<br>如果decelerate还为NO时，它最终停下,否则它还没最终停下</li>
+</ul>
+<p>第二指ScrollView停止滑动，指的滚动条完全停止下来。</p>
+<p>当decelerate = true时，iOS才会调UIScrollView的delegate</p>
+<ul>
+<li>(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView</li>
+</ul>
+<p>那UIScrollView真正停止滑动，应该怎么判断呢<br>解决方法是这样的，首先在</p>
+<ul>
+<li>(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate</li>
+</ul>
+<p>{<br>if(!decelerate)<br>{   //OK,真正停止了，do something}<br>}<br>然后</p>
+<ul>
+<li>(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView</li>
+</ul>
+<p>{<br> //OK,真正停止了,do something<br>}</p>
+<p>3.消息传递</p>
+<p>当手指触摸后, scroll view会暂时拦截触摸事件,使用一个计时器,假如在计时器到点后,没有发生手指移动事件,那么,scroll view发送tracking events到被点击的subview<br>假如在计时器到点前,发生了移动事件,那么 scroll view 取消tracking自己发生滚动</p>
+<p>子类可以重载touchesShouldBegin:withEvent:inContentView: 决定自己是否接收touch事件<br>pagingEnabled当值是YES,会自动滚动到subview的边界,默认是NO<br>touchesShouldCancelInContentView: 开始发送tracking messages消息给subview的时候<br>调用这个方法,决定是否发送tracking messages消息到subview,假如返回NO,发送,YES则不发送<br>假如 canCancelContentTouches属性是NO,则不调用这个方法<br>来影响如何处理滚动手势</p>
 <hr>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
 <p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
@@ -252,11 +280,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">终端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">CocoaPods</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		
 		</ul>
@@ -268,7 +292,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Mac端/" class="article-tag-list-link color5">Mac端</a>
+        			<a href="/categories/移动端/" class="article-tag-list-link color4">移动端</a>
         		</li>
       		
 		</ul>
@@ -323,7 +347,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3aS07DQBAFwNz/0mEbFMW81+MgeVxeWRGOp0Bq+vd4xNfz5Xr95P3+/ec/PXv8+eMbFwYGxmUZz8Nrxnj//pX747NhYGDch7H++mNw/pbkF4SBgYFx1tHz4ybvxcDAwGgZbaidhWYMDAyMtohtW3JJT6z9/IRaHAMD44KMvOv+//dfmW9gYGBcivEsr6Rxf1ZxW5wKAwNja8Ys7VsZbSbp3TANxcDA2JSRHCh/WRI62ybacSgvpqAYGBiXZSSvbMHtilieXEZ/EwwMjK0ZK2teK6E5CcFRAw4DA2NrxkqKljfXkiDewv7gYWBgbMfIm/ttWFwpWeu1DwwMjO0Y7QPtylf+ne3Q9Nc9BgbG1oyz4lWe9s2mrNG/AQwMjK0ZZ7X+2/HAbKXsj+/HwMDYmjEcHC4cdGXho+gaYmBgXJyxvvrQtv6TkrVOUjEwMLZmrDTOclibUNYzDQwMjNswkrJzJYmcNfWGk1gMDIxNGadtbZQLHF/8m2BgYGzEaFccZi3+WQguToWBgXEbRtvwahPBWUiNGm0YGBg3Y+QLE7OBZbEwkT+LgYGxKeNZXuujyrZsHua2GBgYGzFmwa5dfWiD7KzoxcDA2JuxEmTz0jfHDAMuBgbGDRh54Dt+Nj/Eylj0Y56LgYGBMSpB89FmksN+BGNgYGDEyVzehmsL4Gg8gIGBsTUjKWJnKV1eDM8KXQwMjDswZqVjkszNStyV4QQGBsZ2jB8p2kHP+usq+AAAAABJRU5ErkJggg==" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrUlEQVR42u3aQW7CQAwFUO5/abrpDqV822NIpZcVakKYN5Vix/bjER/PlyM/+3rl1V9eP1+dPXzg4eHhjZd+devJUpLr861J1oyHh4e3zUtul9y6t/Sr7a4GCTw8PLz78ybJcR5O8PDw8P47b5Ls5gEj+S4eHh7ed3n57ZKSbr5NvRLwSq0FDw8PL+blBYL7fF7p7+Hh4eGNu+rVB24+WDAPHtFq8fDw8BZ4+QM3SbJzcO8OzS3Gw8PDO8rLSwnVAkT1sV5tm0XFXDw8PLxlXvW1v5eInyoNR+EHDw8Pb4HXG5bKm1J5aCkst9ffw8PDwzvK65UbegNV82LxgWYYHh4e3gIv+clemWCeKC9OluHh4eEFa86DQW/PklCRU5PEvRnr8PDw8Iq8SXGh2irLU/lJUh719/Dw8PAGvBwwSb7zsYB8OKBQusXDw8M7xEuS2t4QQJLTVocGRpuCh4eHd5T3909OQkhe8qiWNsrRDw8PD+8Qr/fCf+qhXx1ByK/Bw8PD2+NV39nzoJKHk7z0UG2P4eHh4e3xeo/73mhUr0xcHXR4JFUTPDw8vAGvWp7IiwW97cj/AXh4eHif5+WLzq85VdSolj/w8PDwPsPLw8Mkzc1bX9XBhcLQFR4eHt4a7xkfCSBvceUDB72xAzw8PLyzvHwPqsjeWEA1dEXjAnh4eHgLvOSxnie1PUa1TByVdPHw8PCWeZNH8CQdH1VNqt08PDw8vDGst6zJluVBovet37N4eHh4C7zJa391idVmWHL9SgjBw8PDG2eeecFiXnjtjRq82Wg8PDy8NV7eOeoVW/ei2Zs14OHh4d2A1wsn8yS7NxuAh4eHdx/evOU/p0ZbgIeHh7fGy9v8VVhv7KCaQB+oteDh4eF1vtt94W+VbqtbsziwhYeHh5fyfgDoq7GGX+peLgAAAABJRU5ErkJggg==" alt="微信分享二维码">
     </div>
 </div>
 
@@ -337,18 +361,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2016/09/16/How-to-use-Xcode8-or-iOS10_SDK/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          如何优雅的使用Xcode8或iOS10 SDK
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/04/26/iOS-Change-navigation-stack/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">iOS修改导航堆栈视图</div>
+    <a href="/2017/03/07/iOS-In-App-Purchase/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">苹果应用内购指南资料</div>
       <i class="icon-circle-right"></i>
     </a>
   
