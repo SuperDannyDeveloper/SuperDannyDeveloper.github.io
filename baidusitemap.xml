@@ -5,10 +5,10 @@
     
   <url>
     <loc>superdanny.link/2015/07/21/About-me/</loc>
-    <lastmod>2017-03-29T09:11:42.000Z</lastmod>
+    <lastmod>2017-03-29T09:37:42.000Z</lastmod>
     <data>
         <display>
-        <title>About Me</title>
+        <title>关于我</title>
         <pubTime>2015-07-21T08:44:00.000Z</pubTime>
         
         <tag>简历</tag>
@@ -534,26 +534,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/06/Interview-questions/</loc>
-    <lastmod>2016-11-30T01:57:34.000Z</lastmod>
-    <data>
-        <display>
-        <title>一天一道面试题</title>
-        <pubTime>2015-09-06T07:16:00.000Z</pubTime>
-        
-        <tag>面试</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2016/09/16/How-to-use-Xcode8-or-iOS10_SDK/</loc>
     <lastmod>2016-11-30T01:57:34.000Z</lastmod>
     <data>
@@ -571,6 +551,26 @@
            
              
               <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/09/06/Interview-questions/</loc>
+    <lastmod>2016-11-30T01:57:34.000Z</lastmod>
+    <data>
+        <display>
+        <title>一天一道面试题</title>
+        <pubTime>2015-09-06T07:16:00.000Z</pubTime>
+        
+        <tag>面试</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -826,12 +826,12 @@
 
     
   <url>
-    <loc>superdanny.link/2015/07/25/Swift-Series-Introduction/</loc>
+    <loc>superdanny.link/2015/07/27/Swift-Series-CollectionType/</loc>
     <lastmod>2016-11-30T01:56:54.000Z</lastmod>
     <data>
         <display>
-        <title>Swift入坑系列—前言</title>
-        <pubTime>2015-07-25T10:45:00.000Z</pubTime>
+        <title>Swift入坑系列—集合类型</title>
+        <pubTime>2015-07-27T14:36:00.000Z</pubTime>
         
         <tag>Swift</tag>
          
@@ -846,12 +846,12 @@
 
     
   <url>
-    <loc>superdanny.link/2015/07/27/Swift-Series-CollectionType/</loc>
+    <loc>superdanny.link/2015/07/25/Swift-Series-Introduction/</loc>
     <lastmod>2016-11-30T01:56:54.000Z</lastmod>
     <data>
         <display>
-        <title>Swift入坑系列—集合类型</title>
-        <pubTime>2015-07-27T14:36:00.000Z</pubTime>
+        <title>Swift入坑系列—前言</title>
+        <pubTime>2015-07-25T10:45:00.000Z</pubTime>
         
         <tag>Swift</tag>
          
@@ -906,6 +906,26 @@
 
     
   <url>
+    <loc>superdanny.link/2014/08/21/Quickly-master-objective-c-grammar/</loc>
+    <lastmod>2016-11-30T01:56:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>十分钟让你明白Objective-C的语法（和Java、C++的对比）</title>
+        <pubTime>2014-08-21T05:46:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2015/09/09/Quickly-access-github/</loc>
     <lastmod>2016-11-30T01:56:52.000Z</lastmod>
     <data>
@@ -921,26 +941,6 @@
            
              
               <breadCrumb title="技术" url="superdanny.link/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2014/08/21/Quickly-master-objective-c-grammar/</loc>
-    <lastmod>2016-11-30T01:56:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>十分钟让你明白Objective-C的语法（和Java、C++的对比）</title>
-        <pubTime>2014-08-21T05:46:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -1106,26 +1106,6 @@
 
     
   <url>
-    <loc>superdanny.link/2016/01/12/iOS-UIWebView-add-customView/</loc>
-    <lastmod>2016-11-30T01:56:47.000Z</lastmod>
-    <data>
-        <display>
-        <title>UIWebView顶部添加自定义视图</title>
-        <pubTime>2016-01-12T06:39:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2015/10/10/iOS-UIKeyboardType/</loc>
     <lastmod>2016-11-30T01:56:47.000Z</lastmod>
     <data>
@@ -1138,6 +1118,26 @@
         <tag>UIKeyboardType</tag>
          
         <tag>键盘</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2016/01/12/iOS-UIWebView-add-customView/</loc>
+    <lastmod>2016-11-30T01:56:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>UIWebView顶部添加自定义视图</title>
+        <pubTime>2016-01-12T06:39:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
          
          
            
@@ -1299,28 +1299,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/29/iOS-app-install-fail-reason/</loc>
-    <lastmod>2016-11-30T01:56:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>iOS应用安装失败原因排查</title>
-        <pubTime>2015-09-29T08:40:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-        <tag>安装失败</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2015/09/24/iOS-about-certification/</loc>
     <lastmod>2016-11-30T01:56:42.000Z</lastmod>
     <data>
@@ -1339,6 +1317,28 @@
           
              
               <breadCrumb title="Mac端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/Mac%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/09/29/iOS-app-install-fail-reason/</loc>
+    <lastmod>2016-11-30T01:56:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>iOS应用安装失败原因排查</title>
+        <pubTime>2015-09-29T08:40:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>安装失败</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -1419,26 +1419,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
-    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>关于开发中遇到问题处理思路</title>
-        <pubTime>2015-09-18T05:56:00.000Z</pubTime>
-        
-        <tag>解决方式</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2015/09/17/Fix-svn-directory-is-out-of-date/</loc>
     <lastmod>2016-11-30T01:56:39.000Z</lastmod>
     <data>
@@ -1459,16 +1439,14 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/16/Custom-UITextField-and-UITextView-function/</loc>
-    <lastmod>2016-11-30T01:56:38.000Z</lastmod>
+    <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
+    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
     <data>
         <display>
-        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
-        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
+        <title>关于开发中遇到问题处理思路</title>
+        <pubTime>2015-09-18T05:56:00.000Z</pubTime>
         
-        <tag>iOS</tag>
-         
-        <tag>长按文本框</tag>
+        <tag>解决方式</tag>
          
          
            
@@ -1489,6 +1467,28 @@
         <pubTime>2015-08-20T04:13:00.000Z</pubTime>
         
         <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/09/16/Custom-UITextField-and-UITextView-function/</loc>
+    <lastmod>2016-11-30T01:56:38.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
+        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>长按文本框</tag>
          
          
            
