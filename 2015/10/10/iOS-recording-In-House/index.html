@@ -21,7 +21,7 @@
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/81f8a509gw1eww9hrf9gej20w80jgdix.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/81f8a509gw1eww9huurchj20w80jggns.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/81f8a509gw1eww9hnenefj20w80jg0vo.jpg">
-<meta property="og:updated_time" content="2016-11-30T01:56:46.000Z">
+<meta property="og:updated_time" content="2017-04-05T03:07:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS开发企业版ipa分发(In-House模式)记录">
 <meta name="twitter:description" content="前言本人公司开发的.ipa发布于 AppStore 和自己的服务器上。但是自己却一直没时间利用公司的资源进行研究。现在赶紧趁热打铁，记录一下，以便以后查阅。
@@ -284,6 +284,7 @@ var _hmt = _hmt || [];
 <p><strong>示例 iOS 应用清单文件</strong></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">plist</span> <span class="attr">version</span>=<span class="string">"1.0"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- array of downloads.--&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">key</span>&gt;</span>items<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">array</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- an array of assets to download --&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">key</span>&gt;</span>assets<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">array</span>&gt;</span></div><div class="line">       <span class="comment">&lt;!-- software-package: the ipa to install.--&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">         <span class="comment">&lt;!-- required. the asset kind.--&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">key</span>&gt;</span>kind<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">string</span>&gt;</span>software-package<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">          <span class="comment">&lt;!-- optional. md5 every n bytes. will restart a chunk if md5 fails.--&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">key</span>&gt;</span>md5-size<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">integer</span>&gt;</span>10485760<span class="tag">&lt;/<span class="name">integer</span>&gt;</span></div><div class="line">          <span class="comment">&lt;!-- optional. array of md5 hashes for each "md5-size" sized chunk.--&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">key</span>&gt;</span>md5s<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">array</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>41fa64bb7a7cae5a46bfb45821ac8bba<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>51fa64bb7a7cae5a46bfb45821ac8bba<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">          <span class="tag">&lt;/<span class="name">array</span>&gt;</span></div><div class="line">          <span class="comment">&lt;!-- required. the URL of the file to download.--&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">key</span>&gt;</span>url<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">string</span>&gt;</span>https://www.example.com/apps/foo.ipa<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- display-image: the icon to display during download.--&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">key</span>&gt;</span>kind<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">string</span>&gt;</span>display-image<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">         <span class="comment">&lt;!-- optional. indicates if icon needs shine effect applied.--&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">key</span>&gt;</span>needs-shine<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">true</span>/&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">key</span>&gt;</span>url<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">string</span>&gt;</span>https://www.example.com/image.57x57.png<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- full-size-image: the large 512x512 icon used by iTunes.--&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">key</span>&gt;</span>kind<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">string</span>&gt;</span>full-size-image<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">         <span class="comment">&lt;!-- optional. one md5 hash for the entire file.--&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">key</span>&gt;</span>md5<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">string</span>&gt;</span>61fa64bb7a7cae5a46bfb45821ac8bba<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">key</span>&gt;</span>needs-shine<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">true</span>/&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">key</span>&gt;</span>url<span class="tag">&lt;/<span class="name">key</span>&gt;</span><span class="tag">&lt;<span class="name">string</span>&gt;</span>https://www.example.com/image.512x512.jpg<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">array</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>metadata<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">       <span class="comment">&lt;!-- required --&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">key</span>&gt;</span>bundle-identifier<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">string</span>&gt;</span>com.example.fooapp<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">       <span class="comment">&lt;!-- optional (software only) --&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">key</span>&gt;</span>bundle-version<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">string</span>&gt;</span>1.0<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">       <span class="comment">&lt;!-- required. the download kind.--&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">key</span>&gt;</span>kind<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">string</span>&gt;</span>software<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">       <span class="comment">&lt;!-- optional. displayed during download; typically company name --&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">key</span>&gt;</span>subtitle<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">string</span>&gt;</span>Apple<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">       <span class="comment">&lt;!-- required. the title to display during the download.--&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">key</span>&gt;</span>title<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">string</span>&gt;</span>Example Corporate App<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">array</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">plist</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>苹果官方相关文档<br><a href="http://help.apple.com/deployment/ios/#/apda0e3426d7" target="_blank" rel="external">以无线方式安装企业内部应用</a></p>
+<h2 id="安装失败原因"><a href="#安装失败原因" class="headerlink" title="安装失败原因"></a>安装失败原因</h2><p>利用企业证书打包部署的 ipa 安装有可能存在安装失败的情况。一般的失败的原因可以查阅<a href="/2015/09/29/iOS-app-install-fail-reason/">iOS应用安装失败原因排查</a></p>
 <hr>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
 <p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
@@ -578,10 +579,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">年终总结</a>
               </li>
              
@@ -594,6 +591,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
               </li>
              
@@ -602,15 +603,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">终端</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CocoaPods</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -638,6 +639,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
@@ -647,10 +652,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -678,11 +679,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -726,11 +727,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -762,6 +763,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打包</a>
               </li>
              
@@ -774,15 +783,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -806,15 +807,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">代码块</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
