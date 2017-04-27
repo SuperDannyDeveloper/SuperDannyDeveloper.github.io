@@ -170,6 +170,181 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-iOS-Apple-Push-Notification-Service" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/02/iOS-Apple-Push-Notification-Service/">iOS推送的那些事</a>
+    </h1>
+  
+
+        
+        <a href="/2016/02/02/iOS-Apple-Push-Notification-Service/" class="archive-article-date">
+  	<time datetime="2016-02-02T05:40:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-02</time>
+</a>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="关于推送"><a href="#关于推送" class="headerlink" title="关于推送"></a>关于推送</h1><p>关于苹果的推送网上已经有非常多的资源讲解，我在这里就不再累赘。直接切入主题，讲讲如何模拟推送以及处理推送消息。在进入主题之前，我先说几个关键流程：</p>
+<ol>
+<li>创建Push SSL Certification(推送证书)</li>
+<li>iOS客户端注册Push功能并获得DeviceToken</li>
+<li>使用Provider向APNS发送Push消息</li>
+<li>iOS客户端接收处理由APNS发来的消息</li>
+</ol>
+        
+          <a class="article-more-a" href="/2016/02/02/iOS-Apple-Push-Notification-Service/#more">阅读全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">推送</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Mac端/" class="article-tag-list-link color5">Mac端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/移动端/" class="article-tag-list-link color4">移动端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/02/02/iOS-Apple-Push-Notification-Service/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS-Upload-Image" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/28/iOS-Upload-Image/">iOS图片压缩上传</a>
+    </h1>
+  
+
+        
+        <a href="/2016/01/28/iOS-Upload-Image/" class="archive-article-date">
+  	<time datetime="2016-01-28T03:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-01-28</time>
+</a>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>很多时候我们上传图片经常遇到一些问题，要不就是图片质量变差，要不就是图片太大等等问题。这里，我找到了一个算是目前比较符合需求的解决方案。在原有基础上增加了动态压缩系数，改写成Swift版本，最底下贴出OC版本。</p>
+<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><p>先调整分辨率，分辨率可以自己设定一个值，大于的就缩小到这分辨率，小余的就保持原本分辨率。然后再根据图片最终大小来设置压缩比，比如传入maxSize = 30KB，最终计算大概这个大小的压缩比。基本上最终出来的图片数据根据当前分辨率能保持差不多的大小同时不至于太模糊，跟微信，微博最终效果应该是差不多的，代码仍然有待优化！</p>
+        
+          <a class="article-more-a" href="/2016/01/28/iOS-Upload-Image/#more">阅读全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图片上传</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/移动端/" class="article-tag-list-link color4">移动端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/01/28/iOS-Upload-Image/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-iOS-get-device-ip-address" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -827,172 +1002,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-iOS-UIDocumentInteractionController" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/26/iOS-UIDocumentInteractionController/">UIDocumentInteractionController之程序间文档共享</a>
-    </h1>
-  
-
-        
-        <a href="/2015/12/26/iOS-UIDocumentInteractionController/" class="archive-article-date">
-  	<time datetime="2015-12-26T03:43:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-12-26</time>
-</a>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>iOS中的沙盒可以让平台更加的安全，这也是沙盒给用户带来的最主要好处。不过由于沙盒的严格限制，导致程序之间共享数据比较麻烦。一般在程序间共享文档可以通过UIDocumentInteractionController类实现通讯。它支持在你的app中用其他app预览和显示文档。同时也支持文件关联，允许其他app通过你的程序打开文件。这些技术包括了UIKit中提供的UIDocumentInteractionController类（<a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/doc/uid/TP40009304">UIDocumentInteractionController Class Reference</a>)，以及Quick Look框架（<a href="https://developer.apple.com/library/ios/documentation/QuickLook/Reference/QuickLookFrameworkReference_iPhoneOS/index.html#//apple_ref/doc/uid/TP40009672">Quick Look Framework Reference</a>)。</p>
-</blockquote>
-<p>本文将就如何在应用之间进行文件共享进行基本探究。还请大牛勿喷。</p>
-        
-          <a class="article-more-a" href="/2015/12/26/iOS-UIDocumentInteractionController/#more">阅读全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">文件共享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">文件预览</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/移动端/" class="article-tag-list-link color4">移动端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/12/26/iOS-UIDocumentInteractionController/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Software-development-documentation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/24/Software-development-documentation/">软件开发的过程中，这些文档你都用到了吗（转）</a>
-    </h1>
-  
-
-        
-        <a href="/2015/12/24/Software-development-documentation/" class="archive-article-date">
-  	<time datetime="2015-12-24T02:24:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-12-24</time>
-</a>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>导读：做软件的目的就是要满足客户的需求，这个需求包括功能、外观、操作、时间及性能等各方面。那么，在软件开发过程中那部分最重要呢，程序员说“毋庸置疑，我编写的程序实现了客户提出的功能以及业务流程，…..</p>
-</blockquote>
-<p>　　众所周知，做软件的目的就是要满足客户的需求，这个需求包括功能、外观、操作、时间及性能等各方面。那么，在软件开发过程中那部分最重要呢，程序员说“毋庸置疑，我编写的程序实现了客户提出的功能以及业务流程，肯定我是最重要的”，美工说“你开发的功能如果没有我的页面美化，是无法呈现给客户的，要知道，很多客户并不很了解内部复杂的功能，首先映入眼帘的就是界面的效果，就像人一样，如果你不是美女，那么他看了你一眼之后，就没有想和你再继续沟通和发展的积极性了”，测试听了不高兴了，说“漏洞百出的产品，哪怕你外观再漂亮，实现的功能再多，也是不成熟的产品，客户是不会使用的。”众说纷纭，各执一词。</p>
-        
-          <a class="article-more-a" href="/2015/12/24/Software-development-documentation/#more">阅读全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">开发文档</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/项目管理/" class="article-tag-list-link color5">项目管理</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/12/24/Software-development-documentation/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -1125,11 +1134,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1141,15 +1150,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">终端</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CocoaPods</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1181,15 +1190,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1209,15 +1218,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Mac</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1245,15 +1254,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1265,11 +1270,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1305,10 +1318,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打包</a>
               </li>
              
@@ -1325,11 +1334,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
+                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1345,15 +1354,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">代码块</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
