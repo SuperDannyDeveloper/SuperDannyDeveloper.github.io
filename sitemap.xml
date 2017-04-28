@@ -44,13 +44,6 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2017/03/10/iOS-UITableView-UICollectionView-Skill/</loc>
-    
-    <lastmod>2017-03-24T07:56:03.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/2015/09/17/Bug-record/</loc>
     
     <lastmod>2017-03-10T08:18:29.000Z</lastmod>
@@ -331,14 +324,14 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/01/UITableView-update-data/</loc>
+    <loc>superdanny.link/2015/01/23/TabBar-hidesBottomBarWhenPushed/</loc>
     
     <lastmod>2016-11-30T01:56:55.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/01/23/TabBar-hidesBottomBarWhenPushed/</loc>
+    <loc>superdanny.link/2015/09/01/UITableView-update-data/</loc>
     
     <lastmod>2016-11-30T01:56:55.000Z</lastmod>
     
@@ -359,14 +352,14 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/08/18/Storyboard/</loc>
+    <loc>superdanny.link/2015/12/24/Software-development-documentation/</loc>
     
     <lastmod>2016-11-30T01:56:53.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/12/24/Software-development-documentation/</loc>
+    <loc>superdanny.link/2015/08/18/Storyboard/</loc>
     
     <lastmod>2016-11-30T01:56:53.000Z</lastmod>
     
@@ -555,7 +548,28 @@
   </url>
   
   <url>
+    <loc>superdanny.link/love/loveForever/jscex.min.js</loc>
+    
+    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveForever/jquery.min.js</loc>
+    
+    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>superdanny.link/love/loveForever/jscex-async.min.js</loc>
+    
+    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveForever/jscex-builderbase.min.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
     
@@ -569,7 +583,21 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveForever/jscex-builderbase.min.js</loc>
+    <loc>superdanny.link/love/loveForever/jscex-jit.js</loc>
+    
+    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveForever/functions.js</loc>
+    
+    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveForever/default.css</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
     
@@ -584,41 +612,6 @@
   
   <url>
     <loc>superdanny.link/love/loveForever/love.js</loc>
-    
-    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveForever/jscex.min.js</loc>
-    
-    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveForever/jscex-jit.js</loc>
-    
-    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveForever/default.css</loc>
-    
-    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveForever/functions.js</loc>
-    
-    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveForever/jquery.min.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
     
@@ -688,20 +681,6 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveMaggie/CanvasRenderer.js</loc>
-    
-    <lastmod>2015-04-20T23:01:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveMaggie/Projector.js</loc>
-    
-    <lastmod>2015-04-20T23:01:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/love/loveMaggie/helvetiker_regular.typeface.js</loc>
     
     <lastmod>2015-04-20T23:01:40.000Z</lastmod>
@@ -716,7 +695,21 @@
   </url>
   
   <url>
+    <loc>superdanny.link/love/loveMaggie/CanvasRenderer.js</loc>
+    
+    <lastmod>2015-04-20T23:01:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>superdanny.link/love/loveMaggie/Sparks.js</loc>
+    
+    <lastmod>2015-04-20T23:01:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveMaggie/Projector.js</loc>
     
     <lastmod>2015-04-20T23:01:40.000Z</lastmod>
     
