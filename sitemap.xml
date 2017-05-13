@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>superdanny.link/2017/03/10/iOS-UITableView-UICollectionView-Skill/</loc>
+    <loc>superdanny.link/2017/05/09/iOS-IJKPlayer/</loc>
     
-    <lastmod>2017-05-13T06:58:59.000Z</lastmod>
+    <lastmod>2017-05-13T09:05:04.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2017/05/09/iOS-IJKPlayer/</loc>
+    <loc>superdanny.link/2017/03/10/iOS-UITableView-UICollectionView-Skill/</loc>
     
-    <lastmod>2017-05-13T06:07:27.000Z</lastmod>
+    <lastmod>2017-05-13T06:58:59.000Z</lastmod>
     
   </url>
   
@@ -562,49 +562,7 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveForever/love.js</loc>
-    
-    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveForever/jscex-builderbase.min.js</loc>
-    
-    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveForever/jscex-parser.js</loc>
-    
-    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveForever/jquery.min.js</loc>
-    
-    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveForever/jscex.min.js</loc>
-    
-    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveForever/jscex-jit.js</loc>
-    
-    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveForever/jscex-async.min.js</loc>
+    <loc>superdanny.link/love/loveForever/default.css</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
     
@@ -618,7 +576,35 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveForever/default.css</loc>
+    <loc>superdanny.link/love/loveForever/love.js</loc>
+    
+    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveForever/jscex-parser.js</loc>
+    
+    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveForever/jscex.min.js</loc>
+    
+    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveForever/jquery.min.js</loc>
+    
+    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveForever/jscex-async.min.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
     
@@ -626,6 +612,20 @@
   
   <url>
     <loc>superdanny.link/love/loveForever/jscex-async-powerpack.min.js</loc>
+    
+    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveForever/jscex-builderbase.min.js</loc>
+    
+    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveForever/jscex-jit.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
     
@@ -695,14 +695,7 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveMaggie/nb.js</loc>
-    
-    <lastmod>2015-04-20T23:01:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveMaggie/Sparks.js</loc>
+    <loc>superdanny.link/love/loveMaggie/helvetiker_regular.typeface.js</loc>
     
     <lastmod>2015-04-20T23:01:40.000Z</lastmod>
     
@@ -710,13 +703,6 @@
   
   <url>
     <loc>superdanny.link/love/loveMaggie/tween.min.js</loc>
-    
-    <lastmod>2015-04-20T23:01:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveMaggie/helvetiker_regular.typeface.js</loc>
     
     <lastmod>2015-04-20T23:01:40.000Z</lastmod>
     
@@ -731,6 +717,20 @@
   
   <url>
     <loc>superdanny.link/love/loveMaggie/Projector.js</loc>
+    
+    <lastmod>2015-04-20T23:01:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveMaggie/Sparks.js</loc>
+    
+    <lastmod>2015-04-20T23:01:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveMaggie/nb.js</loc>
     
     <lastmod>2015-04-20T23:01:40.000Z</lastmod>
     
