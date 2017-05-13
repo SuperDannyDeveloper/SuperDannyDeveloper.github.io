@@ -292,9 +292,9 @@
         <title>Xcode8，你为什么这么坑</title>
         <pubTime>2016-09-26T08:02:00.000Z</pubTime>
         
-        <tag>Xcode</tag>
-         
         <tag>iOS10</tag>
+         
+        <tag>Xcode</tag>
          
         <tag>Xcode8</tag>
          
@@ -670,6 +670,30 @@
 
     
   <url>
+    <loc>superdanny.link/2016/09/16/How-to-use-Xcode8-or-iOS10_SDK/</loc>
+    <lastmod>2016-11-30T01:57:34.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何优雅的使用Xcode8或iOS10 SDK</title>
+        <pubTime>2016-09-16T15:59:00.000Z</pubTime>
+        
+        <tag>iOS10</tag>
+         
+        <tag>Xcode</tag>
+         
+        <tag>Xcode8</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2015/09/06/Interview-questions/</loc>
     <lastmod>2016-11-30T01:57:34.000Z</lastmod>
     <data>
@@ -683,30 +707,6 @@
            
              
               <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2016/09/16/How-to-use-Xcode8-or-iOS10_SDK/</loc>
-    <lastmod>2016-11-30T01:57:34.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何优雅的使用Xcode8或iOS10 SDK</title>
-        <pubTime>2016-09-16T15:59:00.000Z</pubTime>
-        
-        <tag>Xcode</tag>
-         
-        <tag>iOS10</tag>
-         
-        <tag>Xcode8</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -878,28 +878,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/07/08/Update-Xcode-Plug-in/</loc>
-    <lastmod>2016-11-30T01:56:56.000Z</lastmod>
-    <data>
-        <display>
-        <title>关于Xcode更新之后插件失效以及安装失败详解</title>
-        <pubTime>2015-07-08T14:44:00.000Z</pubTime>
-        
-        <tag>Xcode</tag>
-         
-        <tag>插件</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2015/09/09/Using-shell-script-to-automatic-packaging/</loc>
     <lastmod>2016-11-30T01:56:56.000Z</lastmod>
     <data>
@@ -922,12 +900,34 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/01/UITableView-update-data/</loc>
+    <loc>superdanny.link/2015/07/08/Update-Xcode-Plug-in/</loc>
+    <lastmod>2016-11-30T01:56:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>关于Xcode更新之后插件失效以及安装失败详解</title>
+        <pubTime>2015-07-08T14:44:00.000Z</pubTime>
+        
+        <tag>Xcode</tag>
+         
+        <tag>插件</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/01/23/TabBar-hidesBottomBarWhenPushed/</loc>
     <lastmod>2016-11-30T01:56:55.000Z</lastmod>
     <data>
         <display>
-        <title>UITableView数据更新问题</title>
-        <pubTime>2015-09-01T10:07:00.000Z</pubTime>
+        <title>解决TabBar隐藏与显现hidesBottomBarWhenPushed问题</title>
+        <pubTime>2015-01-23T04:00:00.000Z</pubTime>
         
         <tag>iOS</tag>
          
@@ -942,12 +942,12 @@
 
     
   <url>
-    <loc>superdanny.link/2015/01/23/TabBar-hidesBottomBarWhenPushed/</loc>
+    <loc>superdanny.link/2015/09/01/UITableView-update-data/</loc>
     <lastmod>2016-11-30T01:56:55.000Z</lastmod>
     <data>
         <display>
-        <title>解决TabBar隐藏与显现hidesBottomBarWhenPushed问题</title>
-        <pubTime>2015-01-23T04:00:00.000Z</pubTime>
+        <title>UITableView数据更新问题</title>
+        <pubTime>2015-09-01T10:07:00.000Z</pubTime>
         
         <tag>iOS</tag>
          
@@ -1002,26 +1002,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/08/18/Storyboard/</loc>
-    <lastmod>2016-11-30T01:56:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>初探Storyboard</title>
-        <pubTime>2015-08-18T07:05:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2015/12/24/Software-development-documentation/</loc>
     <lastmod>2016-11-30T01:56:53.000Z</lastmod>
     <data>
@@ -1035,6 +1015,26 @@
            
              
               <breadCrumb title="项目管理" url="superdanny.link/categories/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/08/18/Storyboard/</loc>
+    <lastmod>2016-11-30T01:56:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>初探Storyboard</title>
+        <pubTime>2015-08-18T07:05:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -1069,14 +1069,36 @@
         <title>GitHub无法访问或访问缓慢解决办法</title>
         <pubTime>2015-09-09T15:16:00.000Z</pubTime>
         
-        <tag>Mac</tag>
-         
         <tag>GitHub</tag>
+         
+        <tag>Mac</tag>
          
          
            
              
               <breadCrumb title="技术" url="superdanny.link/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/09/10/MacOSX-show-and-hide-file/</loc>
+    <lastmod>2016-11-30T01:56:51.000Z</lastmod>
+    <data>
+        <display>
+        <title>MacOS X隐藏和显示隐藏文件</title>
+        <pubTime>2015-09-09T19:02:00.000Z</pubTime>
+        
+        <tag>Mac</tag>
+         
+        <tag>文件操作</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -1101,28 +1123,6 @@
            
              
               <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2015/09/10/MacOSX-show-and-hide-file/</loc>
-    <lastmod>2016-11-30T01:56:51.000Z</lastmod>
-    <data>
-        <display>
-        <title>MacOS X隐藏和显示隐藏文件</title>
-        <pubTime>2015-09-09T19:02:00.000Z</pubTime>
-        
-        <tag>文件操作</tag>
-         
-        <tag>Mac</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -1218,18 +1218,14 @@
 
     
   <url>
-    <loc>superdanny.link/2015/10/10/iOS-UIKeyboardType/</loc>
+    <loc>superdanny.link/2016/01/12/iOS-UIWebView-add-customView/</loc>
     <lastmod>2016-11-30T01:56:47.000Z</lastmod>
     <data>
         <display>
-        <title>iOS UIKeyboardType各类键盘效果图</title>
-        <pubTime>2015-10-09T16:20:00.000Z</pubTime>
+        <title>UIWebView顶部添加自定义视图</title>
+        <pubTime>2016-01-12T06:39:00.000Z</pubTime>
         
         <tag>iOS</tag>
-         
-        <tag>UIKeyboardType</tag>
-         
-        <tag>键盘</tag>
          
          
            
@@ -1242,14 +1238,18 @@
 
     
   <url>
-    <loc>superdanny.link/2016/01/12/iOS-UIWebView-add-customView/</loc>
+    <loc>superdanny.link/2015/10/10/iOS-UIKeyboardType/</loc>
     <lastmod>2016-11-30T01:56:47.000Z</lastmod>
     <data>
         <display>
-        <title>UIWebView顶部添加自定义视图</title>
-        <pubTime>2016-01-12T06:39:00.000Z</pubTime>
+        <title>iOS UIKeyboardType各类键盘效果图</title>
+        <pubTime>2015-10-09T16:20:00.000Z</pubTime>
         
         <tag>iOS</tag>
+         
+        <tag>UIKeyboardType</tag>
+         
+        <tag>键盘</tag>
          
          
            
@@ -1527,16 +1527,14 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/16/Custom-UITextField-and-UITextView-function/</loc>
+    <loc>superdanny.link/2015/08/20/Custom-UIView-fillet/</loc>
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
-        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
+        <title>指定UIView的特定角为圆角</title>
+        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
         
         <tag>iOS</tag>
-         
-        <tag>长按文本框</tag>
          
          
            
@@ -1549,14 +1547,16 @@
 
     
   <url>
-    <loc>superdanny.link/2015/08/20/Custom-UIView-fillet/</loc>
+    <loc>superdanny.link/2015/09/16/Custom-UITextField-and-UITextView-function/</loc>
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>指定UIView的特定角为圆角</title>
-        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
+        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
+        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
         
         <tag>iOS</tag>
+         
+        <tag>长按文本框</tag>
          
          
            

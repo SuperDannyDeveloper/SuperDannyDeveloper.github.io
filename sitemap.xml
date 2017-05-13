@@ -562,13 +562,6 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveForever/jscex-parser.js</loc>
-    
-    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/love/loveForever/jscex-async.min.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
@@ -576,7 +569,21 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveForever/love.js</loc>
+    <loc>superdanny.link/love/loveForever/jscex-builderbase.min.js</loc>
+    
+    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveForever/jscex-parser.js</loc>
+    
+    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveForever/jscex.min.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
     
@@ -597,21 +604,7 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveForever/jscex.min.js</loc>
-    
-    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveForever/jscex-builderbase.min.js</loc>
-    
-    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/love/loveForever/functions.js</loc>
+    <loc>superdanny.link/love/loveForever/jscex-jit.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
     
@@ -625,7 +618,14 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveForever/jscex-jit.js</loc>
+    <loc>superdanny.link/love/loveForever/functions.js</loc>
+    
+    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveForever/love.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
     
@@ -695,7 +695,7 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveMaggie/nb.js</loc>
+    <loc>superdanny.link/love/loveMaggie/CanvasRenderer.js</loc>
     
     <lastmod>2015-04-20T23:01:40.000Z</lastmod>
     
@@ -709,13 +709,6 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveMaggie/Sparks.js</loc>
-    
-    <lastmod>2015-04-20T23:01:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/love/loveMaggie/tween.min.js</loc>
     
     <lastmod>2015-04-20T23:01:40.000Z</lastmod>
@@ -723,14 +716,21 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveMaggie/CanvasRenderer.js</loc>
+    <loc>superdanny.link/love/loveMaggie/helvetiker_regular.typeface.js</loc>
     
     <lastmod>2015-04-20T23:01:40.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveMaggie/helvetiker_regular.typeface.js</loc>
+    <loc>superdanny.link/love/loveMaggie/nb.js</loc>
+    
+    <lastmod>2015-04-20T23:01:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveMaggie/Sparks.js</loc>
     
     <lastmod>2015-04-20T23:01:40.000Z</lastmod>
     
