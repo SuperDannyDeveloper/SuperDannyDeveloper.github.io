@@ -5,7 +5,7 @@
     
   <url>
     <loc>superdanny.link/2017/05/09/iOS-IJKPlayer/</loc>
-    <lastmod>2017-05-13T09:05:04.000Z</lastmod>
+    <lastmod>2017-05-13T09:13:28.000Z</lastmod>
     <data>
         <display>
         <title>IJKPlayer相关指南</title>
@@ -582,6 +582,26 @@
 
     
   <url>
+    <loc>superdanny.link/2016/01/18/Remove-CocoaPods-from-project/</loc>
+    <lastmod>2016-11-30T01:57:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何从项目中移除CocoaPods(译)</title>
+        <pubTime>2016-01-18T09:44:00.000Z</pubTime>
+        
+        <tag>CocoaPods</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2016/03/09/Swift-Getting-to-Know-Enums-Structs-and-Classes/</loc>
     <lastmod>2016-11-30T01:57:39.000Z</lastmod>
     <data>
@@ -599,26 +619,6 @@
            
              
               <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2016/01/18/Remove-CocoaPods-from-project/</loc>
-    <lastmod>2016-11-30T01:57:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何从项目中移除CocoaPods(译)</title>
-        <pubTime>2016-01-18T09:44:00.000Z</pubTime>
-        
-        <tag>CocoaPods</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -670,6 +670,26 @@
 
     
   <url>
+    <loc>superdanny.link/2015/09/06/Interview-questions/</loc>
+    <lastmod>2016-11-30T01:57:34.000Z</lastmod>
+    <data>
+        <display>
+        <title>一天一道面试题</title>
+        <pubTime>2015-09-06T07:16:00.000Z</pubTime>
+        
+        <tag>面试</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2016/09/16/How-to-use-Xcode8-or-iOS10_SDK/</loc>
     <lastmod>2016-11-30T01:57:34.000Z</lastmod>
     <data>
@@ -687,26 +707,6 @@
            
              
               <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2015/09/06/Interview-questions/</loc>
-    <lastmod>2016-11-30T01:57:34.000Z</lastmod>
-    <data>
-        <display>
-        <title>一天一道面试题</title>
-        <pubTime>2015-09-06T07:16:00.000Z</pubTime>
-        
-        <tag>面试</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -922,12 +922,12 @@
 
     
   <url>
-    <loc>superdanny.link/2015/01/23/TabBar-hidesBottomBarWhenPushed/</loc>
+    <loc>superdanny.link/2015/09/01/UITableView-update-data/</loc>
     <lastmod>2016-11-30T01:56:55.000Z</lastmod>
     <data>
         <display>
-        <title>解决TabBar隐藏与显现hidesBottomBarWhenPushed问题</title>
-        <pubTime>2015-01-23T04:00:00.000Z</pubTime>
+        <title>UITableView数据更新问题</title>
+        <pubTime>2015-09-01T10:07:00.000Z</pubTime>
         
         <tag>iOS</tag>
          
@@ -942,12 +942,12 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/01/UITableView-update-data/</loc>
+    <loc>superdanny.link/2015/01/23/TabBar-hidesBottomBarWhenPushed/</loc>
     <lastmod>2016-11-30T01:56:55.000Z</lastmod>
     <data>
         <display>
-        <title>UITableView数据更新问题</title>
-        <pubTime>2015-09-01T10:07:00.000Z</pubTime>
+        <title>解决TabBar隐藏与显现hidesBottomBarWhenPushed问题</title>
+        <pubTime>2015-01-23T04:00:00.000Z</pubTime>
         
         <tag>iOS</tag>
          
@@ -1084,28 +1084,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/10/MacOSX-show-and-hide-file/</loc>
-    <lastmod>2016-11-30T01:56:51.000Z</lastmod>
-    <data>
-        <display>
-        <title>MacOS X隐藏和显示隐藏文件</title>
-        <pubTime>2015-09-09T19:02:00.000Z</pubTime>
-        
-        <tag>文件操作</tag>
-         
-        <tag>Mac</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2015/09/21/KVC:KVO/</loc>
     <lastmod>2016-11-30T01:56:51.000Z</lastmod>
     <data>
@@ -1123,6 +1101,28 @@
            
              
               <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/09/10/MacOSX-show-and-hide-file/</loc>
+    <lastmod>2016-11-30T01:56:51.000Z</lastmod>
+    <data>
+        <display>
+        <title>MacOS X隐藏和显示隐藏文件</title>
+        <pubTime>2015-09-09T19:02:00.000Z</pubTime>
+        
+        <tag>文件操作</tag>
+         
+        <tag>Mac</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -1286,6 +1286,26 @@
 
     
   <url>
+    <loc>superdanny.link/2015/08/13/iOS-null-data/</loc>
+    <lastmod>2016-11-30T01:56:45.000Z</lastmod>
+    <data>
+        <display>
+        <title>iOS中处理空数据</title>
+        <pubTime>2015-08-13T07:19:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2016/01/15/iOS-iTunes_Connect_2-App-Statuses/</loc>
     <lastmod>2016-11-30T01:56:45.000Z</lastmod>
     <data>
@@ -1308,26 +1328,6 @@
           
              
               <breadCrumb title="Mac端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/Mac%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2015/08/13/iOS-null-data/</loc>
-    <lastmod>2016-11-30T01:56:45.000Z</lastmod>
-    <data>
-        <display>
-        <title>iOS中处理空数据</title>
-        <pubTime>2015-08-13T07:19:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -1527,14 +1527,16 @@
 
     
   <url>
-    <loc>superdanny.link/2015/08/20/Custom-UIView-fillet/</loc>
+    <loc>superdanny.link/2015/09/16/Custom-UITextField-and-UITextView-function/</loc>
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>指定UIView的特定角为圆角</title>
-        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
+        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
+        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
         
         <tag>iOS</tag>
+         
+        <tag>长按文本框</tag>
          
          
            
@@ -1547,16 +1549,14 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/16/Custom-UITextField-and-UITextView-function/</loc>
+    <loc>superdanny.link/2015/08/20/Custom-UIView-fillet/</loc>
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
-        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
+        <title>指定UIView的特定角为圆角</title>
+        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
         
         <tag>iOS</tag>
-         
-        <tag>长按文本框</tag>
          
          
            
