@@ -813,9 +813,9 @@
       <category term="Mac端" scheme="superdanny.link/categories/Mac%E7%AB%AF/"/>
     
     
-      <category term="iOS10" scheme="superdanny.link/tags/iOS10/"/>
-    
       <category term="Xcode" scheme="superdanny.link/tags/Xcode/"/>
+    
+      <category term="iOS10" scheme="superdanny.link/tags/iOS10/"/>
     
       <category term="Xcode8" scheme="superdanny.link/tags/Xcode8/"/>
     
@@ -870,9 +870,9 @@
       <category term="Mac端" scheme="superdanny.link/categories/Mac%E7%AB%AF/"/>
     
     
-      <category term="iOS10" scheme="superdanny.link/tags/iOS10/"/>
-    
       <category term="Xcode" scheme="superdanny.link/tags/Xcode/"/>
+    
+      <category term="iOS10" scheme="superdanny.link/tags/iOS10/"/>
     
       <category term="Xcode8" scheme="superdanny.link/tags/Xcode8/"/>
     
@@ -995,7 +995,7 @@
     <link href="superdanny.link/2016/03/09/Swift-Getting-to-Know-Enums-Structs-and-Classes/"/>
     <id>superdanny.link/2016/03/09/Swift-Getting-to-Know-Enums-Structs-and-Classes/</id>
     <published>2016-03-09T01:40:00.000Z</published>
-    <updated>2016-11-30T01:57:39.000Z</updated>
+    <updated>2017-05-15T06:10:55.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本文将对阅读的<a href="https://www.raywenderlich.com/119881/enums-structs-and-classes-in-swift?utm_source=raywenderlich.com+Weekly&amp;utm_campaign=42d1655b52-raywenderlich_com_Weekly3_08_2016&amp;utm_medium=email&amp;utm_term=0_83b6edc87f-42d1655b52-415085925" target="_blank" rel="external">国外文章</a>进行自己的理解翻译，有哪些不对的地方还望指正。</p>
 <a id="more"></a>
@@ -1003,7 +1003,7 @@
 <p>安全意味着它很难在你编写完程序之后在运行期间出现某些错误，导致你无法捕获。并且在编写代码期间它也能够检测到代码存在的问题并加以提示，而不是等到运行程序之后有问题你才去寻找问题所在。</p>
 <p>此外，Swift可以让你更清楚的知道代码的作用是什么，并且帮助优化你的代码。</p>
 <p>Swift的核心在于简单和高度规范化。实现这个的关键在于Swift的类型系统：</p>
-<p><img src="https://cdn2.raywenderlich.com/wp-content/uploads/2015/11/types-700x195.png" alt="六大类型"></p>
+<p><img src="http://wx3.sinaimg.cn/large/81f8a509gy1ffm0nf0b19j219e0coq44.jpg" alt="六大类型"></p>
 <p>系统由4个命名类型： <code>protocol(协议)</code>, <code>enum(枚举)</code>, <code>struct(结构体)</code>, <code>class(类)</code> 以及2个组合类型：<code>tuple(元组)</code>, <code>function(函数)</code> 组成。</p>
 <p>可能你会觉得还有其他的基本类型：Bool, Int, UInt, Float, Double, Character, String, Array, Set, Dictionary, Optional 等等。其实他们都是建立在命名类型上并且作为Swift标准库中的一部分。</p>
 <p>本文只针对命名类型中的<code>enum(枚举)</code>, <code>struct(结构体)</code>, <code>class(类)</code>进行展开。</p>

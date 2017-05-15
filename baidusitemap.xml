@@ -4,6 +4,55 @@
 
     
   <url>
+    <loc>superdanny.link/2016/03/09/Swift-Getting-to-Know-Enums-Structs-and-Classes/</loc>
+    <lastmod>2017-05-15T06:10:55.000Z</lastmod>
+    <data>
+        <display>
+        <title>swift中的枚举,结构体和类(简译)</title>
+        <pubTime>2016-03-09T01:40:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>Swift</tag>
+         
+        <tag>读书笔记</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2016/02/02/iOS-Apple-Push-Notification-Service/</loc>
+    <lastmod>2017-05-15T05:57:04.000Z</lastmod>
+    <data>
+        <display>
+        <title>iOS推送的那些事</title>
+        <pubTime>2016-02-02T05:40:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>推送</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
+          
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/Mac%E7%AB%AF/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2017/05/09/iOS-IJKPlayer/</loc>
     <lastmod>2017-05-13T09:13:28.000Z</lastmod>
     <data>
@@ -292,9 +341,9 @@
         <title>Xcode8，你为什么这么坑</title>
         <pubTime>2016-09-26T08:02:00.000Z</pubTime>
         
-        <tag>iOS10</tag>
-         
         <tag>Xcode</tag>
+         
+        <tag>iOS10</tag>
          
         <tag>Xcode8</tag>
          
@@ -467,31 +516,6 @@
     
     
   <url>
-    <loc>superdanny.link/2016/02/02/iOS-Apple-Push-Notification-Service/</loc>
-    <lastmod>2016-12-27T06:31:18.000Z</lastmod>
-    <data>
-        <display>
-        <title>iOS推送的那些事</title>
-        <pubTime>2016-02-02T05:40:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-        <tag>推送</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
-          
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/Mac%E7%AB%AF/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2016/12/22/iOS-Autolayout-and-animation/</loc>
     <lastmod>2016-12-22T15:16:57.000Z</lastmod>
     <data>
@@ -602,30 +626,6 @@
 
     
   <url>
-    <loc>superdanny.link/2016/03/09/Swift-Getting-to-Know-Enums-Structs-and-Classes/</loc>
-    <lastmod>2016-11-30T01:57:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>swift中的枚举,结构体和类(简译)</title>
-        <pubTime>2016-03-09T01:40:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-        <tag>Swift</tag>
-         
-        <tag>读书笔记</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2016/02/15/iOS-Certificate-has-an-invalid-issuer/</loc>
     <lastmod>2016-11-30T01:57:36.000Z</lastmod>
     <data>
@@ -677,9 +677,9 @@
         <title>如何优雅的使用Xcode8或iOS10 SDK</title>
         <pubTime>2016-09-16T15:59:00.000Z</pubTime>
         
-        <tag>iOS10</tag>
-         
         <tag>Xcode</tag>
+         
+        <tag>iOS10</tag>
          
         <tag>Xcode8</tag>
          
@@ -878,28 +878,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/09/Using-shell-script-to-automatic-packaging/</loc>
-    <lastmod>2016-11-30T01:56:56.000Z</lastmod>
-    <data>
-        <display>
-        <title>自动打包Shell脚本</title>
-        <pubTime>2015-09-09T12:21:00.000Z</pubTime>
-        
-        <tag>Xcode</tag>
-         
-        <tag>Shell</tag>
-         
-         
-           
-             
-              <breadCrumb title="自动打包" url="superdanny.link/categories/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2015/07/08/Update-Xcode-Plug-in/</loc>
     <lastmod>2016-11-30T01:56:56.000Z</lastmod>
     <data>
@@ -915,6 +893,28 @@
            
              
               <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/09/09/Using-shell-script-to-automatic-packaging/</loc>
+    <lastmod>2016-11-30T01:56:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>自动打包Shell脚本</title>
+        <pubTime>2015-09-09T12:21:00.000Z</pubTime>
+        
+        <tag>Xcode</tag>
+         
+        <tag>Shell</tag>
+         
+         
+           
+             
+              <breadCrumb title="自动打包" url="superdanny.link/categories/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/"/>
           
         </display>
     </data>
@@ -1002,6 +1002,26 @@
 
     
   <url>
+    <loc>superdanny.link/2015/08/18/Storyboard/</loc>
+    <lastmod>2016-11-30T01:56:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>初探Storyboard</title>
+        <pubTime>2015-08-18T07:05:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2015/12/24/Software-development-documentation/</loc>
     <lastmod>2016-11-30T01:56:53.000Z</lastmod>
     <data>
@@ -1022,19 +1042,21 @@
 
     
   <url>
-    <loc>superdanny.link/2015/08/18/Storyboard/</loc>
-    <lastmod>2016-11-30T01:56:53.000Z</lastmod>
+    <loc>superdanny.link/2015/09/09/Quickly-access-github/</loc>
+    <lastmod>2016-11-30T01:56:52.000Z</lastmod>
     <data>
         <display>
-        <title>初探Storyboard</title>
-        <pubTime>2015-08-18T07:05:00.000Z</pubTime>
+        <title>GitHub无法访问或访问缓慢解决办法</title>
+        <pubTime>2015-09-09T15:16:00.000Z</pubTime>
         
-        <tag>iOS</tag>
+        <tag>Mac</tag>
+         
+        <tag>GitHub</tag>
          
          
            
              
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+              <breadCrumb title="技术" url="superdanny.link/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
@@ -1062,28 +1084,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/09/Quickly-access-github/</loc>
-    <lastmod>2016-11-30T01:56:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>GitHub无法访问或访问缓慢解决办法</title>
-        <pubTime>2015-09-09T15:16:00.000Z</pubTime>
-        
-        <tag>GitHub</tag>
-         
-        <tag>Mac</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="superdanny.link/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2015/09/10/MacOSX-show-and-hide-file/</loc>
     <lastmod>2016-11-30T01:56:51.000Z</lastmod>
     <data>
@@ -1091,9 +1091,9 @@
         <title>MacOS X隐藏和显示隐藏文件</title>
         <pubTime>2015-09-09T19:02:00.000Z</pubTime>
         
-        <tag>Mac</tag>
-         
         <tag>文件操作</tag>
+         
+        <tag>Mac</tag>
          
          
            
@@ -1174,6 +1174,26 @@
 
     
   <url>
+    <loc>superdanny.link/2014/10/10/iOS8-TabBarItem-setting-custom-image/</loc>
+    <lastmod>2016-11-30T01:56:48.000Z</lastmod>
+    <data>
+        <display>
+        <title>iOS8 TabBarItem设置自定义图片问题</title>
+        <pubTime>2014-10-10T15:16:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2015/12/31/iOS-xcode-snippet/</loc>
     <lastmod>2016-11-30T01:56:48.000Z</lastmod>
     <data>
@@ -1198,14 +1218,18 @@
 
     
   <url>
-    <loc>superdanny.link/2014/10/10/iOS8-TabBarItem-setting-custom-image/</loc>
-    <lastmod>2016-11-30T01:56:48.000Z</lastmod>
+    <loc>superdanny.link/2015/10/10/iOS-UIKeyboardType/</loc>
+    <lastmod>2016-11-30T01:56:47.000Z</lastmod>
     <data>
         <display>
-        <title>iOS8 TabBarItem设置自定义图片问题</title>
-        <pubTime>2014-10-10T15:16:00.000Z</pubTime>
+        <title>iOS UIKeyboardType各类键盘效果图</title>
+        <pubTime>2015-10-09T16:20:00.000Z</pubTime>
         
         <tag>iOS</tag>
+         
+        <tag>UIKeyboardType</tag>
+         
+        <tag>键盘</tag>
          
          
            
@@ -1226,30 +1250,6 @@
         <pubTime>2016-01-12T06:39:00.000Z</pubTime>
         
         <tag>iOS</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2015/10/10/iOS-UIKeyboardType/</loc>
-    <lastmod>2016-11-30T01:56:47.000Z</lastmod>
-    <data>
-        <display>
-        <title>iOS UIKeyboardType各类键盘效果图</title>
-        <pubTime>2015-10-09T16:20:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-        <tag>UIKeyboardType</tag>
-         
-        <tag>键盘</tag>
          
          
            
