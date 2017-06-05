@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>superdanny.link/2017/03/03/App-Thinning/</loc>
+    
+    <lastmod>2017-06-05T06:07:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>superdanny.link/2016/03/09/Swift-Getting-to-Know-Enums-Structs-and-Classes/</loc>
     
     <lastmod>2017-05-15T06:10:55.000Z</lastmod>
@@ -82,13 +89,6 @@
     <loc>superdanny.link/2017/03/07/iOS-In-App-Purchase/</loc>
     
     <lastmod>2017-03-07T07:56:38.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2017/03/03/App-Thinning/</loc>
-    
-    <lastmod>2017-03-04T02:18:41.000Z</lastmod>
     
   </url>
   
@@ -324,13 +324,6 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/09/Using-shell-script-to-automatic-packaging/</loc>
-    
-    <lastmod>2016-11-30T01:56:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/2015/07/08/Update-Xcode-Plug-in/</loc>
     
     <lastmod>2016-11-30T01:56:56.000Z</lastmod>
@@ -338,14 +331,21 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/01/23/TabBar-hidesBottomBarWhenPushed/</loc>
+    <loc>superdanny.link/2015/09/09/Using-shell-script-to-automatic-packaging/</loc>
+    
+    <lastmod>2016-11-30T01:56:56.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/09/01/UITableView-update-data/</loc>
     
     <lastmod>2016-11-30T01:56:55.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/01/UITableView-update-data/</loc>
+    <loc>superdanny.link/2015/01/23/TabBar-hidesBottomBarWhenPushed/</loc>
     
     <lastmod>2016-11-30T01:56:55.000Z</lastmod>
     
@@ -366,13 +366,6 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/12/24/Software-development-documentation/</loc>
-    
-    <lastmod>2016-11-30T01:56:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/2015/08/18/Storyboard/</loc>
     
     <lastmod>2016-11-30T01:56:53.000Z</lastmod>
@@ -380,14 +373,21 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2014/08/21/Quickly-master-objective-c-grammar/</loc>
+    <loc>superdanny.link/2015/12/24/Software-development-documentation/</loc>
+    
+    <lastmod>2016-11-30T01:56:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/09/09/Quickly-access-github/</loc>
     
     <lastmod>2016-11-30T01:56:52.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/09/Quickly-access-github/</loc>
+    <loc>superdanny.link/2014/08/21/Quickly-master-objective-c-grammar/</loc>
     
     <lastmod>2016-11-30T01:56:52.000Z</lastmod>
     
@@ -562,7 +562,7 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveForever/love.js</loc>
+    <loc>superdanny.link/love/loveForever/jscex-parser.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
     
@@ -576,7 +576,7 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveForever/jscex-parser.js</loc>
+    <loc>superdanny.link/love/loveForever/love.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
     
@@ -590,13 +590,6 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveForever/jscex.min.js</loc>
-    
-    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/love/loveForever/jscex-jit.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
@@ -604,14 +597,14 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveForever/jscex-async-powerpack.min.js</loc>
+    <loc>superdanny.link/love/loveForever/jscex.min.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveForever/functions.js</loc>
+    <loc>superdanny.link/love/loveForever/jscex-async.min.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
     
@@ -625,7 +618,14 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveForever/jscex-async.min.js</loc>
+    <loc>superdanny.link/love/loveForever/functions.js</loc>
+    
+    <lastmod>2016-08-19T14:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/love/loveForever/jscex-async-powerpack.min.js</loc>
     
     <lastmod>2016-08-19T14:53:29.000Z</lastmod>
     
@@ -646,14 +646,14 @@
   </url>
   
   <url>
-    <loc>superdanny.link/404Resource/jquery.min.js</loc>
+    <loc>superdanny.link/404Resource/autoscroll.js</loc>
     
     <lastmod>2015-12-31T02:02:44.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/404Resource/autoscroll.js</loc>
+    <loc>superdanny.link/404Resource/jquery.min.js</loc>
     
     <lastmod>2015-12-31T02:02:44.000Z</lastmod>
     
@@ -695,7 +695,7 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveMaggie/nb.js</loc>
+    <loc>superdanny.link/love/loveMaggie/Projector.js</loc>
     
     <lastmod>2015-04-20T23:01:40.000Z</lastmod>
     
@@ -730,7 +730,7 @@
   </url>
   
   <url>
-    <loc>superdanny.link/love/loveMaggie/Projector.js</loc>
+    <loc>superdanny.link/love/loveMaggie/nb.js</loc>
     
     <lastmod>2015-04-20T23:01:40.000Z</lastmod>
     
