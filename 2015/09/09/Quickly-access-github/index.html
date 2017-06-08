@@ -9,6 +9,7 @@
   <title>GitHub无法访问或访问缓慢解决办法 | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="缘由由于众所周知的原因，Github最近无法访问或访问很慢。由于Github支持https，因此此次屏蔽Github采用的方法是dns污染，用户访问github会返回一个错误的IP翻墙当然是一种解决办法了，但总感觉不是很爽">
+<meta name="keywords" content="Mac,GitHub">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GitHub无法访问或访问缓慢解决办法">
 <meta property="og:url" content="superdanny.link/2015/09/09/Quickly-access-github/index.html">
@@ -193,7 +194,7 @@ var _hmt = _hmt || [];
         <h2 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h2><p>由于众所周知的原因，Github最近无法访问或访问很慢。<br>由于Github支持https，因此此次屏蔽Github采用的方法是dns污染，用户访问github会返回一个错误的IP<br>翻墙当然是一种解决办法了，但总感觉不是很爽</p>
 <a id="more"></a> 
 <h2 id="临时解决办法"><a href="#临时解决办法" class="headerlink" title="临时解决办法"></a>临时解决办法</h2><p>在终端执行指令<code>sudo vi /etc/hosts</code>打开hosts文件进行编辑<br>插入如下内容，保存退出即可！</p>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"># github</div><div class="line"><span class="number">204.232</span><span class="meta">.175</span><span class="meta">.78</span> http://documentcloud.github.com</div><div class="line"><span class="number">207.97</span><span class="meta">.227</span><span class="meta">.239</span> http://github.com</div><div class="line"><span class="number">204.232</span><span class="meta">.175</span><span class="meta">.94</span> http://gist.github.com</div><div class="line"><span class="number">107.21</span><span class="meta">.116</span><span class="meta">.220</span> http://help.github.com</div><div class="line"><span class="number">207.97</span><span class="meta">.227</span><span class="meta">.252</span> http://nodeload.github.com</div><div class="line"><span class="number">199.27</span><span class="meta">.76</span><span class="meta">.130</span> http://raw.github.com</div><div class="line"><span class="number">107.22</span><span class="meta">.3</span><span class="meta">.110</span> http://status.github.com</div><div class="line"><span class="number">204.232</span><span class="meta">.175</span><span class="meta">.78</span> http://training.github.com</div><div class="line"><span class="number">207.97</span><span class="meta">.227</span><span class="meta">.243</span> http://www.github.com</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"># github</div><div class="line">204.232.175.78 http://documentcloud.github.com</div><div class="line">207.97.227.239 http://github.com</div><div class="line">204.232.175.94 http://gist.github.com</div><div class="line">107.21.116.220 http://help.github.com</div><div class="line">207.97.227.252 http://nodeload.github.com</div><div class="line">199.27.76.130 http://raw.github.com</div><div class="line">107.22.3.110 http://status.github.com</div><div class="line">204.232.175.78 http://training.github.com</div><div class="line">207.97.227.243 http://www.github.com</div></pre></td></tr></table></figure>
 <hr>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
 <p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
@@ -496,23 +497,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brew</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -528,15 +521,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,10 +554,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -592,15 +593,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -616,11 +617,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -648,11 +649,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -664,18 +669,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
               </li>
              
@@ -684,7 +677,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -697,6 +694,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -728,11 +729,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">

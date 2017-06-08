@@ -8,33 +8,19 @@
   <link rel="dns-prefetch" href="superdanny.link">
   <title>iOS推送的那些事 | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关于推送关于苹果的推送网上已经有非常多的资源讲解，我在这里就不再累赘。直接切入主题，讲讲如何模拟推送以及处理推送消息。在进入主题之前，我先说几个关键流程：
-
-创建Push SSL Certification(推送证书)
-iOS客户端注册Push功能并获得DeviceToken
-使用Provider向APNS发送Push消息
-iOS客户端接收处理由APNS发来的消息">
+  <meta name="description" content="关于推送关于苹果的推送网上已经有非常多的资源讲解，我在这里就不再累赘。直接切入主题，讲讲如何模拟推送以及处理推送消息。在进入主题之前，我先说几个关键流程：  创建Push SSL Certification(推送证书) iOS客户端注册Push功能并获得DeviceToken 使用Provider向APNS发送Push消息 iOS客户端接收处理由APNS发来的消息">
+<meta name="keywords" content="iOS,推送">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS推送的那些事">
 <meta property="og:url" content="superdanny.link/2016/02/02/iOS-Apple-Push-Notification-Service/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
-<meta property="og:description" content="关于推送关于苹果的推送网上已经有非常多的资源讲解，我在这里就不再累赘。直接切入主题，讲讲如何模拟推送以及处理推送消息。在进入主题之前，我先说几个关键流程：
-
-创建Push SSL Certification(推送证书)
-iOS客户端注册Push功能并获得DeviceToken
-使用Provider向APNS发送Push消息
-iOS客户端接收处理由APNS发来的消息">
+<meta property="og:description" content="关于推送关于苹果的推送网上已经有非常多的资源讲解，我在这里就不再累赘。直接切入主题，讲讲如何模拟推送以及处理推送消息。在进入主题之前，我先说几个关键流程：  创建Push SSL Certification(推送证书) iOS客户端注册Push功能并获得DeviceToken 使用Provider向APNS发送Push消息 iOS客户端接收处理由APNS发来的消息">
 <meta property="og:image" content="https://developer.apple.com/library/prerelease/watchos/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Art/remote_notif_simple_2x.png">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/81f8a509gw1f13ktc92rpj214804ajs6.jpg">
 <meta property="og:updated_time" content="2017-05-15T05:57:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS推送的那些事">
-<meta name="twitter:description" content="关于推送关于苹果的推送网上已经有非常多的资源讲解，我在这里就不再累赘。直接切入主题，讲讲如何模拟推送以及处理推送消息。在进入主题之前，我先说几个关键流程：
-
-创建Push SSL Certification(推送证书)
-iOS客户端注册Push功能并获得DeviceToken
-使用Provider向APNS发送Push消息
-iOS客户端接收处理由APNS发来的消息">
+<meta name="twitter:description" content="关于推送关于苹果的推送网上已经有非常多的资源讲解，我在这里就不再累赘。直接切入主题，讲讲如何模拟推送以及处理推送消息。在进入主题之前，我先说几个关键流程：  创建Push SSL Certification(推送证书) iOS客户端注册Push功能并获得DeviceToken 使用Provider向APNS发送Push消息 iOS客户端接收处理由APNS发来的消息">
 <meta name="twitter:image" content="https://developer.apple.com/library/prerelease/watchos/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Art/remote_notif_simple_2x.png">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
@@ -249,7 +235,7 @@ var _hmt = _hmt || [];
 <p>Payload 本身为 JSON 格式的字符串，它内部必须要包含一个键为 aps 的字典。aps 中可以包含以下字段中的一个或多个：</p>
 <p><strong>alert</strong>：其内容可以为字符串或者字典，如果是字符串，那么将会在通知中显示这条内容<br><strong>badge</strong>：其值为数字，表示当通知到达设备时，应用的角标变为多少。如果没有使用这个字段，那么应用的角标将不会改变。设置为 0 时，会清除应用的角标。<br><strong>sound</strong>：指定通知展现时伴随的提醒音文件名。如果找不到指定的文件或者值为 default，那么默认的系统音将会被使用。如果为空，那么将没有声音。<br><strong>content-available</strong>：此字段为 iOS 7 silent remote notification 使用。不使用此功能时无需包含此字段。</p>
 <p>如果需要添加自定义的字段，就让服务器的小伙伴们跟aps同一层级添加一个数组（以Json为例）：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">　　<span class="attr">"aps"</span> : &#123;<span class="attr">"alert"</span> : <span class="string">"This is the alert text"</span>, <span class="attr">"badge"</span> : <span class="number">1</span>, <span class="attr">"sound"</span> :<span class="string">"default"</span> &#125;,</div><div class="line"></div><div class="line">　　<span class="attr">"server"</span> : &#123;<span class="attr">"serverId"</span> : <span class="number">1</span>, <span class="attr">"name"</span> : <span class="string">"Server name"</span>&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">　　&quot;aps&quot; : &#123;&quot;alert&quot; : &quot;This is the alert text&quot;, &quot;badge&quot; : 1, &quot;sound&quot; :&quot;default&quot; &#125;,</div><div class="line"></div><div class="line">　　&quot;server&quot; : &#123;&quot;serverId&quot; : 1, &quot;name&quot; : &quot;Server name&quot;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这样收到的 Payload 里面会多一个 server 的字段。</p>
 <h1 id="模拟推送"><a href="#模拟推送" class="headerlink" title="模拟推送"></a>模拟推送</h1><p>现在常用的后台server中，一般将推送证书以及推送证书的私钥导出<code>.p12</code>交给后台人员即可。</p>
 <h2 id="生成后台需要的推送证书"><a href="#生成后台需要的推送证书" class="headerlink" title="生成后台需要的推送证书"></a>生成后台需要的推送证书</h2><p>准备：</p>
@@ -263,13 +249,13 @@ var _hmt = _hmt || [];
 <p>操作过程：</p>
 <ol>
 <li><p>把推送证书(.cer)转换为.pem文件，执行命令：</p>
- <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ openssl x509 -<span class="keyword">in</span> 推送证书<span class="selector-class">.cer</span> -inform der -out 推送证书.pem</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ openssl x509 -in 推送证书.cer -inform der -out 推送证书.pem</div></pre></td></tr></table></figure>
 </li>
 <li><p>把推送证书导出的私钥(.p12)文件转化为.pem文件：</p>
- <figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">$</span> openssl pkcs12 -nocerts -out 推送证书私钥.pem -in 推送证书私钥.p12	</div><div class="line"></div><div class="line"><span class="symbol">$</span> Enter Import Password:  <span class="comment">//先输入私钥的密码</span></div><div class="line"><span class="symbol">$</span> MAC verified OK</div><div class="line"><span class="symbol">$</span> Enter PEM pass phrase:  <span class="comment">//设置两次相同的密码短语</span></div><div class="line"><span class="symbol">$</span> Verifying – Enter PEM pass phrase:</div><div class="line"><span class="comment">// 你首先需要为.p12文件输入pass phrase密码短语，这样OpenSSL可以读它。然后你需要键入一个新的密码短语来加密PEM文件。你需要选择一些更安全的密码短语。为了方便管理，例如我统一使用`pushchat`来作为PEM的密码短语。</span></div><div class="line"><span class="comment">// 注意：如果你没有键入一个PEM passphrase，OpenSSL将不会返回一个错误信息，但是产生的.pem文件里面将不会含有私钥。</span></div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ openssl pkcs12 -nocerts -out 推送证书私钥.pem -in 推送证书私钥.p12	</div><div class="line"></div><div class="line">$ Enter Import Password:  //先输入私钥的密码</div><div class="line">$ MAC verified OK</div><div class="line">$ Enter PEM pass phrase:  //设置两次相同的密码短语</div><div class="line">$ Verifying – Enter PEM pass phrase:</div><div class="line">// 你首先需要为.p12文件输入pass phrase密码短语，这样OpenSSL可以读它。然后你需要键入一个新的密码短语来加密PEM文件。你需要选择一些更安全的密码短语。为了方便管理，例如我统一使用`pushchat`来作为PEM的密码短语。</div><div class="line">// 注意：如果你没有键入一个PEM passphrase，OpenSSL将不会返回一个错误信息，但是产生的.pem文件里面将不会含有私钥。</div></pre></td></tr></table></figure>
 </li>
 <li><p>对生成的这两个pem文件再生成一个pem文件，来把证书和私钥整合到一个文件里：</p>
- <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cat 推送证书<span class="selector-class">.pem</span> 推送证书私钥<span class="selector-class">.pem</span> &gt;PHPPush.pem</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cat 推送证书.pem 推送证书私钥.pem &gt;PHPPush.pem</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>然后把这个<code>PHPPush.pem</code>给后台基友们，就可以下班啦。</p>
@@ -278,7 +264,7 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>注意：第三个步骤这里还需要一个.certSigningRequest(csr)文件。</p>
 </blockquote>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ openssl pkcs12 -export -<span class="keyword">in</span>  推送证书<span class="selector-class">.pem</span> -inkey 推送证书私钥<span class="selector-class">.pem</span> -certfile CertificateSigningRequest<span class="selector-class">.certSigningRequest</span> -name <span class="string">"项目名_Production(或项目名_Development)"</span> -out 项目名_Production(或项目名_Development).p12</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ openssl pkcs12 -export -in  推送证书.pem -inkey 推送证书私钥.pem -certfile CertificateSigningRequest.certSigningRequest -name &quot;项目名_Production(或项目名_Development)&quot; -out 项目名_Production(或项目名_Development).p12</div></pre></td></tr></table></figure>
 <p>然后把这个<code>项目名_Production(或项目名_Development).pem</code>给后台基友们，就可以下班啦。</p>
 <p>当然测试推送也比较麻烦，需要模拟真实的推送环境，一般需要后台提供帮助，但是遇到一些后台同事，他们有强烈地信仰着鄙视链的话，很鄙视iOS，心里早就称呼你“死前端”多年了，还那么多事……</p>
 <p>所以关于调试推送，这里有两种方式实现自推！不麻烦别人。</p>
@@ -287,9 +273,9 @@ var _hmt = _hmt || [];
 <p>然后根据上面<a href="/2016/02/02/iOS-Apple-Push-Notification-Service/#php需要的pem证书">PHP需要的Pem证书</a>的步骤生成<code>push.pem</code></p>
 <p>两个文件放在同一目录</p>
 <p>执行下面的命令</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">superdanny</span>@<span class="keyword">SuperDannydeMacBook</span>-<span class="keyword">Pro</span>$ php push.php</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">superdanny@SuperDannydeMacBook-Pro$ php push.php</div></pre></td></tr></table></figure>
 <p>结果为</p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Connected <span class="keyword">to</span> APNS</div><div class="line"><span class="keyword">Message</span> successfully delivered</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Connected to APNS</div><div class="line">Message successfully delivered</div></pre></td></tr></table></figure>
 <h2 id="模拟推送二：通过工具推送"><a href="#模拟推送二：通过工具推送" class="headerlink" title="模拟推送二：通过工具推送"></a>模拟推送二：通过工具推送</h2><p>Github 上面有位大神分享了他的推送工具<a href="https://github.com/noodlewerk/NWPusher" target="_blank" rel="external">NWPusher</a>，大大减少了开发人员的工作量。具体用法说明上面写的很清楚，这里就不再重复。</p>
 <h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p><strong>2016年02月18日</strong></p>
 <ol>
@@ -612,23 +598,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brew</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -644,15 +622,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -665,10 +655,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -708,15 +694,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -732,11 +718,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -764,11 +750,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -780,18 +770,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
               </li>
              
@@ -800,7 +778,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -813,6 +795,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -844,11 +830,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">

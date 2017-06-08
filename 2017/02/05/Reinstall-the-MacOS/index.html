@@ -8,18 +8,19 @@
   <link rel="dns-prefetch" href="superdanny.link">
   <title>重装 Mac 系统 | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天公司从保险柜里面拿出两台笔记本让我修理下，顿时心里一万只草泥马奔腾而过，我是搞开发的，不是修电脑的。。。但是没办法，谁叫我比较好说话，妥协了。。。">
+  <meta name="description" content="今天公司从保险柜里面拿出两台笔记本让我修理下，顿时心里一万只小绵羊奔腾而过，我是搞开发的，不是修电脑的。。。但是没办法，谁叫我比较好说话，妥协了。。。">
+<meta name="keywords" content="Mac,MacOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="重装 Mac 系统">
 <meta property="og:url" content="superdanny.link/2017/02/05/Reinstall-the-MacOS/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
-<meta property="og:description" content="今天公司从保险柜里面拿出两台笔记本让我修理下，顿时心里一万只草泥马奔腾而过，我是搞开发的，不是修电脑的。。。但是没办法，谁叫我比较好说话，妥协了。。。">
+<meta property="og:description" content="今天公司从保险柜里面拿出两台笔记本让我修理下，顿时心里一万只小绵羊奔腾而过，我是搞开发的，不是修电脑的。。。但是没办法，谁叫我比较好说话，妥协了。。。">
 <meta property="og:image" content="http://wx1.sinaimg.cn/large/81f8a509gy1fcfpo7irhmj20mq0cmju6.jpg">
 <meta property="og:image" content="http://wx4.sinaimg.cn/mw690/81f8a509gy1fcfpw2fszyj20wi0rwdlg.jpg">
-<meta property="og:updated_time" content="2017-02-06T05:18:15.000Z">
+<meta property="og:updated_time" content="2017-06-08T05:47:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重装 Mac 系统">
-<meta name="twitter:description" content="今天公司从保险柜里面拿出两台笔记本让我修理下，顿时心里一万只草泥马奔腾而过，我是搞开发的，不是修电脑的。。。但是没办法，谁叫我比较好说话，妥协了。。。">
+<meta name="twitter:description" content="今天公司从保险柜里面拿出两台笔记本让我修理下，顿时心里一万只小绵羊奔腾而过，我是搞开发的，不是修电脑的。。。但是没办法，谁叫我比较好说话，妥协了。。。">
 <meta name="twitter:image" content="http://wx1.sinaimg.cn/large/81f8a509gy1fcfpo7irhmj20mq0cmju6.jpg">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
@@ -193,7 +194,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天公司从保险柜里面拿出两台笔记本让我修理下，顿时心里一万只草泥马奔腾而过，我是搞开发的，不是修电脑的。。。但是没办法，谁叫我比较好说话，妥协了。。。</p>
+        <p>今天公司从保险柜里面拿出两台笔记本让我修理下，顿时心里一万只小绵羊奔腾而过，我是搞开发的，不是修电脑的。。。但是没办法，谁叫我比较好说话，妥协了。。。</p>
 <a id="more"></a>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>1、安装Mac OS X系统的苹果电脑<br>2、重置出厂系统将会清空硬盘数据，需转移硬盘所有文件</p>
 <h2 id="方式一：在线安装"><a href="#方式一：在线安装" class="headerlink" title="方式一：在线安装"></a>方式一：在线安装</h2><p>这种方式比较直接，通过联网下载系统包在线安装，不过下载安装时间取决于网速和硬件。</p>
@@ -214,24 +215,24 @@ var _hmt = _hmt || [];
 <p>方法一：（适合小白）</p>
 <p>前提：下载得到的原版安装包（中文系统中显示为安装 OS X El Capitan，文件名为Install OS X El Capitan.app）已经默认在应用程序文件夹内，且U盘命名为USB01。</p>
 <p>直接将以下命令全部复制、粘贴到终端：</p>
-<figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /Applications/Install<span class="string">\</span> OS<span class="string">\</span> X<span class="string">\</span> El<span class="string">\</span> Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/USB01 --applicationpath /Applications/Install<span class="string">\</span> OS<span class="string">\</span> X<span class="string">\</span> El<span class="string">\</span> Capitan.app --nointeraction</div></pre></td></tr></table></figure>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/USB01 --applicationpath /Applications/Install\ OS\ X\ El\ Capitan.app --nointeraction</div></pre></td></tr></table></figure>
 <p>命令解释：</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo  <span class="comment">#获取超级用户权限执行以下命令</span></div><div class="line"><span class="regexp">/Applications/</span>Install\ OS\ X\ El\ Capitan.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia  #指定运行路径为为/</span>Applications<span class="regexp">/Install OS X El Capitan.app/</span>Contents<span class="regexp">/Resources/</span>中的createinstallmedia这个“创建安装媒体”的程序，路径的文件名中的空格前添加的反斜杠“\”是转义字符，以便将“文件名中的空格”和“命令行中的参数之间的空格”区别开来。</div><div class="line">--volume  <span class="comment">#该选项要求指定在哪个volume中创建安装媒体（安装U盘）</span></div><div class="line"><span class="regexp">/Volumes/</span>USB01  <span class="comment">#你要创建的安装盘（U盘）的路径</span></div><div class="line">--applicationpath  <span class="comment">#该选项是要求指定写入到U盘的OS X系统安装包的路径</span></div><div class="line"><span class="regexp">/Applications/</span>Install\ OS\ X\ El\ Capitan.app  <span class="comment">#所指定的要写入U盘的系统安装包在电脑中的路径</span></div><div class="line">--nointeraction   <span class="comment">#该选项表示运行程序 createinstallmedia 的过程中不交互。如果不用这个选项，可能会弹出一个提示，跟你说接下来要干什么，问你是否确定，确定就按y，然后回车继续。</span></div></pre></td></tr></table></figure>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo  <span class="comment">#获取超级用户权限执行以下命令</span></div><div class="line">/Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinstallmedia  <span class="comment">#指定运行路径为为/Applications/Install OS X El Capitan.app/Contents/Resources/中的createinstallmedia这个“创建安装媒体”的程序，路径的文件名中的空格前添加的反斜杠“\”是转义字符，以便将“文件名中的空格”和“命令行中的参数之间的空格”区别开来。</span></div><div class="line">--volume  <span class="comment">#该选项要求指定在哪个volume中创建安装媒体（安装U盘）</span></div><div class="line">/Volumes/USB01  <span class="comment">#你要创建的安装盘（U盘）的路径</span></div><div class="line">--applicationpath  <span class="comment">#该选项是要求指定写入到U盘的OS X系统安装包的路径</span></div><div class="line">/Applications/Install\ OS\ X\ El\ Capitan.app  <span class="comment">#所指定的要写入U盘的系统安装包在电脑中的路径</span></div><div class="line">--nointeraction   <span class="comment">#该选项表示运行程序 createinstallmedia 的过程中不交互。如果不用这个选项，可能会弹出一个提示，跟你说接下来要干什么，问你是否确定，确定就按y，然后回车继续。</span></div></pre></td></tr></table></figure>
 <p>方法二：输入命令+手动拖入终端操作（明显比较繁琐，适合熟悉终端的高手）。</p>
 <p>此法对安装包Install OS X El Capitan.app的路径和文件名、版本（只要是版本&gt;=10.9的OS X app安装包）没有限制，甚至安装包也可以在移动硬盘中；U盘也不一定要命名为USB01。</p>
 <p>  过程：</p>
 <p>（1）输入</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo空格</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo空格</div></pre></td></tr></table></figure>
 <p>（2）打开Finder，找到Install OS X El Capitan.app，定位到 Install OS X El Capitan.app(右键显示包内容)/Contents/Resources/createinstallmedia，将createinstallmedia拖入终端；<br>（3）接着输入</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">--<span class="keyword">volume</span><span class="bash">空格</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">--volume空格</div></pre></td></tr></table></figure>
 <p>（4）接着将U盘拖入终端；<br>（5）接着输入</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">--applicationpath空格</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">--applicationpath空格</div></pre></td></tr></table></figure>
 <p>（6）接着，将Install OS X El Capitan.app拖入终端；<br>（7）接着输入</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">--nointeraction</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">--nointeraction</div></pre></td></tr></table></figure>
 <p>此时，终端中的命令类似于方法一，只是相关路径可能有所不同。</p>
 </blockquote>
 <p>2、回车。<br>3、输入当前系统密码（看起来没有反应，实际是密码不可见），回车。<br>4、等待十几~几十分钟（视硬件而定），直到出现</p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">Making</span></span> disk bootable...</div><div class="line"><span class="function"><span class="title">Copying</span></span> boot <span class="keyword">files</span>...</div><div class="line">Copy complete.</div><div class="line">Done.</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Making disk bootable...</div><div class="line">Copying boot files...</div><div class="line">Copy complete.</div><div class="line">Done.</div></pre></td></tr></table></figure>
 <p>如图所示：<br><img src="http://wx4.sinaimg.cn/mw690/81f8a509gy1fcfpw2fszyj20wi0rwdlg.jpg" alt=""></p>
 <p>安装U盘制作完成。</p>
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>1、重启需要重装系统的Mac电脑时按住Option进入启动盘选择界面<br>2、选择刚刚制作的U盘<br>3、这里需要注意，本人在重装的过程中出现了 <strong><code>OS X could not be installed on your computer. No packages were eligible for install.</code></strong> 错误提示。<br>经过查询，需要重置系统时间。具体步骤是：点击顶部菜单栏 Utilities-Terminal 进入终端界面，然后输入指令 <code>date {month}{day}{hour}{minute}{year}</code> 例如2017年02月05日17:40的指令是<code>date 0205174017</code><br>4、接下来就是根据提示安装，然后等待十几分钟安装完成。</p>
@@ -537,23 +538,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brew</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -569,15 +562,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -590,10 +595,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -633,15 +634,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -657,11 +658,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -689,11 +690,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -705,18 +710,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
               </li>
              
@@ -725,7 +718,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -738,6 +735,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -769,11 +770,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -8,31 +8,17 @@
   <link rel="dns-prefetch" href="superdanny.link">
   <title>KVC/KVO原理详解及编程指南（转） | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="作者：wangzz
-原文地址：KVC/KVO原理详解及编程指南
-本文只转载KVC部分讲解，KVO部分可到原博客查看。
-本人在阅读过程中也进行了一些勘误修改。
-前言1、本文基本不讲KVC/KVO的用法，只结合网上的资料说说对这种技术的理解。
-2、由于KVO内容较少，而且是以KVC为基础实现的，本文将着重介绍KVC部分。">
+  <meta name="description" content="作者：wangzz 原文地址：KVC/KVO原理详解及编程指南 本文只转载KVC部分讲解，KVO部分可到原博客查看。 本人在阅读过程中也进行了一些勘误修改。 前言1、本文基本不讲KVC/KVO的用法，只结合网上的资料说说对这种技术的理解。 2、由于KVO内容较少，而且是以KVC为基础实现的，本文将着重介绍KVC部分。">
+<meta name="keywords" content="iOS,KVC,KVO">
 <meta property="og:type" content="article">
-<meta property="og:title" content="KVC/KVO原理详解及编程指南（转）">
+<meta property="og:title" content="KVC&#x2F;KVO原理详解及编程指南（转）">
 <meta property="og:url" content="superdanny.link/2015/09/21/KVC:KVO/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
-<meta property="og:description" content="作者：wangzz
-原文地址：KVC/KVO原理详解及编程指南
-本文只转载KVC部分讲解，KVO部分可到原博客查看。
-本人在阅读过程中也进行了一些勘误修改。
-前言1、本文基本不讲KVC/KVO的用法，只结合网上的资料说说对这种技术的理解。
-2、由于KVO内容较少，而且是以KVC为基础实现的，本文将着重介绍KVC部分。">
+<meta property="og:description" content="作者：wangzz 原文地址：KVC/KVO原理详解及编程指南 本文只转载KVC部分讲解，KVO部分可到原博客查看。 本人在阅读过程中也进行了一些勘误修改。 前言1、本文基本不讲KVC/KVO的用法，只结合网上的资料说说对这种技术的理解。 2、由于KVO内容较少，而且是以KVC为基础实现的，本文将着重介绍KVC部分。">
 <meta property="og:updated_time" content="2016-11-30T01:56:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="KVC/KVO原理详解及编程指南（转）">
-<meta name="twitter:description" content="作者：wangzz
-原文地址：KVC/KVO原理详解及编程指南
-本文只转载KVC部分讲解，KVO部分可到原博客查看。
-本人在阅读过程中也进行了一些勘误修改。
-前言1、本文基本不讲KVC/KVO的用法，只结合网上的资料说说对这种技术的理解。
-2、由于KVO内容较少，而且是以KVC为基础实现的，本文将着重介绍KVC部分。">
+<meta name="twitter:title" content="KVC&#x2F;KVO原理详解及编程指南（转）">
+<meta name="twitter:description" content="作者：wangzz 原文地址：KVC/KVO原理详解及编程指南 本文只转载KVC部分讲解，KVO部分可到原博客查看。 本人在阅读过程中也进行了一些勘误修改。 前言1、本文基本不讲KVC/KVO的用法，只结合网上的资料说说对这种技术的理解。 2、由于KVO内容较少，而且是以KVC为基础实现的，本文将着重介绍KVC部分。">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
@@ -576,23 +562,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brew</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -608,15 +586,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -629,10 +619,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -672,15 +658,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -696,11 +682,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -728,11 +714,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -744,18 +734,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
               </li>
              
@@ -764,7 +742,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -777,6 +759,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -808,11 +794,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">

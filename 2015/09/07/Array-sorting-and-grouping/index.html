@@ -8,37 +8,17 @@
   <link rel="dns-prefetch" href="superdanny.link">
   <title>字典数组、对象数组排序以及分组 | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简单排序
-利用block语法进行排序
-高级排序
-拓展-分组问题
-
-
-Objective-C对数据的操作可谓是非常用心，早已经封装好了很多方法等着我们去挖掘。其中对排序就是其中之一。本文是基于前人的基础上进行完善和加上自己的一些见解。
-123456//NSComparisonResult类型结果typedef NS_ENUM(NSInteger, NSComparisonResult) &amp;#1">
+  <meta name="description" content="简单排序 利用block语法进行排序 高级排序 拓展-分组问题   Objective-C对数据的操作可谓是非常用心，早已经封装好了很多方法等着我们去挖掘。其中对排序就是其中之一。本文是基于前人的基础上进行完善和加上自己的一些见解。 123456//NSComparisonResult类型结果typedef NS_ENUM(NSInteger, NSComparisonResult) &amp;#1">
+<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="字典数组、对象数组排序以及分组">
 <meta property="og:url" content="superdanny.link/2015/09/07/Array-sorting-and-grouping/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
-<meta property="og:description" content="简单排序
-利用block语法进行排序
-高级排序
-拓展-分组问题
-
-
-Objective-C对数据的操作可谓是非常用心，早已经封装好了很多方法等着我们去挖掘。其中对排序就是其中之一。本文是基于前人的基础上进行完善和加上自己的一些见解。
-123456//NSComparisonResult类型结果typedef NS_ENUM(NSInteger, NSComparisonResult) &amp;#1">
+<meta property="og:description" content="简单排序 利用block语法进行排序 高级排序 拓展-分组问题   Objective-C对数据的操作可谓是非常用心，早已经封装好了很多方法等着我们去挖掘。其中对排序就是其中之一。本文是基于前人的基础上进行完善和加上自己的一些见解。 123456//NSComparisonResult类型结果typedef NS_ENUM(NSInteger, NSComparisonResult) &amp;#1">
 <meta property="og:updated_time" content="2016-11-30T01:56:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字典数组、对象数组排序以及分组">
-<meta name="twitter:description" content="简单排序
-利用block语法进行排序
-高级排序
-拓展-分组问题
-
-
-Objective-C对数据的操作可谓是非常用心，早已经封装好了很多方法等着我们去挖掘。其中对排序就是其中之一。本文是基于前人的基础上进行完善和加上自己的一些见解。
-123456//NSComparisonResult类型结果typedef NS_ENUM(NSInteger, NSComparisonResult) &amp;#1">
+<meta name="twitter:description" content="简单排序 利用block语法进行排序 高级排序 拓展-分组问题   Objective-C对数据的操作可谓是非常用心，早已经封装好了很多方法等着我们去挖掘。其中对排序就是其中之一。本文是基于前人的基础上进行完善和加上自己的一些见解。 123456//NSComparisonResult类型结果typedef NS_ENUM(NSInteger, NSComparisonResult) &amp;#1">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
@@ -221,7 +201,7 @@ var _hmt = _hmt || [];
 </ul>
 </blockquote>
 <p>Objective-C对数据的操作可谓是非常用心，早已经封装好了很多方法等着我们去挖掘。其中对排序就是其中之一。本文是基于前人的基础上进行完善和加上自己的一些见解。</p>
-<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//<span class="type">NSComparisonResult</span>类型结果</div><div class="line">typedef <span class="type">NS_ENUM</span>(<span class="type">NSInteger</span>, <span class="type">NSComparisonResult</span>) &#123;</div><div class="line">    <span class="type">NSOrderedAscending</span> = -1L, </div><div class="line">    <span class="type">NSOrderedSame</span>, </div><div class="line">    <span class="type">NSOrderedDescending</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//NSComparisonResult类型结果</div><div class="line">typedef NS_ENUM(NSInteger, NSComparisonResult) &#123;</div><div class="line">    NSOrderedAscending = -1L, </div><div class="line">    NSOrderedSame, </div><div class="line">    NSOrderedDescending</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <h2 id="简单排序"><a href="#简单排序" class="headerlink" title="简单排序"></a>简单排序</h2><p><code>sortedArrayUsingSelector:</code><br>通过指定方法对数组元素进行排序。有一点需要记住，就是不管你自定义的方法是什么，都必须最后返回一个<code>NSComparisonResult</code>类型用于决定元素的排列原则。一般用于对字符串数组进行排序，因为字符串有自带的对比方法<code>compare:</code>。如果想对其他类型元素的数组进行排序就需要我们自己自定义排序方法。<br>例如：</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSArray</span> *array = @[<span class="string">@"abc"</span>,<span class="string">@"456"</span>,<span class="string">@"123"</span>,<span class="string">@"789"</span>,<span class="string">@"ef"</span>];</div><div class="line"><span class="built_in">NSArray</span> *sortedArray = [array sortedArrayUsingSelector:<span class="keyword">@selector</span>(compare:)];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"排序后:%@"</span>,sortedArray);</div></pre></td></tr></table></figure>
@@ -546,23 +526,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brew</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,15 +550,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -599,10 +583,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -642,15 +622,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -666,11 +646,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -698,11 +678,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -714,18 +698,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
               </li>
              
@@ -734,7 +706,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -747,6 +723,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -778,11 +758,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">

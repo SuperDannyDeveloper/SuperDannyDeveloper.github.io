@@ -8,61 +8,17 @@
   <link rel="dns-prefetch" href="superdanny.link">
   <title>Swift入坑系列—集合类型 | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数组（Arrays）
-创建并构造数组
-数组的增删改查
-数组的遍历
-
-
-字典（Dictionaries）
-创建字典字面量
-字典的增删改查
-字典的遍历
-
-
-总结
-
-
-数组（Arrays）在OC里面，NSArray和NSMutableArray这两个类可以存储任意类型的对象，并且不提供所返回对象的任何特别信息。在Swift中，数据值被存入某个数组之前类型必须明确。方法是通过显式的类型标注或者类型推断">
+  <meta name="description" content="数组（Arrays） 创建并构造数组 数组的增删改查 数组的遍历   字典（Dictionaries） 创建字典字面量 字典的增删改查 字典的遍历   总结   数组（Arrays）在OC里面，NSArray和NSMutableArray这两个类可以存储任意类型的对象，并且不提供所返回对象的任何特别信息。在Swift中，数据值被存入某个数组之前类型必须明确。方法是通过显式的类型标注或者类型推断">
+<meta name="keywords" content="Swift">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Swift入坑系列—集合类型">
 <meta property="og:url" content="superdanny.link/2015/07/27/Swift-Series-CollectionType/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
-<meta property="og:description" content="数组（Arrays）
-创建并构造数组
-数组的增删改查
-数组的遍历
-
-
-字典（Dictionaries）
-创建字典字面量
-字典的增删改查
-字典的遍历
-
-
-总结
-
-
-数组（Arrays）在OC里面，NSArray和NSMutableArray这两个类可以存储任意类型的对象，并且不提供所返回对象的任何特别信息。在Swift中，数据值被存入某个数组之前类型必须明确。方法是通过显式的类型标注或者类型推断">
+<meta property="og:description" content="数组（Arrays） 创建并构造数组 数组的增删改查 数组的遍历   字典（Dictionaries） 创建字典字面量 字典的增删改查 字典的遍历   总结   数组（Arrays）在OC里面，NSArray和NSMutableArray这两个类可以存储任意类型的对象，并且不提供所返回对象的任何特别信息。在Swift中，数据值被存入某个数组之前类型必须明确。方法是通过显式的类型标注或者类型推断">
 <meta property="og:updated_time" content="2016-11-30T01:56:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Swift入坑系列—集合类型">
-<meta name="twitter:description" content="数组（Arrays）
-创建并构造数组
-数组的增删改查
-数组的遍历
-
-
-字典（Dictionaries）
-创建字典字面量
-字典的增删改查
-字典的遍历
-
-
-总结
-
-
-数组（Arrays）在OC里面，NSArray和NSMutableArray这两个类可以存储任意类型的对象，并且不提供所返回对象的任何特别信息。在Swift中，数据值被存入某个数组之前类型必须明确。方法是通过显式的类型标注或者类型推断">
+<meta name="twitter:description" content="数组（Arrays） 创建并构造数组 数组的增删改查 数组的遍历   字典（Dictionaries） 创建字典字面量 字典的增删改查 字典的遍历   总结   数组（Arrays）在OC里面，NSArray和NSMutableArray这两个类可以存储任意类型的对象，并且不提供所返回对象的任何特别信息。在Swift中，数据值被存入某个数组之前类型必须明确。方法是通过显式的类型标注或者类型推断">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
@@ -292,7 +248,7 @@ Danny
 Johnnie
 Mike
 </code></pre><p>【方式二】</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> array = [<span class="string">"Danny"</span>, <span class="string">"Johnnie"</span>, <span class="string">"Mike"</span>]</div><div class="line"><span class="comment">//遍历数组数据项</span></div><div class="line"><span class="keyword">for</span> (idx, value) <span class="keyword">in</span> array.<span class="built_in">enumerate</span>() &#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"idx:<span class="subst">\(idx)</span>  value:<span class="subst">\(value)</span>"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> array = [<span class="string">"Danny"</span>, <span class="string">"Johnnie"</span>, <span class="string">"Mike"</span>]</div><div class="line"><span class="comment">//遍历数组数据项</span></div><div class="line"><span class="keyword">for</span> (idx, value) <span class="keyword">in</span> array.<span class="built_in">enumerate</span>() &#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"idx:\(idx)  value:\(value)"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <pre><code>控制台打印：
 idx:0  value:Danny
 idx:1  value:Johnnie
@@ -314,18 +270,18 @@ idx:2  value:Mike
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//通过“DUB”键将旧值更新为“Dublin Internation”</span></div><div class="line"><span class="keyword">let</span> oldValue = airports.updateValue(<span class="string">"Dublin Internation"</span>, forKey: <span class="string">"DUB"</span>)</div></pre></td></tr></table></figure>
 </li>
 <li><p>查（访问数据）<br>使用下标语法来在字典中检索特定键对应的值。由于使用一个没有值的键这种情况是有可能发生的，可选类型返回这个键存在的相关值，否则就返回<code>nil</code>：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    <span class="keyword">if</span> <span class="keyword">let</span> airportName = airports[<span class="string">"DUB"</span>] &#123;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"DUB键对应的值为： <span class="subst">\(airportName)</span>."</span>)</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"DUB键没有对应的值"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    <span class="keyword">if</span> <span class="keyword">let</span> airportName = airports[<span class="string">"DUB"</span>] &#123;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"DUB键对应的值为： \(airportName)."</span>)</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"DUB键没有对应的值"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <pre><code>控制台打印：
 DUB键对应的值为： Dublin Internation.
 </code></pre><h3 id="字典的遍历"><a href="#字典的遍历" class="headerlink" title="字典的遍历"></a>字典的遍历</h3><p>【方式一】<br>通过<code>for-in</code>循环遍历某个字典中的键值对。每一个字典中的数据项都由(key, value)元组形式返回，并且我们可以使用临时常量或者变量来分解这些元组：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//遍历字典对应的键值对</span></div><div class="line"><span class="keyword">for</span> (key, value) <span class="keyword">in</span> airports &#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"<span class="subst">\(key)</span>: <span class="subst">\(value)</span>"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//遍历字典对应的键值对</span></div><div class="line"><span class="keyword">for</span> (key, value) <span class="keyword">in</span> airports &#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"\(key): \(value)"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <pre><code>控制台打印：
 TYO: Tokyo
 LHR: London Heathrow
 </code></pre><p>【方式二】<br>我们也可以通过访问它的<code>keys</code>或者<code>values</code>属性检索一个字典所有的键、值：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//遍历字典所有键</span></div><div class="line"><span class="keyword">for</span> key <span class="keyword">in</span> airports.keys &#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"该字典的键：<span class="subst">\(key)</span>"</span>)</div><div class="line">&#125;</div><div class="line"><span class="comment">//遍历字典所有值</span></div><div class="line"><span class="keyword">for</span> value <span class="keyword">in</span> airports.values &#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"该字典的值：<span class="subst">\(value)</span>"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//遍历字典所有键</span></div><div class="line"><span class="keyword">for</span> key <span class="keyword">in</span> airports.keys &#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"该字典的键：\(key)"</span>)</div><div class="line">&#125;</div><div class="line"><span class="comment">//遍历字典所有值</span></div><div class="line"><span class="keyword">for</span> value <span class="keyword">in</span> airports.values &#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"该字典的值：\(value)"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <pre><code>控制台打印：
 该字典的键：LHR
 该字典的键：TYO
@@ -634,23 +590,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brew</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -666,15 +614,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -687,10 +647,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -730,15 +686,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -754,11 +710,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -786,11 +742,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -802,18 +762,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
               </li>
              
@@ -822,7 +770,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -835,6 +787,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -866,11 +822,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">

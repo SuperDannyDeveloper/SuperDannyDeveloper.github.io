@@ -9,6 +9,7 @@
   <title>swift中的枚举,结构体和类(简译) | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前言本文将对阅读的国外文章进行自己的理解翻译，有哪些不对的地方还望指正。">
+<meta name="keywords" content="iOS,Swift,读书笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="swift中的枚举,结构体和类(简译)">
 <meta property="og:url" content="superdanny.link/2016/03/09/Swift-Getting-to-Know-Enums-Structs-and-Classes/index.html">
@@ -221,7 +222,7 @@ var _hmt = _hmt || [];
 <p>在Swift中，像enum(枚举)等命名类型都可以通过继承 Protocols 协议进行功能扩展，达到我们需要的功能。</p>
 </blockquote>
 <p>形式一：通过继承 CustomStringConvertible 协议扩展枚举打印功能</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">ColorModel</span> : <span class="title">CustomStringConvertible</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> description: <span class="type">String</span> &#123;</div><div class="line">        <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</div><div class="line">        <span class="keyword">case</span> .<span class="type">Named</span>(<span class="keyword">let</span> colorName):</div><div class="line">            <span class="keyword">return</span> colorName.rawValue</div><div class="line">        <span class="keyword">case</span> .<span class="type">RGB</span>(<span class="keyword">let</span> red, <span class="keyword">let</span> green, <span class="keyword">let</span> blue):</div><div class="line">            <span class="keyword">return</span> <span class="type">String</span>(format: <span class="string">"#%02X%02X%02X"</span>, red,green,blue)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//通过 extension 扩展和继承，实现枚举的`description`功能</span></div><div class="line"><span class="keyword">let</span> color1 = <span class="type">ColorModel</span>.<span class="type">Named</span>(.<span class="type">Red</span>)</div><div class="line"><span class="keyword">let</span> color2 = <span class="type">ColorModel</span>.<span class="type">RGB</span>(<span class="number">0xAA</span>, <span class="number">0xAA</span>, <span class="number">0xAA</span>)</div><div class="line"></div><div class="line"><span class="comment">//color1.description</span></div><div class="line"><span class="comment">//color2.description</span></div><div class="line"><span class="built_in">print</span>(<span class="string">"color1 = <span class="subst">\(color1)</span>, color2 = <span class="subst">\(color2)</span>"</span>)<span class="comment">// prints color1 = Red, color2 = #AAAAAA</span></div></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">ColorModel</span> : <span class="title">CustomStringConvertible</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> description: <span class="type">String</span> &#123;</div><div class="line">        <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</div><div class="line">        <span class="keyword">case</span> .<span class="type">Named</span>(<span class="keyword">let</span> colorName):</div><div class="line">            <span class="keyword">return</span> colorName.rawValue</div><div class="line">        <span class="keyword">case</span> .<span class="type">RGB</span>(<span class="keyword">let</span> red, <span class="keyword">let</span> green, <span class="keyword">let</span> blue):</div><div class="line">            <span class="keyword">return</span> <span class="type">String</span>(format: <span class="string">"#%02X%02X%02X"</span>, red,green,blue)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//通过 extension 扩展和继承，实现枚举的`description`功能</span></div><div class="line"><span class="keyword">let</span> color1 = <span class="type">ColorModel</span>.<span class="type">Named</span>(.<span class="type">Red</span>)</div><div class="line"><span class="keyword">let</span> color2 = <span class="type">ColorModel</span>.<span class="type">RGB</span>(<span class="number">0xAA</span>, <span class="number">0xAA</span>, <span class="number">0xAA</span>)</div><div class="line"></div><div class="line"><span class="comment">//color1.description</span></div><div class="line"><span class="comment">//color2.description</span></div><div class="line"><span class="built_in">print</span>(<span class="string">"color1 = \(color1), color2 = \(color2)"</span>)<span class="comment">// prints color1 = Red, color2 = #AAAAAA</span></div></pre></td></tr></table></figure>
 <p>形式二：扩展枚举初始化功能</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">ColorModel</span> </span>&#123;</div><div class="line">  <span class="keyword">init</span>(gray: <span class="type">UInt8</span>) &#123;</div><div class="line">    <span class="keyword">self</span> = .<span class="type">RGB</span>(gray, gray, gray)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//通过 extension 扩展，实现初始化枚举类型时赋值初始值</span></div><div class="line"><span class="keyword">let</span> color3 = <span class="type">ColorModel</span>(gray: <span class="number">0xaa</span>)</div><div class="line"><span class="built_in">print</span>(color3)  <span class="comment">//  prints #AAAAAA</span></div></pre></td></tr></table></figure>
 <h3 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h3><p>上述例子中，我们定义的 ColorName 枚举仅仅是为了给 ColorModel 枚举使用，没必要将 ColorName 给外部知道。所以可以将 ColorName 的定义放在 ColorModel 的扩展里面。作为其一部分即可。</p>
@@ -539,23 +540,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brew</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -571,15 +564,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -592,10 +597,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -635,15 +636,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -659,11 +660,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -691,11 +692,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -707,18 +712,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
               </li>
              
@@ -727,7 +720,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -740,6 +737,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -771,11 +772,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">

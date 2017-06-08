@@ -9,6 +9,7 @@
   <title>brew更新镜像源进行update | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="问题Homebrew是OS X上类似APT(apt-get)、Yum的一个软件包管理器。所以，虽然你侥幸下载到了brew，但你肯定是无法更新brew的。原因你懂。不过虽然不能更新brew，但这只是指brew这个管理器本身罢了，软件还是可以安装的。但由于无法使用brew update也就无法更新软件。我们有必要来给brew换源。">
+<meta name="keywords" content="Homebrew,brew">
 <meta property="og:type" content="article">
 <meta property="og:title" content="brew更新镜像源进行update">
 <meta property="og:url" content="superdanny.link/2015/09/19/Brew-instruction/index.html">
@@ -193,10 +194,10 @@ var _hmt = _hmt || [];
         <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p><code>Homebrew</code>是OS X上类似<code>APT(apt-get)</code>、<code>Yum</code>的一个软件包管理器。<br>所以，虽然你侥幸下载到了brew，但你肯定是无法更新brew的。原因你懂。不过虽然不能更新brew，但这只是指brew这个管理器本身罢了，软件还是可以安装的。但由于无法使用<code>brew update</code>也就无法更新软件。我们有必要来给brew换源。</p>
 <a id="more"></a> 
 <h2 id="推荐镜像源"><a href="#推荐镜像源" class="headerlink" title="推荐镜像源"></a>推荐镜像源</h2><p><code>Coding</code>推出了Brew国内镜像源，速度挺快的。</p>
-<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="string">cd </span>/<span class="string">usr/</span><span class="string">local </span>&amp;&amp; <span class="string">git </span><span class="string">remote </span><span class="built_in">set-url</span> <span class="string">origin </span><span class="string">https:</span>//<span class="string">git.</span><span class="string">coding.</span><span class="string">net/</span><span class="string">homebrew/</span><span class="string">homebrew.</span><span class="string">git</span></div><div class="line">$ <span class="string">cd </span>$<span class="string">home </span>&amp;&amp; <span class="string">brew </span><span class="string">update</span></div></pre></td></tr></table></figure>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">cd </span>/<span class="string">usr/</span><span class="string">local</span></div><div class="line">//清华镜像源</div><div class="line"><span class="string">git </span><span class="string">remote </span><span class="built_in">set-url</span> <span class="string">origin </span><span class="string">git:</span>//<span class="string">mirrors.</span><span class="string">tuna.</span><span class="string">tsinghua.</span><span class="string">edu.</span><span class="string">cn/</span><span class="string">homebrew.</span><span class="string">git</span></div><div class="line">//中科大镜像源</div><div class="line"><span class="string">git </span><span class="string">remote </span><span class="built_in">set-url</span> <span class="string">origin </span><span class="string">http:</span>//<span class="string">mirrors.</span><span class="string">ustc.</span><span class="string">edu.</span><span class="string">cn/</span><span class="string">homebrew.</span><span class="string">git</span></div><div class="line">//三者选其一即可更新</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd /usr/local &amp;&amp; git remote set-url origin https://git.coding.net/homebrew/homebrew.git</div><div class="line">$ cd $home &amp;&amp; brew update</div></pre></td></tr></table></figure>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">cd /usr/local</div><div class="line">//清华镜像源</div><div class="line">git remote set-url origin git://mirrors.tuna.tsinghua.edu.cn/homebrew.git</div><div class="line">//中科大镜像源</div><div class="line">git remote set-url origin http://mirrors.ustc.edu.cn/homebrew.git</div><div class="line">//三者选其一即可更新</div></pre></td></tr></table></figure>
 <p>如果速度还是很慢，可以尝试以下操作：</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">cd ~/tmp</div><div class="line"><span class="comment">//以下两个选一个(要与你之前选择的镜像源相同)</span></div><div class="line">git clone <span class="string">git:</span><span class="comment">//mirrors.tuna.tsinghua.edu.cn/homebrew.git</span></div><div class="line">git clone <span class="string">http:</span><span class="comment">//mirrors.ustc.edu.cn/homebrew.git</span></div><div class="line"></div><div class="line">rm -rf <span class="regexp">/usr/</span>local/.git</div><div class="line">rm -rf <span class="regexp">/usr/</span>local/Library</div><div class="line">cp -R homebrew<span class="regexp">/.git /</span>usr<span class="regexp">/local/</span></div><div class="line">cp -R homebrew<span class="regexp">/Library /</span>usr<span class="regexp">/local/</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">cd ~/tmp</div><div class="line">//以下两个选一个(要与你之前选择的镜像源相同)</div><div class="line">git clone git://mirrors.tuna.tsinghua.edu.cn/homebrew.git</div><div class="line">git clone http://mirrors.ustc.edu.cn/homebrew.git</div><div class="line"></div><div class="line">rm -rf /usr/local/.git</div><div class="line">rm -rf /usr/local/Library</div><div class="line">cp -R homebrew/.git /usr/local/</div><div class="line">cp -R homebrew/Library /usr/local/</div></pre></td></tr></table></figure>
 <p>然后重试<code>brew update</code></p>
 <hr>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
@@ -500,23 +501,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brew</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -532,15 +525,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -553,10 +558,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -596,15 +597,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,11 +621,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -652,11 +653,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -668,18 +673,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
               </li>
              
@@ -688,7 +681,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -701,6 +698,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -732,11 +733,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">

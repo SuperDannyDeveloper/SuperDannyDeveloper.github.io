@@ -8,19 +8,17 @@
   <link rel="dns-prefetch" href="superdanny.link">
   <title>CocoaPods之repo换源和gem换源 | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="由于淘宝gem源维护困难，所以已经不再维护。目前已经有了替代方案。
-安装CocoaPods之前的CocoaPods安装过程已经提及过，这里就不再累赘。">
+  <meta name="description" content="由于淘宝gem源维护困难，所以已经不再维护。目前已经有了替代方案。 安装CocoaPods之前的CocoaPods安装过程已经提及过，这里就不再累赘。">
+<meta name="keywords" content="终端,CocoaPods,Gem">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CocoaPods之repo换源和gem换源">
 <meta property="og:url" content="superdanny.link/2016/12/04/CocoaPods-update-gem-and-repo/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
-<meta property="og:description" content="由于淘宝gem源维护困难，所以已经不再维护。目前已经有了替代方案。
-安装CocoaPods之前的CocoaPods安装过程已经提及过，这里就不再累赘。">
-<meta property="og:updated_time" content="2016-12-04T08:08:25.000Z">
+<meta property="og:description" content="由于淘宝gem源维护困难，所以已经不再维护。目前已经有了替代方案。 安装CocoaPods之前的CocoaPods安装过程已经提及过，这里就不再累赘。">
+<meta property="og:updated_time" content="2017-06-08T05:50:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CocoaPods之repo换源和gem换源">
-<meta name="twitter:description" content="由于淘宝gem源维护困难，所以已经不再维护。目前已经有了替代方案。
-安装CocoaPods之前的CocoaPods安装过程已经提及过，这里就不再累赘。">
+<meta name="twitter:description" content="由于淘宝gem源维护困难，所以已经不再维护。目前已经有了替代方案。 安装CocoaPods之前的CocoaPods安装过程已经提及过，这里就不再累赘。">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
@@ -197,18 +195,18 @@ var _hmt = _hmt || [];
 <h2 id="安装CocoaPods"><a href="#安装CocoaPods" class="headerlink" title="安装CocoaPods"></a>安装CocoaPods</h2><p>之前的<a href="/2014/12/16/CocoaPods/">CocoaPods安装过程</a>已经提及过，这里就不再累赘。</p>
 <a id="more"></a>
 <h2 id="gem换源"><a href="#gem换源" class="headerlink" title="gem换源"></a>gem换源</h2><p>请尽可能用比较新的 RubyGems 版本，建议 2.6.x 以上。</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gem update --<span class="keyword">system</span> # 这里请翻墙一下</div><div class="line">gem -v</div><div class="line"><span class="number">2.6</span><span class="number">.6</span></div></pre></td></tr></table></figure>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gem sources --<span class="built_in">add</span> http<span class="variable">s:</span>//gems.<span class="keyword">ruby</span>-china.org/ --<span class="built_in">remove</span> http://<span class="keyword">ruby</span>.taobao.org/</div><div class="line">gem sources -<span class="keyword">l</span></div><div class="line">http<span class="variable">s:</span>//gems.<span class="keyword">ruby</span>-china.org</div><div class="line"># 确保只有 gems.<span class="keyword">ruby</span>-china.org</div></pre></td></tr></table></figure>
-<h2 id="pod-repo换源"><a href="#pod-repo换源" class="headerlink" title="pod repo换源"></a>pod repo换源</h2><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">pod repo</span></div></pre></td></tr></table></figure>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gem update --system <span class="comment"># 这里请翻墙一下</span></div><div class="line">gem -v</div><div class="line">2.6.6</div></pre></td></tr></table></figure>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gem sources --add https://gems.ruby-china.org/ --remove http://ruby.taobao.org/</div><div class="line">gem sources <span class="_">-l</span></div><div class="line">https://gems.ruby-china.org</div><div class="line"><span class="comment"># 确保只有 gems.ruby-china.org</span></div></pre></td></tr></table></figure>
+<h2 id="pod-repo换源"><a href="#pod-repo换源" class="headerlink" title="pod repo换源"></a>pod repo换源</h2><figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod repo</div></pre></td></tr></table></figure>
 <p>会出现以下的字眼（本人以前有多个源，后来全部去掉了。自己直接使用的官方源）</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">artsy</div><div class="line">- <span class="string">Type:</span> git (master)</div><div class="line">- <span class="string">URL:</span>  <span class="string">https:</span><span class="comment">//github.com/Artsy/Specs.git</span></div><div class="line">- <span class="string">Path:</span> <span class="regexp">/Users/</span>superdanny<span class="regexp">/.cocoapods/</span>repos/artsy</div><div class="line"></div><div class="line">getuilaboratory</div><div class="line">- <span class="string">Type:</span> git (master)</div><div class="line">- <span class="string">URL:</span>  <span class="string">https:</span><span class="comment">//github.com/GetuiLaboratory/Specs.git</span></div><div class="line">- <span class="string">Path:</span> <span class="regexp">/Users/</span>superdanny<span class="regexp">/.cocoapods/</span>repos/getuilaboratory</div><div class="line"></div><div class="line">master</div><div class="line">- <span class="string">Type:</span> git (master)</div><div class="line">- <span class="string">URL:</span>  <span class="string">https:</span><span class="comment">//github.com/CocoaPods/Specs.git</span></div><div class="line">- <span class="string">Path:</span> <span class="regexp">/Users/</span>superdanny<span class="regexp">/.cocoapods/</span>repos/master</div><div class="line"></div><div class="line"><span class="number">3</span> repos</div></pre></td></tr></table></figure>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">artsy</div><div class="line">- Type: git (master)</div><div class="line">- URL:  https://github.com/Artsy/Specs.git</div><div class="line">- Path: /Users/superdanny/.cocoapods/repos/artsy</div><div class="line"></div><div class="line">getuilaboratory</div><div class="line">- Type: git (master)</div><div class="line">- URL:  https://github.com/GetuiLaboratory/Specs.git</div><div class="line">- Path: /Users/superdanny/.cocoapods/repos/getuilaboratory</div><div class="line"></div><div class="line">master</div><div class="line">- Type: git (master)</div><div class="line">- URL:  https://github.com/CocoaPods/Specs.git</div><div class="line">- Path: /Users/superdanny/.cocoapods/repos/master</div><div class="line"></div><div class="line">3 repos</div></pre></td></tr></table></figure>
 <p>如果有出现跟我一样的多个源时，可以删除不需要的源</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pod repo <span class="keyword">remove</span> 源的名字</div><div class="line"><span class="comment"># 比如我上面的‘getuilaboratory’、‘artsy’等</span></div><div class="line">pod repo <span class="keyword">remove</span> artsy</div></pre></td></tr></table></figure>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pod repo remove 源的名字</div><div class="line"><span class="comment"># 比如我上面的‘getuilaboratory’、‘artsy’等</span></div><div class="line">pod repo remove artsy</div></pre></td></tr></table></figure>
 <p>接下来就是更换源</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pod repo remove <span class="keyword">master</span></div><div class="line"><span class="title">pod</span> repo add <span class="keyword">master</span> <span class="title">https</span>://gitcafe.com/akuandev/Specs.git</div><div class="line">pod repo update</div></pre></td></tr></table></figure>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pod repo remove master</div><div class="line">pod repo add master https://gitcafe.com/akuandev/Specs.git</div><div class="line">pod repo update</div></pre></td></tr></table></figure>
 <h2 id="Cocoapods使用技巧"><a href="#Cocoapods使用技巧" class="headerlink" title="Cocoapods使用技巧"></a>Cocoapods使用技巧</h2><p>每次我们执行<code>pod install</code>、<code>pod update</code>时都会更新整个specs库，这样非常费时，所以想在不更新specs库的前提下安装三方库。</p>
 <p>只有当觉得specs库太旧了之后或者specs库里面找不到某个三方库时才进行更新specs库。</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pod install --<span class="keyword">verbose</span> --<span class="keyword">no</span>-repo-<span class="keyword">update</span></div><div class="line">pod <span class="keyword">update</span> --<span class="keyword">verbose</span> --<span class="keyword">no</span>-repo-<span class="keyword">update</span></div></pre></td></tr></table></figure>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pod install --verbose --no-repo-update</div><div class="line">pod update --verbose --no-repo-update</div></pre></td></tr></table></figure>
 <hr>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
 <p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
@@ -515,23 +513,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brew</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -547,15 +537,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -568,10 +570,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -611,15 +609,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -635,11 +633,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -667,11 +665,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -683,18 +685,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
               </li>
              
@@ -703,7 +693,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -716,6 +710,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -747,11 +745,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">

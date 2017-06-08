@@ -8,22 +8,17 @@
   <link rel="dns-prefetch" href="superdanny.link">
   <title>升级CocoaPods后存在的问题 | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题今天由于需要，去升级了CocoaPods的版本，更新版本完成之后，在执行pod install指令时出现了问题。
-12[!] The dependency `AFNetworking` is not used in any concrete target.The dependency `SDWebImage` is not used in any concrete target.
-根据提示，是">
+  <meta name="description" content="问题今天由于需要，去升级了CocoaPods的版本，更新版本完成之后，在执行pod install指令时出现了问题。 12[!] The dependency `AFNetworking` is not used in any concrete target.The dependency `SDWebImage` is not used in any concrete target. 根据提示，是">
+<meta name="keywords" content="终端,CocoaPods">
 <meta property="og:type" content="article">
 <meta property="og:title" content="升级CocoaPods后存在的问题">
 <meta property="og:url" content="superdanny.link/2016/05/16/CocoaPods-concrete-target/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
-<meta property="og:description" content="问题今天由于需要，去升级了CocoaPods的版本，更新版本完成之后，在执行pod install指令时出现了问题。
-12[!] The dependency `AFNetworking` is not used in any concrete target.The dependency `SDWebImage` is not used in any concrete target.
-根据提示，是">
+<meta property="og:description" content="问题今天由于需要，去升级了CocoaPods的版本，更新版本完成之后，在执行pod install指令时出现了问题。 12[!] The dependency `AFNetworking` is not used in any concrete target.The dependency `SDWebImage` is not used in any concrete target. 根据提示，是">
 <meta property="og:updated_time" content="2016-12-04T07:40:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="升级CocoaPods后存在的问题">
-<meta name="twitter:description" content="问题今天由于需要，去升级了CocoaPods的版本，更新版本完成之后，在执行pod install指令时出现了问题。
-12[!] The dependency `AFNetworking` is not used in any concrete target.The dependency `SDWebImage` is not used in any concrete target.
-根据提示，是">
+<meta name="twitter:description" content="问题今天由于需要，去升级了CocoaPods的版本，更新版本完成之后，在执行pod install指令时出现了问题。 12[!] The dependency `AFNetworking` is not used in any concrete target.The dependency `SDWebImage` is not used in any concrete target. 根据提示，是">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
@@ -201,9 +196,9 @@ var _hmt = _hmt || [];
 <p>根据提示，是说我没有给这些第三方库指明对应的target。<code>Podfile</code>升级之后到最新版本，pod里的内容必须明确指出所用第三方库的target，否则会出现<strong>The dependency `` is not used in any concrete target</strong>这样的错误。</p>
 <a id="more"></a>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>原本我工程里面<code>Podfile</code>是这样写的：</p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">platform</span> :ios, <span class="string">'8.0'</span></div><div class="line">use_frameworks!</div><div class="line">pod <span class="string">'AFNetworking'</span></div><div class="line">pod <span class="string">'SDWebImage'</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">platform :ios, &apos;8.0&apos;</div><div class="line">use_frameworks!</div><div class="line">pod &apos;AFNetworking&apos;</div><div class="line">pod &apos;SDWebImage&apos;</div></pre></td></tr></table></figure>
 <p>现在需要修改<code>Podfile</code>的写法：</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">platform <span class="symbol">:ios</span>, <span class="string">'8.0'</span></div><div class="line">use_frameworks!</div><div class="line">target <span class="string">"Project target"</span> <span class="keyword">do</span></div><div class="line">pod <span class="string">'AFNetworking'</span></div><div class="line">pod <span class="string">'SDWebImage'</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">platform :ios, &apos;8.0&apos;</div><div class="line">use_frameworks!</div><div class="line">target &quot;Project target&quot; do</div><div class="line">pod &apos;AFNetworking&apos;</div><div class="line">pod &apos;SDWebImage&apos;</div><div class="line">end</div></pre></td></tr></table></figure>
 <p>这样再运行<code>pod install</code>指令就会成功了。</p>
 <hr>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
@@ -507,23 +502,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brew</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,15 +526,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -560,10 +559,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -603,15 +598,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -627,11 +622,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -659,11 +654,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -675,18 +674,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
               </li>
              
@@ -695,7 +682,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -708,6 +699,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -739,11 +734,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">

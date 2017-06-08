@@ -8,46 +8,20 @@
   <link rel="dns-prefetch" href="superdanny.link">
   <title>Xcode上Version和Build | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Version（应用程序发布版本号）
-Build（应用程序内部标示）
-作用
-
-
-高效率开发技巧
-
-
-
-Version（应用程序发布版本号）对应的就是CFBundleShortVersionString。该版本的版本号是三个时期分隔的整数组成的字符串：第一个整数代表重大修改的版本，如实现新的功能或重大变化的修订。第二个整数表示的修订，实现较突出的特点。第三个整数代表维护版本。该键的值不同于CFB">
+  <meta name="description" content="Version（应用程序发布版本号） Build（应用程序内部标示） 作用   高效率开发技巧    Version（应用程序发布版本号）对应的就是CFBundleShortVersionString。该版本的版本号是三个时期分隔的整数组成的字符串：第一个整数代表重大修改的版本，如实现新的功能或重大变化的修订。第二个整数表示的修订，实现较突出的特点。第三个整数代表维护版本。该键的值不同于CFB">
+<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Xcode上Version和Build">
 <meta property="og:url" content="superdanny.link/2015/09/05/Xcode-Version-and-Build/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
-<meta property="og:description" content="Version（应用程序发布版本号）
-Build（应用程序内部标示）
-作用
-
-
-高效率开发技巧
-
-
-
-Version（应用程序发布版本号）对应的就是CFBundleShortVersionString。该版本的版本号是三个时期分隔的整数组成的字符串：第一个整数代表重大修改的版本，如实现新的功能或重大变化的修订。第二个整数表示的修订，实现较突出的特点。第三个整数代表维护版本。该键的值不同于CFB">
+<meta property="og:description" content="Version（应用程序发布版本号） Build（应用程序内部标示） 作用   高效率开发技巧    Version（应用程序发布版本号）对应的就是CFBundleShortVersionString。该版本的版本号是三个时期分隔的整数组成的字符串：第一个整数代表重大修改的版本，如实现新的功能或重大变化的修订。第二个整数表示的修订，实现较突出的特点。第三个整数代表维护版本。该键的值不同于CFB">
 <meta property="og:image" content="http://ww2.sinaimg.cn/mw690/81f8a509gw1evrpwvqelnj20js07yq3j.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/mw690/81f8a509gw1evrqzdm065j215o0gi770.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/mw690/81f8a509gw1evrpwp1qjzj216u0j6tb6.jpg">
 <meta property="og:updated_time" content="2016-11-30T01:56:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xcode上Version和Build">
-<meta name="twitter:description" content="Version（应用程序发布版本号）
-Build（应用程序内部标示）
-作用
-
-
-高效率开发技巧
-
-
-
-Version（应用程序发布版本号）对应的就是CFBundleShortVersionString。该版本的版本号是三个时期分隔的整数组成的字符串：第一个整数代表重大修改的版本，如实现新的功能或重大变化的修订。第二个整数表示的修订，实现较突出的特点。第三个整数代表维护版本。该键的值不同于CFB">
+<meta name="twitter:description" content="Version（应用程序发布版本号） Build（应用程序内部标示） 作用   高效率开发技巧    Version（应用程序发布版本号）对应的就是CFBundleShortVersionString。该版本的版本号是三个时期分隔的整数组成的字符串：第一个整数代表重大修改的版本，如实现新的功能或重大变化的修订。第二个整数表示的修订，实现较突出的特点。第三个整数代表维护版本。该键的值不同于CFB">
 <meta name="twitter:image" content="http://ww2.sinaimg.cn/mw690/81f8a509gw1evrpwvqelnj20js07yq3j.jpg">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
@@ -240,7 +214,7 @@ var _hmt = _hmt || [];
 <p>比如团队打算发布1.0版本的时候，会发布很多build版本供测试或QA团队进行测试，你发布了很多build，因为一直在修改着代码，因此当你收到一条bug信息时候，你怎么知道是哪个build引起的问题呢，这时候build版本号的优点就可以体现出来了。</p>
 </blockquote>
 <h2 id="高效率开发技巧"><a href="#高效率开发技巧" class="headerlink" title="高效率开发技巧"></a>高效率开发技巧</h2><p>在Xcode编译时候自动增加build号码，先把 Info.plist 里的版本号改成某个数字，然后 Targets → your target → Build Phases → Run Script 的地方加上：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line">buildNumber=$(/usr/libexec/PlistBuddy -c <span class="string">"Print CFBundleVersion"</span> <span class="string">"<span class="variable">$INFOPLIST_FILE</span>"</span>)</div><div class="line">buildNumber=$((<span class="variable">$buildNumber</span> + 1))</div><div class="line">/usr/libexec/PlistBuddy -c <span class="string">"Set :CFBundleVersion <span class="variable">$buildNumber</span>"</span> <span class="string">"<span class="variable">$INFOPLIST_FILE</span>"</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">buildNumber=$(/usr/libexec/PlistBuddy -c &quot;Print CFBundleVersion&quot; &quot;$INFOPLIST_FILE&quot;)</div><div class="line">buildNumber=$(($buildNumber + 1))</div><div class="line">/usr/libexec/PlistBuddy -c &quot;Set :CFBundleVersion $buildNumber&quot; &quot;$INFOPLIST_FILE&quot;</div></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <p><img src="http://ww3.sinaimg.cn/mw690/81f8a509gw1evrqzdm065j215o0gi770.jpg" alt="Run Script"></p>
 <p>如果没有找到Run Script选项，只需要New一个就行，如下图：</p>
@@ -547,23 +521,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brew</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -579,15 +545,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -600,10 +578,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -643,15 +617,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -667,11 +641,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -699,11 +673,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -715,18 +693,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
               </li>
              
@@ -735,7 +701,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -748,6 +718,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -779,11 +753,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -8,61 +8,17 @@
   <link rel="dns-prefetch" href="superdanny.link">
   <title>UITableView数据更新问题 | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="自身遇到问题
-拓展-进行增删数据时的注意点
-beginUpdates方法和endUpdates方法是什么呢？ 
-一般什么时候使用这么一个动画块呢？
-插入指定的行
-插入分组到制定位置
-删除制定位置的分组
-移动分组
-
-
-
-
-问答区
-
-
-自身遇到问题今天在设计自定义UITableViewCell的时候遇到一个愚蠢的问题，就是当用户在Cell上面使用自定义按钮触发删除时，为了保证删除时有动画效果，所以">
+  <meta name="description" content="自身遇到问题 拓展-进行增删数据时的注意点 beginUpdates方法和endUpdates方法是什么呢？  一般什么时候使用这么一个动画块呢？ 插入指定的行 插入分组到制定位置 删除制定位置的分组 移动分组     问答区   自身遇到问题今天在设计自定义UITableViewCell的时候遇到一个愚蠢的问题，就是当用户在Cell上面使用自定义按钮触发删除时，为了保证删除时有动画效果，所以">
+<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UITableView数据更新问题">
 <meta property="og:url" content="superdanny.link/2015/09/01/UITableView-update-data/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
-<meta property="og:description" content="自身遇到问题
-拓展-进行增删数据时的注意点
-beginUpdates方法和endUpdates方法是什么呢？ 
-一般什么时候使用这么一个动画块呢？
-插入指定的行
-插入分组到制定位置
-删除制定位置的分组
-移动分组
-
-
-
-
-问答区
-
-
-自身遇到问题今天在设计自定义UITableViewCell的时候遇到一个愚蠢的问题，就是当用户在Cell上面使用自定义按钮触发删除时，为了保证删除时有动画效果，所以">
+<meta property="og:description" content="自身遇到问题 拓展-进行增删数据时的注意点 beginUpdates方法和endUpdates方法是什么呢？  一般什么时候使用这么一个动画块呢？ 插入指定的行 插入分组到制定位置 删除制定位置的分组 移动分组     问答区   自身遇到问题今天在设计自定义UITableViewCell的时候遇到一个愚蠢的问题，就是当用户在Cell上面使用自定义按钮触发删除时，为了保证删除时有动画效果，所以">
 <meta property="og:updated_time" content="2016-11-30T01:56:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UITableView数据更新问题">
-<meta name="twitter:description" content="自身遇到问题
-拓展-进行增删数据时的注意点
-beginUpdates方法和endUpdates方法是什么呢？ 
-一般什么时候使用这么一个动画块呢？
-插入指定的行
-插入分组到制定位置
-删除制定位置的分组
-移动分组
-
-
-
-
-问答区
-
-
-自身遇到问题今天在设计自定义UITableViewCell的时候遇到一个愚蠢的问题，就是当用户在Cell上面使用自定义按钮触发删除时，为了保证删除时有动画效果，所以">
+<meta name="twitter:description" content="自身遇到问题 拓展-进行增删数据时的注意点 beginUpdates方法和endUpdates方法是什么呢？  一般什么时候使用这么一个动画块呢？ 插入指定的行 插入分组到制定位置 删除制定位置的分组 移动分组     问答区   自身遇到问题今天在设计自定义UITableViewCell的时候遇到一个愚蠢的问题，就是当用户在Cell上面使用自定义按钮触发删除时，为了保证删除时有动画效果，所以">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
@@ -583,23 +539,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brew</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -615,15 +563,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -636,10 +596,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -679,15 +635,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -703,11 +659,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -735,11 +691,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -751,18 +711,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
               </li>
              
@@ -771,7 +719,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -784,6 +736,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -815,11 +771,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
