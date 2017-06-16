@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="superdanny.link">
   <title>十分钟让你明白Objective-C的语法（和Java、C++的对比） | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、函数的对比 二、消息 三、Import 四 、Property和Synthesize 五、头文件中的方法 六、self 指向自己的指针 [self method] 七、继承关系和接口实现 八、空指针 九、 id   很多想开发IOS，或者正在开发IOS的程序员以前都做过Java或者C++，当第一次看到Objective-C的代码时都会头疼，Objective-C的代码在语法上和Java,">
+  <meta name="description" content="一、函数的对比 二、消息 三、Import 四 、Property和Synthesize 五、头文件中的方法 六、self 指向自己的指针 [self method] 七、继承关系和接口实现 八、空指针 九、 id   很多想开发iOS，或者正在开发iOS的程序员以前都做过Java或者C++，当第一次看到Objective-C的代码时都会头疼，Objective-C的代码在语法上和Java,">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="十分钟让你明白Objective-C的语法（和Java、C++的对比）">
 <meta property="og:url" content="superdanny.link/2014/08/21/Quickly-master-objective-c-grammar/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
-<meta property="og:description" content="一、函数的对比 二、消息 三、Import 四 、Property和Synthesize 五、头文件中的方法 六、self 指向自己的指针 [self method] 七、继承关系和接口实现 八、空指针 九、 id   很多想开发IOS，或者正在开发IOS的程序员以前都做过Java或者C++，当第一次看到Objective-C的代码时都会头疼，Objective-C的代码在语法上和Java,">
+<meta property="og:description" content="一、函数的对比 二、消息 三、Import 四 、Property和Synthesize 五、头文件中的方法 六、self 指向自己的指针 [self method] 七、继承关系和接口实现 八、空指针 九、 id   很多想开发iOS，或者正在开发iOS的程序员以前都做过Java或者C++，当第一次看到Objective-C的代码时都会头疼，Objective-C的代码在语法上和Java,">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0m256suj20gj07c75g.jpg">
 <meta property="og:image" content="http://ww4.sinaimg.cn/mw690/81f8a509gw1eva0m4i9t7j20c80b4jsn.jpg">
-<meta property="og:updated_time" content="2016-11-30T01:56:52.000Z">
+<meta property="og:updated_time" content="2017-06-16T05:46:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="十分钟让你明白Objective-C的语法（和Java、C++的对比）">
-<meta name="twitter:description" content="一、函数的对比 二、消息 三、Import 四 、Property和Synthesize 五、头文件中的方法 六、self 指向自己的指针 [self method] 七、继承关系和接口实现 八、空指针 九、 id   很多想开发IOS，或者正在开发IOS的程序员以前都做过Java或者C++，当第一次看到Objective-C的代码时都会头疼，Objective-C的代码在语法上和Java,">
+<meta name="twitter:description" content="一、函数的对比 二、消息 三、Import 四 、Property和Synthesize 五、头文件中的方法 六、self 指向自己的指针 [self method] 七、继承关系和接口实现 八、空指针 九、 id   很多想开发iOS，或者正在开发iOS的程序员以前都做过Java或者C++，当第一次看到Objective-C的代码时都会头疼，Objective-C的代码在语法上和Java,">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0m256suj20gj07c75g.jpg">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
@@ -207,7 +207,7 @@ var _hmt = _hmt || [];
 <li>九、 id</li>
 </ul>
 </blockquote>
-<p>很多想开发IOS，或者正在开发IOS的程序员以前都做过Java或者C++，当第一次看到Objective-C的代码时都会头疼，Objective-C的代码在语法上和Java, C++有着很大的区别，有的同学会感觉像是看天书一样。不过，语言都是相通的，有很多共性。下面列出Objective-C语言的语法和Java，C++的对比，这样你就会很容易Objective-C的语法是怎么回事了。</p>
+<p>很多想开发iOS，或者正在开发iOS的程序员以前都做过Java或者C++，当第一次看到Objective-C的代码时都会头疼，Objective-C的代码在语法上和Java, C++有着很大的区别，有的同学会感觉像是看天书一样。不过，语言都是相通的，有很多共性。下面列出Objective-C语言的语法和Java，C++的对比，这样你就会很容易Objective-C的语法是怎么回事了。</p>
 <a id="more"></a> 
 <p>先目睹一下Objective-C头文件和实现文件里都有什么：</p>
 <p>头文件：<br><img src="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0m256suj20gj07c75g.jpg" alt="头文件.png"></p>
@@ -238,12 +238,12 @@ var _hmt = _hmt || [];
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- (returnType)method</div><div class="line">- (returnType)method:(dataType)param1</div><div class="line">- (returnType)method:(dataType)param1</div><div class="line">withParam:(dataType)param2</div></pre></td></tr></table></figure>
 <p>类似于: C/C++/Java</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function">returnType <span class="title">method</span><span class="params">()</span></span></div><div class="line">returnType <span class="title">method</span><span class="params">(param1)</span></div><div class="line">returnType <span class="title">method</span><span class="params">(param1,param2)</span></div></pre></td></tr></table></figure>
-<h4 id="六、self-指向自己的指针-self-method"><a href="#六、self-指向自己的指针-self-method" class="headerlink" title="六、self 指向自己的指针 [self method]"></a>六、self 指向自己的指针 [self method]</h4><p>类似于：c++/java this.method();</p>
+<h3 id="六、self-指向自己的指针-self-method"><a href="#六、self-指向自己的指针-self-method" class="headerlink" title="六、self 指向自己的指针 [self method]"></a>六、self 指向自己的指针 [self method]</h3><p>类似于：c++/java this.method();</p>
 <h3 id="七、继承关系和接口实现"><a href="#七、继承关系和接口实现" class="headerlink" title="七、继承关系和接口实现"></a>七、继承关系和接口实现</h3><p>例子：</p>
 <p>ClassA:ParentA ClassA:ParentA<protocol> ClassA <protocol><br>类似于: java:</protocol></protocol></p>
 <p>ClassA extends ParentA ClassA extends ParentA implements interface ClassA implements interface<br>Objective-C的<code>Protocol</code>和c++、java的接口类似。</p>
 <h3 id="八、空指针"><a href="#八、空指针" class="headerlink" title="八、空指针"></a>八、空指针</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//nil相当与Java中的null</span></div><div class="line"><span class="keyword">id</span> obj = <span class="literal">nil</span>;</div><div class="line"><span class="built_in">NSString</span> *hello = <span class="literal">nil</span>;</div></pre></td></tr></table></figure>
-<h3 id="九、-id"><a href="#九、-id" class="headerlink" title="九、 id"></a>九、 id</h3><p>objective-c的和C++里的(void*)类似</p>
+<h3 id="九、id"><a href="#九、id" class="headerlink" title="九、id"></a>九、id</h3><p>objective-c的和C++里的(void*)类似</p>
 <hr>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
 <p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
@@ -569,7 +569,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -581,7 +581,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -594,10 +598,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GCD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -617,6 +617,18 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">KVC</a>
               </li>
              
@@ -625,23 +637,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -673,6 +673,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Autolayout</a>
               </li>
              
@@ -681,27 +685,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -710,6 +698,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数值</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -749,11 +749,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
+                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
+                <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -781,11 +781,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
