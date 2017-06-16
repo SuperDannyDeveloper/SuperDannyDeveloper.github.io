@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="superdanny.link/"/>
-  <updated>2017-05-13T09:13:28.000Z</updated>
+  <updated>2017-06-16T05:39:47.000Z</updated>
   <id>superdanny.link/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数值类型(金额)限制与判断</title>
+    <link href="superdanny.link/2017/06/16/iOS-Limit-the-number-format/"/>
+    <id>superdanny.link/2017/06/16/iOS-Limit-the-number-format/</id>
+    <published>2017-06-16T05:36:00.000Z</published>
+    <updated>2017-06-16T05:39:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>一般对于支付或者涉及数值输入时，都会判断输入是否符合规范。比如有这么一个需求，我希望能够限制输入的内容只能是两位小数的浮点型。那么这个时候我想到的就是两种办法，一种就是使用正则，一种就是监听输入内容进行判断。下面我将针对我自己的需求：限制输入小数位数以及整数位数进行判断。</p>
+<a id="more"></a> 
+<p>代码写的有点不尽完美，但是已经满足自己的需求了。可灵活变通，一旦有完善的会及时更新代码。下面的代码直接放在UITextField的<code>- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string</code>代理方法里面。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> *  @author LvChanghui, 15-08-07 14:08:01</div><div class="line"> *</div><div class="line"> *  限制输入数字格式（整数位数以及小数位数）</div><div class="line"> *</div><div class="line"> *  @param currentStr  当前文本框的字符串</div><div class="line"> *  @param nextStr     当前输入的字符</div><div class="line"> *  @param range       输入字符的rang位置</div><div class="line"> *  @param intLength   整数位置长度</div><div class="line"> *  @param pointLength 小数位置长度</div><div class="line"> *</div><div class="line"> *  @return 是否允许继续输入</div><div class="line"> */</div><div class="line">+ (<span class="built_in">BOOL</span>)limitTheNumberString:(<span class="built_in">NSString</span> *)currentStr</div><div class="line">               andNextString:(<span class="built_in">NSString</span> *)nextStr</div><div class="line">                     andRang:(<span class="built_in">NSRange</span>)range</div><div class="line">                andIntLength:(<span class="built_in">NSUInteger</span>)intLength</div><div class="line">              andPointLength:(<span class="built_in">NSUInteger</span>)pointLength &#123;</div><div class="line">    </div><div class="line">    <span class="comment">//拼接出最新的字符串</span></div><div class="line">    <span class="built_in">NSString</span> *number = [<span class="keyword">self</span> getResultString:currentStr andNextString:nextStr andRang:range];</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (number.length == <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//整數部份長度</span></div><div class="line">    <span class="built_in">NSString</span> *zhengShu = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%ld"</span>, [number integerValue]];</div><div class="line">    <span class="built_in">NSUInteger</span> tempIntLength = zhengShu.length;</div><div class="line">    <span class="comment">//小數部份長度，包括小數點</span></div><div class="line">    <span class="built_in">NSUInteger</span> tempPointLength = [number substringFromIndex:tempIntLength].length;</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (tempIntLength &gt; intLength || tempPointLength &gt; pointLength+<span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">//如果小數部份長度為0，說明限制數字為整數</span></div><div class="line">    <span class="keyword">if</span> (pointLength == <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">if</span> ([CheckTools isPureInt:number]) &#123;</div><div class="line">            <span class="comment">//如果没有小数点，但是第一位数字确是0开头，则不允许输入</span></div><div class="line">            <span class="keyword">if</span> (![number containsString:<span class="string">@"."</span>] &amp;&amp; number.length &gt; <span class="number">1</span> &amp;&amp; [[number substringToIndex:<span class="number">1</span>] isEqualToString:<span class="string">@"0"</span>]) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">if</span> ([CheckTools isPureFloat:number]) &#123;</div><div class="line">            <span class="comment">//如果没有小数点，但是第一位数字确是0开头，则不允许输入</span></div><div class="line">            <span class="keyword">if</span> (![number containsString:<span class="string">@"."</span>] &amp;&amp; number.length &gt; <span class="number">1</span> &amp;&amp; [[number substringToIndex:<span class="number">1</span>] isEqualToString:<span class="string">@"0"</span>]) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - 获取输入文本框字符串</span></div><div class="line">+ (<span class="built_in">NSString</span> *)getResultString:(<span class="built_in">NSString</span> *)currentStr</div><div class="line">                andNextString:(<span class="built_in">NSString</span> *)nextStr</div><div class="line">                      andRang:(<span class="built_in">NSRange</span>)range &#123;</div><div class="line">    <span class="comment">//拼接出最新的字符串</span></div><div class="line">    <span class="built_in">NSMutableString</span> *string = currentStr.mutableCopy;</div><div class="line">    <span class="keyword">if</span> (nextStr.length) &#123;</div><div class="line">        [string insertString:nextStr atIndex:range.location];</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        [string replaceCharactersInRange:range withString:nextStr];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> string;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>下面看看具体使用方式：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark - UITextFieldDelegate</span></div><div class="line">- (<span class="built_in">BOOL</span>)textField:(<span class="built_in">UITextField</span> *)textField shouldChangeCharactersInRange:(<span class="built_in">NSRange</span>)range replacementString:(<span class="built_in">NSString</span> *)string &#123;</div><div class="line">   <span class="keyword">if</span> (string.length) &#123;</div><div class="line">       <span class="comment">//设置整数部分最多2位，小数部分长度为0</span></div><div class="line">       <span class="built_in">BOOL</span> b = [AmountTools limitTheNumberString:textField.text andNextString:string andRang:range andIntLength:<span class="number">2</span> andPointLength:<span class="number">0</span>];</div><div class="line">       <span class="comment">//如果需要实时获取文本框的值，可以使用下面的方法</span></div><div class="line">       <span class="built_in">NSString</span> *tempStr = [AmountTools getResultString:textField.text andNextString:string andRang:range];</div><div class="line">       <span class="keyword">return</span> b;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<p>再一次感谢您花费时间阅读这篇文章！</p>
+<p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;一般对于支付或者涉及数值输入时，都会判断输入是否符合规范。比如有这么一个需求，我希望能够限制输入的内容只能是两位小数的浮点型。那么这个时候我想到的就是两种办法，一种就是使用正则，一种就是监听输入内容进行判断。下面我将针对我自己的需求：限制输入小数位数以及整数位数进行判断。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="移动端" scheme="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    
+    
+      <category term="iOS" scheme="superdanny.link/tags/iOS/"/>
+    
+      <category term="金额" scheme="superdanny.link/tags/%E9%87%91%E9%A2%9D/"/>
+    
+      <category term="数值" scheme="superdanny.link/tags/%E6%95%B0%E5%80%BC/"/>
+    
+  </entry>
   
   <entry>
     <title>IJKPlayer相关指南</title>
@@ -1138,49 +1173,6 @@
       <category term="iOS" scheme="superdanny.link/tags/iOS/"/>
     
       <category term="Apple Pay" scheme="superdanny.link/tags/Apple-Pay/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS开发证书&quot;此证书的签发者无效&quot;解决方法</title>
-    <link href="superdanny.link/2016/02/15/iOS-Certificate-has-an-invalid-issuer/"/>
-    <id>superdanny.link/2016/02/15/iOS-Certificate-has-an-invalid-issuer/</id>
-    <published>2016-02-15T02:13:00.000Z</published>
-    <updated>2016-11-30T01:57:36.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>哎，每次过完节都要有一个坑给自己跳。逃不过这个魔爪。<br>这不，一过完春节，回来就发现公司证书出现”此证书的签发者无效”。<br><img src="http://ww2.sinaimg.cn/large/81f8a509gw1f100tg3i59j20eg01lq36.jpg" alt="证书签发者无效"></p>
-<a id="more"></a>
-<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>经过一番查找，苹果官方给出了回答。</p>
-<blockquote>
-<p>Thanks for bringing this to the attention of the community and apologies for the issues you’ve been having. This issue stems from having a copy of the expired WWDR Intermediate certificate in both your System and Login keychains. To resolve the issue, you should first download and install the new <a href="https://developer.apple.com/certificationauthority/AppleWWDRCA.cer" target="_blank" rel="external">WWDR intermediate certificate</a> (by double-clicking on the file). Next, in the Keychain Access application, select the System keychain. Make sure to select “Show Expired Certificates” in the View menu and then delete the expired version of the Apple Worldwide Developer Relations Certificate Authority Intermediate certificate (expired on February 14, 2016). Your certificates should now appear as valid in Keychain Access and be available to Xcode for submissions to the App Store.</p>
-</blockquote>
-<p>看来是由于苹果系统的安全证书过期问题导致。<br><img src="http://ww4.sinaimg.cn/large/81f8a509gw1f100ti4ritj20jx05sgmo.jpg" alt="过期的安全证书"></p>
-<p>苹果早在一个多月前就提醒开发者使用新证书。开发者如果不及时更新，不仅会影响到自己的开发工作，还有可能对用户造成困扰。这一份通知面向的是那些开发应用与 Apple Wallet、Safari 推送中心又或者是 Safari 插件相关的开发者。苹果还在通知中表示，开发者需要在 2016 年 2 月 14 日结束之前更新他们的安全证书。更新之后，安全证书的下一个失效期为 2023 年 2 月。</p>
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>既然知道了原因，那么就可以对症下药了。我们通过下载苹果提供的最新的<a href="https://developer.apple.com/certificationauthority/AppleWWDRCA.cer" target="_blank" rel="external">安全证书</a>并双击安装。</p>
-<ol>
-<li>然后打开钥匙串，在导航栏上，依次选择<code>显示</code>-<code>显示已过期的证书</code><br> <img src="http://ww3.sinaimg.cn/mw690/81f8a509gw1f100tfcdg9j21740gsjv4.jpg" alt="显示已过期的证书"> </li>
-<li>选择<code>登录</code>-<code>所有项目</code></li>
-<li>在搜索栏下输入 apple w</li>
-<li>删除对应过期的安全证书</li>
-</ol>
-<p><img src="http://ww3.sinaimg.cn/large/81f8a509gw1f100tau6guj20ud0c476j.jpg" alt="流程"> </p>
-<hr>
-<p>再一次感谢您花费时间阅读这篇文章！</p>
-<p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;哎，每次过完节都要有一个坑给自己跳。逃不过这个魔爪。&lt;br&gt;这不，一过完春节，回来就发现公司证书出现”此证书的签发者无效”。&lt;br&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/large/81f8a509gw1f100tg3i59j20eg01lq36.jpg&quot; alt=&quot;证书签发者无效&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="移动端" scheme="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-    
-    
-      <category term="iOS" scheme="superdanny.link/tags/iOS/"/>
-    
-      <category term="证书无效" scheme="superdanny.link/tags/%E8%AF%81%E4%B9%A6%E6%97%A0%E6%95%88/"/>
     
   </entry>
   
