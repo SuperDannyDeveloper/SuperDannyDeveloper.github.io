@@ -15,7 +15,7 @@
 <meta property="og:url" content="superdanny.link/2017/06/16/iOS-Limit-the-number-format/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
 <meta property="og:description" content="前言一般对于支付或者涉及数值输入时，都会判断输入是否符合规范。比如有这么一个需求，我希望能够限制输入的内容只能是两位小数的浮点型。那么这个时候我想到的就是两种办法，一种就是使用正则，一种就是监听输入内容进行判断。下面我将针对我自己的需求：限制输入小数位数以及整数位数进行判断。">
-<meta property="og:updated_time" content="2017-06-16T05:39:47.000Z">
+<meta property="og:updated_time" content="2017-06-30T05:29:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数值类型(金额)限制与判断">
 <meta name="twitter:description" content="前言一般对于支付或者涉及数值输入时，都会判断输入是否符合规范。比如有这么一个需求，我希望能够限制输入的内容只能是两位小数的浮点型。那么这个时候我想到的就是两种办法，一种就是使用正则，一种就是监听输入内容进行判断。下面我将针对我自己的需求：限制输入小数位数以及整数位数进行判断。">
@@ -194,9 +194,9 @@ var _hmt = _hmt || [];
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>一般对于支付或者涉及数值输入时，都会判断输入是否符合规范。比如有这么一个需求，我希望能够限制输入的内容只能是两位小数的浮点型。那么这个时候我想到的就是两种办法，一种就是使用正则，一种就是监听输入内容进行判断。下面我将针对我自己的需求：限制输入小数位数以及整数位数进行判断。</p>
 <a id="more"></a> 
 <p>代码写的有点不尽完美，但是已经满足自己的需求了。可灵活变通，一旦有完善的会及时更新代码。下面的代码直接放在UITextField的<code>- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string</code>代理方法里面。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> *  @author LvChanghui, 15-08-07 14:08:01</div><div class="line"> *</div><div class="line"> *  限制输入数字格式（整数位数以及小数位数）</div><div class="line"> *</div><div class="line"> *  @param currentStr  当前文本框的字符串</div><div class="line"> *  @param nextStr     当前输入的字符</div><div class="line"> *  @param range       输入字符的rang位置</div><div class="line"> *  @param intLength   整数位置长度</div><div class="line"> *  @param pointLength 小数位置长度</div><div class="line"> *</div><div class="line"> *  @return 是否允许继续输入</div><div class="line"> */</div><div class="line">+ (<span class="built_in">BOOL</span>)limitTheNumberString:(<span class="built_in">NSString</span> *)currentStr</div><div class="line">               andNextString:(<span class="built_in">NSString</span> *)nextStr</div><div class="line">                     andRang:(<span class="built_in">NSRange</span>)range</div><div class="line">                andIntLength:(<span class="built_in">NSUInteger</span>)intLength</div><div class="line">              andPointLength:(<span class="built_in">NSUInteger</span>)pointLength &#123;</div><div class="line">    </div><div class="line">    <span class="comment">//拼接出最新的字符串</span></div><div class="line">    <span class="built_in">NSString</span> *number = [<span class="keyword">self</span> getResultString:currentStr andNextString:nextStr andRang:range];</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (number.length == <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//整數部份長度</span></div><div class="line">    <span class="built_in">NSString</span> *zhengShu = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%ld"</span>, [number integerValue]];</div><div class="line">    <span class="built_in">NSUInteger</span> tempIntLength = zhengShu.length;</div><div class="line">    <span class="comment">//小數部份長度，包括小數點</span></div><div class="line">    <span class="built_in">NSUInteger</span> tempPointLength = [number substringFromIndex:tempIntLength].length;</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (tempIntLength &gt; intLength || tempPointLength &gt; pointLength+<span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">//如果小數部份長度為0，說明限制數字為整數</span></div><div class="line">    <span class="keyword">if</span> (pointLength == <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">if</span> ([CheckTools isPureInt:number]) &#123;</div><div class="line">            <span class="comment">//如果没有小数点，但是第一位数字确是0开头，则不允许输入</span></div><div class="line">            <span class="keyword">if</span> (![number containsString:<span class="string">@"."</span>] &amp;&amp; number.length &gt; <span class="number">1</span> &amp;&amp; [[number substringToIndex:<span class="number">1</span>] isEqualToString:<span class="string">@"0"</span>]) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">if</span> ([CheckTools isPureFloat:number]) &#123;</div><div class="line">            <span class="comment">//如果没有小数点，但是第一位数字确是0开头，则不允许输入</span></div><div class="line">            <span class="keyword">if</span> (![number containsString:<span class="string">@"."</span>] &amp;&amp; number.length &gt; <span class="number">1</span> &amp;&amp; [[number substringToIndex:<span class="number">1</span>] isEqualToString:<span class="string">@"0"</span>]) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - 获取输入文本框字符串</span></div><div class="line">+ (<span class="built_in">NSString</span> *)getResultString:(<span class="built_in">NSString</span> *)currentStr</div><div class="line">                andNextString:(<span class="built_in">NSString</span> *)nextStr</div><div class="line">                      andRang:(<span class="built_in">NSRange</span>)range &#123;</div><div class="line">    <span class="comment">//拼接出最新的字符串</span></div><div class="line">    <span class="built_in">NSMutableString</span> *string = currentStr.mutableCopy;</div><div class="line">    <span class="keyword">if</span> (nextStr.length) &#123;</div><div class="line">        [string insertString:nextStr atIndex:range.location];</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        [string replaceCharactersInRange:range withString:nextStr];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> string;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> *  @author LvChanghui, 15-08-07 14:08:01</div><div class="line"> *</div><div class="line"> *  限制输入数字格式（整数位数以及小数位数）</div><div class="line"> *</div><div class="line"> *  @param textField   当前文本框</div><div class="line"> *  @param nextStr     当前输入的字符</div><div class="line"> *  @param range       输入字符的rang位置</div><div class="line"> *  @param intLength   整数位置长度</div><div class="line"> *  @param pointLength 小数位置长度</div><div class="line"> *</div><div class="line"> *  @return 是否允许继续输入</div><div class="line"> */</div><div class="line">+ (<span class="built_in">BOOL</span>)limitTheNumberTextField:(<span class="built_in">UITextField</span> *)textField</div><div class="line">                  andNextString:(<span class="built_in">NSString</span> *)nextStr</div><div class="line">                        andRang:(<span class="built_in">NSRange</span>)range</div><div class="line">                   andIntLength:(<span class="built_in">NSUInteger</span>)intLength</div><div class="line">                 andPointLength:(<span class="built_in">NSUInteger</span>)pointLength &#123;</div><div class="line">    <span class="comment">//当前文本框的字符串</span></div><div class="line">    <span class="built_in">NSString</span> *currentStr = textField.text;</div><div class="line">    </div><div class="line">    <span class="comment">//拼接出最新的字符串</span></div><div class="line">    <span class="built_in">NSString</span> *number = [<span class="keyword">self</span> getResultString:currentStr andNextString:nextStr andRang:range];</div><div class="line">    </div><div class="line">    <span class="comment">//第一個輸入"."，則自動補全成"0."</span></div><div class="line">    <span class="keyword">if</span> ([textField.text stringByTrimmingCharactersInSet:[<span class="built_in">NSCharacterSet</span> whitespaceCharacterSet]].length == <span class="number">0</span> &amp;&amp; [nextStr isEqualToString:<span class="string">@"."</span>]) &#123;</div><div class="line">        textField.text = <span class="string">@"0."</span>;</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//如果第一个数字是0，且下一个字符为数字，则清空0，将下一个数字作为结果</span></div><div class="line">    <span class="keyword">if</span> (number.length&gt;=<span class="number">2</span>) &#123;</div><div class="line">        <span class="built_in">NSString</span> *tempNum = [number substringToIndex:<span class="number">2</span>];</div><div class="line">        <span class="keyword">if</span> (([tempNum isEqualToString:<span class="string">@"00"</span>] ||</div><div class="line">             [tempNum isEqualToString:<span class="string">@"01"</span>] ||</div><div class="line">             [tempNum isEqualToString:<span class="string">@"02"</span>] ||</div><div class="line">             [tempNum isEqualToString:<span class="string">@"03"</span>] ||</div><div class="line">             [tempNum isEqualToString:<span class="string">@"04"</span>] ||</div><div class="line">             [tempNum isEqualToString:<span class="string">@"05"</span>] ||</div><div class="line">             [tempNum isEqualToString:<span class="string">@"06"</span>] ||</div><div class="line">             [tempNum isEqualToString:<span class="string">@"07"</span>] ||</div><div class="line">             [tempNum isEqualToString:<span class="string">@"08"</span>] ||</div><div class="line">             [tempNum isEqualToString:<span class="string">@"09"</span>]) &amp;&amp;</div><div class="line">            [CheckTools isPureInt:nextStr]) &#123;</div><div class="line">            textField.text = [number substringFromIndex:<span class="number">1</span>];</div><div class="line">            <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//如果删除之后只剩下小数点，则直接清空文本框</span></div><div class="line">    <span class="keyword">if</span> ([number isEqualToString:<span class="string">@"."</span>]) &#123;</div><div class="line">        textField.text = <span class="string">@""</span>;</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (number.length == <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//整數部份長度</span></div><div class="line">    <span class="built_in">NSString</span> *zhengShu = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%ld"</span>, [number integerValue]];</div><div class="line">    <span class="built_in">NSUInteger</span> tempIntLength = zhengShu.length;</div><div class="line">    <span class="comment">//小數部份長度，包括小數點</span></div><div class="line">    <span class="built_in">NSUInteger</span> tempPointLength = [number substringFromIndex:tempIntLength].length;</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (tempIntLength &gt; intLength || tempPointLength &gt; pointLength+<span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">//如果小數部份長度為0，說明限制數字為整數</span></div><div class="line">    <span class="keyword">if</span> (pointLength == <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">if</span> ([CheckTools isPureInt:number]) &#123;</div><div class="line">            <span class="comment">//如果没有小数点，但是第一位数字确是0开头，则不允许输入</span></div><div class="line">            <span class="keyword">if</span> (![number containsString:<span class="string">@"."</span>] &amp;&amp; number.length &gt; <span class="number">1</span> &amp;&amp; [[number substringToIndex:<span class="number">1</span>] isEqualToString:<span class="string">@"0"</span>]) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">if</span> ([CheckTools isPureFloat:number]) &#123;</div><div class="line">            <span class="comment">//如果没有小数点，但是第一位数字确是0开头，则不允许输入</span></div><div class="line">            <span class="keyword">if</span> (![number containsString:<span class="string">@"."</span>] &amp;&amp; number.length &gt; <span class="number">1</span> &amp;&amp; [[number substringToIndex:<span class="number">1</span>] isEqualToString:<span class="string">@"0"</span>]) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - 获取输入文本框字符串</span></div><div class="line">+ (<span class="built_in">NSString</span> *)getResultString:(<span class="built_in">NSString</span> *)currentStr</div><div class="line">                andNextString:(<span class="built_in">NSString</span> *)nextStr</div><div class="line">                      andRang:(<span class="built_in">NSRange</span>)range &#123;</div><div class="line">    <span class="comment">//拼接出最新的字符串</span></div><div class="line">    <span class="built_in">NSMutableString</span> *string = currentStr.mutableCopy;</div><div class="line">    <span class="keyword">if</span> (nextStr.length) &#123;</div><div class="line">        [string insertString:nextStr atIndex:range.location];</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        [string replaceCharactersInRange:range withString:nextStr];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> string;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>下面看看具体使用方式：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark - UITextFieldDelegate</span></div><div class="line">- (<span class="built_in">BOOL</span>)textField:(<span class="built_in">UITextField</span> *)textField shouldChangeCharactersInRange:(<span class="built_in">NSRange</span>)range replacementString:(<span class="built_in">NSString</span> *)string &#123;</div><div class="line">   <span class="keyword">if</span> (string.length) &#123;</div><div class="line">       <span class="comment">//设置整数部分最多2位，小数部分长度为0</span></div><div class="line">       <span class="built_in">BOOL</span> b = [AmountTools limitTheNumberString:textField.text andNextString:string andRang:range andIntLength:<span class="number">2</span> andPointLength:<span class="number">0</span>];</div><div class="line">       <span class="comment">//如果需要实时获取文本框的值，可以使用下面的方法</span></div><div class="line">       <span class="built_in">NSString</span> *tempStr = [AmountTools getResultString:textField.text andNextString:string andRang:range];</div><div class="line">       <span class="keyword">return</span> b;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark - UITextFieldDelegate</span></div><div class="line">- (<span class="built_in">BOOL</span>)textField:(<span class="built_in">UITextField</span> *)textField shouldChangeCharactersInRange:(<span class="built_in">NSRange</span>)range replacementString:(<span class="built_in">NSString</span> *)string &#123;</div><div class="line">   <span class="keyword">if</span> (string.length) &#123;</div><div class="line">       <span class="comment">//设置整数部分最多2位，小数部分长度为0</span></div><div class="line">       <span class="built_in">BOOL</span> b = [AmountTools limitTheNumberTextField:textField andNextString:string andRang:range andIntLength:<span class="number">2</span> andPointLength:<span class="number">0</span>];</div><div class="line">       <span class="comment">//如果需要实时获取文本框的值，可以使用下面的方法</span></div><div class="line">       <span class="built_in">NSString</span> *tempStr = [AmountTools getResultString:textField.text andNextString:string andRang:range];</div><div class="line">       <span class="keyword">return</span> b;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <hr>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
 <p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
@@ -494,11 +494,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -542,10 +542,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
               </li>
              
@@ -554,15 +550,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -582,7 +582,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -590,15 +590,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -606,7 +606,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
+                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -634,10 +634,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Autolayout</a>
               </li>
              
@@ -650,6 +646,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">金额</a>
               </li>
              
@@ -658,15 +662,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -690,10 +690,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打包</a>
               </li>
              
@@ -706,15 +702,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -734,15 +730,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">代码块</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
