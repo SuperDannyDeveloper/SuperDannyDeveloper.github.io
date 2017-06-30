@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>superdanny.link/2015/07/08/iTerm_2&&Oh_My_Zsh/</loc>
+    
+    <lastmod>2017-06-30T09:32:20.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>superdanny.link/2017/04/27/iOS-High-precision-calculation02/</loc>
     
     <lastmod>2017-06-30T05:52:05.000Z</lastmod>
@@ -324,14 +331,14 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/07/08/Update-Xcode-Plug-in/</loc>
+    <loc>superdanny.link/2015/09/09/Using-shell-script-to-automatic-packaging/</loc>
     
     <lastmod>2016-11-30T01:56:56.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/09/Using-shell-script-to-automatic-packaging/</loc>
+    <loc>superdanny.link/2015/07/08/Update-Xcode-Plug-in/</loc>
     
     <lastmod>2016-11-30T01:56:56.000Z</lastmod>
     
@@ -352,14 +359,14 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/07/25/Swift-Series-Introduction/</loc>
+    <loc>superdanny.link/2015/07/27/Swift-Series-CollectionType/</loc>
     
     <lastmod>2016-11-30T01:56:54.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/07/27/Swift-Series-CollectionType/</loc>
+    <loc>superdanny.link/2015/07/25/Swift-Series-Introduction/</loc>
     
     <lastmod>2016-11-30T01:56:54.000Z</lastmod>
     
@@ -397,13 +404,6 @@
     <loc>superdanny.link/2015/09/21/KVC:KVO/</loc>
     
     <lastmod>2016-11-30T01:56:51.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/07/08/iTerm_2&&Oh_My_Zsh/</loc>
-    
-    <lastmod>2016-11-30T01:56:50.000Z</lastmod>
     
   </url>
   
@@ -485,14 +485,14 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/19/Improve-the-efficiency-of-iOS-development/</loc>
+    <loc>superdanny.link/2015/09/24/iOS-about-certification-guide/</loc>
     
     <lastmod>2016-11-30T01:56:41.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/24/iOS-about-certification-guide/</loc>
+    <loc>superdanny.link/2015/09/19/Improve-the-efficiency-of-iOS-development/</loc>
     
     <lastmod>2016-11-30T01:56:41.000Z</lastmod>
     
@@ -520,14 +520,14 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/16/Custom-UITextField-and-UITextView-function/</loc>
+    <loc>superdanny.link/2015/08/20/Custom-UIView-fillet/</loc>
     
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/08/20/Custom-UIView-fillet/</loc>
+    <loc>superdanny.link/2015/09/16/Custom-UITextField-and-UITextView-function/</loc>
     
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     

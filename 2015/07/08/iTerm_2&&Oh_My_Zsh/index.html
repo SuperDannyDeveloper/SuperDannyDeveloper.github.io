@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://ww2.sinaimg.cn/mw690/81f8a509gw1eva0lo5u4ij20fu0dxwhf.jpg">
 <meta property="og:image" content="http://ww4.sinaimg.cn/mw690/81f8a509gw1eva0ltpbjrj20po0f00w0.jpg">
 <meta property="og:image" content="http://ww4.sinaimg.cn/mw690/81f8a509gw1eva0lz9dryj20po0f0tbj.jpg">
-<meta property="og:updated_time" content="2016-11-30T01:56:50.000Z">
+<meta property="og:updated_time" content="2017-06-30T09:32:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iTerm 2 &amp;&amp; Oh My Zsh「DIY教程」">
 <meta name="twitter:description" content="下面，我将分步骤讲解我是怎么一步一步完成DIY过程 1.首先下载 iTerm 2 2.打开iTerm 2 3.输入下面指令安装oh-my-zsh 4.接下来安装Powerline 5.下载、安装库字体库 6.设置iTerm 2的Regular Font 和 Non-ASCII Font 7.配色方案 8.使用agnoster主题 9.增加指令高亮效果——zsh-syntax-highlight">
@@ -252,10 +252,11 @@ var _hmt = _hmt || [];
 <p>保存文件。</p>
 <hr>
 <h2 id="问题解答区"><a href="#问题解答区" class="headerlink" title="问题解答区"></a>问题解答区</h2><ol>
-<li>启动iTerm 2 默认使用dash改用zsh解决方法：<br><code>chsh -s /bin/zsh</code></li>
-<li>执行指令<code>pip install powerline-status</code>出错解决方法：<br>需要下载苹果官方的<a href="https://developer.apple.com/downloads/index.action?name=for%20Xcode%20" target="_blank" rel="external">Command line</a>。必須官方工具下载最新版 Command Line</li>
-<li>⌘+Q关闭iTerm 2 时每次弹窗提示问题：<br>iTerm 2 中，进入<code>Preference</code>-<code>General</code>-<code>Closing栏目</code>，将<code>Confirm &quot;Quit iTerm2(⌘Q)&quot; command</code>选项勾选去掉就行</li>
-<li>找不到.zshrc文件问题：<br>我这里将我的.zshrc文件分享出来。供大家下载<a href="http://pan.baidu.com/s/1sk1LqCt" target="_blank" rel="external">网盘</a></li>
+<li>启动iTerm 2 默认使用dash改用zsh解决方法：<br> <code>chsh -s /bin/zsh</code></li>
+<li>执行指令<code>pip install powerline-status</code>出错解决方法：<br> 需要下载苹果官方的<a href="https://developer.apple.com/downloads/index.action?name=for%20Xcode%20" target="_blank" rel="external">Command line</a>。必須官方工具下载最新版 Command Line</li>
+<li>⌘+Q关闭iTerm 2 时每次弹窗提示问题：<br> iTerm 2 中，进入<code>Preference</code>-<code>General</code>-<code>Closing栏目</code>，将<code>Confirm &quot;Quit iTerm2(⌘Q)&quot; command</code>选项勾选去掉就行</li>
+<li>找不到.zshrc文件问题：<br> 我这里将我的.zshrc文件分享出来。供大家下载<a href="http://pan.baidu.com/s/1sk1LqCt" target="_blank" rel="external">网盘</a></li>
+<li>路径前缀的XX@XX太长，缩短问题：<br> 在此感谢评论区的朋友提供的<a href="http://blog.csdn.net/z3512498/article/details/51245853" target="_blank" rel="external">解决方案</a>。在<code>~/.oh-my-zsh/themes</code>路径下找到<code>agnoster.zsh-theme</code>文件，可使用文本工具打开，将里面的<code>build_prompt</code>下的<code>prompt_context</code>字段在前面加<code>#</code>注释掉即可。</li>
 </ol>
 <hr>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
@@ -559,11 +560,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -579,15 +580,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">终端</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CocoaPods</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -615,11 +616,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -639,14 +640,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
               </li>
              
@@ -655,11 +648,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -683,19 +684,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -707,7 +700,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -715,7 +716,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -727,23 +728,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Realm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -752,6 +745,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件预览</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -767,6 +768,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
@@ -775,7 +780,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
+                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -795,19 +800,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">In-House</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -820,6 +817,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DIY</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
               </li>
             
             <div class="clearfix"></div>
