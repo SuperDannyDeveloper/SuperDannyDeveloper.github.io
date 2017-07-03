@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>superdanny.link/2017/06/16/iOS-Limit-the-number-format/</loc>
+    <lastmod>2017-07-03T07:35:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>数值类型(金额)限制与判断</title>
+        <pubTime>2017-06-16T05:36:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>金额</tag>
+         
+        <tag>数值</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2017/05/09/iOS-IJKPlayer/</loc>
     <lastmod>2017-07-03T06:30:59.000Z</lastmod>
     <data>
@@ -58,30 +82,6 @@
         <tag>iOS</tag>
          
         <tag>金额计算</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2017/06/16/iOS-Limit-the-number-format/</loc>
-    <lastmod>2017-06-30T05:29:23.000Z</lastmod>
-    <data>
-        <display>
-        <title>数值类型(金额)限制与判断</title>
-        <pubTime>2017-06-16T05:36:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-        <tag>金额</tag>
-         
-        <tag>数值</tag>
          
          
            
@@ -944,28 +944,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/07/08/Update-Xcode-Plug-in/</loc>
-    <lastmod>2016-11-30T01:56:56.000Z</lastmod>
-    <data>
-        <display>
-        <title>关于Xcode更新之后插件失效以及安装失败详解</title>
-        <pubTime>2015-07-08T14:44:00.000Z</pubTime>
-        
-        <tag>Xcode</tag>
-         
-        <tag>插件</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2015/09/09/Using-shell-script-to-automatic-packaging/</loc>
     <lastmod>2016-11-30T01:56:56.000Z</lastmod>
     <data>
@@ -988,19 +966,21 @@
 
     
   <url>
-    <loc>superdanny.link/2015/01/23/TabBar-hidesBottomBarWhenPushed/</loc>
-    <lastmod>2016-11-30T01:56:55.000Z</lastmod>
+    <loc>superdanny.link/2015/07/08/Update-Xcode-Plug-in/</loc>
+    <lastmod>2016-11-30T01:56:56.000Z</lastmod>
     <data>
         <display>
-        <title>解决TabBar隐藏与显现hidesBottomBarWhenPushed问题</title>
-        <pubTime>2015-01-23T04:00:00.000Z</pubTime>
+        <title>关于Xcode更新之后插件失效以及安装失败详解</title>
+        <pubTime>2015-07-08T14:44:00.000Z</pubTime>
         
-        <tag>iOS</tag>
+        <tag>Xcode</tag>
+         
+        <tag>插件</tag>
          
          
            
              
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -1028,14 +1008,14 @@
 
     
   <url>
-    <loc>superdanny.link/2015/07/25/Swift-Series-Introduction/</loc>
-    <lastmod>2016-11-30T01:56:54.000Z</lastmod>
+    <loc>superdanny.link/2015/01/23/TabBar-hidesBottomBarWhenPushed/</loc>
+    <lastmod>2016-11-30T01:56:55.000Z</lastmod>
     <data>
         <display>
-        <title>Swift入坑系列—前言</title>
-        <pubTime>2015-07-25T10:45:00.000Z</pubTime>
+        <title>解决TabBar隐藏与显现hidesBottomBarWhenPushed问题</title>
+        <pubTime>2015-01-23T04:00:00.000Z</pubTime>
         
-        <tag>Swift</tag>
+        <tag>iOS</tag>
          
          
            
@@ -1068,14 +1048,14 @@
 
     
   <url>
-    <loc>superdanny.link/2015/08/18/Storyboard/</loc>
-    <lastmod>2016-11-30T01:56:53.000Z</lastmod>
+    <loc>superdanny.link/2015/07/25/Swift-Series-Introduction/</loc>
+    <lastmod>2016-11-30T01:56:54.000Z</lastmod>
     <data>
         <display>
-        <title>初探Storyboard</title>
-        <pubTime>2015-08-18T07:05:00.000Z</pubTime>
+        <title>Swift入坑系列—前言</title>
+        <pubTime>2015-07-25T10:45:00.000Z</pubTime>
         
-        <tag>iOS</tag>
+        <tag>Swift</tag>
          
          
            
@@ -1108,6 +1088,26 @@
 
     
   <url>
+    <loc>superdanny.link/2015/08/18/Storyboard/</loc>
+    <lastmod>2016-11-30T01:56:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>初探Storyboard</title>
+        <pubTime>2015-08-18T07:05:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2015/09/09/Quickly-access-github/</loc>
     <lastmod>2016-11-30T01:56:52.000Z</lastmod>
     <data>
@@ -1115,9 +1115,9 @@
         <title>GitHub无法访问或访问缓慢解决办法</title>
         <pubTime>2015-09-09T15:16:00.000Z</pubTime>
         
-        <tag>Mac</tag>
-         
         <tag>GitHub</tag>
+         
+        <tag>Mac</tag>
          
          
            
@@ -1161,9 +1161,9 @@
         <title>MacOS X隐藏和显示隐藏文件</title>
         <pubTime>2015-09-09T19:02:00.000Z</pubTime>
         
-        <tag>文件操作</tag>
-         
         <tag>Mac</tag>
+         
+        <tag>文件操作</tag>
          
          
            
@@ -1511,26 +1511,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/17/Fix-svn-directory-is-out-of-date/</loc>
-    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>解决SVN提交代码出现目录过期问题</title>
-        <pubTime>2015-09-17T07:35:00.000Z</pubTime>
-        
-        <tag>SVN</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
     <lastmod>2016-11-30T01:56:39.000Z</lastmod>
     <data>
@@ -1544,6 +1524,26 @@
            
              
               <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/09/17/Fix-svn-directory-is-out-of-date/</loc>
+    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>解决SVN提交代码出现目录过期问题</title>
+        <pubTime>2015-09-17T07:35:00.000Z</pubTime>
+        
+        <tag>SVN</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
           
         </display>
     </data>

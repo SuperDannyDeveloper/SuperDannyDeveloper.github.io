@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>superdanny.link/2017/06/16/iOS-Limit-the-number-format/</loc>
+    
+    <lastmod>2017-07-03T07:35:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>superdanny.link/2017/05/09/iOS-IJKPlayer/</loc>
     
     <lastmod>2017-07-03T06:30:59.000Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>superdanny.link/2017/04/27/iOS-High-precision-calculation02/</loc>
     
     <lastmod>2017-06-30T05:52:05.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2017/06/16/iOS-Limit-the-number-format/</loc>
-    
-    <lastmod>2017-06-30T05:29:23.000Z</lastmod>
     
   </url>
   
@@ -331,13 +331,6 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/07/08/Update-Xcode-Plug-in/</loc>
-    
-    <lastmod>2016-11-30T01:56:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/2015/09/09/Using-shell-script-to-automatic-packaging/</loc>
     
     <lastmod>2016-11-30T01:56:56.000Z</lastmod>
@@ -345,9 +338,9 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/01/23/TabBar-hidesBottomBarWhenPushed/</loc>
+    <loc>superdanny.link/2015/07/08/Update-Xcode-Plug-in/</loc>
     
-    <lastmod>2016-11-30T01:56:55.000Z</lastmod>
+    <lastmod>2016-11-30T01:56:56.000Z</lastmod>
     
   </url>
   
@@ -359,14 +352,21 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/07/25/Swift-Series-Introduction/</loc>
+    <loc>superdanny.link/2015/01/23/TabBar-hidesBottomBarWhenPushed/</loc>
+    
+    <lastmod>2016-11-30T01:56:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/07/27/Swift-Series-CollectionType/</loc>
     
     <lastmod>2016-11-30T01:56:54.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/07/27/Swift-Series-CollectionType/</loc>
+    <loc>superdanny.link/2015/07/25/Swift-Series-Introduction/</loc>
     
     <lastmod>2016-11-30T01:56:54.000Z</lastmod>
     
