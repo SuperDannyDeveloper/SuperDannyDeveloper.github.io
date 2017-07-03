@@ -15,7 +15,7 @@
 <meta property="og:url" content="superdanny.link/2017/05/09/iOS-IJKPlayer/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
 <meta property="og:description" content="需求公司以前的直播业务是用Flash开发。为了适应趋势，从去年开始，公司打算使用原生进行开发。这里整理了一些相关的资料。对自己以后也许有所帮助。所谓前人种树，后人乘凉。在此，感谢所有默默无闻分享自己一线经验的老前辈们。">
-<meta property="og:updated_time" content="2017-05-13T09:13:28.000Z">
+<meta property="og:updated_time" content="2017-07-03T06:30:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IJKPlayer相关指南">
 <meta name="twitter:description" content="需求公司以前的直播业务是用Flash开发。为了适应趋势，从去年开始，公司打算使用原生进行开发。这里整理了一些相关的资料。对自己以后也许有所帮助。所谓前人种树，后人乘凉。在此，感谢所有默默无闻分享自己一线经验的老前辈们。">
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
         <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>公司以前的直播业务是用Flash开发。为了适应趋势，从去年开始，公司打算使用原生进行开发。这里整理了一些相关的资料。对自己以后也许有所帮助。所谓前人种树，后人乘凉。在此，感谢所有默默无闻分享自己一线经验的老前辈们。</p>
 <a id="more"></a> 
 <h2 id="参数相关"><a href="#参数相关" class="headerlink" title="参数相关"></a>参数相关</h2><p><code>IJKFFOptions</code>参数说明</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//打开h265硬解</span></div><div class="line">ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_PLAYER, <span class="string">"mediacodec-hevc"</span>, <span class="number">1</span>);</div><div class="line"><span class="comment">//如果是rtsp协议，可以优先用tcp(默认是用udp)</span></div><div class="line">[options setFormatOptionValue:<span class="string">@"tcp"</span> forKey:<span class="string">@"rtsp_transport"</span>];</div><div class="line"><span class="comment">//播放前的探测Size，默认是1M, 改小一点会出画面更快</span></div><div class="line">[options setFormatOptionIntValue:<span class="number">1024</span>*<span class="number">16</span>*<span class="number">0.5</span> forKey:<span class="string">@"probsize"</span>];</div><div class="line"><span class="comment">//播放前的探测时间</span></div><div class="line">[options setFormatOptionIntValue:<span class="number">50000</span> forKey:<span class="string">@"analyzeduration"</span>];</div><div class="line"><span class="comment">//开启/关闭 硬解码（硬件解码CPU消耗低。软解，更稳定）</span></div><div class="line">[options setPlayerOptionIntValue:<span class="number">0</span> forKey:<span class="string">@"videotoolbox"</span>];</div><div class="line"><span class="comment">//解码参数，画面更清晰</span></div><div class="line">[options setCodecOptionIntValue:IJK_AVDISCARD_DEFAULT forKey:<span class="string">@"skip_loop_filter"</span>];</div><div class="line">[options setCodecOptionIntValue:IJK_AVDISCARD_DEFAULT forKey:<span class="string">@"skip_frame"</span>];</div><div class="line"></div><div class="line"><span class="comment">//以下是直播、点播参数设置不同</span></div><div class="line"><span class="keyword">if</span> (直播) &#123;</div><div class="line">   <span class="comment">// Param for living</span></div><div class="line">   <span class="comment">//最大缓存大小是3秒，可以依据自己的需求修改</span></div><div class="line">   [options setPlayerOptionIntValue:<span class="number">3000</span> forKey:<span class="string">@"max_cached_duration"</span>];</div><div class="line">   <span class="comment">//无限读</span></div><div class="line">   [options setPlayerOptionIntValue:<span class="number">1</span> forKey:<span class="string">@"infbuf"</span>];  </div><div class="line">   <span class="comment">//关闭播放器缓冲</span></div><div class="line">   [options setPlayerOptionIntValue:<span class="number">0</span> forKey:<span class="string">@"packet-buffering"</span>];</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">   <span class="comment">// Param for playback</span></div><div class="line">   [options setPlayerOptionIntValue:<span class="number">0</span> forKey:<span class="string">@"max_cached_duration"</span>];</div><div class="line">   [options setPlayerOptionIntValue:<span class="number">0</span> forKey:<span class="string">@"infbuf"</span>];</div><div class="line">   [options setPlayerOptionIntValue:<span class="number">1</span> forKey:<span class="string">@"packet-buffering"</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//在视频帧处理不过来的时候丢弃一些帧达到同步的效果</span></div><div class="line"><span class="comment">//跳帧开关，如果cpu解码能力不足，可以设置成5，否则会引起音视频不同步，也可以通过设置它来跳帧达到倍速播放</span></div><div class="line">[options setPlayerOptionIntValue:<span class="number">5</span><span class="comment">/*0*/</span> forKey:<span class="string">@"framedrop"</span>];</div><div class="line"><span class="comment">//最大fps</span></div><div class="line">[options setPlayerOptionIntValue:<span class="number">30</span> forKey:<span class="string">@"max-fps"</span>];</div><div class="line"><span class="comment">//帧速率(fps) 可以改，确认非标准桢率会导致音画不同步，所以只能设定为15或者29.97</span></div><div class="line">[options setPlayerOptionIntValue:<span class="number">29.97</span> forKey:<span class="string">@"r"</span>];</div><div class="line"><span class="comment">//设置音量大小，256为标准音量。（要设置成两倍音量时则输入512，依此类推）</span></div><div class="line">[options setPlayerOptionIntValue:<span class="number">512</span> forKey:<span class="string">@"vol"</span>];</div><div class="line"><span class="comment">//指定最大宽度</span></div><div class="line">[options setPlayerOptionIntValue:<span class="number">960</span> forKey:<span class="string">@"videotoolbox-max-frame-width"</span>];</div><div class="line"><span class="comment">//自动转屏开关</span></div><div class="line">[options setFormatOptionIntValue:<span class="number">0</span> forKey:<span class="string">@"auto_convert"</span>];</div><div class="line"><span class="comment">//重连次数</span></div><div class="line">[options setFormatOptionIntValue:<span class="number">1</span> forKey:<span class="string">@"reconnect"</span>];</div><div class="line"><span class="comment">//超时时间，timeout参数只对http设置有效。若果你用rtmp设置timeout，ijkplayer内部会忽略timeout参数。rtmp的timeout参数含义和http的不一样。</span></div><div class="line">[options setFormatOptionIntValue:<span class="number">30</span> * <span class="number">1000</span> * <span class="number">1000</span> forKey:<span class="string">@"timeout"</span>];</div></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//打开h265硬解</span></div><div class="line">ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_PLAYER, <span class="string">"mediacodec-hevc"</span>, <span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="comment">/*-------------CodecOption-------------*/</span></div><div class="line"><span class="comment">//解码参数，画面更清晰</span></div><div class="line">[options setCodecOptionIntValue:IJK_AVDISCARD_DEFAULT forKey:<span class="string">@"skip_loop_filter"</span>];</div><div class="line">[options setCodecOptionIntValue:IJK_AVDISCARD_DEFAULT forKey:<span class="string">@"skip_frame"</span>];</div><div class="line"></div><div class="line"><span class="comment">//以下是直播、点播参数设置不同</span></div><div class="line"><span class="keyword">if</span> (直播) &#123;</div><div class="line">   <span class="comment">// Param for living</span></div><div class="line">   <span class="comment">//最大缓存大小是3秒，可以依据自己的需求修改</span></div><div class="line">   [options setPlayerOptionIntValue:<span class="number">3000</span> forKey:<span class="string">@"max_cached_duration"</span>];</div><div class="line">   <span class="comment">//无限读</span></div><div class="line">   [options setPlayerOptionIntValue:<span class="number">1</span> forKey:<span class="string">@"infbuf"</span>];  </div><div class="line">   <span class="comment">//关闭播放器缓冲</span></div><div class="line">   [options setPlayerOptionIntValue:<span class="number">0</span> forKey:<span class="string">@"packet-buffering"</span>];</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">   <span class="comment">// Param for playback</span></div><div class="line">   [options setPlayerOptionIntValue:<span class="number">0</span> forKey:<span class="string">@"max_cached_duration"</span>];</div><div class="line">   [options setPlayerOptionIntValue:<span class="number">0</span> forKey:<span class="string">@"infbuf"</span>];</div><div class="line">   [options setPlayerOptionIntValue:<span class="number">1</span> forKey:<span class="string">@"packet-buffering"</span>];</div><div class="line">&#125;</div><div class="line"><span class="comment">/*-------------PlayerOption-------------*/</span></div><div class="line"><span class="comment">//在视频帧处理不过来的时候丢弃一些帧达到同步的效果</span></div><div class="line"><span class="comment">//跳帧开关，如果cpu解码能力不足，可以设置成5，否则会引起音视频不同步，也可以通过设置它来跳帧达到倍速播放</span></div><div class="line">[options setPlayerOptionIntValue:<span class="number">5</span><span class="comment">/*0*/</span> forKey:<span class="string">@"framedrop"</span>];</div><div class="line"><span class="comment">//最大fps</span></div><div class="line">[options setPlayerOptionIntValue:<span class="number">30</span> forKey:<span class="string">@"max-fps"</span>];</div><div class="line"><span class="comment">//帧速率(fps) 可以改，确认非标准桢率会导致音画不同步，所以只能设定为15或者29.97</span></div><div class="line">[options setPlayerOptionIntValue:<span class="number">29.97</span> forKey:<span class="string">@"r"</span>];</div><div class="line"><span class="comment">//设置音量大小，256为标准音量。（要设置成两倍音量时则输入512，依此类推）</span></div><div class="line">[options setPlayerOptionIntValue:<span class="number">512</span> forKey:<span class="string">@"vol"</span>];</div><div class="line"><span class="comment">//指定最大宽度</span></div><div class="line">[options setPlayerOptionIntValue:<span class="number">960</span> forKey:<span class="string">@"videotoolbox-max-frame-width"</span>];</div><div class="line"><span class="comment">//开启/关闭 硬解码（硬件解码CPU消耗低。软解，更稳定）</span></div><div class="line">[options setPlayerOptionIntValue:<span class="number">0</span> forKey:<span class="string">@"videotoolbox"</span>];</div><div class="line"><span class="comment">//是否有声音</span></div><div class="line">[options setPlayerOptionIntValue:<span class="number">1</span>  forKey:<span class="string">@"an"</span>];</div><div class="line"><span class="comment">//是否有视频</span></div><div class="line">[options setPlayerOptionIntValue:<span class="number">1</span>  forKey:<span class="string">@"vn"</span>];</div><div class="line"><span class="comment">//每处理一个packet之后刷新io上下文</span></div><div class="line">[options setPlayerOptionIntValue:<span class="number">1</span> forKey:<span class="string">@"flush_packets"</span>];</div><div class="line"><span class="comment">//是否禁止图像显示(只输出音频)</span></div><div class="line">[options setPlayerOptionIntValue:<span class="number">1</span> forKey:<span class="string">@"nodisp"</span>];</div><div class="line"><span class="comment">//</span></div><div class="line">[options setPlayerOptionIntValue:<span class="number">0</span> forKey:<span class="string">@"start-on-prepared"</span>];</div><div class="line"><span class="comment">//</span></div><div class="line">[options setPlayerOptionIntValue:<span class="string">@"fcc-_es2"</span> forKey:<span class="string">@"overlay-format"</span>];</div><div class="line"><span class="comment">//</span></div><div class="line">[options setPlayerOptionIntValue:<span class="number">3</span> forKey:<span class="string">@"video-pictq-size"</span>];</div><div class="line"><span class="comment">//</span></div><div class="line">[options setPlayerOptionIntValue:<span class="number">25</span> forKey:<span class="string">@"min-frames"</span>];</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">/*-------------FormatOption-------------*/</span></div><div class="line"><span class="comment">//如果是rtsp协议，可以优先用tcp(默认是用udp)</span></div><div class="line">[options setFormatOptionValue:<span class="string">@"tcp"</span> forKey:<span class="string">@"rtsp_transport"</span>];</div><div class="line"><span class="comment">//播放前的探测Size，默认是1M, 改小一点会出画面更快</span></div><div class="line">[options setFormatOptionIntValue:<span class="number">1024</span>*<span class="number">16</span>*<span class="number">0.5</span> forKey:<span class="string">@"probsize"</span>];</div><div class="line"><span class="comment">//播放前的探测时间</span></div><div class="line">[options setFormatOptionIntValue:<span class="number">50000</span> forKey:<span class="string">@"analyzeduration"</span>];</div><div class="line"><span class="comment">//自动转屏开关</span></div><div class="line">[options setFormatOptionIntValue:<span class="number">0</span> forKey:<span class="string">@"auto_convert"</span>];</div><div class="line"><span class="comment">//重连次数</span></div><div class="line">[options setFormatOptionIntValue:<span class="number">1</span> forKey:<span class="string">@"reconnect"</span>];</div><div class="line"><span class="comment">//超时时间，timeout参数只对http设置有效。若果你用rtmp设置timeout，ijkplayer内部会忽略timeout参数。rtmp的timeout参数含义和http的不一样。</span></div><div class="line">[options setFormatOptionIntValue:<span class="number">30</span> * <span class="number">1000</span> * <span class="number">1000</span> forKey:<span class="string">@"timeout"</span>];</div><div class="line"><span class="comment">//</span></div><div class="line">[options setFormatOptionIntValue:<span class="string">@"nobuffer"</span> forKey:<span class="string">@"fflags"</span>];</div><div class="line"><span class="comment">//</span></div><div class="line">[options setFormatOptionIntValue:<span class="string">@"ijkplayer"</span> forKey:<span class="string">@"user-agent"</span>];</div><div class="line"><span class="comment">//</span></div><div class="line">[options setFormatOptionIntValue:<span class="number">0</span> forKey:<span class="string">@"safe"</span>];</div><div class="line"><span class="comment">//</span></div><div class="line">[options setFormatOptionIntValue:<span class="number">0</span> forKey:<span class="string">@"http-detect-range-support"</span>];</div><div class="line"><span class="comment">//</span></div><div class="line">[options setFormatOptionIntValue:<span class="number">4628439040</span> forKey:<span class="string">@"ijkapplication"</span>];</div><div class="line"><span class="comment">//</span></div><div class="line">[options setFormatOptionIntValue:<span class="number">6176477408</span> forKey:<span class="string">@"ijkiomanager"</span>];</div></pre></td></tr></table></figure>
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p><code>skip_loop_filter</code>参数相关</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// for codec option 'skip_loop_filter' and 'skip_frame'</span></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">enum</span> IJKAVDiscard &#123;</div><div class="line">    <span class="comment">/* We leave some space between them for extensions (drop some</span></div><div class="line">     * keyframes for intra-only or drop just some bidir frames). */</div><div class="line">    IJK_AVDISCARD_NONE    =<span class="number">-16</span>, <span class="comment">///&lt; discard nothing</span></div><div class="line">    IJK_AVDISCARD_DEFAULT =  <span class="number">0</span>, <span class="comment">///&lt; discard useless packets like 0 size packets in avi</span></div><div class="line">    IJK_AVDISCARD_NONREF  =  <span class="number">8</span>, <span class="comment">///&lt; discard all non reference</span></div><div class="line">    IJK_AVDISCARD_BIDIR   = <span class="number">16</span>, <span class="comment">///&lt; discard all bidirectional frames</span></div><div class="line">    IJK_AVDISCARD_NONKEY  = <span class="number">32</span>, <span class="comment">///&lt; discard all frames except keyframes</span></div><div class="line">    IJK_AVDISCARD_ALL     = <span class="number">48</span>, <span class="comment">///&lt; discard all</span></div><div class="line">&#125; IJKAVDiscard;</div></pre></td></tr></table></figure>
 <blockquote>
@@ -566,15 +566,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -586,19 +594,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -610,7 +614,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,11 +626,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -638,15 +642,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -670,11 +670,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Autolayout</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">动画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -690,14 +698,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">金额</a>
               </li>
              
@@ -706,15 +706,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Realm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -726,11 +734,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -746,15 +750,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -786,11 +786,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">iOS9</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">企业级证书打包</a>
+                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -798,7 +794,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
+                <a href="javascript:void(0)" class="js-tag color5">iOS9</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">企业级证书打包</a>
               </li>
             
             <div class="clearfix"></div>
