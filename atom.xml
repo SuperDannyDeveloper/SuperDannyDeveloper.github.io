@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="superdanny.link/"/>
-  <updated>2017-07-03T07:35:12.000Z</updated>
+  <updated>2017-07-04T09:43:05.000Z</updated>
   <id>superdanny.link/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iOS更改AppIcon</title>
+    <link href="superdanny.link/2017/07/03/iOS-Alternate-Icon/"/>
+    <id>superdanny.link/2017/07/03/iOS-Alternate-Icon/</id>
+    <published>2017-07-03T10:44:00.000Z</published>
+    <updated>2017-07-04T09:43:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>iOS 10.3出了挺多的新功能，其中有一个就是可以自定义更改AppIcon。这个功能以前我们只能在苹果的时钟上面看出来。但是一直没有对外开放。现在开放出来，也算是一种突破。</p>
+<a id="more"></a> 
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>苹果在iOS 10.3中，多了一个<code>setAlternateIconName:completionHandler:</code>方法用于更改AppIcon。</p>
+<p>1、我们先创建一个工程，然后在Info.plist文件里面新建一个<code>CFBundleIcons</code>,然后在里面配置可替换的AppIcon。<br>    <img src="http://wx3.sinaimg.cn/large/81f8a509gy1fh7z5wp8nej212s0lwgn1.jpg" alt="打开plist文件"><br>    <img src="http://wx4.sinaimg.cn/large/81f8a509gy1fh7z601txgj212q0ci408.jpg" alt="配置plist"><br>    具体plist配置如下：</p>
+<pre><code><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>CFBundleIcons<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">key</span>&gt;</span>CFBundlePrimaryIcon<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>CFBundleIconFiles<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">array</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>AppIcon<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">array</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">key</span>&gt;</span>CFBundleAlternateIcons<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>icon01<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">key</span>&gt;</span>CFBundleIconFiles<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">array</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">string</span>&gt;</span>icon01<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">array</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>icon02<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">key</span>&gt;</span>CFBundleIconFiles<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">array</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">string</span>&gt;</span>icon02<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">array</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">key</span>&gt;</span>UIPrerenderedIcon<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">false</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div></pre></td></tr></table></figure>
+</code></pre><p>2、将所有要替换的AppIcon加进工程里面，这里需要注意的是，不能放在<code>Assets.xcassets</code>里面，否则无效。<br>    <img src="http://wx4.sinaimg.cn/large/81f8a509gy1fh7z68hb44j208e0923yy.jpg" alt="icons"><br>3、代码实现：</p>
+<pre><code><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//替換icon</span></div><div class="line">- (<span class="keyword">void</span>)changeIconButtonClick:(<span class="built_in">NSUInteger</span>)index &#123;</div><div class="line">    <span class="keyword">if</span> ([<span class="built_in">UIApplication</span> sharedApplication].supportsAlternateIcons) &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"你可以更換icon"</span>);</div><div class="line">        [[<span class="built_in">UIApplication</span> sharedApplication] setAlternateIconName:_iconArr[index] completionHandler:^(<span class="built_in">NSError</span> * _Nullable error) &#123;</div><div class="line">            <span class="keyword">if</span> (!error) &#123;</div><div class="line">                <span class="built_in">NSLog</span>(<span class="string">@"成功更換成%@"</span>,_iconArr[index]);</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                <span class="built_in">NSLog</span>(<span class="string">@"error:%@"</span>,error);</div><div class="line">            &#125;</div><div class="line">        &#125;];</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"非常抱歉，你不能更換icon"</span>);</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//還原icon</span></div><div class="line">- (<span class="keyword">void</span>)backToPrimaryIconAction:(<span class="keyword">id</span>)sender &#123;</div><div class="line">    <span class="keyword">if</span> ([<span class="built_in">UIApplication</span> sharedApplication].alternateIconName != <span class="literal">nil</span>) &#123;</div><div class="line">        <span class="comment">//已經被替換掉了圖標</span></div><div class="line">        [[<span class="built_in">UIApplication</span> sharedApplication] setAlternateIconName:<span class="literal">nil</span> completionHandler:^(<span class="built_in">NSError</span> * _Nullable error) &#123;</div><div class="line">            <span class="keyword">if</span> (!error) &#123;</div><div class="line">                <span class="built_in">NSLog</span>(<span class="string">@"成功還原圖標"</span>);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="built_in">NSLog</span>(<span class="string">@"error:%@"</span>,error);</div><div class="line">            &#125;</div><div class="line">        &#125;];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><p>最终效果如下<br><img src="http://wx2.sinaimg.cn/large/81f8a509gy1fh7zi2bgxrg207p0dthdt.gif" alt="效果图"></p>
+<p>附上写好的<a href="/uploads/Demos/AlternateIcon.zip">Demo</a></p>
+<hr>
+<p>再一次感谢您花费时间阅读这篇文章！</p>
+<p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;iOS 10.3出了挺多的新功能，其中有一个就是可以自定义更改AppIcon。这个功能以前我们只能在苹果的时钟上面看出来。但是一直没有对外开放。现在开放出来，也算是一种突破。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="移动端" scheme="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    
+    
+      <category term="iOS" scheme="superdanny.link/tags/iOS/"/>
+    
+      <category term="动态icon" scheme="superdanny.link/tags/%E5%8A%A8%E6%80%81icon/"/>
+    
+  </entry>
   
   <entry>
     <title>数值类型(金额)限制与判断</title>
@@ -1099,80 +1135,6 @@
       <category term="Swift" scheme="superdanny.link/tags/Swift/"/>
     
       <category term="读书笔记" scheme="superdanny.link/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Apple Pay 入门（转）</title>
-    <link href="superdanny.link/2016/02/20/iOS-Apple-Pay/"/>
-    <id>superdanny.link/2016/02/20/iOS-Apple-Pay/</id>
-    <published>2016-02-20T05:30:00.000Z</published>
-    <updated>2016-11-30T01:57:35.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://developer.apple.com/apple-pay/get-started/" target="_blank" rel="external">Pay官方参考资料</a></p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>利用 Apple Pay，用户可以在您的 App 中轻松安全地购买实物商品和服务。客户更喜欢使用 Apple Pay，因为他们在购物时无需输入账单、送货和联系人详细信息。而且，Apple Pay 具有更高的安全性，能让客户和开发者安心使用。Apple 不会存储或共享客户的实际信用卡和借记卡卡号，因此商家和 App 开发者无需负责管理和保护实际的信用卡和借记卡卡号。进一步了解 <a href="https://support.apple.com/zh-cn/HT203027" target="_blank" rel="external">Apple Pay 的安全与隐私政策</a>。</p>
-<a id="more"></a>
-<p>由于具备这些优点，在按照推荐方式实施了 Apple Pay 之后，开发者的结账转换率提高为原来的 2 倍，结账时间也大幅缩短；而且，在整合了 Apple Pay 之后，客户的忠诚度和购买频率也都提高了。</p>
-<p>在您的 App 中，用户可以使用 Touch ID 为付款授权，以释放安全地存储在 iPhone 和 iPad 上的令牌化信用卡和借记卡付款凭证。此外，用户还可将其账单、送货和联系人信息存储在 Wallet 这一 App 中。这样一来，当客户在您的 App 中使用 Touch ID 为购买项目授权时，系统就会随付款凭证一道提供这些信息。</p>
-<p>目前，Apple Pay 可在澳大利亚、加拿大、中国、英国和美国使用。</p>
-<h2 id="Apple-Pay-或-App-内购买项目"><a href="#Apple-Pay-或-App-内购买项目" class="headerlink" title="Apple Pay 或 App 内购买项目"></a>Apple Pay 或 App 内购买项目</h2><p>了解 Apple Pay 和“App 内购买项目”之间的区别非常重要。使用 Apple Pay 可销售实物商品，如食品杂货、服装和电器。也可通过 Apple Pay 提供各种服务，如俱乐部会员、酒店预订和活动门票。而使用“App 内购买项目”则可销售虚拟商品，如适用于您的 App 的优质内容及订阅数字内容。</p>
-<p><a href="https://developer.apple.com/library/ios/ApplePay_Guide/" target="_blank" rel="external">《Apple Pay 编程指南》</a>（“Apple Pay Programming Guide”）提供了有关如何使用 PassKit 框架整合 Apple Pay 的详细信息。<a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/StoreKitGuide/Introduction.html" target="_blank" rel="external">《App 内购买项目编程指南》</a>（“In-App Purchase Programming Guide”）提供了有关如何使用 StoreKit 框架整合 App 内购买项目的详细信息。</p>
-<h2 id="先决条件"><a href="#先决条件" class="headerlink" title="先决条件"></a>先决条件</h2><p>除了使用 PassKit 框架实施 Apple Pay 之外，您还必须：</p>
-<ul>
-<li>通过<a href="https://developer.apple.com/apple-pay/" target="_blank" rel="external">付款处理机构或网关</a>设置一个帐户。</li>
-<li>通过“<a href="https://developer.apple.com/account/ios/identifiers/merchant/merchantLanding.action" target="_blank" rel="external">证书、标识符和描述文件</a>”（“Certificates, Identifiers &amp; Profiles”）注册一个商家 ID。</li>
-<li>生成一个 <a href="https://developer.apple.com/account/ios/certificate/certificateCreate.action" target="_blank" rel="external">Apple Pay 证书</a>，用于加密和解密付款令牌。</li>
-<li>在您的 App 中包括一个 Apple Pay 授权。</li>
-<li>遵循“应用审核准则”的第 29 节中列出的要求。</li>
-<li>遵循<a href="https://developer.apple.com/app-store/review/guidelines/#apple-pay" target="_blank" rel="external">《App 审核准则》</a>(“App Review Guidelines”)第 29 节中列出的要求。</li>
-</ul>
-<h2 id="支付供应商"><a href="#支付供应商" class="headerlink" title="支付供应商"></a>支付供应商</h2><p>强烈建议选择支持 Apple Pay 并提供 SDK 的<a href="https://developer.apple.com/apple-pay/" target="_blank" rel="external">支付供应商</a>。您也可以提供自己的服务器端解决方案，以用于从您的 App 接收付款、解密付款令牌并与支付供应商进行互动。信用卡和借记卡付款的处理可能非常复杂。如果您不具备相应的专业知识和系统，又希望您的 App 支持 Apple Pay，使用支付供应商提供的 SDK 是最为便捷可靠的一种方式。</p>
-<h2 id="显示-Apple-Pay-按钮"><a href="#显示-Apple-Pay-按钮" class="headerlink" title="显示 Apple Pay 按钮"></a>显示 Apple Pay 按钮</h2><p>PassKit 提供了各种 API，您的 App 可以使用这些 API 来确定自己所在的设备上是否装有 Secure Element，以及设备是否已加载您所支持的付款卡。</p>
-<p>如果设备已启用 Apple Pay，则您应该使用 PassKit 内提供的 API 来显示“用 Apple Pay 购买”按钮。</p>
-<p>如果设备没有 Apple Pay，则您可以显示“设置 Apple Pay”按钮以代替“用 Apple Pay 购买”按钮，以便用户方便地设置 Apple Pay。或者，您也可以选择不显示 Apple Pay 按钮。</p>
-<p>在您的 App 中放置 Apple Pay 按钮时，必须遵循<a href="https://developer.apple.com/apple-pay/Apple-Pay-Identity-Guidelines.pdf" target="_blank" rel="external">《Apple Pay 识别标志指南》</a>（“Apple Pay Identity Guidelines”）。</p>
-<h2 id="显示付款单"><a href="#显示付款单" class="headerlink" title="显示付款单"></a>显示付款单</h2><p>在您的用户选择好要购买的商品或服务，并选择 Apple Pay 作为付款方式时，您会创建一个付款请求，并要求 PassKit 向客户显示付款单。请参见图 1。在用户轻点 Apple Pay 按钮后，付款单必须立即显示，中间不能出现任何临时屏幕或弹出窗口。</p>
-<p>您的 App 可以指定付款单的内容，但无法控制用户与其进行的互动。您必须确定，向用户显示送货信息、账单信息、送货方式和其他行项目是否有意义。您只应请求处理交易所需的信息。</p>
-<p>有关为您的 App 整合 Apple Pay 按钮和定制 Apple Pay 付款单的详细信息，请参考<a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/ApplePay.html#//apple_ref/doc/uid/TP40006556-CH69-SW1" target="_blank" rel="external">《iOS 人机界面准则》</a>（“iOS Human Interface Guidelines”）。</p>
-<p><strong>图1</strong><br><img src="https://developer.apple.com/apple-pay/images/figure-1-payment-sheet-cn_2x.png" alt="付款单"></p>
-<h2 id="付款令牌"><a href="#付款令牌" class="headerlink" title="付款令牌"></a>付款令牌</h2><p>在用户使用 Touch ID 和银行 PIN 码进行授权（必要时）后，您的 App 会从 PassKit 收到一个付款令牌。该付款令牌内含有完成付款交易所需的信息，包括设备特定的帐户编号、金额以及唯一的一次性密码。已加密的付款套装可由商家使用私有密钥证书来解密，也可由付款处理机构使用 SDK 替商家代为解密。</p>
-<p>在有些情况下，开发者可能未被设置为负责记录和处理付款的商家。在这种情况下，开发者可以解密付款令牌，并将解密后的令牌传递给下游合适的商家，以便相应的处理机构进行处理。App 必须清楚表明自己只是一个中介方。更多详细信息，请参考<a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/ApplePay.html#//apple_ref/doc/uid/TP40006556-CH69-SW1" target="_blank" rel="external">《iOS 人机界面准则》</a>（“iOS Human Interface Guidelines”）。</p>
-<p>图 2 展示了一个典型的付款流程。首先，App 会检查其是否支持 Apple Pay 作为付款方式。在本例中，App 需要与所选送货地址相应的邮政编码，以计算送货成本并更新应付的总金额。在用户完成付款授权后，您的 App 会通过 PassKit 从 Secure Element 收到一个付款令牌。</p>
-<p>最后， App 会调用付款处理机构 SDK 中的相应 API，以将付款信息传送至付款处理机构，交由其处理。</p>
-<p><strong>图2</strong><br><img src="https://developer.apple.com/apple-pay/images/figure-2-payment-flow-cn_2x.png" alt="付款流程"></p>
-<h2 id="支持的交易类型"><a href="#支持的交易类型" class="headerlink" title="支持的交易类型"></a>支持的交易类型</h2><p>要处理以下类型的电子商务交易，必须要有支持 Apple Pay 的付款处理机构 SDK。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">授权	付款处理机构	在客户的帐户上预留资金</div><div class="line">收款	付款处理机构	在订单成功完成后将资金转账到您的银行帐户</div><div class="line">部分发货	付款处理机构	针对无法一同发货的商品将某次购物分成多次付款（在中国不可用）</div><div class="line">重复付款	付款处理机构 - 应在 App 中清楚标出	处理针对服务的重复付款，如按月支付的健身房会费（在中国不可用）</div><div class="line">退单	付款处理机构	处理欺诈性交易或存在争议的交易</div></pre></td></tr></table></figure>
-<p>最佳做法<br>查看<a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/ApplePay.html#//apple_ref/doc/uid/TP40006556-CH69-SW1" target="_blank" rel="external">《iOS 人机界面准则》</a>（“iOS Human Interface Guidelines”）和 WWDC 研讨会视频“<a href="https://developer.apple.com/videos/wwdc/2015/?id=702" target="_blank" rel="external">App 内的 Apple Pay</a>”（“Apple Pay Within Apps”），并按照其中的指南操作。此外，请遵循以下最佳做法，以便让您的 App 呈现最佳效果。</p>
-<p>不必要求用户注册。<br>除非确有必要，否则用户在使用 Apple Pay 购物时不必要求他们注册。您可以在客户购物时获得必需的联系信息；客户遇到的阻碍越少，其改变付款方式的机率就越低。</p>
-<p>在产品详细信息页面和购物车结账页面添加 Apple Pay 按钮。<br>在产品详细信息页面上，除了“添加到购物车”按钮之外，还要放置一个 Apple Pay 按钮，以便客户在找到想要购买的产品后立即结账。还要确保在购物车结账页面上添加 Apple Pay 作为付款选项。</p>
-<p>在醒目的位置显示 Apple Pay 按钮，或将默认付款方式设为 Apple Pay。<br>对于已经在其 iOS 设备上设置了 Apple Pay 的用户，提供 Apple Pay 作为主要的付款选项。</p>
-<p>请勿要求用户提供除 Apple Pay 付款单之外的其他信息。<br>Apple Pay 付款单中含有送货地址、账单地址、电话号码、电子邮件和姓名。客户也可以在付款单中选择送货方式。要求用户提供付款单之外的其他信息会增加阻碍，这可能会导致客户放弃购买。</p>
-<h2 id="常见问题解答"><a href="#常见问题解答" class="headerlink" title="常见问题解答"></a>常见问题解答</h2><p><strong>1. 哪些付款提供商支持此服务？</strong><br>    有关付款提供商列表，请参阅 <a href="https://developer.apple.com/apple-pay/" target="_blank" rel="external">Apple Pay 开发者信息页面</a>。</p>
-<p><strong>2. 支持哪些支付网络？</strong><br>    支持参加计划的银行所发行的 Visa、MasterCard、American Express、Discover 和中国银联信用卡和借记卡。</p>
-<p><strong>3. 支持哪些卡片类型？</strong><br>    支持主要发卡行所发行的信用卡和借记卡。</p>
-<p><strong>4. 接受 Apple Pay 需要支付其他费用吗？</strong><br>    对于使用 Apple Pay 付款的用户、商家或开发者，Apple 不会收取任何费用。</p>
-<p><strong>5. 我能否将 Apple Pay 整合到采用 Web 结账方式的 App 中？</strong><br>    Apple Pay 支持原生和混合 App。对于那些采用 Web 结账方式的商家，请使用 WebKit 桥接允许数据从 Web 内容传送至原生 API（反之亦然）。</p>
-<p><strong>6. 我能否在不知道最终金额的情况下使用 Apple Pay 购物？</strong><br>    对于使用 iOS 9 和更高版本的客户，您可以将金额设为“待定”。对于 iOS 9 之前的版本，您应该收取基本的金额，并在 Apple Pay 付款单的“PAY”（付款）行中指明最终金额待定。</p>
-<p>在中国，商家/PSP/中国银联的付款流程均不支持此项功能，需在知晓最终金额的情况下进行购买。</p>
-<p><a href="https://developer.apple.com/library/ios/samplecode/Emporium/EmporiumASimpleShoppingExperiencewithApplePay.zip" target="_blank" rel="external">官方Demo</a></p>
-<hr>
-<p>再一次感谢您花费时间阅读这篇文章！</p>
-<p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://developer.apple.com/apple-pay/get-started/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pay官方参考资料&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;利用 Apple Pay，用户可以在您的 App 中轻松安全地购买实物商品和服务。客户更喜欢使用 Apple Pay，因为他们在购物时无需输入账单、送货和联系人详细信息。而且，Apple Pay 具有更高的安全性，能让客户和开发者安心使用。Apple 不会存储或共享客户的实际信用卡和借记卡卡号，因此商家和 App 开发者无需负责管理和保护实际的信用卡和借记卡卡号。进一步了解 &lt;a href=&quot;https://support.apple.com/zh-cn/HT203027&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Apple Pay 的安全与隐私政策&lt;/a&gt;。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="移动端" scheme="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-    
-    
-      <category term="iOS" scheme="superdanny.link/tags/iOS/"/>
-    
-      <category term="Apple Pay" scheme="superdanny.link/tags/Apple-Pay/"/>
     
   </entry>
   
