@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/81f8a509gw1eww9hnenefj20w80jg0vo.jpg">
 <meta property="og:image" content="http://wx3.sinaimg.cn/large/81f8a509gy1fhbc6r22tlj21kw0jumyj.jpg">
 <meta property="og:image" content="http://wx2.sinaimg.cn/large/81f8a509gy1fhbc6ueay3j21do0kggni.jpg">
-<meta property="og:updated_time" content="2017-07-07T07:33:12.000Z">
+<meta property="og:updated_time" content="2017-07-07T07:44:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS开发企业版ipa分发(In-House模式)记录">
 <meta name="twitter:description" content="前言本人公司开发的.ipa发布于 AppStore 和自己的服务器上。但是自己却一直没时间利用公司的资源进行研究。现在赶紧趁热打铁，记录一下，以便以后查阅。 在此之前，在网上查阅了相关资料并整理了一下加以完善更正。">
@@ -265,10 +265,11 @@ var _hmt = _hmt || [];
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">htmlxmlns="http:</span>//<span class="attr">www.w3.org</span>/<span class="attr">1999</span>/<span class="attr">xhtml</span>"&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">metahttp-equiv="Content-Type"content="text</span>/<span class="attr">html</span>; <span class="attr">charset</span>=<span class="string">utf-8</span>"/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>应用名字<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">            var url ="https://example.com/manifest.plist";</div><div class="line">            window.location ="itms-services://?action=download-manifest&amp;url="+ url;</div><div class="line">        <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>3、方式三：通过iOS应用内安装</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[<span class="built_in">UIApplication</span> sharedApplication] openURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"itms-services://?action=download-manifest&amp;url=https://example.com/manifest.plist"</span>]];</div></pre></td></tr></table></figure>
-<p>4、方式四：终极大招，直接使用第三方托管平台（推荐两个自己常用平台）</p>
+<p>4、方式四：终极大招，直接使用第三方托管平台（推荐自己常用平台）</p>
 <ol>
 <li><a href="https://fir.im/" target="_blank" rel="external">fir.im - 免费应用内测托管平台|iOS应用Beta测试分发|Android应用内测分发</a></li>
 <li><a href="https://www.pgyer.com/" target="_blank" rel="external">蒲公英 - 免费的应用托管平台|App应用众测分发</a></li>
+<li><a href="https://developer.apple.com/testflight/" target="_blank" rel="external">TestFlight Beta Testing - App Store - Apple Developer</a></li>
 </ol>
 <h2 id="安装失败原因"><a href="#安装失败原因" class="headerlink" title="安装失败原因"></a>安装失败原因</h2><p>利用企业证书打包部署的 ipa 安装有可能存在安装失败的情况。一般的失败的原因可以查阅<a href="/2015/09/29/iOS-app-install-fail-reason/">iOS应用安装失败原因排查</a></p>
 <hr>
@@ -569,15 +570,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">年终总结</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -633,23 +634,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -661,7 +654,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -673,7 +678,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -682,10 +687,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -701,23 +702,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -729,6 +722,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
               </li>
              
@@ -737,19 +738,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件预览</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -758,6 +747,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数值</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件预览</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -817,15 +818,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">代码块</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DIY</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -837,7 +838,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+                <a href="javascript:void(0)" class="js-tag color4">DIY</a>
               </li>
             
             <div class="clearfix"></div>
