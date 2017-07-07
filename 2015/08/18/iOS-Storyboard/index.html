@@ -6,19 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="superdanny.link">
-  <title>UITableView数据更新问题 | 皮卡丘♪～(´ε｀　)</title>
+  <title>初探Storyboard | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="自身遇到问题 拓展-进行增删数据时的注意点 beginUpdates方法和endUpdates方法是什么呢？  一般什么时候使用这么一个动画块呢？ 插入指定的行 插入分组到制定位置 删除制定位置的分组 移动分组     问答区   自身遇到问题今天在设计自定义UITableViewCell的时候遇到一个愚蠢的问题，就是当用户在Cell上面使用自定义按钮触发删除时，为了保证删除时有动画效果，所以">
+  <meta name="description" content="创建一个基于Navigation Controller的根视图 绑定跳转事件 修改Navigation Bar标题 ViewController ViewController之间的数据传递 ViewController之间的跳转 Storyboard之间ViewController的跳转   常见问题 学习感悟   以前一直使用xib，后来来到新公司就使用纯代码。从来没有用过Storyboar">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UITableView数据更新问题">
-<meta property="og:url" content="superdanny.link/2015/09/01/UITableView-update-data/index.html">
+<meta property="og:title" content="初探Storyboard">
+<meta property="og:url" content="superdanny.link/2015/08/18/iOS-Storyboard/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
-<meta property="og:description" content="自身遇到问题 拓展-进行增删数据时的注意点 beginUpdates方法和endUpdates方法是什么呢？  一般什么时候使用这么一个动画块呢？ 插入指定的行 插入分组到制定位置 删除制定位置的分组 移动分组     问答区   自身遇到问题今天在设计自定义UITableViewCell的时候遇到一个愚蠢的问题，就是当用户在Cell上面使用自定义按钮触发删除时，为了保证删除时有动画效果，所以">
-<meta property="og:updated_time" content="2016-11-30T01:56:55.000Z">
+<meta property="og:description" content="创建一个基于Navigation Controller的根视图 绑定跳转事件 修改Navigation Bar标题 ViewController ViewController之间的数据传递 ViewController之间的跳转 Storyboard之间ViewController的跳转   常见问题 学习感悟   以前一直使用xib，后来来到新公司就使用纯代码。从来没有用过Storyboar">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0moknfuj20r60oajw8.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0ms5b6hj20l00v875m.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/81f8a509gw1eva0mxiadgj20fs0amabi.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/81f8a509gw1eva0mzeipdj20fi0b4q3q.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/81f8a509gw1ex9nxmhp09j20ec0sawhk.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0n5zxn2j20eo0mkgof.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0n1tiy3j20di0bowfg.jpg">
+<meta property="og:updated_time" content="2016-11-30T01:56:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UITableView数据更新问题">
-<meta name="twitter:description" content="自身遇到问题 拓展-进行增删数据时的注意点 beginUpdates方法和endUpdates方法是什么呢？  一般什么时候使用这么一个动画块呢？ 插入指定的行 插入分组到制定位置 删除制定位置的分组 移动分组     问答区   自身遇到问题今天在设计自定义UITableViewCell的时候遇到一个愚蠢的问题，就是当用户在Cell上面使用自定义按钮触发删除时，为了保证删除时有动画效果，所以">
+<meta name="twitter:title" content="初探Storyboard">
+<meta name="twitter:description" content="创建一个基于Navigation Controller的根视图 绑定跳转事件 修改Navigation Bar标题 ViewController ViewController之间的数据传递 ViewController之间的跳转 Storyboard之间ViewController的跳转   常见问题 学习感悟   以前一直使用xib，后来来到新公司就使用纯代码。从来没有用过Storyboar">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0moknfuj20r60oajw8.jpg">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
@@ -170,20 +178,20 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-UITableView-update-data" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-iOS-Storyboard" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      UITableView数据更新问题
+      初探Storyboard
     </h1>
   
 
         
-        <a href="/2015/09/01/UITableView-update-data/" class="archive-article-date">
-  	<time datetime="2015-09-01T10:07:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-09-01</time>
+        <a href="/2015/08/18/iOS-Storyboard/" class="archive-article-date">
+  	<time datetime="2015-08-18T07:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-08-18</time>
 </a>
 
         
@@ -193,55 +201,88 @@ var _hmt = _hmt || [];
       
         <blockquote>
 <ul>
-<li>自身遇到问题</li>
-<li>拓展-进行增删数据时的注意点<ul>
-<li>beginUpdates方法和endUpdates方法是什么呢？ </li>
-<li>一般什么时候使用这么一个动画块呢？<ul>
-<li>插入指定的行</li>
-<li>插入分组到制定位置</li>
-<li>删除制定位置的分组</li>
-<li>移动分组</li>
+<li>创建一个基于Navigation Controller的根视图</li>
+<li>绑定跳转事件</li>
+<li>修改Navigation Bar标题</li>
+<li>ViewController<ul>
+<li>ViewController之间的数据传递</li>
+<li>ViewController之间的跳转</li>
+<li>Storyboard之间ViewController的跳转</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>问答区</li>
+<li>常见问题</li>
+<li>学习感悟</li>
 </ul>
 </blockquote>
-<h2 id="自身遇到问题"><a href="#自身遇到问题" class="headerlink" title="自身遇到问题"></a>自身遇到问题</h2><p>今天在设计自定义UITableViewCell的时候遇到一个愚蠢的问题，就是当用户在Cell上面使用自定义按钮触发删除时，为了保证删除时有动画效果，所以不能在执行<code>deleteRowsAtIndexPaths: withRowAnimation:</code>之后手动执行<code>reloadData</code>。<br>这样就有一个问题，由于不执行reloadData，我们需要获取到Cell最新的indexPath就遇到问题</p>
-<p>解决方案：<br>通过获取按钮所在的Cell的indexPath解决</p>
+<p>以前一直使用xib，后来来到新公司就使用纯代码。从来没有用过<code>Storyboard</code>（中文称<code>故事板</code>），今天趁有几分兴致，在学习绘图的同时练练<code>故事板</code>。这里做一下笔记，方便以后查看。如果大家有什么Storyboard使用技巧可以留言分享哟！</p>
 <a id="more"></a> 
-<p>方式一：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">UITableViewCell</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath &#123;</div><div class="line"></div><div class="line">    AMDeleteCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];</div><div class="line"></div><div class="line">    [cell setDeleteBlock:^(<span class="built_in">NSDictionary</span> *dic, AMDeleteCell *cell) &#123;</div><div class="line">  </div><div class="line">        <span class="comment">//UITableViewCellContentView</span></div><div class="line">        <span class="built_in">UIView</span> *v = [sender superview];</div><div class="line">	</div><div class="line">        <span class="comment">//UITableViewCell</span></div><div class="line">        <span class="built_in">UITableViewCell</span> *cell = (<span class="built_in">UITableViewCell</span>*)[v superview];</div><div class="line">        <span class="built_in">NSIndexPath</span> *indexPath = [tableView indexPathForCell:cell];</div><div class="line">        <span class="keyword">self</span>.deleteIndexPath = indexPath;</div><div class="line"></div><div class="line">    &#125;];</div><div class="line"></div><div class="line">    <span class="keyword">return</span> cell;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>方式二(个人认为比较好的一种方式)：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">UITableViewCell</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath &#123;</div><div class="line"></div><div class="line">    AMDeleteCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];</div><div class="line"></div><div class="line">    [cell setDeleteBlock:^(<span class="built_in">NSDictionary</span> *dic, AMDeleteCell *cell) &#123;</div><div class="line"></div><div class="line">        <span class="built_in">NSIndexPath</span> *indexPath = [tableView indexPathForCell:cell];</div><div class="line"></div><div class="line">        <span class="keyword">self</span>.deleteIndexPath = indexPath;</div><div class="line"></div><div class="line">    &#125;];</div><div class="line"></div><div class="line">    <span class="keyword">return</span> cell;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>自定义Cell内部部分代码：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="meta">#import <span class="meta-string">"AMDeleteCell.h"</span></span></div><div class="line"></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span>(^DeleteCellBlock)(<span class="built_in">NSDictionary</span> *dic, AMDeleteCell *cell);</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">AMDeleteCell</span> ()</span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>) <span class="built_in">UIButton</span>        *deleteBtn;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>) <span class="built_in">NSDictionary</span>    *dataDic;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">copy</span>, <span class="keyword">nonatomic</span>  ) DeleteCellBlock block;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">AMDeleteCell</span></span></div><div class="line"></div><div class="line"><span class="comment">//…省略部分代码...</span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setDeleteBlock:(<span class="keyword">void</span> (^)(<span class="built_in">NSDictionary</span> *, AMDeleteCell *))block &#123;</div><div class="line">    <span class="keyword">self</span>.block = block;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - Cell上面按钮触发的方法</span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)deleteAction:(<span class="built_in">UIButton</span> *)sender &#123;</div><div class="line">    <span class="keyword">if</span> (_block) &#123;</div><div class="line">        _block(_dataDic, <span class="keyword">self</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//...省略部分代码...</span></div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
-<h2 id="拓展-进行增删数据时的注意点"><a href="#拓展-进行增删数据时的注意点" class="headerlink" title="拓展-进行增删数据时的注意点"></a>拓展-进行增删数据时的注意点</h2><p>1、普通形式（<code>UITableViewStylePlain</code>）数据增删</p>
-<p>将tableView进行增删时需要先更新数据源，然后再执行delete/insert操作</p>
-<p>2、分组形式（<code>UITableViewStyleGrouped</code>）数据增删</p>
-<p>如果我们的UITableView是<code>UITableViewStyleGrouped</code>的时候，我们如果删除某个Group的最后一条记录时，相应的分组也将被删除。所以，必须保证UITableView的分组，和Cell同时被删除。所以，就需要使用beginUpdates方法和endUpdates方法，将要做的删除操作“包”起来！</p>
-<h3 id="beginUpdates方法和endUpdates方法是什么呢？"><a href="#beginUpdates方法和endUpdates方法是什么呢？" class="headerlink" title="beginUpdates方法和endUpdates方法是什么呢？"></a>beginUpdates方法和endUpdates方法是什么呢？</h3><ol>
-<li>这两个方法，是配合起来使用的，标记了一个tableView的动画块。</li>
-<li>分别代表动画的开始和结束。两者成对出现，可以嵌套使用。</li>
-<li>一般，在<code>添加</code>、<code>删除</code>、<code>选择</code>tableView中使用，并实现动画效果。</li>
-<li><code>在动画块内，不建议使用reloadData方法，如果使用，会影响动画</code></li>
-</ol>
-<h3 id="一般什么时候使用这么一个动画块呢？"><a href="#一般什么时候使用这么一个动画块呢？" class="headerlink" title="一般什么时候使用这么一个动画块呢？"></a>一般什么时候使用这么一个动画块呢？</h3><p>一般在UITableView执行：<code>删除行</code>，<code>插入行</code>，<code>删除分组</code>，<code>插入分组</code>时使用！用来协调UITableView的动画效果。</p>
-<h4 id="插入指定的行"><a href="#插入指定的行" class="headerlink" title="插入指定的行"></a>插入指定的行</h4><p>在执行该方法时，会对数据源进行访问（分组数据和行数据），并更新可见行。所以，在调用该方法前，应该先更新数据源</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)insertRowsAtIndexPaths:(<span class="built_in">NSArray</span> *)indexPaths</div><div class="line">              withRowAnimation:(<span class="built_in">UITableViewRowAnimation</span>)animation</div></pre></td></tr></table></figure>
-<h4 id="插入分组到制定位置"><a href="#插入分组到制定位置" class="headerlink" title="插入分组到制定位置"></a>插入分组到制定位置</h4><p>插入一个特定的分组。如果，指定的位置上已经存在了分组，那么原来的分组向后移动一个位置。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)insertSections:(<span class="built_in">NSIndexSet</span> *)sections</div><div class="line">      withRowAnimation:(<span class="built_in">UITableViewRowAnimation</span>)animation</div></pre></td></tr></table></figure>
-<h4 id="删除制定位置的分组"><a href="#删除制定位置的分组" class="headerlink" title="删除制定位置的分组"></a>删除制定位置的分组</h4><p>删除一个制定位置的分组，其后面的分组向前移动一个位置。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)deleteSections:(<span class="built_in">NSIndexSet</span> *)sections</div><div class="line">      withRowAnimation:(<span class="built_in">UITableViewRowAnimation</span>)animation</div></pre></td></tr></table></figure>
-<h4 id="移动分组"><a href="#移动分组" class="headerlink" title="移动分组"></a>移动分组</h4><p>移动原来的分组从一个位置移动到一个新的位置。如果，新位置上若存在某个分组，那这某个分组将会向上（下）移动到临近一个位置。该方法，没有动画参数。会直接移动。并且一次只能移动一个分组。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)moveSection:(<span class="built_in">NSInteger</span>)section</div><div class="line">          toSection:(<span class="built_in">NSInteger</span>)newSection</div></pre></td></tr></table></figure>
-<p>在如上方法中，建议使用该动画块进行操作！</p>
-<hr>
-<h2 id="问答区"><a href="#问答区" class="headerlink" title="问答区"></a>问答区</h2><ol>
-<li>为什么block属性使用copy修饰？<br>答：Block属性的声明，首先需要用copy修饰符，因为只有copy后的Block才会在堆中，栈中的Block的生命周期是和栈绑定的。ARC和非ARC声明都是一样的，当然注意在非ARC下要release Block。</li>
+<h2 id="创建一个基于Navigation-Controller的根视图"><a href="#创建一个基于Navigation-Controller的根视图" class="headerlink" title="创建一个基于Navigation Controller的根视图"></a>创建一个基于Navigation Controller的根视图</h2><ol>
+<li><p>首先，我们选中默认生成的View Controller，在Editor -&gt; Embed In 中有<code>Navigation Controller</code>和<code>Tab Bar Controller</code>两个选项（图一），我们选择嵌入<code>Navigation Controller</code>。<br><img src="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0moknfuj20r60oajw8.jpg" alt="图一"></p>
+</li>
+<li><p>另外拖一个Table View Controller到故事板中，选中Table View Controller的Table View。打开<code>Attrbutes inspector</code>，将<code>Content</code>设置为<code>Static Cells</code>，layout area中的Table View上出现了3个Cell。</p>
+</li>
+<li><p>我们依次给每一个Cell设置不同的背景颜色，并依次选中3个Table View Cell，然后在<code>Attributes inspector</code>中将他们的Style改成<code>Basic</code>并给每一个Cell设置标题（图二）。<br><img src="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0ms5b6hj20l00v875m.jpg" alt="图二"></p>
+</li>
 </ol>
 <hr>
+<h2 id="绑定跳转事件"><a href="#绑定跳转事件" class="headerlink" title="绑定跳转事件"></a>绑定跳转事件</h2><ol>
+<li><p>脑补时刻，先讲解一下一些关键的跳转事件</p>
+<blockquote>
+<ul>
+<li><code>Selection Segue</code>：当用户点击table view cell的任何部分，都会产生反应。</li>
+<li><code>Accessory Action</code>：只有当用户点击table view cell右边的圆圈箭头按钮时，才会产生的反应。</li>
+<li><code>Show</code>：在master或detail区域展现内容(典型的如iPad的设置界面，左侧是master，右侧是detail)，究竟是在哪个区要取决于屏幕上的内容，如果不分master/detail，就单纯的把新的内容push到当前view controller stack的顶部</li>
+<li><code>Show Detail</code>：大致同Show，在detail区域展现内容，如果不分master/detail，新的内容取代当前view controller stack的顶部</li>
+<li><code>Present Modally</code>：模态展示内容</li>
+<li><code>Present as Popover</code>：在当前的view上出现一个小窗口来展示内容，无处不在的“选中文字后出现 复制/翻译 按钮就是这个</li>
+<li><code>Custom</code>：自定义的</li>
+</ul>
+</blockquote>
+</li>
+<li><p>我们选中第一个Cell，按住<code>Control</code>键拖拉到要跳转的视图，在弹出的选项窗中选择<code>show</code>，这样就完成了页面跳转操作。接下来2个Cell也是同样的操作。</p>
+</li>
+</ol>
+<hr>
+<h2 id="修改Navigation-Bar标题"><a href="#修改Navigation-Bar标题" class="headerlink" title="修改Navigation Bar标题"></a>修改Navigation Bar标题</h2><ol>
+<li><p>在Table View Controller上中选中Navigation Item（图三）。<br><img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1eva0mxiadgj20fs0amabi.jpg" alt="图三"></p>
+</li>
+<li><p>将<code>Attributes inspector</code>中<code>Title</code>设置为“绘图技术”，将Back Button设值为“绘图”（图四）。<br><img src="http://ww4.sinaimg.cn/mw690/81f8a509gw1eva0mzeipdj20fi0b4q3q.jpg" alt="图四"></p>
+</li>
+</ol>
+<blockquote>
+<p>注意，这里的<code>Back Button</code>并不是显示在当前的Navigator Bar上的，而是显示在下一个sub view controller的navigator bar上的返回按钮的文字</p>
+</blockquote>
+<hr>
+<h2 id="ViewController"><a href="#ViewController" class="headerlink" title="ViewController"></a>ViewController</h2><h3 id="ViewController之间的数据传递"><a href="#ViewController之间的数据传递" class="headerlink" title="ViewController之间的数据传递"></a>ViewController之间的数据传递</h3><p>当你从当前scene中触发一个segue的时候，系统会自动调用<code>prepareForSegue:sender:</code>这个方法。如果你想从一个界面切换到里另一个界面的时候传递数据，你应该override这个方法。<br>比如：<br>视图A -&gt; 视图B</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)prepareForSegue:(<span class="keyword">nonnull</span> <span class="built_in">UIStoryboardSegue</span> *)segue sender:(<span class="keyword">nullable</span> <span class="keyword">id</span>)sender &#123;</div><div class="line">    ThreeViewController *b_vc = segue.destinationViewController;</div><div class="line">    <span class="comment">//我们传递了一个字符串到视图B</span></div><div class="line">    b_vc.str = <span class="string">@"dataStr"</span>;</div><div class="line"></div><div class="line">    <span class="comment">//更多功能</span></div><div class="line">    <span class="comment">//源视图控制器(当前控制器)</span></div><div class="line">    [segue sourceViewController];</div><div class="line">    <span class="comment">//目标视图控制器</span></div><div class="line">    [segue destinationViewController];</div><div class="line">    <span class="comment">//过渡标识</span></div><div class="line">    [segue identifier];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="ViewController之间的跳转"><a href="#ViewController之间的跳转" class="headerlink" title="ViewController之间的跳转"></a>ViewController之间的跳转</h3><p>在上文中我提及到通过绑定事件进行ViewController之间的跳转。这里罗列一下有三种情况可进行跳转：</p>
+<ol>
+<li><p>如果在<code>Storyboard</code>中当前的ViewController和要跳转的ViewController之间的segue存在，则可以执行<code>performSegueWithIdentifier:sender:</code>这个方法实现跳转。</p>
+</li>
+<li><p>如果目标ViewController存在<code>Storyboard</code>中，但是没有segue。你可以通过<code>UIStoryboard</code>的<code>instantiateViewControllerWithIdentifier:</code>这个方法获取到它，然后再用你想要的方式实现跳转，如：压栈。</p>
+</li>
+<li>如果目标ViewController不存在，则需要我们创建好ViewController才能进行接下来的操作。</li>
+</ol>
+<h3 id="Storyboard之间ViewController的跳转"><a href="#Storyboard之间ViewController的跳转" class="headerlink" title="Storyboard之间ViewController的跳转"></a>Storyboard之间ViewController的跳转</h3><p><code>Storyboard</code>被看作是一个视图的容器，存放所有视图，方便管理。<br>【情景】<br>当project里面有<code>StoryboardOne</code>和<code>StoryboardTwo</code>两个故事板。要求Storyboard之间的ViewController需要进行交互时（我们在<code>StoryboardOne</code>里面的<code>ViewControllerOne</code>要跳转到<code>StoryboardTwo</code>里面的<code>ViewControllerTwo</code>），可使用以下方式进行跳转：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//这个是ViewControllerOne里面Button绑定事件的代码</span></div><div class="line">- (<span class="keyword">IBAction</span>)buttonActoin:(<span class="keyword">id</span>)sender &#123;</div><div class="line">    <span class="built_in">UIStoryboard</span> *sb = [<span class="built_in">UIStoryboard</span> storyboardWithName:<span class="string">@"StoryboardTwo"</span> bundle:<span class="literal">nil</span>];</div><div class="line">    <span class="comment">//Identifier为‘ViewControllerTwo’在Storyboard里面设置的StoryboardId</span></div><div class="line">    <span class="built_in">UIViewController</span> *vc = [sb instantiateViewControllerWithIdentifier:<span class="string">@"ViewControllerTwo"</span>];</div><div class="line">    [<span class="keyword">self</span>.navigationController pushViewController:vc animated:<span class="literal">YES</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ol>
+<li><p><strong>在使用storyboard时，报错：Failed to instantiate the default view controller for UIMainStoryboardFile ‘MainStoryboard’ - perhaps the designated entry point is not set?</strong></p>
+<p> 原因分析：在StoryBoard中没有一个view controller设置了Initial Scene。</p>
+<p> 解决方案：在Storyboard中，选择一个view conroller作为story board的第一启动界面</p>
+<p> <img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1ex9nxmhp09j20ec0sawhk.jpg" alt="图五"></p>
+</li>
+</ol>
+<hr>
+<h2 id="学习感悟"><a href="#学习感悟" class="headerlink" title="学习感悟"></a>学习感悟</h2><blockquote>
+<p>在学习Storyboard过程中，慢慢有所感悟，在这里记录一下。可能我说的不一定是最好的，但是会再学习的过程中慢慢提升。</p>
+</blockquote>
+<ol>
+<li>当Storyboard中如果VC的数量越来越多的时候，可能会出现一种情况就是，用户要定位到某一个VC比较困难。所以我在每一个VC的Title属性都设置成该VC的类名（图五），方便以后可直接在<code>Document Outline</code>界面定位（图六）</li>
+<li>待续…</li>
+</ol>
+<p><img src="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0n5zxn2j20eo0mkgof.jpg" alt="图六"><br><img src="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0n1tiy3j20di0bowfg.jpg" alt="图七"></p>
+<hr>
+<p>暂时就讲这些，后面会将文章补全。</p>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
 <p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
 
@@ -355,7 +396,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3aSW7DMBAEwPz/08o1QGK5e6gYEFU8GV5Elg8DzvL1Fa/jx2q///u356/zXeqFgYFxW8ZxutpjvXr++TcT2KvdMTAwnsNoH/0qRCbv5GE9ORsGBgZGEjST7RMYBgYGxlWMlQvl+b4YGBgY54w2TU0OkdTE2vcvyMUxMDBuyMir7p9//S/9DQwMjFsxjnIlSWlSels5wx97YWBgbM3IA1xe7m8PHSWoyfAHBgbGpozkcW3zcmU4I0+MMTAwnsNYGd6KYnncHmgH0aIuBwYGxkaMNlBeFS5X8BgYGM9ktK3HNkTOynDFCAgGBsamjLb43jYPkgMlny5Ni2BgYNycUUTl8lh5oW32qzdJNQYGxqaM82vcrPTWjny1QRwDA+MJjNkGnznuUr0QAwNjO0b+oFkLIT/QsBWBgYGxNSMJhW3hPvkjkqctnQEDA2NrRhtYrxqYKMa/8oWBgbEFox1xaEcoVgLxsBmAgYGxHaMNuLMt80C8cpXEwMDYm9EW9PPyfd48mKWsS10ODAyM2zJmGeJ6gppcOt/8fRgYGA9g5CloG6ZnjYf8txgYGHszjnK1ae0s0a1DMAYGxtaMtqm5Pv7VXjTXmxAYGBh7MPIg27YkW2p7fcTAwHgaoy3oz47SXhzrVBYDAwMjCKBt22A9DcbAwMDIm4iz4l1bjKs7sRgYGBsxZs2AvMGZD1u07UwMDIwnMGajFbMDtUW3q1JfDAyM2zK+AdsO+gh19EqPAAAAAElFTkSuQmCC" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACFklEQVR42u3aQZKDMAwF0dz/0sw2G0N/CTKF1axSxBn0WGgsyZ8Pvg58na///nb1+fvOzZcMGTJey+iEdf4rHjRfs6TKkCFjAGOVwVZrauGSp5w/d3lfhgwZMhZBd1IwuS9DhgwZNQYPi2wB/y3hypAh44WMfoMMlZoA8HgtLkOGjBcyeNf9958fmW/IkCHjVYxOIdrZSqbJ9yIqGTJkbM3gCS4tL2tbw048MmTI2JVRa3j11/AmGhohyJAhY2tGJ7g0rDQFk/QtQ4aMCYx0DNBpzN3LkyFDxhwG6a6nhSUPNP6fAGAyZMjYm8Hngzx18qZ/p2CWIUPG3ow0CfJw+WaxfyhNhgwZExi1wxC1tj5/QSTRy5AhQwYvWcl9sjUsNtpkyJAxgJEekiDbuDhphglahgwZ0xg84R744u028rLOX7oMGTImMEghmrbk7l158aJlyJAxhtFvhJHNX+0oxgVJhgwZWzPSY1v9kSfZOPLfypAhYxqDt/XTI19pUy9N1jJkyJjJSIvPNLGmo1DUFpQhQ8YARlpYopZ9+EQ+lpAhQ8YcxhFeJC3eVaCSMacMGTImMPjVoaZJloSeHhORIUPG2xnpeLLWJusPG2TIkCGDJ770kETatmuVsjJkyJCBH1Mbc3aOi8mQIUPGE201HgPCyJAhYwCDp79aQcv/cnGcKUOGjK0Z6YaPr6kl384TZciQsR3jDzU5YL6iYQ3IAAAAAElFTkSuQmCC" alt="微信分享二维码">
     </div>
 </div>
 
@@ -369,18 +410,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2015/09/05/Xcode-Version-and-Build/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/08/20/iOS-Custom-UIView-fillet/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Xcode上Version和Build
+          指定UIView的特定角为圆角
         
       </div>
     </a>
   
   
-    <a href="/2015/08/28/My-projects-introduction/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">项目简介</div>
+    <a href="/2015/08/13/iOS-null-data/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS中处理空数据</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -535,15 +576,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">年终总结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,6 +596,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">终端</a>
               </li>
              
@@ -567,7 +608,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+                <a href="javascript:void(0)" class="js-tag color5">年终总结</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -575,7 +616,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -587,27 +628,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -635,19 +660,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
+                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
+                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -667,11 +684,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -687,7 +708,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -695,7 +716,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -703,7 +724,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -736,6 +773,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">键盘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -783,14 +824,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">代码块</a>
               </li>
              
@@ -799,7 +832,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">企业级证书打包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">

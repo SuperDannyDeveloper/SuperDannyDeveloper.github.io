@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="superdanny.link">
-  <title>Grand Central Dispatch | 皮卡丘♪～(´ε｀　)</title>
+  <title>UITableView数据更新问题 | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简答的复习了一下GCD的一些简单操作，这里做一个笔记，方便以后查看。   Dispatch Queue 自定义串、并行队列 程序进程缺省队列 主线程队列   同步/异步、串行/并行使用 死锁问题 dispatch_after dispatch_group">
-<meta name="keywords" content="iOS,GCD">
+  <meta name="description" content="自身遇到问题 拓展-进行增删数据时的注意点 beginUpdates方法和endUpdates方法是什么呢？  一般什么时候使用这么一个动画块呢？ 插入指定的行 插入分组到制定位置 删除制定位置的分组 移动分组     问答区   自身遇到问题今天在设计自定义UITableViewCell的时候遇到一个愚蠢的问题，就是当用户在Cell上面使用自定义按钮触发删除时，为了保证删除时有动画效果，所以">
+<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Grand Central Dispatch">
-<meta property="og:url" content="superdanny.link/2015/07/15/Grand-Central-Dispatch/index.html">
+<meta property="og:title" content="UITableView数据更新问题">
+<meta property="og:url" content="superdanny.link/2015/09/01/iOS-UITableView-update-data/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
-<meta property="og:description" content="简答的复习了一下GCD的一些简单操作，这里做一个笔记，方便以后查看。   Dispatch Queue 自定义串、并行队列 程序进程缺省队列 主线程队列   同步/异步、串行/并行使用 死锁问题 dispatch_after dispatch_group">
-<meta property="og:updated_time" content="2016-11-30T01:56:40.000Z">
+<meta property="og:description" content="自身遇到问题 拓展-进行增删数据时的注意点 beginUpdates方法和endUpdates方法是什么呢？  一般什么时候使用这么一个动画块呢？ 插入指定的行 插入分组到制定位置 删除制定位置的分组 移动分组     问答区   自身遇到问题今天在设计自定义UITableViewCell的时候遇到一个愚蠢的问题，就是当用户在Cell上面使用自定义按钮触发删除时，为了保证删除时有动画效果，所以">
+<meta property="og:updated_time" content="2016-11-30T01:56:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Grand Central Dispatch">
-<meta name="twitter:description" content="简答的复习了一下GCD的一些简单操作，这里做一个笔记，方便以后查看。   Dispatch Queue 自定义串、并行队列 程序进程缺省队列 主线程队列   同步/异步、串行/并行使用 死锁问题 dispatch_after dispatch_group">
+<meta name="twitter:title" content="UITableView数据更新问题">
+<meta name="twitter:description" content="自身遇到问题 拓展-进行增删数据时的注意点 beginUpdates方法和endUpdates方法是什么呢？  一般什么时候使用这么一个动画块呢？ 插入指定的行 插入分组到制定位置 删除制定位置的分组 移动分组     问答区   自身遇到问题今天在设计自定义UITableViewCell的时候遇到一个愚蠢的问题，就是当用户在Cell上面使用自定义按钮触发删除时，为了保证删除时有动画效果，所以">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
@@ -170,20 +170,20 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Grand-Central-Dispatch" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-iOS-UITableView-update-data" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Grand Central Dispatch
+      UITableView数据更新问题
     </h1>
   
 
         
-        <a href="/2015/07/15/Grand-Central-Dispatch/" class="archive-article-date">
-  	<time datetime="2015-07-15T12:23:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-15</time>
+        <a href="/2015/09/01/iOS-UITableView-update-data/" class="archive-article-date">
+  	<time datetime="2015-09-01T10:07:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-09-01</time>
 </a>
 
         
@@ -191,96 +191,56 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>简答的复习了一下GCD的一些简单操作，这里做一个笔记，方便以后查看。</p>
-<blockquote>
+        <blockquote>
 <ul>
-<li>Dispatch Queue<ul>
-<li>自定义串、并行队列</li>
-<li>程序进程缺省队列</li>
-<li>主线程队列</li>
+<li>自身遇到问题</li>
+<li>拓展-进行增删数据时的注意点<ul>
+<li>beginUpdates方法和endUpdates方法是什么呢？ </li>
+<li>一般什么时候使用这么一个动画块呢？<ul>
+<li>插入指定的行</li>
+<li>插入分组到制定位置</li>
+<li>删除制定位置的分组</li>
+<li>移动分组</li>
 </ul>
 </li>
-<li>同步/异步、串行/并行使用</li>
-<li>死锁问题</li>
-<li>dispatch_after</li>
-<li>dispatch_group</li>
+</ul>
+</li>
+<li>问答区</li>
 </ul>
 </blockquote>
+<h2 id="自身遇到问题"><a href="#自身遇到问题" class="headerlink" title="自身遇到问题"></a>自身遇到问题</h2><p>今天在设计自定义UITableViewCell的时候遇到一个愚蠢的问题，就是当用户在Cell上面使用自定义按钮触发删除时，为了保证删除时有动画效果，所以不能在执行<code>deleteRowsAtIndexPaths: withRowAnimation:</code>之后手动执行<code>reloadData</code>。<br>这样就有一个问题，由于不执行reloadData，我们需要获取到Cell最新的indexPath就遇到问题</p>
+<p>解决方案：<br>通过获取按钮所在的Cell的indexPath解决</p>
 <a id="more"></a> 
-<h2 id="Dispatch-Queue"><a href="#Dispatch-Queue" class="headerlink" title="Dispatch Queue"></a>Dispatch Queue</h2><ul>
-<li><p><code>Serial Dispatch Queue</code><br><strong>按添加进队列的顺序（先进先出）一个接一个的执行</strong></p>
-</li>
-<li><p><code>Concurrent Dispatch Queue</code><br><strong>并发执行队列里的任务</strong></p>
-</li>
-</ul>
-<h3 id="1-1-自定义串、并行队列"><a href="#1-1-自定义串、并行队列" class="headerlink" title="1.1 自定义串、并行队列"></a>1.1 自定义串、并行队列</h3><p>并行队列：<code>DISPATCH_QUEUE_CONCURRENT</code><br>串行队列：<code>DISPATCH_QUEUE_SERIAL</code></p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建一个名称为‘com.company.xxx’的串行队列</span></div><div class="line"><span class="built_in">dispatch_queue_t</span> serialQueue = dispatch_queue_create(<span class="string">"com.company.xxx"</span>, DISPATCH_QUEUE_SERIAL);</div><div class="line"></div><div class="line"><span class="comment">//创建一个名称为‘com.xxx’的并行队列</span></div><div class="line"><span class="built_in">dispatch_queue_t</span> concurrentQueue = dispatch_queue_create(<span class="string">"com.company.xxx"</span>, DISPATCH_QUEUE_CONCURRENT);</div></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>Note：</strong><br>1）参数一是队列的名称，一般是使用倒序的全域名。虽然可以不给队列指定一个名称，但是有名称的队列可以让我们在遇到问题时更好调试<br>2）当参数二为nil时返回<code>Serial Dispatch Queue(串行队列)</code>，如上面那个例子，当指定为<code>DISPATCH_QUEUE_CONCURRENT</code>时返回<code>Concurrent Dispatch Queue(并行队列)</code></p>
-</blockquote>
-<h3 id="1-2-程序进程缺省队列"><a href="#1-2-程序进程缺省队列" class="headerlink" title="1.2 程序进程缺省队列"></a>1.2 程序进程缺省队列</h3><p>高优先级队列：<code>DISPATCH_QUEUE_PRIORITY_HIGH</code><br>中优先级队列：<code>DISPATCH_QUEUE_PRIORITY_DEFAULT</code><br>低优先级队列：<code>DISPATCH_QUEUE_PRIORITY_LOW</code></p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//获取程序缺省并行队列，第二个参数固定为0</span></div><div class="line"><span class="built_in">dispatch_queue_t</span> queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</div></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>Note：</strong><br>1）需要注意的是，三个队列不代表三个线程，可能会有更多的线程。并发队列可以根据实际情况来自动产生合理的线程数，也可理解为dispatch队列实现了一个线程池的管理，对于程序逻辑是透明的。<br>2）获取<code>Global Dispatch Queue</code>的时候可以指定优先级，可以根据自己的实际情况来决定使用哪种优先级</p>
-</blockquote>
-<h3 id="1-3-主线程队列"><a href="#1-3-主线程队列" class="headerlink" title="1.3 主线程队列"></a>1.3 主线程队列</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//获取主线程串行队列</span></div><div class="line"><span class="built_in">dispatch_queue_t</span> queue = dispatch_get_main_queue();</div></pre></td></tr></table></figure>
-<h2 id="三者对比"><a href="#三者对比" class="headerlink" title="三者对比"></a>三者对比</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">队列</th>
-<th style="text-align:center">串行</th>
-<th style="text-align:center">并行</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">自定义队列</td>
-<td style="text-align:center"><strong>√</strong></td>
-<td style="text-align:center"><strong>√</strong></td>
-</tr>
-<tr>
-<td style="text-align:center">程序缺省队列</td>
-<td style="text-align:center"><strong>×</strong></td>
-<td style="text-align:center"><strong>√</strong></td>
-</tr>
-<tr>
-<td style="text-align:center">主线程队列</td>
-<td style="text-align:center"><strong>√</strong></td>
-<td style="text-align:center"><strong>×</strong></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>Note：</strong><br>一般只在需要更新UI时我们才获取<code>Main Dispatch Queue</code>，其他情况下用<code>Global Dispatch Queue</code>就满足需求了</p>
-</blockquote>
-<h2 id="同步-异步、串行-并行使用"><a href="#同步-异步、串行-并行使用" class="headerlink" title="同步/异步、串行/并行使用"></a>同步/异步、串行/并行使用</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//异步执行block，函数立即返回</span></div><div class="line"><span class="built_in">dispatch_async</span>(queue, ^&#123;</div><div class="line"></div><div class="line"><span class="comment">//block具体代码</span></div><div class="line"></div><div class="line">&#125;); </div><div class="line"></div><div class="line"><span class="comment">//同步执行block，函数不返回</span></div><div class="line"><span class="built_in">dispatch_sync</span>(queue, ^&#123;</div><div class="line"></div><div class="line"><span class="comment">//block具体代码</span></div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>方式一：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">UITableViewCell</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath &#123;</div><div class="line"></div><div class="line">    AMDeleteCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];</div><div class="line"></div><div class="line">    [cell setDeleteBlock:^(<span class="built_in">NSDictionary</span> *dic, AMDeleteCell *cell) &#123;</div><div class="line">  </div><div class="line">        <span class="comment">//UITableViewCellContentView</span></div><div class="line">        <span class="built_in">UIView</span> *v = [sender superview];</div><div class="line">	</div><div class="line">        <span class="comment">//UITableViewCell</span></div><div class="line">        <span class="built_in">UITableViewCell</span> *cell = (<span class="built_in">UITableViewCell</span>*)[v superview];</div><div class="line">        <span class="built_in">NSIndexPath</span> *indexPath = [tableView indexPathForCell:cell];</div><div class="line">        <span class="keyword">self</span>.deleteIndexPath = indexPath;</div><div class="line"></div><div class="line">    &#125;];</div><div class="line"></div><div class="line">    <span class="keyword">return</span> cell;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>方式二(个人认为比较好的一种方式)：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">UITableViewCell</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath &#123;</div><div class="line"></div><div class="line">    AMDeleteCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];</div><div class="line"></div><div class="line">    [cell setDeleteBlock:^(<span class="built_in">NSDictionary</span> *dic, AMDeleteCell *cell) &#123;</div><div class="line"></div><div class="line">        <span class="built_in">NSIndexPath</span> *indexPath = [tableView indexPathForCell:cell];</div><div class="line"></div><div class="line">        <span class="keyword">self</span>.deleteIndexPath = indexPath;</div><div class="line"></div><div class="line">    &#125;];</div><div class="line"></div><div class="line">    <span class="keyword">return</span> cell;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>自定义Cell内部部分代码：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="meta">#import <span class="meta-string">"AMDeleteCell.h"</span></span></div><div class="line"></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span>(^DeleteCellBlock)(<span class="built_in">NSDictionary</span> *dic, AMDeleteCell *cell);</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">AMDeleteCell</span> ()</span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>) <span class="built_in">UIButton</span>        *deleteBtn;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>) <span class="built_in">NSDictionary</span>    *dataDic;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">copy</span>, <span class="keyword">nonatomic</span>  ) DeleteCellBlock block;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">AMDeleteCell</span></span></div><div class="line"></div><div class="line"><span class="comment">//…省略部分代码...</span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setDeleteBlock:(<span class="keyword">void</span> (^)(<span class="built_in">NSDictionary</span> *, AMDeleteCell *))block &#123;</div><div class="line">    <span class="keyword">self</span>.block = block;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - Cell上面按钮触发的方法</span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)deleteAction:(<span class="built_in">UIButton</span> *)sender &#123;</div><div class="line">    <span class="keyword">if</span> (_block) &#123;</div><div class="line">        _block(_dataDic, <span class="keyword">self</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//...省略部分代码...</span></div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<h2 id="拓展-进行增删数据时的注意点"><a href="#拓展-进行增删数据时的注意点" class="headerlink" title="拓展-进行增删数据时的注意点"></a>拓展-进行增删数据时的注意点</h2><p>1、普通形式（<code>UITableViewStylePlain</code>）数据增删</p>
+<p>将tableView进行增删时需要先更新数据源，然后再执行delete/insert操作</p>
+<p>2、分组形式（<code>UITableViewStyleGrouped</code>）数据增删</p>
+<p>如果我们的UITableView是<code>UITableViewStyleGrouped</code>的时候，我们如果删除某个Group的最后一条记录时，相应的分组也将被删除。所以，必须保证UITableView的分组，和Cell同时被删除。所以，就需要使用beginUpdates方法和endUpdates方法，将要做的删除操作“包”起来！</p>
+<h3 id="beginUpdates方法和endUpdates方法是什么呢？"><a href="#beginUpdates方法和endUpdates方法是什么呢？" class="headerlink" title="beginUpdates方法和endUpdates方法是什么呢？"></a>beginUpdates方法和endUpdates方法是什么呢？</h3><ol>
+<li>这两个方法，是配合起来使用的，标记了一个tableView的动画块。</li>
+<li>分别代表动画的开始和结束。两者成对出现，可以嵌套使用。</li>
+<li>一般，在<code>添加</code>、<code>删除</code>、<code>选择</code>tableView中使用，并实现动画效果。</li>
+<li><code>在动画块内，不建议使用reloadData方法，如果使用，会影响动画</code></li>
+</ol>
+<h3 id="一般什么时候使用这么一个动画块呢？"><a href="#一般什么时候使用这么一个动画块呢？" class="headerlink" title="一般什么时候使用这么一个动画块呢？"></a>一般什么时候使用这么一个动画块呢？</h3><p>一般在UITableView执行：<code>删除行</code>，<code>插入行</code>，<code>删除分组</code>，<code>插入分组</code>时使用！用来协调UITableView的动画效果。</p>
+<h4 id="插入指定的行"><a href="#插入指定的行" class="headerlink" title="插入指定的行"></a>插入指定的行</h4><p>在执行该方法时，会对数据源进行访问（分组数据和行数据），并更新可见行。所以，在调用该方法前，应该先更新数据源</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)insertRowsAtIndexPaths:(<span class="built_in">NSArray</span> *)indexPaths</div><div class="line">              withRowAnimation:(<span class="built_in">UITableViewRowAnimation</span>)animation</div></pre></td></tr></table></figure>
+<h4 id="插入分组到制定位置"><a href="#插入分组到制定位置" class="headerlink" title="插入分组到制定位置"></a>插入分组到制定位置</h4><p>插入一个特定的分组。如果，指定的位置上已经存在了分组，那么原来的分组向后移动一个位置。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)insertSections:(<span class="built_in">NSIndexSet</span> *)sections</div><div class="line">      withRowAnimation:(<span class="built_in">UITableViewRowAnimation</span>)animation</div></pre></td></tr></table></figure>
+<h4 id="删除制定位置的分组"><a href="#删除制定位置的分组" class="headerlink" title="删除制定位置的分组"></a>删除制定位置的分组</h4><p>删除一个制定位置的分组，其后面的分组向前移动一个位置。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)deleteSections:(<span class="built_in">NSIndexSet</span> *)sections</div><div class="line">      withRowAnimation:(<span class="built_in">UITableViewRowAnimation</span>)animation</div></pre></td></tr></table></figure>
+<h4 id="移动分组"><a href="#移动分组" class="headerlink" title="移动分组"></a>移动分组</h4><p>移动原来的分组从一个位置移动到一个新的位置。如果，新位置上若存在某个分组，那这某个分组将会向上（下）移动到临近一个位置。该方法，没有动画参数。会直接移动。并且一次只能移动一个分组。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)moveSection:(<span class="built_in">NSInteger</span>)section</div><div class="line">          toSection:(<span class="built_in">NSInteger</span>)newSection</div></pre></td></tr></table></figure>
+<p>在如上方法中，建议使用该动画块进行操作！</p>
 <hr>
-<p><strong>举例：</strong></p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">dispatch_async</span>(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</div><div class="line"><span class="comment">//子线程中开始网络请求数据</span></div><div class="line">...</div><div class="line"><span class="comment">//更新数据模型</span></div><div class="line"><span class="built_in">dispatch_sync</span>(dispatch_get_main_queue(), ^&#123;</div><div class="line"><span class="comment">//在主线程中更新UI代码</span></div><div class="line"><span class="keyword">self</span>.view.backgroundColor = [<span class="built_in">UIColor</span> orangeColor];</div><div class="line">&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<hr>
-<blockquote>
-<p><strong>Note：</strong><br>尽可能避免使用<code>dispatch_sync</code>，嵌套使用时还容易引起程序死锁</p>
-</blockquote>
-<h2 id="死锁问题"><a href="#死锁问题" class="headerlink" title="死锁问题"></a>死锁问题</h2><ul>
-<li>同步串行会出现死锁，同步并行不会造成死锁</li>
-<li>异步不管是串行还是并行都不会出现死锁</li>
-<li>异步嵌套同步或者同步嵌套异步就需要注意代码执行顺序</li>
-</ul>
-<blockquote>
-<p><strong>Note：</strong><br>死锁原因：提交到主线程队列的时候，慎用同步<code>dispatch_sync</code>方法，有可能造成死锁。因为主线程队列是串行队列，要等队列里的任务一个一个执行。所以提交一个任务到队列，如果用同步方法就会阻塞住主线程，而主线程又要等主线程队列里的任务都执行完才能执行那个刚提交的，所以主线程队列里还有其他的任务的话，但他已经被阻塞住了，没法先完成队列里的其他任务，即，最后一个任务也没机会执行到，于是造成死锁。</p>
-</blockquote>
-<h2 id="dispatch-after"><a href="#dispatch-after" class="headerlink" title="dispatch_after"></a>dispatch_after</h2><p><code>dispatch_after</code>能让我们添加进队列的任务延时执行，比如想让一个Block在5秒后执行：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span> delayTime = <span class="number">5.0</span>;</div><div class="line"></div><div class="line">dispCatch_time_t dTime = dispatch_time(DISPATCH_TIME_NOW, </div><div class="line">(int64_t)(delayTime*<span class="built_in">NSEC_PER_SEC</span>));</div><div class="line"></div><div class="line">dispatch_after(dTime, dispatch_get_main_queue(), ^&#123;</div><div class="line"><span class="comment">//delayTime秒后执行block块</span></div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"block执行"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p><code>dispatch_after</code>的真正含义是在5秒后把任务添加进队列中，并不是表示在5秒后执行，大部分情况该函数能达到我们的预期，只有在对时间要求非常精准的情况下才可能会出现问题</p>
-<hr>
-<p>【拓展】<br>延迟执行还有另外一种方式，那就是NSObject中的<code>performSelector:withObject:afterDelay:</code>以及<code>performSelector:withObject:afterDelay:inModes:</code></p>
-<hr>
-<h2 id="dispatch-group"><a href="#dispatch-group" class="headerlink" title="dispatch_group"></a>dispatch_group</h2><p>我们现在有3个Block要执行，我们不在乎它们执行的顺序，我们只希望在这3个Block执行完之后再执行某个操作。这个时候就需要使用<code>dispatch_group</code>了</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">dispatch_group_t groupQueue = dispatch_group_create();</div><div class="line"></div><div class="line">dispatch_group_async(groupQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"1"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">dispatch_group_async(groupQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"2"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">dispatch_group_async(groupQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"3"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">dispatch_group_notify(groupQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"completion"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>在控制台打印的结果是：<br>2015-07-21 22:17:57.159 GCD[9606:1327380] 3<br>2015-07-21 22:17:57.159 GCD[9606:1327377] 2<br>2015-07-21 22:17:57.159 GCD[9606:1327379] 1<br>2015-07-21 22:17:57.159 GCD[9606:1327377] completion</p>
-<blockquote>
-<p><strong>Note：</strong><br>输出的顺序与添加进队列的顺序无关，因为队列是Concurrent Dispatch Queue，但“completion”的输出一定是在最后的</p>
-</blockquote>
+<h2 id="问答区"><a href="#问答区" class="headerlink" title="问答区"></a>问答区</h2><ol>
+<li>为什么block属性使用copy修饰？<br>答：Block属性的声明，首先需要用copy修饰符，因为只有copy后的Block才会在堆中，栈中的Block的生命周期是和栈绑定的。ARC和非ARC声明都是一样的，当然注意在非ARC下要release Block。</li>
+</ol>
 <hr>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
 <p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
@@ -329,10 +289,6 @@ var _hmt = _hmt || [];
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">GCD</a>
         		</li>
       		
 		</ul>
@@ -399,7 +355,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3aS3KEMAxFUfa/abKADtR9EiRt6zKiEmJ8GCj6+DjwdX5cV89cPX//28+fH29cMmTIWJZx3l78BfwZ8gn43mTIkDGHwZfmIZXw7p8kfyVDhgwZfFs12NU6MmTIkPFUwE3XuU8l/+3/hgwZMhZhdFI9Xmp2GnCP1eIyZMhYkMG77n9//8p8Q4YMGUsxzvB6Y4tpkP1lVzJkyNiawQNcJ5njqWFnPzJkyJjG6B/hqg01SThG2asMGTI2ZbxXAfNGf5AIfq4mQ4aMrRlPlZ18DJmOP4NPLEOGjO0YtdHgw2NFnJ5e3suQIWMko3b04alClzfvjv62ZMiQ8fUM0mLjzbI0dHZGmEERK0OGjMUZ9yGMBDu+Ai9K+XtlyJAxgZGWlLVt1Qrgh9NEGTJkLM5Ik7k0pSPrpAG6eCxMhgwZWzDS0Jnedw6EoTMjMmTIGMPoNPo75Sg/8BGMBGTIkLEFg7ex0o3WClSeSsqQIWMOo3Mkgjf6O2ODYAYrQ4aMAYz0lTzF5Ilg2vKTIUPGNEZ6oKG29Q44zmplyJCxEeO9NC5trvHPHc83ZMiQsSDjDK9OA6521AyNCmTIkLE1ozYTrC2RHrPgRzdkyJAxgUGCbPoleIrZSR9lyJAxjZH2r/qHyWqpHqrFZciQIQM/yQvgGj6I8TJkyBjGSBthtbYdbwjKkCFjDiM9EpGGUd5EKzbvZMiQsTUjLR37Tf9+8C0OMmXIkLEe4wdpWdsZ2oQ3zQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACOElEQVR42u3aQW7DMAxEUd//0i7QXZHa+UMqRU19rQKntf2yECgOjwOv83u9fr6/8rquvn29fnxiyZAh47GM83ZdMa4exr8lDPJuMmTI2IdBNtnOFb693m/ul9dlyJAho/T4tKCUIUOGjLUb7n05SIrL9C9lyJAho1/GkVZa51i77CwuQ4aMBzI6wcCnP/9RviFDhox/zDjDRe5AnsWDTPRWMmTIGM3oN8LSg+79fdLD8EGqVBkyZIxg1A6ltU0zbaKR58qQIWM2gxRzpLxLG/ppy+zNnWXIkDGa0Ykn08ELfkAt/hAyZMgYzVgVJdaadJ1mXBASyJAh47EMUpyRQ2wn7Kwhf9xHhgwZoxm11+2Ejrzdn1JlyJAxlZE+gBw4awEkLytlyJCxG4M33zuHzHQrT+dUZciQMZtBhieW9fPCl+bBqgwZMnZg3JdrvChcFVjGz5IhQ8ZoRq3sq5WS/Ns0WJUhQ8ZujFoTDRVwIIxMxzVQsiFDhoxBjLVhZBoGdLZ+GTJkzGYEhVcp4Pz0Ni1Dhox9GDwqID8Ejy3T0vPyv2TIkDGakQ6P1lpvhM3Dy9a2K0OGjAcyznClIxTpz5Fu1r8ksTJkyBjHaA1jhdFjGhKQklGGDBn7MNKxrZRda7q1xsJkyJAxlEFeZVW7P97vSdEpQ4YMGeHRlISa6cjFm3eWIUOGDD5I2jjQpgfdYmkoQ4aMxzL4UFdtjDXdgnl5KkOGjB0Y/fYZDyZr/7UMI0OGjOcxvgAw9/AulfcvHAAAAABJRU5ErkJggg==" alt="微信分享二维码">
     </div>
 </div>
 
@@ -413,18 +369,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2015/07/21/About-me/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/09/05/Xcode-Version-and-Build/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          关于我
+          Xcode上Version和Build
         
       </div>
     </a>
   
   
-    <a href="/2015/07/08/Update-Xcode-Plug-in/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">关于Xcode更新之后插件失效以及安装失败详解</div>
+    <a href="/2015/08/28/My-projects-introduction/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">项目简介</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -579,15 +535,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">年终总结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -603,6 +555,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">终端</a>
               </li>
              
@@ -611,7 +567,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+                <a href="javascript:void(0)" class="js-tag color5">年终总结</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -619,7 +575,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -631,27 +587,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -679,19 +619,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
+                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
+                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -711,11 +643,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -731,7 +667,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -739,7 +675,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -747,7 +683,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -780,6 +732,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">键盘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -827,14 +783,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">代码块</a>
               </li>
              
@@ -843,7 +791,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">企业级证书打包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="superdanny.link">
-  <title>指定UIView的特定角为圆角 | 皮卡丘♪～(´ε｀　)</title>
+  <title>字典数组、对象数组排序以及分组 | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="如果需要将UIView的4个角全部设为圆角，做法相当简单：    纯代码只需设置其Layer的cornerRadius属性即可（项目需要使用QuartzCore框架） xib上只需如图一那样设置就行了">
+  <meta name="description" content="简单排序 利用block语法进行排序 高级排序 拓展-分组问题   Objective-C对数据的操作可谓是非常用心，早已经封装好了很多方法等着我们去挖掘。其中对排序就是其中之一。本文是基于前人的基础上进行完善和加上自己的一些见解。 123456//NSComparisonResult类型结果typedef NS_ENUM(NSInteger, NSComparisonResult) &amp;#1">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="指定UIView的特定角为圆角">
-<meta property="og:url" content="superdanny.link/2015/08/20/Custom-UIView-fillet/index.html">
+<meta property="og:title" content="字典数组、对象数组排序以及分组">
+<meta property="og:url" content="superdanny.link/2015/09/07/iOS-Array-sorting-and-grouping/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
-<meta property="og:description" content="如果需要将UIView的4个角全部设为圆角，做法相当简单：    纯代码只需设置其Layer的cornerRadius属性即可（项目需要使用QuartzCore框架） xib上只需如图一那样设置就行了">
-<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/81f8a509gw1eva0n9ntluj20ey0iotad.jpg">
-<meta property="og:updated_time" content="2016-11-30T01:56:38.000Z">
+<meta property="og:description" content="简单排序 利用block语法进行排序 高级排序 拓展-分组问题   Objective-C对数据的操作可谓是非常用心，早已经封装好了很多方法等着我们去挖掘。其中对排序就是其中之一。本文是基于前人的基础上进行完善和加上自己的一些见解。 123456//NSComparisonResult类型结果typedef NS_ENUM(NSInteger, NSComparisonResult) &amp;#1">
+<meta property="og:updated_time" content="2016-11-30T01:56:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="指定UIView的特定角为圆角">
-<meta name="twitter:description" content="如果需要将UIView的4个角全部设为圆角，做法相当简单：    纯代码只需设置其Layer的cornerRadius属性即可（项目需要使用QuartzCore框架） xib上只需如图一那样设置就行了">
-<meta name="twitter:image" content="http://ww2.sinaimg.cn/mw690/81f8a509gw1eva0n9ntluj20ey0iotad.jpg">
+<meta name="twitter:title" content="字典数组、对象数组排序以及分组">
+<meta name="twitter:description" content="简单排序 利用block语法进行排序 高级排序 拓展-分组问题   Objective-C对数据的操作可谓是非常用心，早已经封装好了很多方法等着我们去挖掘。其中对排序就是其中之一。本文是基于前人的基础上进行完善和加上自己的一些见解。 123456//NSComparisonResult类型结果typedef NS_ENUM(NSInteger, NSComparisonResult) &amp;#1">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
@@ -172,20 +170,20 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Custom-UIView-fillet" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-iOS-Array-sorting-and-grouping" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      指定UIView的特定角为圆角
+      字典数组、对象数组排序以及分组
     </h1>
   
 
         
-        <a href="/2015/08/20/Custom-UIView-fillet/" class="archive-article-date">
-  	<time datetime="2015-08-20T04:13:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-08-20</time>
+        <a href="/2015/09/07/iOS-Array-sorting-and-grouping/" class="archive-article-date">
+  	<time datetime="2015-09-06T16:21:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-09-07</time>
 </a>
 
         
@@ -193,32 +191,43 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>如果需要将UIView的4个角全部设为圆角，做法相当简单：</li>
-</ul>
-<blockquote>
-<ol>
-<li>纯代码只需设置其Layer的cornerRadius属性即可（项目需要使用QuartzCore框架）</li>
-<li>xib上只需如<code>图一</code>那样设置就行了</li>
-</ol>
-</blockquote>
-<a id="more"></a> 
-<p><img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1eva0n9ntluj20ey0iotad.jpg" alt="图一"></p>
-<ul>
-<li>若要指定某几个角（小于4个）为圆角而别的不变时，这种方法就不好用了。对于这种情况，Stackoverflow上提供了<a href="http://stackoverflow.com/questions/2264083/rounded-uiview-using-calayers-only-some-corners-how" target="_blank" rel="external">几种解决方案</a>。其中最简单优雅的方案，就是使用UIBezierPath。下面给出一段示例代码。</li>
-</ul>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">UIView</span> *view = [[<span class="built_in">UIView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">120</span>, <span class="number">10</span>, <span class="number">80</span>, <span class="number">80</span>)];</div><div class="line">view.backgroundColor = [<span class="built_in">UIColor</span> redColor];</div><div class="line">[<span class="keyword">self</span>.view addSubview:view2];</div><div class="line"></div><div class="line"><span class="built_in">UIBezierPath</span> *maskPath = [<span class="built_in">UIBezierPath</span> bezierPathWithRoundedRect:view2.bounds</div><div class="line">byRoundingCorners:<span class="built_in">UIRectCornerBottomLeft</span> | <span class="built_in">UIRectCornerBottomRight</span></div><div class="line">cornerRadii:<span class="built_in">CGSizeMake</span>(<span class="number">10</span>, <span class="number">10</span>)];</div><div class="line"><span class="built_in">CAShapeLayer</span> *maskLayer = [[<span class="built_in">CAShapeLayer</span> alloc] init];</div><div class="line">maskLayer.frame         = view.bounds;</div><div class="line">maskLayer.path          = maskPath.CGPath;</div><div class="line">view.layer.mask         = maskLayer;</div></pre></td></tr></table></figure>
-<p>其中<code>byRoundingCorners:UIRectCornerBottomLeft | UIRectCornerBottomRight</code><br>指定了需要成为圆角的角。该参数是<code>UIRectCorner</code>类型的，可选的值有：</p>
+        <hr>
 <blockquote>
 <ul>
-<li>UIRectCornerTopLeft</li>
-<li>UIRectCornerTopRight</li>
-<li>UIRectCornerBottomLeft</li>
-<li>UIRectCornerBottomRight</li>
-<li>UIRectCornerAllCorners</li>
+<li>简单排序</li>
+<li>利用block语法进行排序</li>
+<li>高级排序</li>
+<li>拓展-分组问题</li>
 </ul>
 </blockquote>
-<p>从名字很容易看出来代表的意思，使用“|”来组合就好了。</p>
+<p>Objective-C对数据的操作可谓是非常用心，早已经封装好了很多方法等着我们去挖掘。其中对排序就是其中之一。本文是基于前人的基础上进行完善和加上自己的一些见解。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//NSComparisonResult类型结果</div><div class="line">typedef NS_ENUM(NSInteger, NSComparisonResult) &#123;</div><div class="line">    NSOrderedAscending = -1L, </div><div class="line">    NSOrderedSame, </div><div class="line">    NSOrderedDescending</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="简单排序"><a href="#简单排序" class="headerlink" title="简单排序"></a>简单排序</h2><p><code>sortedArrayUsingSelector:</code><br>通过指定方法对数组元素进行排序。有一点需要记住，就是不管你自定义的方法是什么，都必须最后返回一个<code>NSComparisonResult</code>类型用于决定元素的排列原则。一般用于对字符串数组进行排序，因为字符串有自带的对比方法<code>compare:</code>。如果想对其他类型元素的数组进行排序就需要我们自己自定义排序方法。<br>例如：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSArray</span> *array = @[<span class="string">@"abc"</span>,<span class="string">@"456"</span>,<span class="string">@"123"</span>,<span class="string">@"789"</span>,<span class="string">@"ef"</span>];</div><div class="line"><span class="built_in">NSArray</span> *sortedArray = [array sortedArrayUsingSelector:<span class="keyword">@selector</span>(compare:)];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"排序后:%@"</span>,sortedArray);</div></pre></td></tr></table></figure>
+<h2 id="利用block语法进行排序"><a href="#利用block语法进行排序" class="headerlink" title="利用block语法进行排序"></a>利用block语法进行排序</h2><p><code>sortedArrayUsingComparator:</code></p>
+<p>假如我们有一个存储了NSDate类型的数组需要进行排序，那么我们可以通过<code>compare:</code>方法进行排序。或者如果想自定义排序原则也可以使用如下方式：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSArray</span> *sortedArray = [array sortedArrayUsingComparator:^<span class="built_in">NSComparisonResult</span>(<span class="built_in">NSDate</span> *obj1, <span class="built_in">NSDate</span> *obj2) &#123;</div><div class="line">    <span class="keyword">if</span> ([date1 timeIntervalSinceDate:date2] &lt; <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">NSOrderedDescending</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> ([date1 timeIntervalSinceDate:date2] &gt; <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">NSOrderedAscending</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">NSOrderedSame</span>;</div><div class="line">    <span class="comment">//或者使用compare:进行排序</span></div><div class="line"><span class="comment">//    NSComparisonResult result = [date1 compare:date2];</span></div><div class="line"><span class="comment">//    return result;</span></div><div class="line">    </div><div class="line">&#125;];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"排序后:%@"</span>,sortedArray);</div></pre></td></tr></table></figure>
+<p>假如我们有一个存储了NSDate类型的数组需要进行排序，那么我们可以通过此方法进行排序。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSArray</span> *sortedArray = [array sortedArrayUsingComparator:^<span class="built_in">NSComparisonResult</span>(<span class="built_in">NSDate</span> * date1, <span class="built_in">NSDate</span> * date2) &#123;</div><div class="line">    <span class="keyword">if</span> ([date1 timeIntervalSinceDate:date2] &lt; <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">NSOrderedDescending</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> ([date1 timeIntervalSinceDate:date2] &gt; <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">NSOrderedAscending</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">NSOrderedSame</span>;</div><div class="line">&#125;];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"排序后:%@"</span>,sortedArray);</div></pre></td></tr></table></figure>
+<h2 id="高级排序"><a href="#高级排序" class="headerlink" title="高级排序"></a>高级排序</h2><p><code>sortedArrayUsingDescriptors:</code> &amp; <code>sortUsingDescriptors:</code><br>前者带返回值，是NSArray的方法，返回值中的数组是排好序的数组<br>后者不带返回值，是NSMutableArray的方法，是对当前数组自己排序</p>
+<p>该方法是根据用户的描述器（Descriptor）进行排序。可能这样说有点抽象，我们直接上代码解释：</p>
+<p>假设我们有Person类，Car类。需要对Person进行特定条件的排序，排序的原则就是优先根据姓名排序，用户名相同时，再根据年龄排序，年龄也相同时，再按照车进行排序。</p>
+<p>Car类</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">Car.h文件</div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Car</span> : <span class="title">NSObject</span></span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *name;</div><div class="line"></div><div class="line">+ (Car *)initWithName:(<span class="built_in">NSString</span> *)name;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line">Car.m文件</div><div class="line"><span class="meta">#import <span class="meta-string">"Car.h"</span></span></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Car</span></span></div><div class="line"> </div><div class="line">+ (Car *)initWithName:(<span class="built_in">NSString</span> *)name &#123;</div><div class="line">    Car *car = [Car alloc] init];</div><div class="line">    car.name = name;</div><div class="line">    <span class="keyword">return</span> car;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<p>Person类</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">Person.h文件</div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Person</span> : <span class="title">NSObject</span></span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>  ) <span class="built_in">NSString</span>  *name;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">NSInteger</span> age;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) Car       *car;</div><div class="line"></div><div class="line">+ (Person *)personWithAge:(<span class="keyword">int</span>)age withName:(<span class="built_in">NSString</span> *)name withCar:(Car *)car;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line">Person.m文件</div><div class="line"><span class="meta">#import <span class="meta-string">"Person.h"</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">"Car.h"</span></span></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Person</span></span></div><div class="line"> </div><div class="line">+ (Person *)personWithAge:(<span class="keyword">int</span>)age withName:(<span class="built_in">NSString</span> *)name withCar:(Car *)car &#123;</div><div class="line">    Person *person = [[Person alloc] init];</div><div class="line">    person.age  = age;</div><div class="line">    person.name = name;</div><div class="line">    person.car  = car;</div><div class="line">    <span class="keyword">return</span> person;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>排序方法的实现</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//首先来3辆车，分别是奥迪、劳斯莱斯、宝马</span></div><div class="line">Car *car1 = [Car initWithName:<span class="string">@"Audio"</span>];</div><div class="line">Car *car2 = [Car initWithName:<span class="string">@"Rolls-Royce"</span>];</div><div class="line">Car *car3 = [Car initWithName:<span class="string">@"BMW"</span>];</div><div class="line"></div><div class="line"><span class="comment">//再来5个Person，每人送辆车，分别为car2、car1、car1、car3、car2</span></div><div class="line">Person *p1 = [Person personWithAge:<span class="number">20</span> withName:<span class="string">@"Danny"</span> withCar:car2];</div><div class="line">Person *p2 = [Person personWithAge:<span class="number">21</span> withName:<span class="string">@"Kevin"</span> withCar:car1];</div><div class="line">Person *p3 = [Person personWithAge:<span class="number">24</span> withName:<span class="string">@"Maggie"</span> withCar:car1];</div><div class="line">Person *p4 = [Person personWithAge:<span class="number">23</span> withName:<span class="string">@"Danny"</span> withCar:car3];</div><div class="line">Person *p5 = [Person personWithAge:<span class="number">23</span> withName:<span class="string">@"LvChanghui"</span> withCar:car2];</div><div class="line"></div><div class="line"><span class="comment">//加入数组</span></div><div class="line"><span class="built_in">NSArray</span> *array = @[p1,p2,p3,p4,p5];</div><div class="line"></div><div class="line"><span class="comment">//构建排序描述器,这里很类似KVO的读取属性的方法，直接从字符串读取对象属性，注意不要写错</span></div><div class="line"><span class="built_in">NSSortDescriptor</span> *carNameDesc    = [<span class="built_in">NSSortDescriptor</span> sortDescriptorWithKey:<span class="string">@"car.name"</span></div><div class="line">                                                                 ascending:<span class="literal">YES</span>];</div><div class="line"><span class="built_in">NSSortDescriptor</span> *personNameDesc = [<span class="built_in">NSSortDescriptor</span> sortDescriptorWithKey:<span class="string">@"name"</span></div><div class="line">                                                                 ascending:<span class="literal">YES</span>];</div><div class="line"><span class="built_in">NSSortDescriptor</span> *personAgeDesc  = [<span class="built_in">NSSortDescriptor</span> sortDescriptorWithKey:<span class="string">@"age"</span></div><div class="line">                                                                 ascending:<span class="literal">YES</span>];</div><div class="line"></div><div class="line"><span class="comment">//把排序描述器放进数组里，放入的顺序就是你想要排序的顺序</span></div><div class="line"><span class="comment">//这里是：首先按照姓名，然后是年龄排序，最后是按照车的名字</span></div><div class="line"><span class="built_in">NSArray</span> *descriptorArray = @[personNameDesc,personAgeDesc,carNameDesc];</div><div class="line"></div><div class="line"><span class="built_in">NSArray</span> *sortedArray = [array sortedArrayUsingDescriptors: descriptorArray];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,sortedArray);</div><div class="line"></div><div class="line"><span class="comment">//如果是可变数组，则使用sortUsingDescriptors:</span></div><div class="line"><span class="built_in">NSMutableArray</span> *mutableArray = [<span class="built_in">NSMutableArray</span> arrayWithArray:@[p1,p2,p3,p4,p5]];</div><div class="line"></div><div class="line">[mutableArray sortUsingDescriptors:[<span class="built_in">NSArray</span> arrayWithObject:sortDescriptor]];</div><div class="line"><span class="comment">//此时mutableArray已经排好顺序</span></div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,mutableArray);</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="拓展-分组问题"><a href="#拓展-分组问题" class="headerlink" title="拓展-分组问题"></a>拓展-分组问题</h2><p>假如我们需要对<code>字典(或对象)</code>数组里面，根据<code>字典（或对象）</code>元素的某个<code>键值（或属性）</code>进行分组。分组的思路无非就是将某个<code>键值（或属性）</code>相同的<code>字典（或对象）</code>放在一起。那么如何做到快速分组呢？这里就要引入一个新的类型<code>NSMutableSet</code>、<code>NSSet</code></p>
+<p>该类型具有无序的，不重复的特性（保证数据的唯一性）。当插入相同的数据时，不会有任何效果。从内部实现来说是hash表。</p>
+<p>例如：有一个Model类，需要根据Model里面的exchangeShortTime字段进行分组</p>
+<p>Model类</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Model</span> : <span class="title">NSObject</span></span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *exchangeShortTime;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<p>分组的实现</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)groupAction:(<span class="built_in">NSMutableArray</span> *)arr &#123;</div><div class="line">    <span class="comment">//arr里面存储着多个model对象，现在我们根据model中的exchangeShortTime字段进行分组</span></div><div class="line">    </div><div class="line">    <span class="built_in">NSMutableSet</span> *set = [<span class="built_in">NSMutableSet</span> set];</div><div class="line"></div><div class="line">    <span class="comment">//利用set不重复的特性,得到有多少组,根据model中的exchangeShortTime字段</span></div><div class="line">    [arr enumerateObjectsUsingBlock:^(Model * _Nonnull model, <span class="built_in">NSUInteger</span> idx, <span class="built_in">BOOL</span> * _Nonnull stop) &#123;</div><div class="line">        [set addObject:model.exchangeShortTime];</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">    <span class="comment">/*此时，set里面已经存储了可以分为组数*/</span></div><div class="line">    </div><div class="line">    <span class="comment">//接下来需要用到NSPredicate语法进行筛选</span></div><div class="line">    __block <span class="built_in">NSMutableArray</span> *groupArr = [<span class="built_in">NSMutableArray</span> array];</div><div class="line">    [set enumerateObjectsUsingBlock:^(<span class="built_in">NSString</span> * _Nonnull exchangeShortTime, <span class="built_in">BOOL</span> * _Nonnull stop) &#123;</div><div class="line">        <span class="built_in">NSPredicate</span> *predicate = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"exchangeShortTime = %@"</span>, exchangeShortTime];</div><div class="line">        <span class="built_in">NSArray</span> *tempArr = [<span class="built_in">NSArray</span> arrayWithArray:[arr filteredArrayUsingPredicate:predicate]];</div><div class="line">        [groupArr addObject:tempArr];</div><div class="line">    &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>大功告成！排序分组就讲到这里。如果后面还有更多相关知识点会补充上。</p>
 <hr>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
 <p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
@@ -333,7 +342,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJUlEQVR42u3aS27DMAwFwNz/0u62i9p+JJ0ClkaroAlkTQow/OjzidfxayXvnv0leX32lAcWBgbGaxnH5aoyqtQcdvMUDAyMDRhnD07CYnLEJIxe73NzZgwMDIziIa6DYx7WMTAwMOaM3iMxMDAweoykiM3xk1D79VocAwPjhYy86/7/r78y38DAwHgV4yiu6j7JEY/xwsDAWJvRa6VVh455ajg5DwYGxg6MUbBrsZPCuFCyYmBgLM2oXrCoXhfLP5kH6JvQjIGBsQGjV3bOh5o5oPAbgoGBsQQjD6x5AldNBB8YkWJgYCzNqF726l2hmLfwHpu7YmBgvIoxSeyqrbf5CPN0ZwwMjA0YhTFh/Pi8JK4OQf/YGQMDY2lGb+t58G0e9PrLxcDAWJqRB9BqS66Q3l0G6PL/BAMDYzlG3rifJHn5V1AdpmJgYKzNSEJkb5zZK0dHgwEMDIwNGPMWW75b+Tfh+u8YGBhLM5IrDr0idoKpBn0MDIx9GNVxZvXaxLyIvUkZMTAwNmDkQ8d5GJ2E+5uuIQYGxmaMPNXLS9DqmCGvVTEwMFZlHMXVSxPzVLI5KsDAwFiaka9eaVotSpNkMU8cMTAwVmL0GvHV4rbX2sPAwMDIi9je9YukAdcrYjEwMDCeyjTzd6uB+25KgIGBsTuj+snr41YD+ldSQwwMjJcwnkrvrttw1XZbPgTFwMBYm9G74pA/bNJ0e+qKBgYGxmsZP+P3YL5pSKcpAAAAAElFTkSuQmCC" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACl0lEQVR42u3aQW7DQAgF0N7/0u22UurkA4ObSM+ryHHtea4EBObrKz6+fx2P55+fSb5Nzj+/8+jAw8PDGyz98bjiXZ1JFnd1Zf5qkjXj4eHhbfPyoFxNEpOlV5MEHh4e3mfxkmq2HNbjJISHh4f3zrznS+wheyU+Hh4e3v/yJrdLFponm7ykPtxrwcPDw6tVrdEU6X0+r8z38PDw8MZT9WorYXLnfNhWuBseHh7eAi8PuElxnLcb9jZd4eHh4W3z8h/8eYDeqGx7rQ08PDy8DV4S1nsDsLwVmyeJ5pV4eHh4t/OSMjophScppJps8PDw8PZ41YDeK7ir6eRYkwIPDw9vgTfZKNB7Tb25f55yIjAeHh7eUV7+DvLy91TKGf3H8PDw8JZ51ZJ39Mg4FVWHZ3h4eHh7vDxY94ZbvUA/GaTh4eHh3cObjMGSK6vbBXqNYzw8PLw7eZNmbrUNkRfK8y1ceHh4eHu8POwm46jqHar4ZP14eHh4e7w8xCfbAqrFcfUlTtaGh4eHN+fNQ/98bFYtxAvtYDw8PLwF3tntVpOmRvLEyRYxPDw8vFO86qaBvHkx3xZQHaf98RkPDw9vgdfsWMRHssT5EK4Aw8PDwzvEmwT0Sauit9mrnGzw8PDw1ni9Fmpv0b3h1rGZHh4eHt7ydoE89E8C+nyQdnklHh4e3i28fBH5SKy6FWCeKvDw8PA2eL2yuDfszxuv1SYIHh4e3p28+Siryui1jJtzPDw8PLw1Xq/9Wr3DpFjvDd7w8PDwtnn5hqfejKn64vLQ/6Lcx8PDw3t7Xt6o7Q238PDw8D6R1yxti62N/Ikv0gkeHh7eGi8f/OfDsBycX19OIXh4eHgLvN4P/l4y6LV0q3+Lh4eHt8b7AWSxnHHm45smAAAAAElFTkSuQmCC" alt="微信分享二维码">
     </div>
 </div>
 
@@ -347,18 +356,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2015/08/28/My-projects-introduction/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/09/09/iOS-Verifying-the-legitimacy-of-the-bank-card/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          项目简介
+          银行卡合法性校验
         
       </div>
     </a>
   
   
-    <a href="/2015/08/18/Storyboard/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">初探Storyboard</div>
+    <a href="/2015/09/06/Interview-questions/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一天一道面试题</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -513,15 +522,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">年终总结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -537,6 +542,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">终端</a>
               </li>
              
@@ -545,7 +554,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+                <a href="javascript:void(0)" class="js-tag color5">年终总结</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -553,7 +562,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -565,27 +574,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -613,19 +606,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
+                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
+                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -645,11 +630,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -665,7 +654,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -673,7 +662,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -681,7 +670,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -714,6 +719,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">键盘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -761,14 +770,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">代码块</a>
               </li>
              
@@ -777,7 +778,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">企业级证书打包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">

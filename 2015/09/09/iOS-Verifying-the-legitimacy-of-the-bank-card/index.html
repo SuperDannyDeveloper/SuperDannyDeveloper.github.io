@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="superdanny.link">
-  <title>如何禁用/解除禁用 复制、剪切、选择、全选 | 皮卡丘♪～(´ε｀　)</title>
+  <title>银行卡合法性校验 | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="需求希望能够屏蔽文本框的复制、粘贴等动能，或者在某些界面需要解除屏蔽功能。 解决方案我们需要重写canPerformAction:withSender:方法实现">
-<meta name="keywords" content="iOS,长按文本框">
+  <meta name="description" content="Luhn检验数字算法（Luhn Check Digit Algorithm），也叫做模数10公式，是一种简单的算法，用于验证银行卡、信用卡号码的有效性的算法。对所有大型信用卡公司发行的信用卡都起作用，这些公司包括美国Express、护照、万事达卡、Discover和用餐者俱乐部等。这种算法最初是在20世纪60年代由一组数学家制定，现在Luhn检验数字算法属于大众，任何人都可以使用它。算法：将每个奇">
+<meta name="keywords" content="iOS,银行卡校验">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何禁用&#x2F;解除禁用 复制、剪切、选择、全选">
-<meta property="og:url" content="superdanny.link/2015/09/16/Custom-UITextField-and-UITextView-function/index.html">
+<meta property="og:title" content="银行卡合法性校验">
+<meta property="og:url" content="superdanny.link/2015/09/09/iOS-Verifying-the-legitimacy-of-the-bank-card/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
-<meta property="og:description" content="需求希望能够屏蔽文本框的复制、粘贴等动能，或者在某些界面需要解除屏蔽功能。 解决方案我们需要重写canPerformAction:withSender:方法实现">
-<meta property="og:updated_time" content="2016-11-30T01:56:38.000Z">
+<meta property="og:description" content="Luhn检验数字算法（Luhn Check Digit Algorithm），也叫做模数10公式，是一种简单的算法，用于验证银行卡、信用卡号码的有效性的算法。对所有大型信用卡公司发行的信用卡都起作用，这些公司包括美国Express、护照、万事达卡、Discover和用餐者俱乐部等。这种算法最初是在20世纪60年代由一组数学家制定，现在Luhn检验数字算法属于大众，任何人都可以使用它。算法：将每个奇">
+<meta property="og:updated_time" content="2016-11-30T01:56:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何禁用&#x2F;解除禁用 复制、剪切、选择、全选">
-<meta name="twitter:description" content="需求希望能够屏蔽文本框的复制、粘贴等动能，或者在某些界面需要解除屏蔽功能。 解决方案我们需要重写canPerformAction:withSender:方法实现">
+<meta name="twitter:title" content="银行卡合法性校验">
+<meta name="twitter:description" content="Luhn检验数字算法（Luhn Check Digit Algorithm），也叫做模数10公式，是一种简单的算法，用于验证银行卡、信用卡号码的有效性的算法。对所有大型信用卡公司发行的信用卡都起作用，这些公司包括美国Express、护照、万事达卡、Discover和用餐者俱乐部等。这种算法最初是在20世纪60年代由一组数学家制定，现在Luhn检验数字算法属于大众，任何人都可以使用它。算法：将每个奇">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
@@ -170,20 +170,20 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Custom-UITextField-and-UITextView-function" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-iOS-Verifying-the-legitimacy-of-the-bank-card" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      如何禁用/解除禁用 复制、剪切、选择、全选
+      银行卡合法性校验
     </h1>
   
 
         
-        <a href="/2015/09/16/Custom-UITextField-and-UITextView-function/" class="archive-article-date">
-  	<time datetime="2015-09-16T05:31:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-09-16</time>
+        <a href="/2015/09/09/iOS-Verifying-the-legitimacy-of-the-bank-card/" class="archive-article-date">
+  	<time datetime="2015-09-09T12:13:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-09-09</time>
 </a>
 
         
@@ -191,27 +191,10 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>希望能够屏蔽文本框的复制、粘贴等动能，或者在某些界面需要解除屏蔽功能。</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>我们需要重写<code>canPerformAction:withSender:</code>方法实现</p>
+        <p>Luhn检验数字算法（Luhn Check Digit Algorithm），也叫做模数10公式，是一种简单的算法，用于验证银行卡、信用卡号码的有效性的算法。对所有大型信用卡公司发行的信用卡都起作用，这些公司包括美国Express、护照、万事达卡、Discover和用餐者俱乐部等。这种算法最初是在20世纪60年代由一组数学家制定，现在Luhn检验数字算法属于大众，任何人都可以使用它。<br>算法：将每个奇数加倍和使它变为单个的数字，如果必要的话通过减去9和在每个偶数上加上这些值。如果此卡要有效，那么，结果必须是10的倍数。</p>
 <a id="more"></a> 
-<p>代码1：禁用所有长按文本框操作</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark - 禁用所有长按文本框操作</span></div><div class="line">- (<span class="built_in">BOOL</span>)canPerformAction:(SEL)action withSender:(<span class="keyword">id</span>)sender &#123;</div><div class="line">    <span class="keyword">if</span> ([<span class="built_in">UIMenuController</span> sharedMenuController]) &#123;</div><div class="line">        [<span class="built_in">UIMenuController</span> sharedMenuController].menuVisible = <span class="literal">NO</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>代码2：禁用部分长按文本框操作</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark - 禁用部分长按文本框操作</span></div><div class="line">- (<span class="built_in">BOOL</span>)canPerformAction:(SEL)action withSender:(<span class="keyword">id</span>)sender</div><div class="line">&#123;</div><div class="line">    <span class="comment">//禁用选择、全选、粘贴功能</span></div><div class="line">    <span class="comment">//...</span></div><div class="line">    <span class="keyword">if</span> (action == <span class="keyword">@selector</span>(paste:))</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    <span class="keyword">if</span> (action == <span class="keyword">@selector</span>(select:))</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    <span class="keyword">if</span> (action == <span class="keyword">@selector</span>(selectAll:))</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    <span class="comment">//...</span></div><div class="line">    <span class="keyword">return</span> [<span class="keyword">super</span> canPerformAction:action withSender:sender];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<pre><code>拓展：部分长按操作    
-- (void)cut:(nullable id)sender 
-- (void)copy:(nullable id)sender
-- (void)paste:(nullable id)sender
-- (void)select:(nullable id)sender
-- (void)selectAll:(nullable id)sender
-- (void)delete:(nullable id)sender
-</code></pre><h3 id="分析、解决"><a href="#分析、解决" class="headerlink" title="分析、解决"></a>分析、解决</h3><p>【情况1】：如果是屏蔽所有界面的<code>UITextField</code>/<code>UITextView</code>文本框，而<code>UITextView</code>/<code>UITextField</code>不改变</p>
-<p>方法：我们可以给<code>UITextField</code>/<code>UITextView</code>的Category里面添加代码1/代码2</p>
-<p>【情况2】：如果部分界面的文本框需要保留部分功能，可以通过自定义UITextField保留想要的功能。</p>
-<p>DDTextField.h文件</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">&lt;UIKit/UIKit.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DDTextField</span> : <span class="title">UITextField</span></span></div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
-<p>DDTextField.m文件</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"DDTextField.h"</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">DDTextField</span></span></div><div class="line"></div><div class="line"><span class="meta">#pragma mark -</span></div><div class="line">- (<span class="built_in">BOOL</span>)canPerformAction:(SEL)action withSender:(<span class="keyword">id</span>)sender &#123;</div><div class="line">    <span class="keyword">if</span> (action == <span class="keyword">@selector</span>(paste:))</div><div class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">    <span class="keyword">if</span> (action == <span class="keyword">@selector</span>(cut:))</div><div class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">    <span class="keyword">if</span> (action == <span class="keyword">@selector</span>(<span class="keyword">copy</span>:))</div><div class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">    <span class="keyword">if</span> (action == <span class="keyword">@selector</span>(select:))</div><div class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">    <span class="keyword">if</span> (action == <span class="keyword">@selector</span>(selectAll:))</div><div class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">    <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<p>使用如下代码：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//剔除卡号里的非法字符</span></div><div class="line">-(<span class="built_in">NSString</span> *)getDigitsOnly:(<span class="built_in">NSString</span>*)s</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSString</span> *digitsOnly = <span class="string">@""</span>;</div><div class="line">    <span class="keyword">char</span> c;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length; i++)</div><div class="line">    &#123;</div><div class="line">        c = [s characterAtIndex:i];</div><div class="line">        <span class="keyword">if</span> (isdigit(c))</div><div class="line">        &#123;</div><div class="line">            digitsOnly =[digitsOnly stringByAppendingFormat:<span class="string">@"%c"</span>,c];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> digitsOnly;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//检查银行卡是否合法</span></div><div class="line"><span class="comment">//Luhn算法</span></div><div class="line">-(<span class="built_in">BOOL</span>)isValidCardNumber:(<span class="built_in">NSString</span> *)cardNumber</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSString</span> *digitsOnly = [<span class="keyword">self</span> getDigitsOnly:cardNumber];</div><div class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> digit = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> addend = <span class="number">0</span>;</div><div class="line">    <span class="built_in">BOOL</span> timesTwo = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = digitsOnly.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</div><div class="line">    &#123;</div><div class="line">        digit = [digitsOnly characterAtIndex:i] - <span class="string">'0'</span>;</div><div class="line">        <span class="keyword">if</span> (timesTwo)</div><div class="line">        &#123;</div><div class="line">            addend = digit * <span class="number">2</span>;</div><div class="line">            <span class="keyword">if</span> (addend &gt; <span class="number">9</span>) &#123;</div><div class="line">                addend -= <span class="number">9</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> &#123;</div><div class="line">            addend = digit;</div><div class="line">        &#125;</div><div class="line">        sum += addend;</div><div class="line">        timesTwo = !timesTwo;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> modulus = sum % <span class="number">10</span>;</div><div class="line">    <span class="keyword">return</span> modulus == <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <hr>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
 <p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
@@ -263,7 +246,7 @@ var _hmt = _hmt || [];
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">长按文本框</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">银行卡校验</a>
         		</li>
       		
 		</ul>
@@ -330,7 +313,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACs0lEQVR42u3a227CMBAEUP7/p6nU1zZhZm2XVj15QlxCTpC8y6wfj/h4fh6zx8nZvh5Xrz5OHHh4eHijS0++5urSZ5d4/7g95+UtwMPDwzvGy4tB8tmE3ZaZ4fXg4eHhvZXXvnNWWhISHh4e3l/hrReJdtFPbhYeHh7eu3j5n//71nml2LRBxuasBQ8PDy/mnR6AnXj8i+Z7eHh4/4z3HB33gcKJeGJ4nXh4eHgHeEm7fGIDVrtNYTYMw8PDwzvHmwWmK4t4fuNmcUOUuODh4eGNePcboZIFPV/675/PXy3KGx4eHt4BXnvS2VfONloNW+e8mcbDw8PbNCGaBRZtCNs20HmpuKx7eHh4eFt57Z//lXa5LSf5jf7m/Hh4eHjHeHmzm3/BbAxWLPorkz08PDy8rbzZM+uLext5RM09Hh4e3gHeSuhw/571ZT0JMupRGR4eHt5WXktKisesMLRDsmIDAR4eHt4yrx04zZbvfPA/bJSvfjc8PDy8Y7y2dd67XbUtNkXFw8PDwzvGmy27s2B3Fi4kpeKbM+Dh4eEd4O2atueMlcB3Q0CMh4eHt5XXLtz1bC0uJ7OyUZQEPDw8vAXeetCQX/ossFgavOHh4eEd5rVNc9tArwQcSQl5URjw8PDwNvHapTZvoGcx6yzqffHD4OHh4R3g1VlvuQlgdrb8JkalCA8PD28rb9Yit4FsHgq3G61e/FR4eHh4P8LLl+PZVoOl5jiOOfDw8PBO8J7lsd5qzwLc4cAMDw8P7wBvWEkOFIA24Mg3NODh4eGd4LXFoG2gZ1sHZlEvHh4e3k/ykqC2ff/ecDa/TXh4eHh/hdduFGg/NdzugIeHh/dW3sqwKo938xudlBk8PDy8c7y2CW6X/uRb8mFYnUDj4eHhbeW1zWu7NK+MxLZFEnh4eHh7eB8bIXOoxps+SQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACpklEQVR42u3aQXIbMQwEQP3/08kDUrueIQjblWqdXJa8YvNAwAN+PvHrzz+vp98/ffL9ye/f+P7JCy88PDy88dLfGflC3zfiHfP+/GJD8fDw8NZ4yeOSheblJNnitkjg4eHh/U5essS88CSbhYeHh/d/8PKWum3T8xYfDw8P72d57eMmwcHZ0b+eteDh4eGdz6Q+eZH4qZ9X5nt4eHh446n65EA/a6Pb1vyL1eLh4eEt8NqgIRn/z4tNMkJL1omHh4e3wcv/4Z/HEHcDiOhqAh4eHt4C71ae0R7c89ChKBh4eHh4V3lJi9wezWdjqryc1P8r4OHh4V3lJbHprVY7347kmQUeDw8Pb4GXI5N3R5ef4ue3hQcPDw/vFq9dYnstYBLC5pcJHksFHh4e3hpv8mVJyzsZg+VXCh4LAx4eHt4yrx2Mtcf32dHfrg0PDw9vj9cevkmEeja4alvwIlDGw8PDu8rL2+g8kji7NHA2YIuSaTw8PLw1Xjtkyhl5vJtvVvQuHh4e3gIvv+qUXAjI2ZOyUUfGeHh4eFd5+XE/H3flcUYbRjyuGQ8PD2+NdzbQSsrJ3WFYO37Dw8PD2+CdHcdnw61Ji5wPzPDw8PC2ee3w6dZA6+x76wsHeHh4eAu8jUtUeRnIw4WzaBgPDw9vm3cW17aNcj34n4cReHh4eN/Cm7fCZxvXxsSHhQEPDw/vEm9+xLcxa44fxcd4eHh4V3nzi6R5rDBvo/O/wsPDw9vjzQPZs5a6HYAd3oPAw8PDW+MlxWAyiDp7cvK9UTHAw8PDW+O146V57LuRrBQ3I/Dw8PC+nXdrRp+PxOp8Gg8PD+/X8PIQoW2mk+O+jifw8PDw1njJUs7AZ1evJluJh4eHt807bFXLz7fLyt+9Nt/Dw8PD+5r3F7OmDQG85cu2AAAAAElFTkSuQmCC" alt="微信分享二维码">
     </div>
 </div>
 
@@ -344,18 +327,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2015/09/17/Bug-record/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/09/09/Using-shell-script-to-automatic-packaging/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          BUG记录
+          自动打包Shell脚本
         
       </div>
     </a>
   
   
-    <a href="/2015/09/10/MacOSX-show-and-hide-file/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">MacOS X隐藏和显示隐藏文件</div>
+    <a href="/2015/09/07/iOS-Array-sorting-and-grouping/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">字典数组、对象数组排序以及分组</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -510,15 +493,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">年终总结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,6 +513,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">终端</a>
               </li>
              
@@ -542,7 +525,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+                <a href="javascript:void(0)" class="js-tag color5">年终总结</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -550,7 +533,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,27 +545,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -610,19 +577,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
+                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
+                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -642,11 +601,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -662,7 +625,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -670,7 +633,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -678,7 +641,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -711,6 +690,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">键盘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -758,14 +741,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">代码块</a>
               </li>
              
@@ -774,7 +749,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">企业级证书打包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">

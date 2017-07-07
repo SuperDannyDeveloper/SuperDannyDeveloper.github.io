@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="superdanny.link">
-  <title>字典数组、对象数组排序以及分组 | 皮卡丘♪～(´ε｀　)</title>
+  <title>Grand Central Dispatch | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简单排序 利用block语法进行排序 高级排序 拓展-分组问题   Objective-C对数据的操作可谓是非常用心，早已经封装好了很多方法等着我们去挖掘。其中对排序就是其中之一。本文是基于前人的基础上进行完善和加上自己的一些见解。 123456//NSComparisonResult类型结果typedef NS_ENUM(NSInteger, NSComparisonResult) &amp;#1">
-<meta name="keywords" content="iOS">
+  <meta name="description" content="简答的复习了一下GCD的一些简单操作，这里做一个笔记，方便以后查看。   Dispatch Queue 自定义串、并行队列 程序进程缺省队列 主线程队列   同步/异步、串行/并行使用 死锁问题 dispatch_after dispatch_group">
+<meta name="keywords" content="iOS,GCD">
 <meta property="og:type" content="article">
-<meta property="og:title" content="字典数组、对象数组排序以及分组">
-<meta property="og:url" content="superdanny.link/2015/09/07/Array-sorting-and-grouping/index.html">
+<meta property="og:title" content="Grand Central Dispatch">
+<meta property="og:url" content="superdanny.link/2015/07/15/iOS-Grand-Central-Dispatch/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
-<meta property="og:description" content="简单排序 利用block语法进行排序 高级排序 拓展-分组问题   Objective-C对数据的操作可谓是非常用心，早已经封装好了很多方法等着我们去挖掘。其中对排序就是其中之一。本文是基于前人的基础上进行完善和加上自己的一些见解。 123456//NSComparisonResult类型结果typedef NS_ENUM(NSInteger, NSComparisonResult) &amp;#1">
-<meta property="og:updated_time" content="2016-11-30T01:56:35.000Z">
+<meta property="og:description" content="简答的复习了一下GCD的一些简单操作，这里做一个笔记，方便以后查看。   Dispatch Queue 自定义串、并行队列 程序进程缺省队列 主线程队列   同步/异步、串行/并行使用 死锁问题 dispatch_after dispatch_group">
+<meta property="og:updated_time" content="2016-11-30T01:56:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="字典数组、对象数组排序以及分组">
-<meta name="twitter:description" content="简单排序 利用block语法进行排序 高级排序 拓展-分组问题   Objective-C对数据的操作可谓是非常用心，早已经封装好了很多方法等着我们去挖掘。其中对排序就是其中之一。本文是基于前人的基础上进行完善和加上自己的一些见解。 123456//NSComparisonResult类型结果typedef NS_ENUM(NSInteger, NSComparisonResult) &amp;#1">
+<meta name="twitter:title" content="Grand Central Dispatch">
+<meta name="twitter:description" content="简答的复习了一下GCD的一些简单操作，这里做一个笔记，方便以后查看。   Dispatch Queue 自定义串、并行队列 程序进程缺省队列 主线程队列   同步/异步、串行/并行使用 死锁问题 dispatch_after dispatch_group">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
@@ -170,20 +170,20 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Array-sorting-and-grouping" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-iOS-Grand-Central-Dispatch" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      字典数组、对象数组排序以及分组
+      Grand Central Dispatch
     </h1>
   
 
         
-        <a href="/2015/09/07/Array-sorting-and-grouping/" class="archive-article-date">
-  	<time datetime="2015-09-06T16:21:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-09-07</time>
+        <a href="/2015/07/15/iOS-Grand-Central-Dispatch/" class="archive-article-date">
+  	<time datetime="2015-07-15T12:23:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-15</time>
 </a>
 
         
@@ -191,43 +191,96 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
+        <p>简答的复习了一下GCD的一些简单操作，这里做一个笔记，方便以后查看。</p>
 <blockquote>
 <ul>
-<li>简单排序</li>
-<li>利用block语法进行排序</li>
-<li>高级排序</li>
-<li>拓展-分组问题</li>
+<li>Dispatch Queue<ul>
+<li>自定义串、并行队列</li>
+<li>程序进程缺省队列</li>
+<li>主线程队列</li>
+</ul>
+</li>
+<li>同步/异步、串行/并行使用</li>
+<li>死锁问题</li>
+<li>dispatch_after</li>
+<li>dispatch_group</li>
 </ul>
 </blockquote>
-<p>Objective-C对数据的操作可谓是非常用心，早已经封装好了很多方法等着我们去挖掘。其中对排序就是其中之一。本文是基于前人的基础上进行完善和加上自己的一些见解。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//NSComparisonResult类型结果</div><div class="line">typedef NS_ENUM(NSInteger, NSComparisonResult) &#123;</div><div class="line">    NSOrderedAscending = -1L, </div><div class="line">    NSOrderedSame, </div><div class="line">    NSOrderedDescending</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="简单排序"><a href="#简单排序" class="headerlink" title="简单排序"></a>简单排序</h2><p><code>sortedArrayUsingSelector:</code><br>通过指定方法对数组元素进行排序。有一点需要记住，就是不管你自定义的方法是什么，都必须最后返回一个<code>NSComparisonResult</code>类型用于决定元素的排列原则。一般用于对字符串数组进行排序，因为字符串有自带的对比方法<code>compare:</code>。如果想对其他类型元素的数组进行排序就需要我们自己自定义排序方法。<br>例如：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSArray</span> *array = @[<span class="string">@"abc"</span>,<span class="string">@"456"</span>,<span class="string">@"123"</span>,<span class="string">@"789"</span>,<span class="string">@"ef"</span>];</div><div class="line"><span class="built_in">NSArray</span> *sortedArray = [array sortedArrayUsingSelector:<span class="keyword">@selector</span>(compare:)];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"排序后:%@"</span>,sortedArray);</div></pre></td></tr></table></figure>
-<h2 id="利用block语法进行排序"><a href="#利用block语法进行排序" class="headerlink" title="利用block语法进行排序"></a>利用block语法进行排序</h2><p><code>sortedArrayUsingComparator:</code></p>
-<p>假如我们有一个存储了NSDate类型的数组需要进行排序，那么我们可以通过<code>compare:</code>方法进行排序。或者如果想自定义排序原则也可以使用如下方式：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSArray</span> *sortedArray = [array sortedArrayUsingComparator:^<span class="built_in">NSComparisonResult</span>(<span class="built_in">NSDate</span> *obj1, <span class="built_in">NSDate</span> *obj2) &#123;</div><div class="line">    <span class="keyword">if</span> ([date1 timeIntervalSinceDate:date2] &lt; <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">NSOrderedDescending</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> ([date1 timeIntervalSinceDate:date2] &gt; <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">NSOrderedAscending</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">NSOrderedSame</span>;</div><div class="line">    <span class="comment">//或者使用compare:进行排序</span></div><div class="line"><span class="comment">//    NSComparisonResult result = [date1 compare:date2];</span></div><div class="line"><span class="comment">//    return result;</span></div><div class="line">    </div><div class="line">&#125;];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"排序后:%@"</span>,sortedArray);</div></pre></td></tr></table></figure>
-<p>假如我们有一个存储了NSDate类型的数组需要进行排序，那么我们可以通过此方法进行排序。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSArray</span> *sortedArray = [array sortedArrayUsingComparator:^<span class="built_in">NSComparisonResult</span>(<span class="built_in">NSDate</span> * date1, <span class="built_in">NSDate</span> * date2) &#123;</div><div class="line">    <span class="keyword">if</span> ([date1 timeIntervalSinceDate:date2] &lt; <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">NSOrderedDescending</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> ([date1 timeIntervalSinceDate:date2] &gt; <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">NSOrderedAscending</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">NSOrderedSame</span>;</div><div class="line">&#125;];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"排序后:%@"</span>,sortedArray);</div></pre></td></tr></table></figure>
-<h2 id="高级排序"><a href="#高级排序" class="headerlink" title="高级排序"></a>高级排序</h2><p><code>sortedArrayUsingDescriptors:</code> &amp; <code>sortUsingDescriptors:</code><br>前者带返回值，是NSArray的方法，返回值中的数组是排好序的数组<br>后者不带返回值，是NSMutableArray的方法，是对当前数组自己排序</p>
-<p>该方法是根据用户的描述器（Descriptor）进行排序。可能这样说有点抽象，我们直接上代码解释：</p>
-<p>假设我们有Person类，Car类。需要对Person进行特定条件的排序，排序的原则就是优先根据姓名排序，用户名相同时，再根据年龄排序，年龄也相同时，再按照车进行排序。</p>
-<p>Car类</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">Car.h文件</div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Car</span> : <span class="title">NSObject</span></span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *name;</div><div class="line"></div><div class="line">+ (Car *)initWithName:(<span class="built_in">NSString</span> *)name;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line">Car.m文件</div><div class="line"><span class="meta">#import <span class="meta-string">"Car.h"</span></span></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Car</span></span></div><div class="line"> </div><div class="line">+ (Car *)initWithName:(<span class="built_in">NSString</span> *)name &#123;</div><div class="line">    Car *car = [Car alloc] init];</div><div class="line">    car.name = name;</div><div class="line">    <span class="keyword">return</span> car;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
-<p>Person类</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">Person.h文件</div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Person</span> : <span class="title">NSObject</span></span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>  ) <span class="built_in">NSString</span>  *name;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">NSInteger</span> age;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) Car       *car;</div><div class="line"></div><div class="line">+ (Person *)personWithAge:(<span class="keyword">int</span>)age withName:(<span class="built_in">NSString</span> *)name withCar:(Car *)car;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line">Person.m文件</div><div class="line"><span class="meta">#import <span class="meta-string">"Person.h"</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">"Car.h"</span></span></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Person</span></span></div><div class="line"> </div><div class="line">+ (Person *)personWithAge:(<span class="keyword">int</span>)age withName:(<span class="built_in">NSString</span> *)name withCar:(Car *)car &#123;</div><div class="line">    Person *person = [[Person alloc] init];</div><div class="line">    person.age  = age;</div><div class="line">    person.name = name;</div><div class="line">    person.car  = car;</div><div class="line">    <span class="keyword">return</span> person;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>排序方法的实现</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//首先来3辆车，分别是奥迪、劳斯莱斯、宝马</span></div><div class="line">Car *car1 = [Car initWithName:<span class="string">@"Audio"</span>];</div><div class="line">Car *car2 = [Car initWithName:<span class="string">@"Rolls-Royce"</span>];</div><div class="line">Car *car3 = [Car initWithName:<span class="string">@"BMW"</span>];</div><div class="line"></div><div class="line"><span class="comment">//再来5个Person，每人送辆车，分别为car2、car1、car1、car3、car2</span></div><div class="line">Person *p1 = [Person personWithAge:<span class="number">20</span> withName:<span class="string">@"Danny"</span> withCar:car2];</div><div class="line">Person *p2 = [Person personWithAge:<span class="number">21</span> withName:<span class="string">@"Kevin"</span> withCar:car1];</div><div class="line">Person *p3 = [Person personWithAge:<span class="number">24</span> withName:<span class="string">@"Maggie"</span> withCar:car1];</div><div class="line">Person *p4 = [Person personWithAge:<span class="number">23</span> withName:<span class="string">@"Danny"</span> withCar:car3];</div><div class="line">Person *p5 = [Person personWithAge:<span class="number">23</span> withName:<span class="string">@"LvChanghui"</span> withCar:car2];</div><div class="line"></div><div class="line"><span class="comment">//加入数组</span></div><div class="line"><span class="built_in">NSArray</span> *array = @[p1,p2,p3,p4,p5];</div><div class="line"></div><div class="line"><span class="comment">//构建排序描述器,这里很类似KVO的读取属性的方法，直接从字符串读取对象属性，注意不要写错</span></div><div class="line"><span class="built_in">NSSortDescriptor</span> *carNameDesc    = [<span class="built_in">NSSortDescriptor</span> sortDescriptorWithKey:<span class="string">@"car.name"</span></div><div class="line">                                                                 ascending:<span class="literal">YES</span>];</div><div class="line"><span class="built_in">NSSortDescriptor</span> *personNameDesc = [<span class="built_in">NSSortDescriptor</span> sortDescriptorWithKey:<span class="string">@"name"</span></div><div class="line">                                                                 ascending:<span class="literal">YES</span>];</div><div class="line"><span class="built_in">NSSortDescriptor</span> *personAgeDesc  = [<span class="built_in">NSSortDescriptor</span> sortDescriptorWithKey:<span class="string">@"age"</span></div><div class="line">                                                                 ascending:<span class="literal">YES</span>];</div><div class="line"></div><div class="line"><span class="comment">//把排序描述器放进数组里，放入的顺序就是你想要排序的顺序</span></div><div class="line"><span class="comment">//这里是：首先按照姓名，然后是年龄排序，最后是按照车的名字</span></div><div class="line"><span class="built_in">NSArray</span> *descriptorArray = @[personNameDesc,personAgeDesc,carNameDesc];</div><div class="line"></div><div class="line"><span class="built_in">NSArray</span> *sortedArray = [array sortedArrayUsingDescriptors: descriptorArray];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,sortedArray);</div><div class="line"></div><div class="line"><span class="comment">//如果是可变数组，则使用sortUsingDescriptors:</span></div><div class="line"><span class="built_in">NSMutableArray</span> *mutableArray = [<span class="built_in">NSMutableArray</span> arrayWithArray:@[p1,p2,p3,p4,p5]];</div><div class="line"></div><div class="line">[mutableArray sortUsingDescriptors:[<span class="built_in">NSArray</span> arrayWithObject:sortDescriptor]];</div><div class="line"><span class="comment">//此时mutableArray已经排好顺序</span></div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,mutableArray);</div></pre></td></tr></table></figure>
+<a id="more"></a> 
+<h2 id="Dispatch-Queue"><a href="#Dispatch-Queue" class="headerlink" title="Dispatch Queue"></a>Dispatch Queue</h2><ul>
+<li><p><code>Serial Dispatch Queue</code><br><strong>按添加进队列的顺序（先进先出）一个接一个的执行</strong></p>
+</li>
+<li><p><code>Concurrent Dispatch Queue</code><br><strong>并发执行队列里的任务</strong></p>
+</li>
+</ul>
+<h3 id="1-1-自定义串、并行队列"><a href="#1-1-自定义串、并行队列" class="headerlink" title="1.1 自定义串、并行队列"></a>1.1 自定义串、并行队列</h3><p>并行队列：<code>DISPATCH_QUEUE_CONCURRENT</code><br>串行队列：<code>DISPATCH_QUEUE_SERIAL</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建一个名称为‘com.company.xxx’的串行队列</span></div><div class="line"><span class="built_in">dispatch_queue_t</span> serialQueue = dispatch_queue_create(<span class="string">"com.company.xxx"</span>, DISPATCH_QUEUE_SERIAL);</div><div class="line"></div><div class="line"><span class="comment">//创建一个名称为‘com.xxx’的并行队列</span></div><div class="line"><span class="built_in">dispatch_queue_t</span> concurrentQueue = dispatch_queue_create(<span class="string">"com.company.xxx"</span>, DISPATCH_QUEUE_CONCURRENT);</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>Note：</strong><br>1）参数一是队列的名称，一般是使用倒序的全域名。虽然可以不给队列指定一个名称，但是有名称的队列可以让我们在遇到问题时更好调试<br>2）当参数二为nil时返回<code>Serial Dispatch Queue(串行队列)</code>，如上面那个例子，当指定为<code>DISPATCH_QUEUE_CONCURRENT</code>时返回<code>Concurrent Dispatch Queue(并行队列)</code></p>
+</blockquote>
+<h3 id="1-2-程序进程缺省队列"><a href="#1-2-程序进程缺省队列" class="headerlink" title="1.2 程序进程缺省队列"></a>1.2 程序进程缺省队列</h3><p>高优先级队列：<code>DISPATCH_QUEUE_PRIORITY_HIGH</code><br>中优先级队列：<code>DISPATCH_QUEUE_PRIORITY_DEFAULT</code><br>低优先级队列：<code>DISPATCH_QUEUE_PRIORITY_LOW</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//获取程序缺省并行队列，第二个参数固定为0</span></div><div class="line"><span class="built_in">dispatch_queue_t</span> queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>Note：</strong><br>1）需要注意的是，三个队列不代表三个线程，可能会有更多的线程。并发队列可以根据实际情况来自动产生合理的线程数，也可理解为dispatch队列实现了一个线程池的管理，对于程序逻辑是透明的。<br>2）获取<code>Global Dispatch Queue</code>的时候可以指定优先级，可以根据自己的实际情况来决定使用哪种优先级</p>
+</blockquote>
+<h3 id="1-3-主线程队列"><a href="#1-3-主线程队列" class="headerlink" title="1.3 主线程队列"></a>1.3 主线程队列</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//获取主线程串行队列</span></div><div class="line"><span class="built_in">dispatch_queue_t</span> queue = dispatch_get_main_queue();</div></pre></td></tr></table></figure>
+<h2 id="三者对比"><a href="#三者对比" class="headerlink" title="三者对比"></a>三者对比</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">队列</th>
+<th style="text-align:center">串行</th>
+<th style="text-align:center">并行</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">自定义队列</td>
+<td style="text-align:center"><strong>√</strong></td>
+<td style="text-align:center"><strong>√</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">程序缺省队列</td>
+<td style="text-align:center"><strong>×</strong></td>
+<td style="text-align:center"><strong>√</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">主线程队列</td>
+<td style="text-align:center"><strong>√</strong></td>
+<td style="text-align:center"><strong>×</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note：</strong><br>一般只在需要更新UI时我们才获取<code>Main Dispatch Queue</code>，其他情况下用<code>Global Dispatch Queue</code>就满足需求了</p>
+</blockquote>
+<h2 id="同步-异步、串行-并行使用"><a href="#同步-异步、串行-并行使用" class="headerlink" title="同步/异步、串行/并行使用"></a>同步/异步、串行/并行使用</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//异步执行block，函数立即返回</span></div><div class="line"><span class="built_in">dispatch_async</span>(queue, ^&#123;</div><div class="line"></div><div class="line"><span class="comment">//block具体代码</span></div><div class="line"></div><div class="line">&#125;); </div><div class="line"></div><div class="line"><span class="comment">//同步执行block，函数不返回</span></div><div class="line"><span class="built_in">dispatch_sync</span>(queue, ^&#123;</div><div class="line"></div><div class="line"><span class="comment">//block具体代码</span></div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <hr>
-<h2 id="拓展-分组问题"><a href="#拓展-分组问题" class="headerlink" title="拓展-分组问题"></a>拓展-分组问题</h2><p>假如我们需要对<code>字典(或对象)</code>数组里面，根据<code>字典（或对象）</code>元素的某个<code>键值（或属性）</code>进行分组。分组的思路无非就是将某个<code>键值（或属性）</code>相同的<code>字典（或对象）</code>放在一起。那么如何做到快速分组呢？这里就要引入一个新的类型<code>NSMutableSet</code>、<code>NSSet</code></p>
-<p>该类型具有无序的，不重复的特性（保证数据的唯一性）。当插入相同的数据时，不会有任何效果。从内部实现来说是hash表。</p>
-<p>例如：有一个Model类，需要根据Model里面的exchangeShortTime字段进行分组</p>
-<p>Model类</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Model</span> : <span class="title">NSObject</span></span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *exchangeShortTime;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
-<p>分组的实现</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)groupAction:(<span class="built_in">NSMutableArray</span> *)arr &#123;</div><div class="line">    <span class="comment">//arr里面存储着多个model对象，现在我们根据model中的exchangeShortTime字段进行分组</span></div><div class="line">    </div><div class="line">    <span class="built_in">NSMutableSet</span> *set = [<span class="built_in">NSMutableSet</span> set];</div><div class="line"></div><div class="line">    <span class="comment">//利用set不重复的特性,得到有多少组,根据model中的exchangeShortTime字段</span></div><div class="line">    [arr enumerateObjectsUsingBlock:^(Model * _Nonnull model, <span class="built_in">NSUInteger</span> idx, <span class="built_in">BOOL</span> * _Nonnull stop) &#123;</div><div class="line">        [set addObject:model.exchangeShortTime];</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">    <span class="comment">/*此时，set里面已经存储了可以分为组数*/</span></div><div class="line">    </div><div class="line">    <span class="comment">//接下来需要用到NSPredicate语法进行筛选</span></div><div class="line">    __block <span class="built_in">NSMutableArray</span> *groupArr = [<span class="built_in">NSMutableArray</span> array];</div><div class="line">    [set enumerateObjectsUsingBlock:^(<span class="built_in">NSString</span> * _Nonnull exchangeShortTime, <span class="built_in">BOOL</span> * _Nonnull stop) &#123;</div><div class="line">        <span class="built_in">NSPredicate</span> *predicate = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"exchangeShortTime = %@"</span>, exchangeShortTime];</div><div class="line">        <span class="built_in">NSArray</span> *tempArr = [<span class="built_in">NSArray</span> arrayWithArray:[arr filteredArrayUsingPredicate:predicate]];</div><div class="line">        [groupArr addObject:tempArr];</div><div class="line">    &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>大功告成！排序分组就讲到这里。如果后面还有更多相关知识点会补充上。</p>
+<p><strong>举例：</strong></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">dispatch_async</span>(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</div><div class="line"><span class="comment">//子线程中开始网络请求数据</span></div><div class="line">...</div><div class="line"><span class="comment">//更新数据模型</span></div><div class="line"><span class="built_in">dispatch_sync</span>(dispatch_get_main_queue(), ^&#123;</div><div class="line"><span class="comment">//在主线程中更新UI代码</span></div><div class="line"><span class="keyword">self</span>.view.backgroundColor = [<span class="built_in">UIColor</span> orangeColor];</div><div class="line">&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p><strong>Note：</strong><br>尽可能避免使用<code>dispatch_sync</code>，嵌套使用时还容易引起程序死锁</p>
+</blockquote>
+<h2 id="死锁问题"><a href="#死锁问题" class="headerlink" title="死锁问题"></a>死锁问题</h2><ul>
+<li>同步串行会出现死锁，同步并行不会造成死锁</li>
+<li>异步不管是串行还是并行都不会出现死锁</li>
+<li>异步嵌套同步或者同步嵌套异步就需要注意代码执行顺序</li>
+</ul>
+<blockquote>
+<p><strong>Note：</strong><br>死锁原因：提交到主线程队列的时候，慎用同步<code>dispatch_sync</code>方法，有可能造成死锁。因为主线程队列是串行队列，要等队列里的任务一个一个执行。所以提交一个任务到队列，如果用同步方法就会阻塞住主线程，而主线程又要等主线程队列里的任务都执行完才能执行那个刚提交的，所以主线程队列里还有其他的任务的话，但他已经被阻塞住了，没法先完成队列里的其他任务，即，最后一个任务也没机会执行到，于是造成死锁。</p>
+</blockquote>
+<h2 id="dispatch-after"><a href="#dispatch-after" class="headerlink" title="dispatch_after"></a>dispatch_after</h2><p><code>dispatch_after</code>能让我们添加进队列的任务延时执行，比如想让一个Block在5秒后执行：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span> delayTime = <span class="number">5.0</span>;</div><div class="line"></div><div class="line">dispCatch_time_t dTime = dispatch_time(DISPATCH_TIME_NOW, </div><div class="line">(int64_t)(delayTime*<span class="built_in">NSEC_PER_SEC</span>));</div><div class="line"></div><div class="line">dispatch_after(dTime, dispatch_get_main_queue(), ^&#123;</div><div class="line"><span class="comment">//delayTime秒后执行block块</span></div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"block执行"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><code>dispatch_after</code>的真正含义是在5秒后把任务添加进队列中，并不是表示在5秒后执行，大部分情况该函数能达到我们的预期，只有在对时间要求非常精准的情况下才可能会出现问题</p>
+<hr>
+<p>【拓展】<br>延迟执行还有另外一种方式，那就是NSObject中的<code>performSelector:withObject:afterDelay:</code>以及<code>performSelector:withObject:afterDelay:inModes:</code></p>
+<hr>
+<h2 id="dispatch-group"><a href="#dispatch-group" class="headerlink" title="dispatch_group"></a>dispatch_group</h2><p>我们现在有3个Block要执行，我们不在乎它们执行的顺序，我们只希望在这3个Block执行完之后再执行某个操作。这个时候就需要使用<code>dispatch_group</code>了</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">dispatch_group_t groupQueue = dispatch_group_create();</div><div class="line"></div><div class="line">dispatch_group_async(groupQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"1"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">dispatch_group_async(groupQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"2"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">dispatch_group_async(groupQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"3"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">dispatch_group_notify(groupQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"completion"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>在控制台打印的结果是：<br>2015-07-21 22:17:57.159 GCD[9606:1327380] 3<br>2015-07-21 22:17:57.159 GCD[9606:1327377] 2<br>2015-07-21 22:17:57.159 GCD[9606:1327379] 1<br>2015-07-21 22:17:57.159 GCD[9606:1327377] completion</p>
+<blockquote>
+<p><strong>Note：</strong><br>输出的顺序与添加进队列的顺序无关，因为队列是Concurrent Dispatch Queue，但“completion”的输出一定是在最后的</p>
+</blockquote>
 <hr>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
 <p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
@@ -276,6 +329,10 @@ var _hmt = _hmt || [];
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">GCD</a>
         		</li>
       		
 		</ul>
@@ -342,7 +399,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3ay66DMAyE4b7/S3O2RyqGmXGohPOzqloa8rGw4svnI19HcX3/ev2N8vn/N4svGDBgvJZxXF7KA6p/VfdksJunwIABYwNG9eBs6SyMXq9zs2cYMGDAuNxEB/a9MgwYMGCsZej3VNvVU18YMGDA6B/1lFRTX//BXBwGDBgvZOhV999/fqS/AQMGjFcxDvNyV6u2lYXXclcwYMAYzdADnE7KjoZKUn2TGMOAAWMoQx+wcB+cjW4oJTnjaAgDBowRDLeU9kQIdg+F5a5gwIAxlOEu2k9KlRX0gAsDBow9GVmxPhubUH6VAj0MGDA2Y+gL6S0BZUPKN+VuYcCAMZqhl7T0YNoJrG4qe5KLw4ABYygjO5x1DoX6a7KTWxgwYIxmZEu7AxNuW7TV1IQBA8YIhl7SMvSNQQ13LONkLAwGDBjjGHqqmRXj3IKagrwJ6zBgwBjHyIa6soZB9lKk1woDBowtGRlPH9foD4rBgAFjH4YSu9z0tVPc798JAwaMqQw9tGU8NxzrR9KT9gAMGDA2Y2SHts4YayvQw4ABYxtGljq6bc7O6FireQkDBowXMvoD7p2xeDdA3xwKYcCAMZSRlc/cg6a7lay1AAMGjNmMVeHSDcpZIDZOjjBgwBjHWFW/cmGr2gwwYMCAoQfQte3JBwMuDBgwRjPccOyyleS5TGJhwIAxmuGGP7fEpodmpbQHAwaM3Rhu6uimssbch/ksGDBgbMD4A5k+A/GboewtAAAAAElFTkSuQmCC" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3aW47DIBAF0ex/084CRuC6NJ7ITfEVTWzDcSSmH3w+eFx/xujb0fXzb0fP2TxkyJDxWsY1HZVljeZKP89nlyFDxjkMPiWHkW10fiW5S4YMGTL4sjis8vpkyJAhox7GzbPL+bw/2HBlyJDxKkYa6vGEM93EH8/FZciQ8UIGr7r//+dH+hsyZMh4FeMKBwns0gT4Kg8ZMmT0ZvANjgdkJIDjoWewHhkyZDRlpBvfEw3OtAAnQ4aM0xi87EUCuzQBXstDh2wZMmQ0ZfBLeVE+PWbB5x2+IBkyZLRmpBM/0bBcOzR204mVIUNGIwbfXnk5jAeOa6Hn8HeQIUNGUwZZSv0cR6WFuZYSy5AhoxMjLZali9vVZUX9DRkyZDRlkIJXOkGlAcCPd6BcXIYMGY0YZOMjhbO0AZkGjjJkyDiTUSlspW3IJzLvm9NtMmTIaMTY8CDcZuDBYvBfQoYMGa0ZaXJIWpu86BYX1DhJhgwZTRmVB1UObaTX3GBkyJDRlMEDL16A27UFB8GoDBkyDmCsLZEvjpTk0nvjuFWGDBktGGnAV0+G0xra8F4ZMmQ0ZVSOStQPfvE252JQKEOGjBaMymbHJ0hfx1rSK0OGjN4MXqDfhUyfhhoSMmTIOICxdiAsDfj4YQuSHsuQIUPG2oa7FiyutTBRhU+GDBlHMtKtc1fx7ubvMmTIOIBR2f7IIYm1wxZBE1SGDBmtGWnqyK/ZleKmz5chQ0YjxhdFQxkGgFa9dgAAAABJRU5ErkJggg==" alt="微信分享二维码">
     </div>
 </div>
 
@@ -356,18 +413,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2015/09/09/Verifying-the-legitimacy-of-the-bank-card/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/07/21/About-me/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          银行卡合法性校验
+          关于我
         
       </div>
     </a>
   
   
-    <a href="/2015/09/06/Interview-questions/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">一天一道面试题</div>
+    <a href="/2015/07/08/iTerm_2&&Oh_My_Zsh/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iTerm 2 &amp;&amp; Oh My Zsh「DIY教程」</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -522,15 +579,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">年终总结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -546,6 +599,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">终端</a>
               </li>
              
@@ -554,7 +611,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+                <a href="javascript:void(0)" class="js-tag color5">年终总结</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,7 +619,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -574,27 +631,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -622,19 +663,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
+                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
+                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -654,11 +687,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -674,7 +711,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -682,7 +719,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -690,7 +727,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -723,6 +776,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">键盘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -770,14 +827,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">代码块</a>
               </li>
              
@@ -786,7 +835,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">企业级证书打包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
