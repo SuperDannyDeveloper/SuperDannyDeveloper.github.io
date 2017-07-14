@@ -2,23 +2,310 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>superdanny.link/2015/10/10/iOS-recording-In-House/</loc>
+    <loc>superdanny.link/2017/05/09/iOS-IJKPlayer/</loc>
     
-    <lastmod>2017-07-07T07:44:18.000Z</lastmod>
+    <lastmod>2017-07-14T02:29:35.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/07/08/iTerm_2&&Oh_My_Zsh/</loc>
+    <loc>superdanny.link/2017/03/03/App-Thinning/</loc>
     
-    <lastmod>2017-07-07T07:40:11.000Z</lastmod>
+    <lastmod>2017-07-14T02:25:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2016/12/04/CocoaPods-update-gem-and-repo/</loc>
+    
+    <lastmod>2017-07-14T02:25:23.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>superdanny.link/2017/07/03/iOS-Alternate-Icon/</loc>
     
-    <lastmod>2017-07-06T06:32:09.000Z</lastmod>
+    <lastmod>2017-07-14T02:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/09/29/iOS-app-install-fail-reason/</loc>
+    
+    <lastmod>2017-07-14T02:24:46.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2016/02/02/iOS-Apple-Push-Notification-Service/</loc>
+    
+    <lastmod>2017-07-14T02:24:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/09/23/iOS-assert/</loc>
+    
+    <lastmod>2017-07-14T02:24:31.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2016/12/14/iOS-High-precision-calculation/</loc>
+    
+    <lastmod>2017-07-14T02:24:14.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2017/01/04/iOS-NavigationBar-Alpha/</loc>
+    
+    <lastmod>2017-07-14T02:23:38.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/09/25/iOS-production-certificate-and-use/</loc>
+    
+    <lastmod>2017-07-14T02:23:31.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2017/02/22/iOS-Realm/</loc>
+    
+    <lastmod>2017-07-14T02:23:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/10/10/iOS-recording-In-House/</loc>
+    
+    <lastmod>2017-07-14T02:23:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2017/03/10/iOS-UITableView-UICollectionView-Skill/</loc>
+    
+    <lastmod>2017-07-14T02:23:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2016/01/28/iOS-Upload-Image/</loc>
+    
+    <lastmod>2017-07-14T02:22:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/09/18/iOS9-about-enterprise-certificate/</loc>
+    
+    <lastmod>2017-07-14T02:22:47.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/07/08/iTerm_2&&Oh_My_Zsh/</loc>
+    
+    <lastmod>2017-07-14T02:22:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/08/28/My-projects-introduction/</loc>
+    
+    <lastmod>2017-07-14T02:22:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2014/08/21/Quickly-master-objective-c-grammar/</loc>
+    
+    <lastmod>2017-07-14T02:21:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2017/02/05/Reinstall-the-MacOS/</loc>
+    
+    <lastmod>2017-07-14T02:21:47.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2016/03/09/Swift-Getting-to-Know-Enums-Structs-and-Classes/</loc>
+    
+    <lastmod>2017-07-14T02:21:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2016/09/26/Xcode8-pit/</loc>
+    
+    <lastmod>2017-07-14T02:21:33.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/12/30/2015-Year-end-summary/</loc>
+    
+    <lastmod>2017-07-14T02:21:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2016/11/26/2016-Year-end-summary/</loc>
+    
+    <lastmod>2017-07-14T02:21:15.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2016/04/20/Change-CocoaPods-Source/</loc>
+    
+    <lastmod>2017-07-14T02:21:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2014/12/16/CocoaPods/</loc>
+    
+    <lastmod>2017-07-14T02:20:57.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2016/09/16/How-to-use-Xcode8-or-iOS10_SDK/</loc>
+    
+    <lastmod>2017-07-14T02:20:33.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/09/19/Improve-the-efficiency-of-iOS-development/</loc>
+    
+    <lastmod>2017-07-14T02:20:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/09/06/Interview-questions/</loc>
+    
+    <lastmod>2017-07-14T02:20:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/09/24/iOS-about-certification/</loc>
+    
+    <lastmod>2017-07-14T02:19:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2016/02/20/iOS-Apple-Pay/</loc>
+    
+    <lastmod>2017-07-14T02:19:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/09/07/iOS-Array-sorting-and-grouping/</loc>
+    
+    <lastmod>2017-07-14T02:19:25.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/07/15/iOS-Grand-Central-Dispatch/</loc>
+    
+    <lastmod>2017-07-14T02:19:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2016/01/13/iOS-iTunes_Connect_1-Uploading-APP-to-Appstore/</loc>
+    
+    <lastmod>2017-07-14T02:18:47.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/09/21/iOS-KVC:KVO/</loc>
+    
+    <lastmod>2017-07-14T02:18:31.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/08/18/iOS-Storyboard/</loc>
+    
+    <lastmod>2017-07-14T02:18:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/12/26/iOS-UIDocumentInteractionController/</loc>
+    
+    <lastmod>2017-07-14T02:18:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/10/10/iOS-UIKeyboardType/</loc>
+    
+    <lastmod>2017-07-14T02:17:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/09/01/iOS-UITableView-update-data/</loc>
+    
+    <lastmod>2017-07-14T02:17:36.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/12/31/iOS-xcode-snippet/</loc>
+    
+    <lastmod>2017-07-14T02:17:21.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/07/27/Swift-Series-CollectionType/</loc>
+    
+    <lastmod>2017-07-14T02:16:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/07/08/Update-Xcode-Plug-in/</loc>
+    
+    <lastmod>2017-07-14T02:16:19.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/09/09/Using-shell-script-to-automatic-packaging/</loc>
+    
+    <lastmod>2017-07-14T02:15:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/09/05/Xcode-Version-and-Build/</loc>
+    
+    <lastmod>2017-07-14T02:15:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/09/09/iOS-Verifying-the-legitimacy-of-the-bank-card/</loc>
+    
+    <lastmod>2017-07-14T02:14:32.000Z</lastmod>
     
   </url>
   
@@ -37,86 +324,9 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2017/05/09/iOS-IJKPlayer/</loc>
-    
-    <lastmod>2017-07-03T06:30:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/2017/04/27/iOS-High-precision-calculation02/</loc>
     
     <lastmod>2017-06-30T05:52:05.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2014/08/21/Quickly-master-objective-c-grammar/</loc>
-    
-    <lastmod>2017-06-16T06:07:43.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2017/03/10/iOS-UITableView-UICollectionView-Skill/</loc>
-    
-    <lastmod>2017-06-08T06:56:31.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2016/12/04/CocoaPods-update-gem-and-repo/</loc>
-    
-    <lastmod>2017-06-08T05:50:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2017/02/05/Reinstall-the-MacOS/</loc>
-    
-    <lastmod>2017-06-08T05:47:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2017/03/03/App-Thinning/</loc>
-    
-    <lastmod>2017-06-05T06:07:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2016/03/09/Swift-Getting-to-Know-Enums-Structs-and-Classes/</loc>
-    
-    <lastmod>2017-05-15T06:10:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2016/02/02/iOS-Apple-Push-Notification-Service/</loc>
-    
-    <lastmod>2017-05-15T05:57:04.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2016/12/14/iOS-High-precision-calculation/</loc>
-    
-    <lastmod>2017-04-27T09:35:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/09/29/iOS-app-install-fail-reason/</loc>
-    
-    <lastmod>2017-04-05T05:22:36.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/09/18/iOS9-about-enterprise-certificate/</loc>
-    
-    <lastmod>2017-04-05T01:39:27.000Z</lastmod>
     
   </url>
   
@@ -131,41 +341,6 @@
     <loc>superdanny.link/2017/03/07/iOS-In-App-Purchase/</loc>
     
     <lastmod>2017-03-07T07:56:38.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2017/02/22/iOS-Realm/</loc>
-    
-    <lastmod>2017-02-24T01:21:54.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/09/23/iOS-assert/</loc>
-    
-    <lastmod>2017-02-22T08:41:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2016/09/26/Xcode8-pit/</loc>
-    
-    <lastmod>2017-02-17T07:57:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2016/01/28/iOS-Upload-Image/</loc>
-    
-    <lastmod>2017-02-17T06:05:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/09/25/iOS-production-certificate-and-use/</loc>
-    
-    <lastmod>2017-02-13T09:42:23.000Z</lastmod>
     
   </url>
   
@@ -212,13 +387,6 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2017/01/04/iOS-NavigationBar-Alpha/</loc>
-    
-    <lastmod>2017-01-05T05:50:14.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/aboutme.html</loc>
     
     <lastmod>2016-12-30T08:51:28.000Z</lastmod>
@@ -229,13 +397,6 @@
     <loc>superdanny.link/2016/12/22/iOS-Autolayout-and-animation/</loc>
     
     <lastmod>2016-12-22T15:16:57.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/08/28/My-projects-introduction/</loc>
-    
-    <lastmod>2016-12-05T03:53:21.000Z</lastmod>
     
   </url>
   
@@ -261,41 +422,6 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2016/02/20/iOS-Apple-Pay/</loc>
-    
-    <lastmod>2016-11-30T01:57:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/09/06/Interview-questions/</loc>
-    
-    <lastmod>2016-11-30T01:57:34.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2016/09/16/How-to-use-Xcode8-or-iOS10_SDK/</loc>
-    
-    <lastmod>2016-11-30T01:57:34.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2014/12/16/CocoaPods/</loc>
-    
-    <lastmod>2016-11-30T01:57:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2016/04/20/Change-CocoaPods-Source/</loc>
-    
-    <lastmod>2016-11-30T01:57:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/2016/01/18/Brew-OSX_EI-error/</loc>
     
     <lastmod>2016-11-30T01:57:32.000Z</lastmod>
@@ -310,55 +436,6 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2016/11/26/2016-Year-end-summary/</loc>
-    
-    <lastmod>2016-11-30T01:57:25.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/12/30/2015-Year-end-summary/</loc>
-    
-    <lastmod>2016-11-30T01:57:23.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/09/05/Xcode-Version-and-Build/</loc>
-    
-    <lastmod>2016-11-30T01:56:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/09/09/iOS-Verifying-the-legitimacy-of-the-bank-card/</loc>
-    
-    <lastmod>2016-11-30T01:56:57.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/07/08/Update-Xcode-Plug-in/</loc>
-    
-    <lastmod>2016-11-30T01:56:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/09/09/Using-shell-script-to-automatic-packaging/</loc>
-    
-    <lastmod>2016-11-30T01:56:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/09/01/iOS-UITableView-update-data/</loc>
-    
-    <lastmod>2016-11-30T01:56:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/2015/01/23/iOS-TabBar-hidesBottomBarWhenPushed/</loc>
     
     <lastmod>2016-11-30T01:56:55.000Z</lastmod>
@@ -366,23 +443,9 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/07/27/Swift-Series-CollectionType/</loc>
-    
-    <lastmod>2016-11-30T01:56:54.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/2015/07/25/Swift-Series-Introduction/</loc>
     
     <lastmod>2016-11-30T01:56:54.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/08/18/iOS-Storyboard/</loc>
-    
-    <lastmod>2016-11-30T01:56:53.000Z</lastmod>
     
   </url>
   
@@ -408,23 +471,9 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/21/iOS-KVC:KVO/</loc>
-    
-    <lastmod>2016-11-30T01:56:51.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/2015/09/17/iOS9-http-change/</loc>
     
     <lastmod>2016-11-30T01:56:49.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/12/31/iOS-xcode-snippet/</loc>
-    
-    <lastmod>2016-11-30T01:56:48.000Z</lastmod>
     
   </url>
   
@@ -443,16 +492,9 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/10/10/iOS-UIKeyboardType/</loc>
+    <loc>superdanny.link/2016/01/15/iOS-iTunes_Connect_2-App-Statuses/</loc>
     
-    <lastmod>2016-11-30T01:56:47.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/12/26/iOS-UIDocumentInteractionController/</loc>
-    
-    <lastmod>2016-11-30T01:56:46.000Z</lastmod>
+    <lastmod>2016-11-30T01:56:45.000Z</lastmod>
     
   </url>
   
@@ -464,30 +506,9 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2016/01/15/iOS-iTunes_Connect_2-App-Statuses/</loc>
-    
-    <lastmod>2016-11-30T01:56:45.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2016/01/13/iOS-iTunes_Connect_1-Uploading-APP-to-Appstore/</loc>
-    
-    <lastmod>2016-11-30T01:56:44.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/2015/09/25/iOS-archive/</loc>
     
     <lastmod>2016-11-30T01:56:43.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/09/24/iOS-about-certification/</loc>
-    
-    <lastmod>2016-11-30T01:56:42.000Z</lastmod>
     
   </url>
   
@@ -499,28 +520,14 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/19/Improve-the-efficiency-of-iOS-development/</loc>
-    
-    <lastmod>2016-11-30T01:56:41.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/07/15/iOS-Grand-Central-Dispatch/</loc>
-    
-    <lastmod>2016-11-30T01:56:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
+    <loc>superdanny.link/2015/09/17/Fix-svn-directory-is-out-of-date/</loc>
     
     <lastmod>2016-11-30T01:56:39.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/17/Fix-svn-directory-is-out-of-date/</loc>
+    <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
     
     <lastmod>2016-11-30T01:56:39.000Z</lastmod>
     
@@ -551,13 +558,6 @@
     <loc>superdanny.link/2015/12/24/Control-Software-Project-Schedule/</loc>
     
     <lastmod>2016-11-30T01:56:36.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/09/07/iOS-Array-sorting-and-grouping/</loc>
-    
-    <lastmod>2016-11-30T01:56:35.000Z</lastmod>
     
   </url>
   
