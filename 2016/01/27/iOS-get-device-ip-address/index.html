@@ -15,7 +15,7 @@
 <meta property="og:url" content="superdanny.link/2016/01/27/iOS-get-device-ip-address/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
 <meta property="og:description" content="以前做过获取设备IP地址的功能，但是由于当时代码管理不当，很多代码已经遗失，现在只能重新过一遍，也让自己更有基情激情的学习。网上关于这方面的文章很多，但是找到自己真正需要的却不容易，经过几番周折。终于在著名的stackoverflow上面找到了我想要的答案。">
-<meta property="og:updated_time" content="2017-01-11T05:33:12.000Z">
+<meta property="og:updated_time" content="2017-08-04T06:37:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS获取设备IP地址">
 <meta name="twitter:description" content="以前做过获取设备IP地址的功能，但是由于当时代码管理不当，很多代码已经遗失，现在只能重新过一遍，也让自己更有基情激情的学习。网上关于这方面的文章很多，但是找到自己真正需要的却不容易，经过几番周折。终于在著名的stackoverflow上面找到了我想要的答案。">
@@ -198,6 +198,82 @@ var _hmt = _hmt || [];
 <p><strong>2017年01月11日</strong></p>
 <p>很多朋友说这个方法只能获取到内网IP，无法获取公网IP，确实，这边补充下获取公网IP方式。</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//方法一：</span></div><div class="line"><span class="built_in">NSError</span> *error; </div><div class="line"><span class="built_in">NSURL</span> *ipURL = [<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://ifconfig.me/ip"</span>];</div><div class="line"><span class="built_in">NSString</span> *ip = [<span class="built_in">NSString</span> stringWithContentsOfURL:ipURL encoding:<span class="built_in">NSUTF8StringEncoding</span> error:&amp;error];</div><div class="line"><span class="comment">//方法二：个人推荐用这个请求，速度比较快</span></div><div class="line"><span class="comment">/*</span></div><div class="line">http://ipof.in/json</div><div class="line">http://ipof.in/xml</div><div class="line">http://ipof.in/txt</div><div class="line">If you want HTTPS you can use the same URLs with https prefix. The advantage being that even if you are on a Wifi you will get the public address.</div><div class="line"> */</div><div class="line"><span class="built_in">NSError</span> *error; </div><div class="line"><span class="built_in">NSURL</span> *ipURL = [<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://ipof.in/txt"</span>];</div><div class="line"><span class="built_in">NSString</span> *ip = [<span class="built_in">NSString</span> stringWithContentsOfURL:ipURL encoding:<span class="built_in">NSUTF8StringEncoding</span> error:&amp;error];</div></pre></td></tr></table></figure>
+<p><strong>2017年08月04日</strong></p>
+<p>增加部分公开API</p>
+<p>1、淘宝API</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">1. 请求接口（GET）：</div><div class="line">http://ip.taobao.com/service/getIpInfo.php?ip=ip地址</div><div class="line">2. 响应信息：</div><div class="line">（json格式的）国家 、省（自治区或直辖市）、市（县）、运营商</div><div class="line">3. 返回数据格式：</div><div class="line">&#123;</div><div class="line">    &quot;code&quot;: 0,</div><div class="line">    &quot;data&quot;: &#123;</div><div class="line">        &quot;country&quot;: &quot;中国&quot;,</div><div class="line">        &quot;country_id&quot;: &quot;CN&quot;,</div><div class="line">        &quot;area&quot;: &quot;华南&quot;,</div><div class="line">        &quot;area_id&quot;: &quot;800000&quot;,</div><div class="line">        &quot;region&quot;: &quot;广东省&quot;,</div><div class="line">        &quot;region_id&quot;: &quot;440000&quot;,</div><div class="line">        &quot;city&quot;: &quot;深圳市&quot;,</div><div class="line">        &quot;city_id&quot;: &quot;440300&quot;,</div><div class="line">        &quot;county&quot;: &quot;&quot;,</div><div class="line">        &quot;county_id&quot;: &quot;-1&quot;,</div><div class="line">        &quot;isp&quot;: &quot;电信&quot;,</div><div class="line">        &quot;isp_id&quot;: &quot;100017&quot;,</div><div class="line">        &quot;ip&quot;: &quot;121.35.211.41&quot;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">其中code的值的含义为，0：成功，1：失败。</div><div class="line">4. 访问限制：为了保障服务正常运行，每个用户的访问频率需小于10qps。</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>状态码，正常为0，异常的时候为非0。</td>
+</tr>
+<tr>
+<td>data</td>
+<td>查询到的结果。</td>
+</tr>
+<tr>
+<td>country</td>
+<td>国家。</td>
+</tr>
+<tr>
+<td>country_id</td>
+<td>国家代码。</td>
+</tr>
+<tr>
+<td>area</td>
+<td>地区名称（华南、华北…）。</td>
+</tr>
+<tr>
+<td>area_id</td>
+<td>地区编号。</td>
+</tr>
+<tr>
+<td>region</td>
+<td>省名称。</td>
+</tr>
+<tr>
+<td>region_id</td>
+<td>省编号。</td>
+</tr>
+<tr>
+<td>city</td>
+<td>市名称。</td>
+</tr>
+<tr>
+<td>city_id</td>
+<td>市编号。</td>
+</tr>
+<tr>
+<td>county</td>
+<td>县名称。</td>
+</tr>
+<tr>
+<td>county_id</td>
+<td>县编号。</td>
+</tr>
+<tr>
+<td>isp</td>
+<td>ISP服务商名称（电信/联通/铁通/移动…）。</td>
+</tr>
+<tr>
+<td>isp_id</td>
+<td>ISP服务商编号。</td>
+</tr>
+<tr>
+<td>ip</td>
+<td>查询的IP地址。</td>
+</tr>
+</tbody>
+</table>
+<p>2、站长工具API</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">http://ip.chinaz.com/getip.aspx</div><div class="line">返回数据格式：</div><div class="line">&#123;ip:&apos;121.35.211.41&apos;,address:&apos;广东省深圳市 电信&apos;&#125;</div></pre></td></tr></table></figure>
 <hr>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
 <p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
@@ -524,15 +600,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">brew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -548,19 +624,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -576,15 +644,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -596,7 +660,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,19 +672,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -632,7 +700,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -645,10 +725,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">动画</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -720,6 +796,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打包</a>
               </li>
              
@@ -729,10 +809,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
               </li>
              
               <li class="article-tag-list-item">

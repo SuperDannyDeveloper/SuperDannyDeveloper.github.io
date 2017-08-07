@@ -17,7 +17,7 @@
 <meta property="og:description" content="关于推送关于苹果的推送网上已经有非常多的资源讲解，我在这里就不再累赘。直接切入主题，讲讲如何模拟推送以及处理推送消息。在进入主题之前，我先说几个关键流程：  创建Push SSL Certification(推送证书) iOS客户端注册Push功能并获得DeviceToken 使用Provider向APNS发送Push消息 iOS客户端接收处理由APNS发来的消息">
 <meta property="og:image" content="https://developer.apple.com/library/prerelease/watchos/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Art/remote_notif_simple_2x.png">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/81f8a509gw1f13ktc92rpj214804ajs6.jpg">
-<meta property="og:updated_time" content="2017-07-14T02:24:40.000Z">
+<meta property="og:updated_time" content="2017-07-17T03:00:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS推送的那些事">
 <meta name="twitter:description" content="关于推送关于苹果的推送网上已经有非常多的资源讲解，我在这里就不再累赘。直接切入主题，讲讲如何模拟推送以及处理推送消息。在进入主题之前，我先说几个关键流程：  创建Push SSL Certification(推送证书) iOS客户端注册Push功能并获得DeviceToken 使用Provider向APNS发送Push消息 iOS客户端接收处理由APNS发来的消息">
@@ -214,13 +214,13 @@ var _hmt = _hmt || [];
 </ol>
 <p>上述第一个步骤注册的 API 是 iOS 8 新增的，因此在 iOS 7，前两个步骤需更改为 iOS 7 中的 API。</p>
 <p>DeviceToken 有可能会更改，因此需要在程序每次启动时都去注册并且上传到你的服务器端。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application</div><div class="line">    didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> ([application respondsToSelector:<span class="keyword">@selector</span>(registerUserNotificationSettings:)]) &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Requesting permission for push notifications..."</span>); <span class="comment">// iOS 8</span></div><div class="line">        <span class="built_in">UIUserNotificationSettings</span> *settings = [<span class="built_in">UIUserNotificationSettings</span> settingsForTypes:</div><div class="line">            <span class="built_in">UIUserNotificationTypeAlert</span> | <span class="built_in">UIUserNotificationTypeBadge</span> |</div><div class="line">            <span class="built_in">UIUserNotificationTypeSound</span> categories:<span class="literal">nil</span>];</div><div class="line">        [<span class="built_in">UIApplication</span>.sharedApplication registerUserNotificationSettings:settings];</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Registering device for push notifications..."</span>); <span class="comment">// iOS 7 and earlier</span></div><div class="line">        [<span class="built_in">UIApplication</span>.sharedApplication registerForRemoteNotificationTypes:</div><div class="line">            <span class="built_in">UIRemoteNotificationTypeAlert</span> | <span class="built_in">UIRemoteNotificationTypeBadge</span> |</div><div class="line">            <span class="built_in">UIRemoteNotificationTypeSound</span>];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *)application</div><div class="line">    didRegisterUserNotificationSettings:(<span class="built_in">UIUserNotificationSettings</span> *)settings</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Registering device for push notifications..."</span>); <span class="comment">// iOS 8</span></div><div class="line">    [application registerForRemoteNotifications];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *)application</div><div class="line">    didRegisterForRemoteNotificationsWithDeviceToken:(<span class="built_in">NSData</span> *)token</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Registration successful, bundle identifier: %@, mode: %@, device token: %@"</span>,</div><div class="line">        [<span class="built_in">NSBundle</span>.mainBundle bundleIdentifier], [<span class="keyword">self</span> modeString], token);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *)application</div><div class="line">    didFailToRegisterForRemoteNotificationsWithError:(<span class="built_in">NSError</span> *)error</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Failed to register: %@"</span>, error);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *)application handleActionWithIdentifier:(<span class="built_in">NSString</span> *)identifier</div><div class="line">    forRemoteNotification:(<span class="built_in">NSDictionary</span> *)notification completionHandler:(<span class="keyword">void</span>(^)())completionHandler</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Received push notification: %@, identifier: %@"</span>, notification, identifier); <span class="comment">// iOS 8</span></div><div class="line">    completionHandler();</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *)application</div><div class="line">    didReceiveRemoteNotification:(<span class="built_in">NSDictionary</span> *)notification</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Received push notification: %@"</span>, notification); <span class="comment">// iOS 7 and earlier</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="built_in">NSString</span> *)modeString</div><div class="line">&#123;</div><div class="line"><span class="meta">#if DEBUG</span></div><div class="line">    <span class="keyword">return</span> <span class="string">@"Development (sandbox)"</span>;</div><div class="line"><span class="meta">#else</span></div><div class="line">    <span class="keyword">return</span> <span class="string">@"Production"</span>;</div><div class="line"><span class="meta">#endif</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application</div><div class="line">    didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions &#123;</div><div class="line">    <span class="keyword">if</span> ([application respondsToSelector:<span class="keyword">@selector</span>(registerUserNotificationSettings:)]) &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Requesting permission for push notifications..."</span>); <span class="comment">// iOS 8</span></div><div class="line">        <span class="built_in">UIUserNotificationSettings</span> *settings = [<span class="built_in">UIUserNotificationSettings</span> settingsForTypes:</div><div class="line">            <span class="built_in">UIUserNotificationTypeAlert</span> | <span class="built_in">UIUserNotificationTypeBadge</span> |</div><div class="line">            <span class="built_in">UIUserNotificationTypeSound</span> categories:<span class="literal">nil</span>];</div><div class="line">        [<span class="built_in">UIApplication</span>.sharedApplication registerUserNotificationSettings:settings];</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Registering device for push notifications..."</span>); <span class="comment">// iOS 7 and earlier</span></div><div class="line">        [<span class="built_in">UIApplication</span>.sharedApplication registerForRemoteNotificationTypes:</div><div class="line">            <span class="built_in">UIRemoteNotificationTypeAlert</span> | <span class="built_in">UIRemoteNotificationTypeBadge</span> |</div><div class="line">            <span class="built_in">UIRemoteNotificationTypeSound</span>];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *)application</div><div class="line">    didRegisterUserNotificationSettings:(<span class="built_in">UIUserNotificationSettings</span> *)settings &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Registering device for push notifications..."</span>); <span class="comment">// iOS 8</span></div><div class="line">    [application registerForRemoteNotifications];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *)application</div><div class="line">    didRegisterForRemoteNotificationsWithDeviceToken:(<span class="built_in">NSData</span> *)token &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Registration successful, bundle identifier: %@, mode: %@, device token: %@"</span>,</div><div class="line">        [<span class="built_in">NSBundle</span>.mainBundle bundleIdentifier], [<span class="keyword">self</span> modeString], token);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *)application</div><div class="line">    didFailToRegisterForRemoteNotificationsWithError:(<span class="built_in">NSError</span> *)error &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Failed to register: %@"</span>, error);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *)application handleActionWithIdentifier:(<span class="built_in">NSString</span> *)identifier</div><div class="line">    forRemoteNotification:(<span class="built_in">NSDictionary</span> *)notification completionHandler:(<span class="keyword">void</span>(^)())completionHandler &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Received push notification: %@, identifier: %@"</span>, notification, identifier); <span class="comment">// iOS 8</span></div><div class="line">    completionHandler();</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *)application</div><div class="line">    didReceiveRemoteNotification:(<span class="built_in">NSDictionary</span> *)notification &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Received push notification: %@"</span>, notification); <span class="comment">// iOS 7 and earlier</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="built_in">NSString</span> *)modeString &#123;</div><div class="line"><span class="meta">#if DEBUG</span></div><div class="line">    <span class="keyword">return</span> <span class="string">@"Development (sandbox)"</span>;</div><div class="line"><span class="meta">#else</span></div><div class="line">    <span class="keyword">return</span> <span class="string">@"Production"</span>;</div><div class="line"><span class="meta">#endif</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="处理推送消息"><a href="#处理推送消息" class="headerlink" title="处理推送消息"></a>处理推送消息</h1><ol>
 <li><p>当程序未启动，用户接收到消息。需要在AppDelegate中的didFinishLaunchingWithOptions得到消息内容</p>
  <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions &#123;</div><div class="line">    <span class="comment">//...</span></div><div class="line">    <span class="built_in">NSDictionary</span> *payload = [launchOptions objectForKey:<span class="built_in">UIApplicationLaunchOptionsRemoteNotificationKey</span>];</div><div class="line">    <span class="keyword">if</span> (payload) &#123;</div><div class="line">		<span class="comment">//...</span></div><div class="line">    &#125;</div><div class="line">   <span class="comment">//...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>当程序在前台运行，接收到消息不会有消息提示（提示框或横幅）。当程序运行在后台，接收到消息会有消息提示，点击消息后进入程序，AppDelegate的didReceiveRemoteNotification函数会被调用，消息做为此函数的参数传入</p>
- <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *)application didReceiveRemoteNotification:(<span class="built_in">NSDictionary</span> *)payload &#123;</div><div class="line">   <span class="built_in">NSLog</span>(<span class="string">@"remote notification: %@"</span>,[payload description]);</div><div class="line">	<span class="built_in">NSString</span>* alertStr = <span class="literal">nil</span>;        </div><div class="line">	<span class="built_in">NSDictionary</span> *apsInfo = [payload objectForKey:<span class="string">@"aps"</span>];    </div><div class="line">	<span class="built_in">NSObject</span> *alert = [apsInfo objectForKey:<span class="string">@"alert"</span>];    </div><div class="line">	<span class="keyword">if</span> ([alert isKindOfClass:[<span class="built_in">NSString</span> <span class="keyword">class</span>]])    </div><div class="line">	&#123;       </div><div class="line">		alertStr = (<span class="built_in">NSString</span>*)alert;    </div><div class="line">	&#125;    </div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span> ([alert isKindOfClass:[<span class="built_in">NSDictionary</span> <span class="keyword">class</span>]])    </div><div class="line">	&#123;        </div><div class="line">		<span class="built_in">NSDictionary</span>* alertDict = (<span class="built_in">NSDictionary</span>*)alert;        </div><div class="line">		alertStr = [alertDict objectForKey:<span class="string">@"body"</span>];    </div><div class="line">	&#125;        </div><div class="line">	application.applicationIconBadgeNumber = [[apsInfo objectForKey:<span class="string">@"badge"</span>] integerValue];        </div><div class="line">	<span class="keyword">if</span> ([application applicationState] == <span class="built_in">UIApplicationStateActive</span> &amp;&amp; alertStr != <span class="literal">nil</span>)    </div><div class="line">	&#123;</div><div class="line">		<span class="built_in">UIAlertView</span>* alertView = [[<span class="built_in">UIAlertView</span> alloc] initWithTitle:<span class="string">@"Pushed Message"</span> message:alertStr delegate:<span class="literal">nil</span> cancelButtonTitle:<span class="string">@"OK"</span> otherButtonTitles:<span class="literal">nil</span>];</div><div class="line">		[alertView show];    </div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+ <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *)application didReceiveRemoteNotification:(<span class="built_in">NSDictionary</span> *)payload &#123;</div><div class="line">	   <span class="built_in">NSLog</span>(<span class="string">@"remote notification: %@"</span>,[payload description]);</div><div class="line">    <span class="built_in">NSString</span>* alertStr = <span class="literal">nil</span>;</div><div class="line">    <span class="built_in">NSDictionary</span> *apsInfo = [payload objectForKey:<span class="string">@"aps"</span>];</div><div class="line">    <span class="built_in">NSObject</span> *alert = [apsInfo objectForKey:<span class="string">@"alert"</span>];</div><div class="line">    <span class="keyword">if</span> ([alert isKindOfClass:[<span class="built_in">NSString</span> <span class="keyword">class</span>]]) &#123;</div><div class="line">        alertStr = (<span class="built_in">NSString</span>*)alert;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> ([alert isKindOfClass:[<span class="built_in">NSDictionary</span> <span class="keyword">class</span>]]) &#123;</div><div class="line">        <span class="built_in">NSDictionary</span>* alertDict = (<span class="built_in">NSDictionary</span>*)alert;</div><div class="line">        alertStr = [alertDict objectForKey:<span class="string">@"body"</span>];</div><div class="line">    &#125;</div><div class="line">    application.applicationIconBadgeNumber = [[apsInfo objectForKey:<span class="string">@"badge"</span>] integerValue];</div><div class="line">    <span class="keyword">if</span> ([application applicationState] == <span class="built_in">UIApplicationStateActive</span> &amp;&amp; alertStr != <span class="literal">nil</span>) &#123;</div><div class="line">        <span class="built_in">UIAlertView</span>* alertView =</div><div class="line">        [[<span class="built_in">UIAlertView</span> alloc] initWithTitle:<span class="string">@"Pushed Message"</span></div><div class="line">                                   message:alertStr</div><div class="line">                                  delegate:<span class="literal">nil</span></div><div class="line">                         cancelButtonTitle:<span class="string">@"OK"</span></div><div class="line">                         otherButtonTitles:<span class="literal">nil</span>];</div><div class="line">        [alertView show];    </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="自定义通知提示音"><a href="#自定义通知提示音" class="headerlink" title="自定义通知提示音"></a>自定义通知提示音</h2><p>你可以在 App 的 Bundle 中加入一段自定义提示音文件。然后当通知到达时可以指定播放这个文件。必须为以下几种数据格式：</p>
@@ -278,14 +278,11 @@ var _hmt = _hmt || [];
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Connected to APNS</div><div class="line">Message successfully delivered</div></pre></td></tr></table></figure>
 <h2 id="模拟推送二：通过工具推送"><a href="#模拟推送二：通过工具推送" class="headerlink" title="模拟推送二：通过工具推送"></a>模拟推送二：通过工具推送</h2><p>Github 上面有位大神分享了他的推送工具<a href="https://github.com/noodlewerk/NWPusher" target="_blank" rel="external">NWPusher</a>，大大减少了开发人员的工作量。具体用法说明上面写的很清楚，这里就不再重复。</p>
 <h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p><strong>2016年02月18日</strong></p>
-<ol>
-<li><p>昨天由于有个应用的推送证书过期了，所以需要重新生成新的推送证书。偶然之间发现苹果的推送证书更新了，一开始还觉得有些跟以前不同，在这里记录一下，方面后人不入坑。</p>
+<p>昨天由于有个应用的推送证书过期了，所以需要重新生成新的推送证书。偶然之间发现苹果的推送证书更新了，一开始还觉得有些跟以前不同，在这里记录一下，方面后人不入坑。</p>
 <blockquote>
 <p><strong>Apple Push Notification Service Update</strong><br>December 17, 2015<br>At WWDC 2015 we announced a new HTTP/2 based provider API and simplified certificate management process for developers using the Apple Push Notification service. You can now take advantage of this new provider API and create a single SSL certificate for each of your iOS apps, allowing you to connect to both APNs environments. To learn more, read the <a href="https://developer.apple.com/go/?id=local-and-remote-notifications" target="_blank" rel="external">Local and Remote Notification Programming Guide</a> and watch <a href="https://developer.apple.com/videos/play/wwdc2015-720/?time=1281/" target="_blank" rel="external">What’s New in Notifications</a>.</p>
 <p><img src="http://ww2.sinaimg.cn/large/81f8a509gw1f13ktc92rpj214804ajs6.jpg" alt="新旧推送证书不同"></p>
 </blockquote>
-</li>
-</ol>
 <p><strong>2016年02月20日</strong></p>
 <p>当上线产品推送证书过期时，不要惊慌，我们不需要更新推送证书之后重新提交 AppStore 。只需要替换服务器端的推送证书即可(<strong>记得重启服务器，不然推送在测试环境下有效，但是在真实环境下是无效的</strong>)。</p>
 <p><strong>2016年12月27日</strong></p>
@@ -635,15 +632,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">brew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -659,19 +656,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -687,15 +676,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -707,7 +692,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -715,19 +704,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -743,7 +732,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -756,10 +757,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">动画</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -831,6 +828,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打包</a>
               </li>
              
@@ -840,10 +841,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
               </li>
              
               <li class="article-tag-list-item">
