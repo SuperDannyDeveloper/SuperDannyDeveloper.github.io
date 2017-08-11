@@ -17,7 +17,7 @@
 <meta property="og:description" content="iOS中的沙盒可以让平台更加的安全，这也是沙盒给用户带来的最主要好处。不过由于沙盒的严格限制，导致程序之间共享数据比较麻烦。一般在程序间共享文档可以通过UIDocumentInteractionController类实现通讯。它支持在你的app中用其他app预览和显示文档。同时也支持文件关联，允许其他app通过你的程序打开文件。这些技术包括了UIKit中提供的UIDocumentInteract">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/81f8a509gw1eziwe2y487j20aa0iaq42.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/81f8a509gw1ezhhucpcbgg20ab0ie12v.gif">
-<meta property="og:updated_time" content="2017-07-14T02:18:03.000Z">
+<meta property="og:updated_time" content="2017-08-11T16:58:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UIDocumentInteractionController之程序间文档共享">
 <meta name="twitter:description" content="iOS中的沙盒可以让平台更加的安全，这也是沙盒给用户带来的最主要好处。不过由于沙盒的严格限制，导致程序之间共享数据比较麻烦。一般在程序间共享文档可以通过UIDocumentInteractionController类实现通讯。它支持在你的app中用其他app预览和显示文档。同时也支持文件关联，允许其他app通过你的程序打开文件。这些技术包括了UIKit中提供的UIDocumentInteract">
@@ -225,8 +225,8 @@ var _hmt = _hmt || [];
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- documentInteractionControllerViewControllerForPreview:</div><div class="line">- documentInteractionControllerViewForPreview:</div><div class="line">- documentInteractionControllerRectForPreview:</div></pre></td></tr></table></figure>
 <p>这3个方法在用户点击“快速查看”菜单时依次调用。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">- (UIViewController *)documentInteractionControllerViewControllerForPreview:(UIDocumentInteractionController *)controller &#123;</div><div class="line">    return self;</div><div class="line">&#125;</div><div class="line">- (UIView *)documentInteractionControllerViewForPreview:(UIDocumentInteractionController *)controller &#123;</div><div class="line">    return self.view;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (CGRect)documentInteractionControllerRectForPreview:(UIDocumentInteractionController *)controller &#123;</div><div class="line">　　return self.view.frame;</div><div class="line"> &#125;</div><div class="line"> </div><div class="line">//点击预览窗口的“Done”(完成)按钮时调用</div><div class="line">- (void)documentInteractionControllerDidEndPreview:(UIDocumentInteractionController *)controller &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="功能一：分享文件"><a href="#功能一：分享文件" class="headerlink" title="功能一：分享文件"></a>功能一：分享文件</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)shareFile &#123;</div><div class="line">    <span class="built_in">NSString</span> *filePath = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:<span class="string">@"皮卡丘"</span></div><div class="line">                                                          ofType:<span class="string">@"jpeg"</span>];</div><div class="line">                                                          </div><div class="line">    <span class="comment">//创建实例</span></div><div class="line">    <span class="built_in">UIDocumentInteractionController</span> *documentController = [<span class="built_in">UIDocumentInteractionController</span> interactionControllerWithURL:[<span class="built_in">NSURL</span> fileURLWithPath:filePath]];</div><div class="line">    </div><div class="line">    <span class="comment">//设置代理</span></div><div class="line">    documentController.delegate = <span class="keyword">self</span>;</div><div class="line">    <span class="built_in">BOOL</span> canOpen = [documentController presentOpenInMenuFromRect:<span class="built_in">CGRectZero</span></div><div class="line">                                                          inView:<span class="keyword">self</span>.view</div><div class="line">                                                        animated:<span class="literal">YES</span>];</div><div class="line">    <span class="keyword">if</span> (!canOpen) &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"沒有程序可以打開要分享的文件"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="功能二：预览文件-注册应用程序支持的文件类型"><a href="#功能二：预览文件-注册应用程序支持的文件类型" class="headerlink" title="功能二：预览文件(注册应用程序支持的文件类型)"></a>功能二：预览文件(注册应用程序支持的文件类型)</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)preview &#123;</div><div class="line">    <span class="keyword">if</span> (!_path) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">NSURL</span> *fileURL = [<span class="built_in">NSURL</span> URLWithString:[<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@%@"</span>, [<span class="keyword">self</span> getURL], [_path lastPathComponent]]];</div><div class="line">    </div><div class="line">    <span class="comment">//创建实例</span></div><div class="line">    <span class="built_in">UIDocumentInteractionController</span> *documentController =</div><div class="line">    [<span class="built_in">UIDocumentInteractionController</span></div><div class="line">     interactionControllerWithURL:fileURL];</div><div class="line">     </div><div class="line">    <span class="comment">//设置代理</span></div><div class="line">    documentController.delegate = <span class="keyword">self</span>;</div><div class="line"></div><div class="line">    [documentController presentPreviewAnimated:<span class="literal">YES</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="功能一：分享文件"><a href="#功能一：分享文件" class="headerlink" title="功能一：分享文件"></a>功能一：分享文件</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)shareFile &#123;</div><div class="line">    <span class="built_in">NSString</span> *filePath = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:<span class="string">@"皮卡丘"</span></div><div class="line">                                                          ofType:<span class="string">@"jpeg"</span>];</div><div class="line">                                                          </div><div class="line">    <span class="comment">//创建实例(写成成员变量，不然可能导致分享出去被释放崩溃问题)</span></div><div class="line">    _documentController = [<span class="built_in">UIDocumentInteractionController</span> interactionControllerWithURL:[<span class="built_in">NSURL</span> fileURLWithPath:filePath]];</div><div class="line">    </div><div class="line">    <span class="comment">//设置代理</span></div><div class="line">    documentController.delegate = <span class="keyword">self</span>;</div><div class="line">    <span class="built_in">BOOL</span> canOpen = [documentController presentOpenInMenuFromRect:<span class="built_in">CGRectZero</span></div><div class="line">                                                          inView:<span class="keyword">self</span>.view</div><div class="line">                                                        animated:<span class="literal">YES</span>];</div><div class="line">    <span class="keyword">if</span> (!canOpen) &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"沒有程序可以打開要分享的文件"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="功能二：预览文件-注册应用程序支持的文件类型"><a href="#功能二：预览文件-注册应用程序支持的文件类型" class="headerlink" title="功能二：预览文件(注册应用程序支持的文件类型)"></a>功能二：预览文件(注册应用程序支持的文件类型)</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)preview &#123;</div><div class="line">    <span class="keyword">if</span> (!_path) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">NSURL</span> *fileURL = [<span class="built_in">NSURL</span> URLWithString:[<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@%@"</span>, [<span class="keyword">self</span> getURL], [_path lastPathComponent]]];</div><div class="line">    </div><div class="line">    <span class="comment">//创建实例(写成成员变量，不然可能导致分享出去被释放崩溃问题)</span></div><div class="line">    _documentController =</div><div class="line">    [<span class="built_in">UIDocumentInteractionController</span></div><div class="line">     interactionControllerWithURL:fileURL];</div><div class="line">     </div><div class="line">    <span class="comment">//设置代理</span></div><div class="line">    documentController.delegate = <span class="keyword">self</span>;</div><div class="line"></div><div class="line">    [documentController presentPreviewAnimated:<span class="literal">YES</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="配置Info-plist文件"><a href="#配置Info-plist文件" class="headerlink" title="配置Info.plist文件"></a>配置Info.plist文件</h3><blockquote>
 <p>如果你的程序能够打开某种文件，你可以向系统进行注册。方便其他程序通过 iOS 的<code>document interaction</code>技术提供给用户一个选择，从而调用你的程序处理这些文件。</p>
 <p>这需要在程序的<code>Info.plist</code>文件中添加<code>CFBundleDocumentTypes</code>键(查看<a href="https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249" target="_blank" rel="external">CoreFoundation Keys</a>)。</p>
@@ -621,11 +621,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">年终总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打赏</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">年终总结</a>
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -641,7 +645,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -650,10 +654,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CocoaPods</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -689,19 +689,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -745,6 +745,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Autolayout</a>
               </li>
              
@@ -753,15 +757,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -773,23 +773,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">金额</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数值</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -801,15 +793,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">金额</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数值</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Realm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -821,7 +813,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
+                <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">键盘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -829,7 +825,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
+                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -853,6 +849,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
               </li>
              
@@ -873,11 +873,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">代码块</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+                <a href="javascript:void(0)" class="js-tag color4">DIY</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -886,10 +890,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">企业级证书打包</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DIY</a>
               </li>
             
             <div class="clearfix"></div>
