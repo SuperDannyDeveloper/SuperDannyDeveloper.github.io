@@ -287,7 +287,7 @@
     <link href="superdanny.link/2017/03/03/App-Thinning/"/>
     <id>superdanny.link/2017/03/03/App-Thinning/</id>
     <published>2017-03-03T06:17:00.000Z</published>
-    <updated>2017-07-14T02:25:34.000Z</updated>
+    <updated>2017-10-12T02:01:13.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>每次产品迭代的次数越多，你就会发现安装包的大小也会随之增大，因为有很多废弃的代码，UI素材堆积在项目里面，导致了冗余。这边按照自己亲身经验对APP进行瘦身。</p>
 <a id="more"></a> 
@@ -302,7 +302,7 @@
 <tbody>
 <tr>
 <td style="text-align:center">没什么变化</td>
-<td style="text-align:center">配置编译选项未必能够较少安装包大小，根据实际情况而定。</td>
+<td style="text-align:center">配置编译选项未必能够减少安装包大小，根据实际情况而定。</td>
 </tr>
 </tbody>
 </table>

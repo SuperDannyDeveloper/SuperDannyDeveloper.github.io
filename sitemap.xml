@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>superdanny.link/2016/01/28/iOS-Upload-Image/</loc>
+    <loc>superdanny.link/2015/07/21/About-me/</loc>
     
-    <lastmod>2017-10-09T07:19:10.000Z</lastmod>
+    <lastmod>2017-10-17T07:26:55.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/07/21/About-me/</loc>
+    <loc>superdanny.link/2017/03/03/App-Thinning/</loc>
     
-    <lastmod>2017-09-29T06:05:23.000Z</lastmod>
+    <lastmod>2017-10-12T02:01:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2016/01/28/iOS-Upload-Image/</loc>
+    
+    <lastmod>2017-10-09T07:19:10.000Z</lastmod>
     
   </url>
   
@@ -61,13 +68,6 @@
     <loc>superdanny.link/2017/05/09/iOS-IJKPlayer/</loc>
     
     <lastmod>2017-07-14T02:29:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2017/03/03/App-Thinning/</loc>
-    
-    <lastmod>2017-07-14T02:25:34.000Z</lastmod>
     
   </url>
   
@@ -520,13 +520,6 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/17/Fix-svn-directory-is-out-of-date/</loc>
-    
-    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
     
     <lastmod>2016-11-30T01:56:39.000Z</lastmod>
@@ -534,14 +527,21 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
+    <loc>superdanny.link/2015/09/17/Fix-svn-directory-is-out-of-date/</loc>
+    
+    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
     
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
+    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
     
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     
