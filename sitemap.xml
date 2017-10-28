@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>superdanny.link/wechat/download.html</loc>
+    
+    <lastmod>2017-10-28T16:41:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>superdanny.link/2015/07/21/About-me/</loc>
     
     <lastmod>2017-10-17T07:26:55.000Z</lastmod>
@@ -520,13 +527,6 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/17/Fix-svn-directory-is-out-of-date/</loc>
-    
-    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
     
     <lastmod>2016-11-30T01:56:39.000Z</lastmod>
@@ -534,14 +534,21 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
+    <loc>superdanny.link/2015/09/17/Fix-svn-directory-is-out-of-date/</loc>
+    
+    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
     
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
+    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
     
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     
