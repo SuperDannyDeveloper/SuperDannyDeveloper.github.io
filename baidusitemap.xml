@@ -550,9 +550,9 @@
         <title>Xcode8，你为什么这么坑</title>
         <pubTime>2016-09-26T08:02:00.000Z</pubTime>
         
-        <tag>iOS10</tag>
-         
         <tag>Xcode</tag>
+         
+        <tag>iOS10</tag>
          
         <tag>Xcode8</tag>
          
@@ -652,9 +652,9 @@
         <title>如何优雅的使用Xcode8或iOS10 SDK</title>
         <pubTime>2016-09-16T15:59:00.000Z</pubTime>
         
-        <tag>iOS10</tag>
-         
         <tag>Xcode</tag>
+         
+        <tag>iOS10</tag>
          
         <tag>Xcode8</tag>
          
@@ -1594,14 +1594,16 @@
 
     
   <url>
-    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
+    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>指定UIView的特定角为圆角</title>
-        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
+        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
+        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
         
         <tag>iOS</tag>
+         
+        <tag>长按文本框</tag>
          
          
            
@@ -1614,16 +1616,14 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
+    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
-        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
+        <title>指定UIView的特定角为圆角</title>
+        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
         
         <tag>iOS</tag>
-         
-        <tag>长按文本框</tag>
          
          
            
