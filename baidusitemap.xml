@@ -3,6 +3,50 @@
 
 
     
+  <url>
+    <loc>superdanny.link/2016/01/27/iOS-get-device-ip-address/</loc>
+    <lastmod>2017-11-17T07:53:32.910Z</lastmod>
+    <data>
+        <display>
+        <title>iOS获取设备IP地址</title>
+        <pubTime>2016-01-27T06:30:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>获取IP</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/07/15/iOS-Grand-Central-Dispatch/</loc>
+    <lastmod>2017-11-14T06:23:30.742Z</lastmod>
+    <data>
+        <display>
+        <title>Grand Central Dispatch</title>
+        <pubTime>2015-07-15T12:23:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>GCD</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>superdanny.link/2015/07/21/About-me/</loc>
@@ -118,28 +162,6 @@
         <pubTime>2017-03-10T08:42:00.000Z</pubTime>
         
         <tag>iOS</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2016/01/27/iOS-get-device-ip-address/</loc>
-    <lastmod>2017-08-04T06:37:21.000Z</lastmod>
-    <data>
-        <display>
-        <title>iOS获取设备IP地址</title>
-        <pubTime>2016-01-27T06:30:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-        <tag>获取IP</tag>
          
          
            
@@ -778,28 +800,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/07/15/iOS-Grand-Central-Dispatch/</loc>
-    <lastmod>2017-07-14T02:19:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>Grand Central Dispatch</title>
-        <pubTime>2015-07-15T12:23:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-        <tag>GCD</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2016/01/13/iOS-iTunes_Connect_1-Uploading-APP-to-Appstore/</loc>
     <lastmod>2017-07-14T02:18:47.000Z</lastmod>
     <data>
@@ -1381,9 +1381,9 @@
         <title>GitHub无法访问或访问缓慢解决办法</title>
         <pubTime>2015-09-09T15:16:00.000Z</pubTime>
         
-        <tag>Mac</tag>
-         
         <tag>GitHub</tag>
+         
+        <tag>Mac</tag>
          
          
            
@@ -1403,9 +1403,9 @@
         <title>MacOS X隐藏和显示隐藏文件</title>
         <pubTime>2015-09-09T19:02:00.000Z</pubTime>
         
-        <tag>文件操作</tag>
-         
         <tag>Mac</tag>
+         
+        <tag>文件操作</tag>
          
          
            
@@ -1554,26 +1554,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
-    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>关于开发中遇到问题处理思路</title>
-        <pubTime>2015-09-18T05:56:00.000Z</pubTime>
-        
-        <tag>解决方式</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2015/09/17/Fix-svn-directory-is-out-of-date/</loc>
     <lastmod>2016-11-30T01:56:39.000Z</lastmod>
     <data>
@@ -1594,14 +1574,14 @@
 
     
   <url>
-    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
-    <lastmod>2016-11-30T01:56:38.000Z</lastmod>
+    <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
+    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
     <data>
         <display>
-        <title>指定UIView的特定角为圆角</title>
-        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
+        <title>关于开发中遇到问题处理思路</title>
+        <pubTime>2015-09-18T05:56:00.000Z</pubTime>
         
-        <tag>iOS</tag>
+        <tag>解决方式</tag>
          
          
            
@@ -1624,6 +1604,26 @@
         <tag>iOS</tag>
          
         <tag>长按文本框</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
+    <lastmod>2016-11-30T01:56:38.000Z</lastmod>
+    <data>
+        <display>
+        <title>指定UIView的特定角为圆角</title>
+        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
          
          
            
