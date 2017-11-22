@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/81f8a509gy1fdhw8vcx4gg207p0duqq5.gif">
 <meta property="og:image" content="http://wx4.sinaimg.cn/mw690/81f8a509gy1fdhw9ck7ijg207p0due81.gif">
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/81f8a509gy1fiay119qnjg207p0dtu0x.gif">
-<meta property="og:updated_time" content="2017-08-07T02:22:07.000Z">
+<meta property="og:updated_time" content="2017-11-22T07:33:22.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UITableView&#x2F;UICollectionView使用技巧">
 <meta name="twitter:description" content="前言知识是无穷无尽，技术需要积累，记录一点一滴，让成长的时间轴上变得充实一些。今天就讲讲UITableView/UICollectionView的一些使用技巧。结合自己项目情况进行展开。">
@@ -222,6 +222,7 @@ var _hmt = _hmt || [];
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)scrollViewDidEndDecelerating:(<span class="built_in">UIScrollView</span> *)scrollView</div></pre></td></tr></table></figure>
 <p>那UIScrollView真正停止滑动，应该怎么判断呢？<br>解决方法如下：</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)scrollViewDidEndDragging:(<span class="built_in">UIScrollView</span> *)scrollView willDecelerate:(<span class="built_in">BOOL</span>)decelerate &#123;</div><div class="line">    <span class="keyword">if</span>(!decelerate) &#123;   </div><div class="line">        <span class="comment">//OK,真正停止了，do something</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//然后</span></div><div class="line">- (<span class="keyword">void</span>)scrollViewDidEndDecelerating:(<span class="built_in">UIScrollView</span> *)scrollView &#123;</div><div class="line">    <span class="comment">//OK,真正停止了,do something</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="UIScrollView左右滑动到某个位置时，禁止继续向左或者向右滑动"><a href="#UIScrollView左右滑动到某个位置时，禁止继续向左或者向右滑动" class="headerlink" title="UIScrollView左右滑动到某个位置时，禁止继续向左或者向右滑动"></a>UIScrollView左右滑动到某个位置时，禁止继续向左或者向右滑动</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)scrollViewDidScroll:(<span class="built_in">UIScrollView</span> *)scrollView &#123;</div><div class="line">    <span class="built_in">CGFloat</span> contentOffsetX = scrollView.contentOffset.x;</div><div class="line">    <span class="keyword">if</span> (contentOffsetX&lt;=<span class="number">0</span> || contentOffsetX&gt;=kScreenWidth) &#123;</div><div class="line">        <span class="comment">//当滑动到最左边或者最右边时，禁止继续滑动</span></div><div class="line">        scrollView.scrollEnabled = <span class="literal">NO</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        scrollView.scrollEnabled = <span class="literal">YES</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)scrollViewDidEndDragging:(<span class="built_in">UIScrollView</span> *)scrollView willDecelerate:(<span class="built_in">BOOL</span>)decelerate &#123;</div><div class="line">    scrollView.scrollEnabled = <span class="literal">YES</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)scrollViewDidEndDecelerating:(<span class="built_in">UIScrollView</span> *)scrollView &#123;</div><div class="line">    scrollView.scrollEnabled = <span class="literal">YES</span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="消息传递"><a href="#消息传递" class="headerlink" title="消息传递"></a>消息传递</h3><p>当手指触摸后，scrollView会暂时拦截触摸事件，使用一个计时器，假如在计时器到点后，没有发生手指移动事件，那么，scrollView发送tracking events到被点击的subView。<br>假如在计时器到点前，发生了移动事件，那么scrollView取消tracking自己发生滚动。</p>
 <p>子类可以重载<code>touchesShouldBegin:withEvent:inContentView:</code>决定自己是否接收touch事件。<br>当<code>pagingEnabled</code>值为<code>YES</code>，会自动滚动到subView的边界，默认是<code>NO</code>。</p>
 <p><code>touchesShouldCancelInContentView:</code>开始发送tracking messages消息给subView的时候<br>调用这个方法，决定是否发送tracking messages消息到subview，假如返回<code>NO</code>，则发送，<code>YES</code>则不发送。</p>
@@ -395,7 +396,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Header-Footer高度、悬停设置"><span class="toc-number">2.</span> <span class="toc-text">Header/Footer高度、悬停设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#高度设置"><span class="toc-number">2.1.</span> <span class="toc-text">高度设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#悬停"><span class="toc-number">2.2.</span> <span class="toc-text">悬停</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方式一-全部悬停-："><span class="toc-number">2.2.1.</span> <span class="toc-text">方式一(全部悬停)：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方式二-部分悬停-："><span class="toc-number">2.2.2.</span> <span class="toc-text">方式二(部分悬停)：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#滚动监听"><span class="toc-number">3.</span> <span class="toc-text">滚动监听</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#UIScrollView-减速"><span class="toc-number">3.1.</span> <span class="toc-text">UIScrollView 减速</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UIScrollView-如何判断停止滑动"><span class="toc-number">3.2.</span> <span class="toc-text">UIScrollView 如何判断停止滑动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#消息传递"><span class="toc-number">3.3.</span> <span class="toc-text">消息传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改tableView中headerView的位置-类似美团外卖首页"><span class="toc-number">3.4.</span> <span class="toc-text">修改tableView中headerView的位置(类似美团外卖首页)</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Header-Footer高度、悬停设置"><span class="toc-number">2.</span> <span class="toc-text">Header/Footer高度、悬停设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#高度设置"><span class="toc-number">2.1.</span> <span class="toc-text">高度设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#悬停"><span class="toc-number">2.2.</span> <span class="toc-text">悬停</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方式一-全部悬停-："><span class="toc-number">2.2.1.</span> <span class="toc-text">方式一(全部悬停)：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方式二-部分悬停-："><span class="toc-number">2.2.2.</span> <span class="toc-text">方式二(部分悬停)：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#滚动监听"><span class="toc-number">3.</span> <span class="toc-text">滚动监听</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#UIScrollView-减速"><span class="toc-number">3.1.</span> <span class="toc-text">UIScrollView 减速</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UIScrollView-如何判断停止滑动"><span class="toc-number">3.2.</span> <span class="toc-text">UIScrollView 如何判断停止滑动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UIScrollView左右滑动到某个位置时，禁止继续向左或者向右滑动"><span class="toc-number">3.3.</span> <span class="toc-text">UIScrollView左右滑动到某个位置时，禁止继续向左或者向右滑动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#消息传递"><span class="toc-number">3.4.</span> <span class="toc-text">消息传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改tableView中headerView的位置-类似美团外卖首页"><span class="toc-number">3.5.</span> <span class="toc-text">修改tableView中headerView的位置(类似美团外卖首页)</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -572,6 +573,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
@@ -588,15 +593,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -605,6 +606,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,7 +625,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -628,11 +633,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -640,19 +641,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -664,6 +661,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
@@ -672,11 +673,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
+                <a href="javascript:void(0)" class="js-tag color1">Autolayout</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">动画</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -696,15 +705,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Autolayout</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">动画</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
+                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -712,19 +713,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
+                <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">金额</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数值</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -733,6 +726,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">KVO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">金额</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数值</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -788,6 +789,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">上架</a>
               </li>
              
@@ -797,10 +802,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">iTunes Connect</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
               </li>
              
               <li class="article-tag-list-item">
