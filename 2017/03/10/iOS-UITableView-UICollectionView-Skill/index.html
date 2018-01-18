@@ -20,7 +20,8 @@
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/81f8a509gy1fdhw8vcx4gg207p0duqq5.gif">
 <meta property="og:image" content="http://wx4.sinaimg.cn/mw690/81f8a509gy1fdhw9ck7ijg207p0due81.gif">
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/81f8a509gy1fiay119qnjg207p0dtu0x.gif">
-<meta property="og:updated_time" content="2017-11-22T07:33:22.598Z">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/81f8a509gy1fnjqb9s98hg20960k0n9f.gif">
+<meta property="og:updated_time" content="2018-01-17T09:35:19.098Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UITableView&#x2F;UICollectionView使用技巧">
 <meta name="twitter:description" content="前言知识是无穷无尽，技术需要积累，记录一点一滴，让成长的时间轴上变得充实一些。今天就讲讲UITableView/UICollectionView的一些使用技巧。结合自己项目情况进行展开。">
@@ -230,6 +231,14 @@ var _hmt = _hmt || [];
 <h3 id="修改tableView中headerView的位置-类似美团外卖首页"><a href="#修改tableView中headerView的位置-类似美团外卖首页" class="headerlink" title="修改tableView中headerView的位置(类似美团外卖首页)"></a>修改tableView中headerView的位置(类似美团外卖首页)</h3><p>实现原理就是监听滚动情况，重设scrollView.contentInset即可<br>效果如下：</p>
 <p><img src="http://wx3.sinaimg.cn/mw690/81f8a509gy1fiay119qnjg207p0dtu0x.gif" alt="修改headerView的位置"></p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)scrollViewDidScroll:(<span class="built_in">UIScrollView</span> *)scrollView &#123;</div><div class="line">    <span class="built_in">CGFloat</span> contentOffsety = scrollView.contentOffset.y;</div><div class="line">    _contentOffSet_y = contentOffsety;</div><div class="line">    <span class="comment">//这个header其实是section的header到顶部的距离</span></div><div class="line">    <span class="built_in">CGFloat</span> header = kBannerHight+[HSFuntionCell cellHeight]+kFooterViewHeight<span class="number">-64</span>;</div><div class="line">    </div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"=======%lf=====%lf"</span>, contentOffsety, header);</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (contentOffsety&lt;=header&amp;&amp;contentOffsety&gt;=<span class="number">0</span>) &#123;</div><div class="line">        <span class="comment">//当视图滑动的距离小于header时</span></div><div class="line">        scrollView.contentInset = <span class="built_in">UIEdgeInsetsMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</div><div class="line">        </div><div class="line">        <span class="keyword">self</span>.headerView.layer.borderColor = [<span class="built_in">UIColorTools</span> colorWithTheme:<span class="built_in">UIColorThemeWhite</span>].CGColor;</div><div class="line">        </div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (contentOffsety&gt;header) &#123;</div><div class="line">        <span class="comment">//当视图滑动的距离大于header时，这里就可以设置section的header的位置，设置的时候要考虑到导航栏的透明对滚动视图的影响</span></div><div class="line">        scrollView.contentInset = <span class="built_in">UIEdgeInsetsMake</span>(<span class="number">64</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</div><div class="line">        </div><div class="line">        <span class="keyword">self</span>.headerView.layer.borderColor = [<span class="built_in">UIColorTools</span> colorWithTheme:<span class="built_in">UIColorThemeSeparatorColor</span>].CGColor;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">self</span>.headerView.borderWhich = DDViewBorderTop;</div><div class="line">    <span class="comment">//设置导航条透明度</span></div><div class="line">    [<span class="keyword">self</span> setNavigationColor:contentOffsety];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="顶部拉伸效果-头像拉伸"><a href="#顶部拉伸效果-头像拉伸" class="headerlink" title="顶部拉伸效果(头像拉伸)"></a>顶部拉伸效果(头像拉伸)</h3><p>实现思路：自定义一个ViewA，作为TableView的headerView，然后监听TableView的滚动，将回调传递给ViewA即可。</p>
+<p>效果如下：</p>
+<p><img src="http://wx2.sinaimg.cn/mw690/81f8a509gy1fnjqb9s98hg20960k0n9f.gif" alt="顶部拉伸效果"></p>
+<h4 id="下面是自定义MOActivityTopView"><a href="#下面是自定义MOActivityTopView" class="headerlink" title="下面是自定义MOActivityTopView"></a>下面是自定义MOActivityTopView</h4><p><strong>.h文件</strong></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">MOActivityTopView</span> : <span class="title">UIView</span></span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) MOActivityModel *model;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)didScroll:(<span class="built_in">CGFloat</span>)contentOffSetY;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<p><strong>.m文件</strong></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"MOActivityTopView.h"</span></span></div><div class="line"></div><div class="line"><span class="meta">#define kViewHeight     (kScreenWidth*340/750.)</span></div><div class="line"><span class="meta">#define kTopHeight      (kScreenWidth*240/750.)</span></div><div class="line"><span class="meta">#define kBottomHeight   (kScreenWidth*100/750.)</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">MOActivityTopView</span> ()</span></div><div class="line"></div><div class="line"><span class="comment">/// 背景图</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">UIImageView</span> *backgroundImgV;</div><div class="line"><span class="comment">/// 毛玻璃</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">UIVisualEffectView</span> *visualEffectView;</div><div class="line"><span class="comment">/// 活動圖</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">UIImageView</span> *activityImgV;</div><div class="line"><span class="comment">/// 活動名稱</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">UILabel</span> *activityLab;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">MOActivityTopView</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">instancetype</span>)init &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">self</span> = [<span class="keyword">super</span> initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, kScreenWidth, kViewHeight)]) &#123;</div><div class="line">        [<span class="keyword">self</span> setUp];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - Getter</span></div><div class="line">-(<span class="built_in">UIImageView</span> *)backgroundImgV &#123;</div><div class="line">    <span class="keyword">if</span> (_backgroundImgV == <span class="literal">nil</span>) &#123;</div><div class="line">        _backgroundImgV = [[<span class="built_in">UIImageView</span> alloc]initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="keyword">self</span>.dd_w, kTopHeight)];</div><div class="line">        [_backgroundImgV setContentMode:<span class="built_in">UIViewContentModeScaleAspectFill</span>];</div><div class="line">        [_backgroundImgV setClipsToBounds:<span class="literal">YES</span>];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> _backgroundImgV;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setUp &#123;</div><div class="line">    [<span class="keyword">self</span> addSubview:<span class="keyword">self</span>.backgroundImgV];</div><div class="line">    </div><div class="line">    <span class="built_in">UIVisualEffect</span> *blurEffect;</div><div class="line">    blurEffect = [<span class="built_in">UIBlurEffect</span> effectWithStyle:<span class="built_in">UIBlurEffectStyleLight</span>];</div><div class="line">    </div><div class="line">    _visualEffectView = [[<span class="built_in">UIVisualEffectView</span> alloc] initWithEffect:blurEffect];</div><div class="line">    <span class="comment">//    _visualEffectView.alpha = 0.8;</span></div><div class="line">    </div><div class="line">    _visualEffectView.frame = <span class="keyword">self</span>.backgroundImgV.frame;</div><div class="line">    [<span class="keyword">self</span> addSubview:_visualEffectView];</div><div class="line">    </div><div class="line">    <span class="built_in">UIView</span> *bgView = [[<span class="built_in">UIView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="keyword">self</span>.backgroundImgV.dd_max_y, kScreenWidth, kBottomHeight)];</div><div class="line">    bgView.backgroundColor = [<span class="built_in">UIColorTools</span> colorWithTheme:<span class="built_in">UIColorThemeWhite</span>];</div><div class="line">    [<span class="keyword">self</span> addSubview:bgView];</div><div class="line">    </div><div class="line">    <span class="built_in">CGFloat</span> height = (kScreenWidth*<span class="number">160</span>/<span class="number">750.</span>);</div><div class="line">    <span class="built_in">CGFloat</span> width = height/(<span class="number">16</span>/<span class="number">21.</span>);</div><div class="line">    _activityImgV = [[<span class="built_in">UIImageView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">15</span>, bgView.dd_h<span class="number">-7</span>-height, width, height)];</div><div class="line">    [bgView addSubview:_activityImgV];</div><div class="line">    </div><div class="line">    _activityLab = [[<span class="built_in">UILabel</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(_activityImgV.dd_max_x+<span class="number">8</span>, <span class="number">0</span>, kScreenWidth-_activityImgV.dd_max_x<span class="number">-8</span><span class="number">-15</span>, kBottomHeight)];</div><div class="line">    _activityLab.textColor = [<span class="built_in">UIColorTools</span> colorWithTheme:<span class="built_in">UIColorThemeBlack</span>];</div><div class="line">    _activityLab.numberOfLines = <span class="number">2</span>;</div><div class="line"><span class="comment">//    _activityLab.adjustsFontSizeToFitWidth = YES;</span></div><div class="line">    [bgView addSubview:_activityLab];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)layoutSubviews &#123;</div><div class="line">    [<span class="keyword">super</span> layoutSubviews];</div><div class="line">    _activityImgV.clipsToBounds = <span class="literal">YES</span>;</div><div class="line">    _activityImgV.layer.masksToBounds = <span class="literal">YES</span>;</div><div class="line">    _activityImgV.layer.borderWidth = <span class="number">1.5</span>;</div><div class="line">    _activityImgV.layer.borderColor = [<span class="built_in">UIColorTools</span> colorWithTheme:<span class="built_in">UIColorThemeWhite</span>].CGColor;</div><div class="line">    _activityImgV.layer.cornerRadius = kViewCornerRadius;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setModel:(MOActivityModel *)model &#123;</div><div class="line">    _model = model;</div><div class="line">    [_activityImgV sd_setImageWithURL:kMOImageUrlSet(model.ActivityURL) placeholderImage:[<span class="built_in">UIImage</span> placeholderImage_activity]];</div><div class="line">    [_backgroundImgV sd_setImageWithURL:kMOImageUrlSet(model.ActivityURL) placeholderImage:kImageSet(<span class="string">@"Icon-noti"</span>)];</div><div class="line">    _activityLab.text = model.ActivityName;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)didScroll:(<span class="built_in">CGFloat</span>)contentOffSetY &#123;</div><div class="line">    <span class="comment">//图片高度</span></div><div class="line">    <span class="built_in">CGFloat</span> imageHeight = <span class="keyword">self</span>.dd_h;</div><div class="line">    <span class="comment">//图片宽度</span></div><div class="line">    <span class="built_in">CGFloat</span> imageWidth = kScreenWidth;</div><div class="line">    <span class="comment">//图片上下偏移量</span></div><div class="line">    <span class="built_in">CGFloat</span> imageOffsetY = contentOffSetY;</div><div class="line">    </div><div class="line"><span class="comment">//    NSLog(@"图片上下偏移量 imageOffsetY:%f -&gt;",imageOffsetY);</span></div><div class="line">    </div><div class="line">    <span class="comment">//下拉</span></div><div class="line">    <span class="keyword">if</span> (imageOffsetY &lt; <span class="number">0</span>) &#123;</div><div class="line">        <span class="built_in">CGFloat</span> totalOffset = imageHeight + ABS(imageOffsetY);</div><div class="line">        <span class="built_in">CGFloat</span> f = totalOffset / imageHeight;</div><div class="line">        <span class="keyword">self</span>.backgroundImgV.frame = <span class="built_in">CGRectMake</span>(-(imageWidth * f - imageWidth) * <span class="number">0.5</span>, imageOffsetY, imageWidth * f, totalOffset);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line"><span class="comment">//    //上拉</span></div><div class="line"><span class="comment">//    if (imageOffsetY &gt; 0) &#123;</span></div><div class="line"><span class="comment">//        CGFloat totalOffset = imageHeight - ABS(imageOffsetY);</span></div><div class="line"><span class="comment">//        CGFloat f = totalOffset / imageHeight;</span></div><div class="line"><span class="comment">//        [self.backgroundImgV setFrame:CGRectMake(-(imageWidth * f - imageWidth) * 0.5, imageOffsetY, imageWidth * f, totalOffset)];</span></div><div class="line"><span class="comment">//    &#125;</span></div><div class="line">    _visualEffectView.frame = <span class="keyword">self</span>.backgroundImgV.frame;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<h4 id="监听滚动"><a href="#监听滚动" class="headerlink" title="监听滚动"></a>监听滚动</h4><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">UIView</span> *)topHeaderView &#123;</div><div class="line">    <span class="keyword">if</span> (!_topHeaderView) &#123;</div><div class="line">        _topHeaderView = [[MOActivityTopView alloc] init];</div><div class="line">        _topHeaderView.model = _model;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> _topHeaderView;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)scrollViewDidScroll:(<span class="built_in">UIScrollView</span> *)scrollView &#123;</div><div class="line">    <span class="built_in">CGFloat</span> contentOffSetY = scrollView.contentOffset.y;</div><div class="line">    [<span class="keyword">self</span>.topHeaderView didScroll:contentOffSetY];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <hr>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
 <p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
@@ -396,7 +405,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Header-Footer高度、悬停设置"><span class="toc-number">2.</span> <span class="toc-text">Header/Footer高度、悬停设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#高度设置"><span class="toc-number">2.1.</span> <span class="toc-text">高度设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#悬停"><span class="toc-number">2.2.</span> <span class="toc-text">悬停</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方式一-全部悬停-："><span class="toc-number">2.2.1.</span> <span class="toc-text">方式一(全部悬停)：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方式二-部分悬停-："><span class="toc-number">2.2.2.</span> <span class="toc-text">方式二(部分悬停)：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#滚动监听"><span class="toc-number">3.</span> <span class="toc-text">滚动监听</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#UIScrollView-减速"><span class="toc-number">3.1.</span> <span class="toc-text">UIScrollView 减速</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UIScrollView-如何判断停止滑动"><span class="toc-number">3.2.</span> <span class="toc-text">UIScrollView 如何判断停止滑动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UIScrollView左右滑动到某个位置时，禁止继续向左或者向右滑动"><span class="toc-number">3.3.</span> <span class="toc-text">UIScrollView左右滑动到某个位置时，禁止继续向左或者向右滑动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#消息传递"><span class="toc-number">3.4.</span> <span class="toc-text">消息传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改tableView中headerView的位置-类似美团外卖首页"><span class="toc-number">3.5.</span> <span class="toc-text">修改tableView中headerView的位置(类似美团外卖首页)</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Header-Footer高度、悬停设置"><span class="toc-number">2.</span> <span class="toc-text">Header/Footer高度、悬停设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#高度设置"><span class="toc-number">2.1.</span> <span class="toc-text">高度设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#悬停"><span class="toc-number">2.2.</span> <span class="toc-text">悬停</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方式一-全部悬停-："><span class="toc-number">2.2.1.</span> <span class="toc-text">方式一(全部悬停)：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方式二-部分悬停-："><span class="toc-number">2.2.2.</span> <span class="toc-text">方式二(部分悬停)：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#滚动监听"><span class="toc-number">3.</span> <span class="toc-text">滚动监听</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#UIScrollView-减速"><span class="toc-number">3.1.</span> <span class="toc-text">UIScrollView 减速</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UIScrollView-如何判断停止滑动"><span class="toc-number">3.2.</span> <span class="toc-text">UIScrollView 如何判断停止滑动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UIScrollView左右滑动到某个位置时，禁止继续向左或者向右滑动"><span class="toc-number">3.3.</span> <span class="toc-text">UIScrollView左右滑动到某个位置时，禁止继续向左或者向右滑动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#消息传递"><span class="toc-number">3.4.</span> <span class="toc-text">消息传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改tableView中headerView的位置-类似美团外卖首页"><span class="toc-number">3.5.</span> <span class="toc-text">修改tableView中headerView的位置(类似美团外卖首页)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#顶部拉伸效果-头像拉伸"><span class="toc-number">3.6.</span> <span class="toc-text">顶部拉伸效果(头像拉伸)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#下面是自定义MOActivityTopView"><span class="toc-number">3.6.1.</span> <span class="toc-text">下面是自定义MOActivityTopView</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#监听滚动"><span class="toc-number">3.6.2.</span> <span class="toc-text">监听滚动</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -442,7 +451,7 @@ var _hmt = _hmt || [];
     <div id="footer-info">
     	<!--<div class="footer-left">-->
         <div>
-    		&copy; 2017 SuperDanny
+    		&copy; 2018 SuperDanny
         <span>总访问量：</span><span id="busuanzi_value_site_pv"></span>
         <span> | 访客：</span><span id="busuanzi_value_site_uv"></span>
         <span> | 本页阅读：</span><span id="busuanzi_value_page_pv"></span>次
@@ -557,6 +566,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">年终总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打赏</a>
               </li>
              
@@ -565,19 +578,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">年终总结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">终端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CocoaPods</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -593,15 +594,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">终端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CocoaPods</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -617,15 +622,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -638,6 +635,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -681,19 +690,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">推送</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -705,6 +702,18 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
@@ -713,27 +722,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">金额</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数值</a>
+                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -757,11 +750,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
+                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">金额</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数值</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -774,6 +779,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -797,23 +810,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
+                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -821,11 +822,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DIY</a>
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">企业级证书打包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">DIY</a>
               </li>
             
             <div class="clearfix"></div>

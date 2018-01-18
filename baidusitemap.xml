@@ -4,14 +4,14 @@
 
     
   <url>
-    <loc>superdanny.link/2015/07/21/About-me/</loc>
-    <lastmod>2017-12-26T02:07:13.664Z</lastmod>
+    <loc>superdanny.link/2018/01/02/2017-Year-end-summary/</loc>
+    <lastmod>2018-01-18T14:06:32.670Z</lastmod>
     <data>
         <display>
-        <title>关于我</title>
-        <pubTime>2015-07-21T08:44:00.000Z</pubTime>
+        <title>2017，我的年终总结</title>
+        <pubTime>2018-01-02T11:49:00.000Z</pubTime>
         
-        <tag>简历</tag>
+        <tag>年终总结</tag>
          
          
            
@@ -22,7 +22,7 @@
     
   <url>
     <loc>superdanny.link/2017/03/10/iOS-UITableView-UICollectionView-Skill/</loc>
-    <lastmod>2017-11-22T07:33:22.598Z</lastmod>
+    <lastmod>2018-01-17T09:35:19.098Z</lastmod>
     <data>
         <display>
         <title>UITableView/UICollectionView使用技巧</title>
@@ -35,6 +35,45 @@
              
               <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/07/08/iTerm_2&&Oh_My_Zsh/</loc>
+    <lastmod>2018-01-08T03:36:26.434Z</lastmod>
+    <data>
+        <display>
+        <title>iTerm 2 && Oh My Zsh「DIY教程」</title>
+        <pubTime>2015-07-08T14:44:00.000Z</pubTime>
+        
+        <tag>终端</tag>
+         
+        <tag>DIY</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/07/21/About-me/</loc>
+    <lastmod>2017-12-26T02:07:13.664Z</lastmod>
+    <data>
+        <display>
+        <title>关于我</title>
+        <pubTime>2015-07-21T08:44:00.000Z</pubTime>
+        
+        <tag>简历</tag>
+         
+         
+           
         </display>
     </data>
     </url>
@@ -460,9 +499,9 @@
         
         <tag>iOS</tag>
          
-        <tag>In-House</tag>
-         
         <tag>iOS9</tag>
+         
+        <tag>In-House</tag>
          
         <tag>企业级证书打包</tag>
          
@@ -470,28 +509,6 @@
            
              
               <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2015/07/08/iTerm_2&&Oh_My_Zsh/</loc>
-    <lastmod>2017-07-14T02:22:24.000Z</lastmod>
-    <data>
-        <display>
-        <title>iTerm 2 && Oh My Zsh「DIY教程」</title>
-        <pubTime>2015-07-08T14:44:00.000Z</pubTime>
-        
-        <tag>终端</tag>
-         
-        <tag>DIY</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -1594,14 +1611,16 @@
 
     
   <url>
-    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
+    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>指定UIView的特定角为圆角</title>
-        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
+        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
+        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
         
         <tag>iOS</tag>
+         
+        <tag>长按文本框</tag>
          
          
            
@@ -1614,16 +1633,14 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
+    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
-        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
+        <title>指定UIView的特定角为圆角</title>
+        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
         
         <tag>iOS</tag>
-         
-        <tag>长按文本框</tag>
          
          
            
