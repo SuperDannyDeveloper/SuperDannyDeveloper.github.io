@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>superdanny.link/2017/03/10/iOS-UITableView-UICollectionView-Skill/</loc>
+    
+    <lastmod>2018-01-30T08:45:12.240Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>superdanny.link/404.html</loc>
     
-    <lastmod>2018-01-25T08:43:52.134Z</lastmod>
+    <lastmod>2018-01-25T09:41:02.812Z</lastmod>
     
   </url>
   
@@ -12,13 +19,6 @@
     <loc>superdanny.link/2018/01/02/2017-Year-end-summary/</loc>
     
     <lastmod>2018-01-22T15:07:05.233Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2017/03/10/iOS-UITableView-UICollectionView-Skill/</loc>
-    
-    <lastmod>2018-01-17T09:35:19.098Z</lastmod>
     
   </url>
   
@@ -548,14 +548,14 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
+    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
     
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
+    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
     
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     
