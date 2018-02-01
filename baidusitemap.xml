@@ -5,7 +5,7 @@
     
   <url>
     <loc>superdanny.link/2017/03/10/iOS-UITableView-UICollectionView-Skill/</loc>
-    <lastmod>2018-01-30T08:45:12.240Z</lastmod>
+    <lastmod>2018-02-01T01:40:12.860Z</lastmod>
     <data>
         <display>
         <title>UITableView/UICollectionView使用技巧</title>
@@ -17,6 +17,53 @@
            
              
               <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/07/08/iTerm_2&&Oh_My_Zsh/</loc>
+    <lastmod>2018-01-31T02:17:35.798Z</lastmod>
+    <data>
+        <display>
+        <title>iTerm 2 && Oh My Zsh「DIY教程」</title>
+        <pubTime>2015-07-08T14:44:00.000Z</pubTime>
+        
+        <tag>终端</tag>
+         
+        <tag>DIY</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2016/02/02/iOS-Apple-Push-Notification-Service/</loc>
+    <lastmod>2018-01-31T02:11:03.603Z</lastmod>
+    <data>
+        <display>
+        <title>iOS推送的那些事</title>
+        <pubTime>2016-02-02T05:40:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>推送</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
+          
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/Mac%E7%AB%AF/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -38,28 +85,6 @@
          
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2015/07/08/iTerm_2&&Oh_My_Zsh/</loc>
-    <lastmod>2018-01-08T03:36:26.434Z</lastmod>
-    <data>
-        <display>
-        <title>iTerm 2 && Oh My Zsh「DIY教程」</title>
-        <pubTime>2015-07-08T14:44:00.000Z</pubTime>
-        
-        <tag>终端</tag>
-         
-        <tag>DIY</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
-          
         </display>
     </data>
     </url>
@@ -237,31 +262,6 @@
           
              
               <breadCrumb title="Mac端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/Mac%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2016/02/02/iOS-Apple-Push-Notification-Service/</loc>
-    <lastmod>2017-07-17T03:00:16.000Z</lastmod>
-    <data>
-        <display>
-        <title>iOS推送的那些事</title>
-        <pubTime>2016-02-02T05:40:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-        <tag>推送</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
-          
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/Mac%E7%AB%AF/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -1613,16 +1613,14 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
+    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
-        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
+        <title>指定UIView的特定角为圆角</title>
+        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
         
         <tag>iOS</tag>
-         
-        <tag>长按文本框</tag>
          
          
            
@@ -1635,14 +1633,16 @@
 
     
   <url>
-    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
+    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>指定UIView的特定角为圆角</title>
-        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
+        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
+        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
         
         <tag>iOS</tag>
+         
+        <tag>长按文本框</tag>
          
          
            

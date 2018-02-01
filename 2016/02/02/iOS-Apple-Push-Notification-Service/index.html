@@ -17,7 +17,7 @@
 <meta property="og:description" content="关于推送关于苹果的推送网上已经有非常多的资源讲解，我在这里就不再累赘。直接切入主题，讲讲如何模拟推送以及处理推送消息。在进入主题之前，我先说几个关键流程：  创建Push SSL Certification(推送证书) iOS客户端注册Push功能并获得DeviceToken 使用Provider向APNS发送Push消息 iOS客户端接收处理由APNS发来的消息">
 <meta property="og:image" content="https://developer.apple.com/library/prerelease/watchos/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Art/remote_notif_simple_2x.png">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/81f8a509gw1f13ktc92rpj214804ajs6.jpg">
-<meta property="og:updated_time" content="2017-07-17T03:00:16.000Z">
+<meta property="og:updated_time" content="2018-01-31T02:11:03.603Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS推送的那些事">
 <meta name="twitter:description" content="关于推送关于苹果的推送网上已经有非常多的资源讲解，我在这里就不再累赘。直接切入主题，讲讲如何模拟推送以及处理推送消息。在进入主题之前，我先说几个关键流程：  创建Push SSL Certification(推送证书) iOS客户端注册Push功能并获得DeviceToken 使用Provider向APNS发送Push消息 iOS客户端接收处理由APNS发来的消息">
@@ -220,7 +220,7 @@ var _hmt = _hmt || [];
  <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions &#123;</div><div class="line">    <span class="comment">//...</span></div><div class="line">    <span class="built_in">NSDictionary</span> *payload = [launchOptions objectForKey:<span class="built_in">UIApplicationLaunchOptionsRemoteNotificationKey</span>];</div><div class="line">    <span class="keyword">if</span> (payload) &#123;</div><div class="line">		<span class="comment">//...</span></div><div class="line">    &#125;</div><div class="line">   <span class="comment">//...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>当程序在前台运行，接收到消息不会有消息提示（提示框或横幅）。当程序运行在后台，接收到消息会有消息提示，点击消息后进入程序，AppDelegate的didReceiveRemoteNotification函数会被调用，消息做为此函数的参数传入</p>
- <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *)application didReceiveRemoteNotification:(<span class="built_in">NSDictionary</span> *)payload &#123;</div><div class="line">	   <span class="built_in">NSLog</span>(<span class="string">@"remote notification: %@"</span>,[payload description]);</div><div class="line">    <span class="built_in">NSString</span>* alertStr = <span class="literal">nil</span>;</div><div class="line">    <span class="built_in">NSDictionary</span> *apsInfo = [payload objectForKey:<span class="string">@"aps"</span>];</div><div class="line">    <span class="built_in">NSObject</span> *alert = [apsInfo objectForKey:<span class="string">@"alert"</span>];</div><div class="line">    <span class="keyword">if</span> ([alert isKindOfClass:[<span class="built_in">NSString</span> <span class="keyword">class</span>]]) &#123;</div><div class="line">        alertStr = (<span class="built_in">NSString</span>*)alert;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> ([alert isKindOfClass:[<span class="built_in">NSDictionary</span> <span class="keyword">class</span>]]) &#123;</div><div class="line">        <span class="built_in">NSDictionary</span>* alertDict = (<span class="built_in">NSDictionary</span>*)alert;</div><div class="line">        alertStr = [alertDict objectForKey:<span class="string">@"body"</span>];</div><div class="line">    &#125;</div><div class="line">    application.applicationIconBadgeNumber = [[apsInfo objectForKey:<span class="string">@"badge"</span>] integerValue];</div><div class="line">    <span class="keyword">if</span> ([application applicationState] == <span class="built_in">UIApplicationStateActive</span> &amp;&amp; alertStr != <span class="literal">nil</span>) &#123;</div><div class="line">        <span class="built_in">UIAlertView</span>* alertView =</div><div class="line">        [[<span class="built_in">UIAlertView</span> alloc] initWithTitle:<span class="string">@"Pushed Message"</span></div><div class="line">                                   message:alertStr</div><div class="line">                                  delegate:<span class="literal">nil</span></div><div class="line">                         cancelButtonTitle:<span class="string">@"OK"</span></div><div class="line">                         otherButtonTitles:<span class="literal">nil</span>];</div><div class="line">        [alertView show];    </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+ <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *)application didReceiveRemoteNotification:(<span class="built_in">NSDictionary</span> *)payload &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"remote notification: %@"</span>,[payload description]);</div><div class="line">    <span class="built_in">NSString</span>* alertStr = <span class="literal">nil</span>;</div><div class="line">    <span class="built_in">NSDictionary</span> *apsInfo = [payload objectForKey:<span class="string">@"aps"</span>];</div><div class="line">    <span class="built_in">NSObject</span> *alert = [apsInfo objectForKey:<span class="string">@"alert"</span>];</div><div class="line">    <span class="keyword">if</span> ([alert isKindOfClass:[<span class="built_in">NSString</span> <span class="keyword">class</span>]]) &#123;</div><div class="line">           alertStr = (<span class="built_in">NSString</span>*)alert;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> ([alert isKindOfClass:[<span class="built_in">NSDictionary</span> <span class="keyword">class</span>]]) &#123;</div><div class="line">           <span class="built_in">NSDictionary</span>* alertDict = (<span class="built_in">NSDictionary</span>*)alert;</div><div class="line">           alertStr = [alertDict objectForKey:<span class="string">@"body"</span>];</div><div class="line">    &#125;</div><div class="line">    application.applicationIconBadgeNumber = [[apsInfo objectForKey:<span class="string">@"badge"</span>] integerValue];</div><div class="line">    <span class="keyword">if</span> ([application applicationState] == <span class="built_in">UIApplicationStateActive</span> &amp;&amp; alertStr != <span class="literal">nil</span>) &#123;</div><div class="line">           <span class="built_in">UIAlertView</span>* alertView =</div><div class="line">           [[<span class="built_in">UIAlertView</span> alloc] initWithTitle:<span class="string">@"Pushed Message"</span></div><div class="line">                                      message:alertStr</div><div class="line">                                     delegate:<span class="literal">nil</span></div><div class="line">                            cancelButtonTitle:<span class="string">@"OK"</span></div><div class="line">                            otherButtonTitles:<span class="literal">nil</span>];</div><div class="line">           [alertView show];    </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="自定义通知提示音"><a href="#自定义通知提示音" class="headerlink" title="自定义通知提示音"></a>自定义通知提示音</h2><p>你可以在 App 的 Bundle 中加入一段自定义提示音文件。然后当通知到达时可以指定播放这个文件。必须为以下几种数据格式：</p>
@@ -273,7 +273,7 @@ var _hmt = _hmt || [];
 <p>然后根据上面<a href="/2016/02/02/iOS-Apple-Push-Notification-Service/#php需要的pem证书">PHP需要的Pem证书</a>的步骤生成<code>push.pem</code></p>
 <p>两个文件放在同一目录</p>
 <p>执行下面的命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">superdanny@SuperDannydeMacBook-Pro$ php push.php</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ php push.php</div></pre></td></tr></table></figure>
 <p>结果为</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Connected to APNS</div><div class="line">Message successfully delivered</div></pre></td></tr></table></figure>
 <h2 id="模拟推送二：通过工具推送"><a href="#模拟推送二：通过工具推送" class="headerlink" title="模拟推送二：通过工具推送"></a>模拟推送二：通过工具推送</h2><p>Github 上面有位大神分享了他的推送工具<a href="https://github.com/noodlewerk/NWPusher" target="_blank" rel="external">NWPusher</a>，大大减少了开发人员的工作量。具体用法说明上面写的很清楚，这里就不再重复。</p>
@@ -660,14 +660,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
               </li>
              
@@ -676,11 +668,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -692,11 +692,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -720,6 +720,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Swift</a>
               </li>
              
@@ -728,23 +732,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -760,10 +752,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
@@ -772,11 +760,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -784,7 +780,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -796,10 +804,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
               </li>
              
@@ -808,11 +812,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
+                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -828,7 +828,35 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件预览</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -844,15 +872,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -860,31 +880,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件预览</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">iOS9</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
               </li>
              
               <li class="article-tag-list-item">

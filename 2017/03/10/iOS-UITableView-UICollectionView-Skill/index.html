@@ -21,7 +21,7 @@
 <meta property="og:image" content="http://wx4.sinaimg.cn/mw690/81f8a509gy1fdhw9ck7ijg207p0due81.gif">
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/81f8a509gy1fiay119qnjg207p0dtu0x.gif">
 <meta property="og:image" content="http://wx2.sinaimg.cn/mw690/81f8a509gy1fnjqb9s98hg20960k0n9f.gif">
-<meta property="og:updated_time" content="2018-01-30T08:45:12.240Z">
+<meta property="og:updated_time" content="2018-02-01T01:40:12.860Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UITableView&#x2F;UICollectionView使用技巧">
 <meta name="twitter:description" content="前言知识是无穷无尽，技术需要积累，记录一点一滴，让成长的时间轴上变得充实一些。今天就讲讲UITableView/UICollectionView的一些使用技巧。结合自己项目情况进行展开。">
@@ -200,11 +200,10 @@ var _hmt = _hmt || [];
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>知识是无穷无尽，技术需要积累，记录一点一滴，让成长的时间轴上变得充实一些。<br>今天就讲讲UITableView/UICollectionView的一些使用技巧。结合自己项目情况进行展开。</p>
 <a id="more"></a>
-<h2 id="Header-Footer高度、悬停设置"><a href="#Header-Footer高度、悬停设置" class="headerlink" title="Header/Footer高度、悬停设置"></a>Header/Footer高度、悬停设置</h2><h3 id="高度设置"><a href="#高度设置" class="headerlink" title="高度设置"></a>高度设置</h3><p>有时候我们需要设置 TableView 的头部和尾部的间距，如果 TableView 的 <code>Style</code> 是 <code>UITableViewStylePlain</code> 的话，头部尾部的高度只需要在代理里面设置高度就行。</p>
-<p>当使用自定义头部和尾部视图时，最终高度由<code>tableView:heightForHeaderInSection:</code>和<code>tableView:heightForFooterInSection:</code>两个代理方法决定。不实现这两个代理方法时，高度为默认高度。</p>
-<p>实现代码如下：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">CGFloat</span>)tableView:(<span class="built_in">UITableView</span> *)tableView heightForHeaderInSection:(<span class="built_in">NSInteger</span>)section &#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">0.01</span>f;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="built_in">UIView</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView viewForHeaderInSection:(<span class="built_in">NSInteger</span>)section &#123;</div><div class="line">    <span class="built_in">UIView</span> *view = [[<span class="built_in">UIView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, kScreenWidth, <span class="number">1</span>)];</div><div class="line">    view.backgroundColor = [<span class="built_in">UIColor</span> clearColor];</div><div class="line">    <span class="keyword">return</span> view;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="built_in">CGFloat</span>)tableView:(<span class="built_in">UITableView</span> *)tableView heightForFooterInSection:(<span class="built_in">NSInteger</span>)section &#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">10</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="built_in">UIView</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView viewForFooterInSection:(<span class="built_in">NSInteger</span>)section &#123;</div><div class="line">    <span class="built_in">UIView</span> *view = [[<span class="built_in">UIView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, kScreenWidth, <span class="number">1</span>)];</div><div class="line">    view.backgroundColor = [<span class="built_in">UIColor</span> clearColor];</div><div class="line">    <span class="keyword">return</span> view;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>通过上面的代码我们就可以正确的设置高度，同时需要注意的是，<code>UITableViewStyleGrouped</code>时，不能设置 TableView 的<code>tableFooterView</code>、<code>tableHeaderView</code>，不然高度设置会无效。</p>
+<h2 id="Header-Footer高度、悬停设置"><a href="#Header-Footer高度、悬停设置" class="headerlink" title="Header/Footer高度、悬停设置"></a>Header/Footer高度、悬停设置</h2><h3 id="高度设置"><a href="#高度设置" class="headerlink" title="高度设置"></a>高度设置</h3><p>有时候我们需要设置 TableView 的头部和尾部的间距，头部尾部的高度只需要在代理里面设置高度就行。</p>
+<p>示例代码如下：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">CGFloat</span>)tableView:(<span class="built_in">UITableView</span> *)tableView heightForHeaderInSection:(<span class="built_in">NSInteger</span>)section &#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">0.01</span>f;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="built_in">UIView</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView viewForHeaderInSection:(<span class="built_in">NSInteger</span>)section &#123;</div><div class="line">    <span class="built_in">UIView</span> *view = [[<span class="built_in">UIView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, kScreenWidth, <span class="number">20</span>)];</div><div class="line">    view.backgroundColor = [<span class="built_in">UIColor</span> clearColor];</div><div class="line">    <span class="keyword">return</span> view;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="built_in">CGFloat</span>)tableView:(<span class="built_in">UITableView</span> *)tableView heightForFooterInSection:(<span class="built_in">NSInteger</span>)section &#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">10</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="built_in">UIView</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView viewForFooterInSection:(<span class="built_in">NSInteger</span>)section &#123;</div><div class="line">    <span class="built_in">UIView</span> *view = [[<span class="built_in">UIView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, kScreenWidth, <span class="number">1</span>)];</div><div class="line">    view.backgroundColor = [<span class="built_in">UIColor</span> clearColor];</div><div class="line">    <span class="keyword">return</span> view;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>小结：通过上面的代码实现的效果可以看出，当自定义头部和尾部视图时，即使自定义头部和尾部视图设置了高度。高度最终还是由<code>tableView:heightForHeaderInSection:</code>和<code>tableView:heightForFooterInSection:</code>两个代理方法决定。当没有实现这两个代理方法时，高度为默认高度。</p>
 <h3 id="悬停"><a href="#悬停" class="headerlink" title="悬停"></a>悬停</h3><p><strong>TableView</strong>的悬停功能只有在 <code>Style</code> 是 <code>UITableViewStylePlain</code> 的时候才有。如果有这么一种需求，就是需要有Header悬停，同时每个section之间需要有间隔。<br>效果如下：</p>
 <p><img src="http://wx2.sinaimg.cn/mw690/81f8a509gy1fdhw91vcc9g207p0dukae.gif" alt="TableView悬停方式一"></p>
 <h4 id="方式一-全部悬停-："><a href="#方式一-全部悬停-：" class="headerlink" title="方式一(全部悬停)："></a>方式一(全部悬停)：</h4><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">CGFloat</span>)tableView:(<span class="built_in">UITableView</span> *)tableView heightForHeaderInSection:(<span class="built_in">NSInteger</span>)section &#123;</div><div class="line">    <span class="keyword">return</span> kHeaderHeight+<span class="number">9</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="built_in">UIView</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView viewForHeaderInSection:(<span class="built_in">NSInteger</span>)section &#123;</div><div class="line">    BillListModel *model = _sectionArr[section];</div><div class="line">    </div><div class="line">    <span class="built_in">UIView</span> *header = (&#123;</div><div class="line">        <span class="built_in">UIView</span> *bgView = [[<span class="built_in">UIView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, KScreenWidth, kHeaderHeight+<span class="number">9</span>)];</div><div class="line">        bgView.backgroundColor = [<span class="built_in">UIColorTools</span> colorWithTheme:<span class="built_in">UIColorThemeAppBgColor</span>];</div><div class="line">        </div><div class="line">        <span class="built_in">UILabel</span> *titleLab = [[<span class="built_in">UILabel</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">9</span>, KScreenWidth, kHeaderHeight)];</div><div class="line">        titleLab.backgroundColor = [<span class="built_in">UIColorTools</span> colorWithTheme:<span class="built_in">UIColorThemeWhite</span>];</div><div class="line">        titleLab.textColor = [<span class="built_in">UIColorTools</span> colorWithTheme:<span class="built_in">UIColorThemeBlack</span>];</div><div class="line">        titleLab.text = model.time;</div><div class="line">        [bgView addSubview:titleLab];</div><div class="line">        </div><div class="line">        <span class="built_in">UIImageView</span> *lineHBottom = [[<span class="built_in">UIImageView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0.0</span>, titleLab.mj_max_y - <span class="number">0.5</span>, KScreenWidth, <span class="number">0.5</span>)];</div><div class="line">        lineHBottom.backgroundColor = [<span class="built_in">UIColorTools</span> colorWithTheme:<span class="built_in">UIColorThemeSeparatorColor</span>];</div><div class="line">        [bgView addSubview:lineHBottom];</div><div class="line">        </div><div class="line">        bgView;</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> header;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)scrollViewDidScroll:(<span class="built_in">UIScrollView</span> *)scrollView  &#123;</div><div class="line">    <span class="keyword">if</span> (scrollView == _tableView) &#123;</div><div class="line">        <span class="built_in">UITableView</span> *tableview = (<span class="built_in">UITableView</span> *)scrollView;</div><div class="line">        <span class="built_in">CGFloat</span> sectionHeaderHeight = kHeaderHeight;</div><div class="line">        <span class="built_in">CGFloat</span> sectionFooterHeight = <span class="number">9</span>;</div><div class="line">        <span class="built_in">CGFloat</span> offsetY = tableview.contentOffset.y;</div><div class="line">        <span class="keyword">if</span> (offsetY &gt;= <span class="number">0</span> &amp;&amp; offsetY &lt;= sectionFooterHeight) &#123;</div><div class="line">            tableview.contentInset = <span class="built_in">UIEdgeInsetsMake</span>(-offsetY, <span class="number">0</span>, -sectionHeaderHeight, <span class="number">0</span>);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (offsetY &gt;= sectionFooterHeight &amp;&amp; offsetY &lt;= tableview.contentSize.height - tableview.frame.size.height - sectionHeaderHeight) &#123;</div><div class="line">            tableview.contentInset = <span class="built_in">UIEdgeInsetsMake</span>(-sectionFooterHeight, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (offsetY &gt;= <span class="number">0</span> &amp;&amp; tableview.contentSize.height &gt;= tableview.contentSize.height) &#123;</div><div class="line">            tableview.contentInset = <span class="built_in">UIEdgeInsetsMake</span>(-sectionFooterHeight, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -603,14 +602,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
               </li>
              
@@ -619,11 +610,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -635,11 +634,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -663,6 +662,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Swift</a>
               </li>
              
@@ -671,23 +674,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -703,10 +694,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
@@ -715,11 +702,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -727,7 +722,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -739,10 +746,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
               </li>
              
@@ -751,11 +754,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
+                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -771,7 +770,35 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件预览</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -787,15 +814,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -803,31 +822,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件预览</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">iOS9</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
               </li>
              
               <li class="article-tag-list-item">
