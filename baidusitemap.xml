@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>superdanny.link/2015/12/26/iOS-UIDocumentInteractionController/</loc>
+    <lastmod>2018-03-06T12:11:02.545Z</lastmod>
+    <data>
+        <display>
+        <title>UIDocumentInteractionController之程序间文档共享</title>
+        <pubTime>2015-12-26T03:43:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>文件共享</tag>
+         
+        <tag>文件预览</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>superdanny.link/2017/03/10/iOS-UITableView-UICollectionView-Skill/</loc>
     <lastmod>2018-02-01T01:40:12.860Z</lastmod>
     <data>
@@ -204,30 +229,6 @@
         <pubTime>2015-08-27T16:26:00.000Z</pubTime>
         
         <tag>项目</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2015/12/26/iOS-UIDocumentInteractionController/</loc>
-    <lastmod>2017-08-11T16:58:23.000Z</lastmod>
-    <data>
-        <display>
-        <title>UIDocumentInteractionController之程序间文档共享</title>
-        <pubTime>2015-12-26T03:43:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-        <tag>文件共享</tag>
-         
-        <tag>文件预览</tag>
          
          
            
@@ -1573,26 +1574,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
-    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>关于开发中遇到问题处理思路</title>
-        <pubTime>2015-09-18T05:56:00.000Z</pubTime>
-        
-        <tag>解决方式</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2015/09/17/Fix-svn-directory-is-out-of-date/</loc>
     <lastmod>2016-11-30T01:56:39.000Z</lastmod>
     <data>
@@ -1606,6 +1587,26 @@
            
              
               <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
+    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>关于开发中遇到问题处理思路</title>
+        <pubTime>2015-09-18T05:56:00.000Z</pubTime>
+        
+        <tag>解决方式</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
           
         </display>
     </data>

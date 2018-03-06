@@ -17,7 +17,7 @@
 <meta property="og:description" content="iOS中的沙盒可以让平台更加的安全，这也是沙盒给用户带来的最主要好处。不过由于沙盒的严格限制，导致程序之间共享数据比较麻烦。一般在程序间共享文档可以通过UIDocumentInteractionController类实现通讯。它支持在你的app中用其他app预览和显示文档。同时也支持文件关联，允许其他app通过你的程序打开文件。这些技术包括了UIKit中提供的UIDocumentInteract">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/81f8a509gw1eziwe2y487j20aa0iaq42.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/81f8a509gw1ezhhucpcbgg20ab0ie12v.gif">
-<meta property="og:updated_time" content="2017-08-11T16:58:23.000Z">
+<meta property="og:updated_time" content="2018-03-06T12:11:02.545Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UIDocumentInteractionController之程序间文档共享">
 <meta name="twitter:description" content="iOS中的沙盒可以让平台更加的安全，这也是沙盒给用户带来的最主要好处。不过由于沙盒的严格限制，导致程序之间共享数据比较麻烦。一般在程序间共享文档可以通过UIDocumentInteractionController类实现通讯。它支持在你的app中用其他app预览和显示文档。同时也支持文件关联，允许其他app通过你的程序打开文件。这些技术包括了UIKit中提供的UIDocumentInteract">
@@ -251,7 +251,7 @@ var _hmt = _hmt || [];
 <p>是一个数组，包含多个<code>UTI</code>【<a href="https://developer.apple.com/library/mac/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html" target="_blank" rel="external">Uniform Type Identifiers</a>】类型的字符串。<code>UTI</code>类型是本文档类型（组）所包含的文件类型。</p>
 </blockquote>
 </li>
-<li><p>LSHandlerRank</p>
+<li><p><a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/20001431-101685" target="_blank" rel="external">LSHandlerRank</a></p>
 <blockquote>
 <p>表示应用程序是“拥有”还是仅仅是“打开”这种类型而已。</p>
 </blockquote>
@@ -289,6 +289,8 @@ var _hmt = _hmt || [];
 <p>如果你的应用程序处于活跃状态，此时<code>application:didFinishLaunchingWithOptions:</code>方法是不会被调用的。需要实现<code>application:openURL:options:</code>方法</p>
 <p><strong>【以下是本人的写法】</strong></p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions &#123;</div><div class="line">    _vc = [[ViewController alloc] init];</div><div class="line">    <span class="built_in">UINavigationController</span> *nav    = [[<span class="built_in">UINavigationController</span> alloc] initWithRootViewController:_vc];</div><div class="line">    </div><div class="line">    <span class="keyword">self</span>.window                    = [[<span class="built_in">UIWindow</span> alloc] initWithFrame:[<span class="built_in">UIScreen</span> mainScreen].bounds];</div><div class="line">    <span class="keyword">self</span>.window.backgroundColor    = [<span class="built_in">UIColor</span> whiteColor];</div><div class="line">    <span class="keyword">self</span>.window.rootViewController = nav;</div><div class="line">    [<span class="keyword">self</span>.window makeKeyAndVisible];</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (launchOptions) &#123;</div><div class="line">        <span class="built_in">NSString</span> *str = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"\n发送请求的应用程序的 Bundle ID：%@\n\n文件的NSURL：%@\n\n文件相关的属性列表对象：%@"</span>,</div><div class="line">                         launchOptions[<span class="built_in">UIApplicationLaunchOptionsSourceApplicationKey</span>],</div><div class="line">                         launchOptions[<span class="built_in">UIApplicationLaunchOptionsURLKey</span>],</div><div class="line">                         launchOptions[<span class="built_in">UIApplicationLaunchOptionsSourceApplicationKey</span>]];</div><div class="line">        </div><div class="line">        [[[<span class="built_in">UIAlertView</span> alloc] initWithTitle:<span class="string">@""</span></div><div class="line">                                    message:str</div><div class="line">                                   delegate:<span class="literal">nil</span></div><div class="line">                          cancelButtonTitle:<span class="string">@"确定"</span></div><div class="line">                          otherButtonTitles:<span class="literal">nil</span>, <span class="literal">nil</span>] show];</div><div class="line">        </div><div class="line">        _vc.path = [launchOptions[<span class="built_in">UIApplicationLaunchOptionsURLKey</span>] description];</div><div class="line">        [_vc preview];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application openURL:(<span class="keyword">nonnull</span> <span class="built_in">NSURL</span> *)url options:(<span class="keyword">nonnull</span> <span class="built_in">NSDictionary</span>&lt;<span class="built_in">NSString</span> *,<span class="keyword">id</span>&gt; *)options &#123;</div><div class="line">    <span class="keyword">if</span> (options) &#123;</div><div class="line">        <span class="built_in">NSString</span> *str = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"\n发送请求的应用程序的 Bundle ID：%@\n\n文件的NSURL：%@"</span>, options[<span class="built_in">UIApplicationOpenURLOptionsSourceApplicationKey</span>], url];</div><div class="line">        </div><div class="line">        [[[<span class="built_in">UIAlertView</span> alloc] initWithTitle:<span class="string">@""</span></div><div class="line">                                    message:str</div><div class="line">                                   delegate:<span class="literal">nil</span></div><div class="line">                          cancelButtonTitle:<span class="string">@"确定"</span></div><div class="line">                          otherButtonTitles:<span class="literal">nil</span>, <span class="literal">nil</span>] show];</div><div class="line"></div><div class="line">        _vc.path = [url description];</div><div class="line">        [_vc preview];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以下创建了一个NSString的分类，并且提供了一个对象方法，使用文件名调用即可返回当前文件的MIMEType类型</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">NSString</span> *)MIMEType &#123;</div><div class="line">    <span class="comment">// 1.根据当前文件创建URL</span></div><div class="line">    <span class="built_in">NSURL</span> *url = [<span class="built_in">NSURL</span> fileURLWithPath:<span class="keyword">self</span>];</div><div class="line">    <span class="comment">// 2.根据URL创建网络请求</span></div><div class="line">    <span class="built_in">NSURLRequest</span> *request = [<span class="built_in">NSURLRequest</span> requestWithURL:url];</div><div class="line">    <span class="comment">// 3.发送请求</span></div><div class="line">    <span class="built_in">NSURLResponse</span> *response = <span class="literal">nil</span>;</div><div class="line">    [<span class="built_in">NSURLConnection</span> sendSynchronousRequest:request returningResponse:&amp;response error:<span class="literal">nil</span>];</div><div class="line">    <span class="keyword">return</span> response.MIMEType;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <hr>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
 <p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
@@ -661,6 +663,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
               </li>
              
@@ -669,19 +679,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
+                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -709,19 +711,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -737,11 +739,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -753,22 +775,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
@@ -777,11 +783,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
+                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
+                <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -793,15 +799,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">金额</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数值</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件预览</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -813,7 +827,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -829,15 +847,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -846,18 +860,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件预览</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -873,15 +875,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
               </li>
              
               <li class="article-tag-list-item">
