@@ -17,7 +17,7 @@
 <meta property="og:description" content="已经是第三个年头写总结了，感觉写总结是对自己人生计划的一个负责，毕竟每个人都有自己的理想计划，总结这一年来自己成长了多少，完成了多少年前计划，漏掉忽略了多少，是否有什么成就或者遗憾，来年的计划等等。写总结也不能像记流水账一样草草了事，不然就没有任何意义。">
 <meta property="og:image" content="http://wx4.sinaimg.cn/large/81f8a509gy1fnjyys0x2dj21kw16o4qp.jpg">
 <meta property="og:image" content="http://wx4.sinaimg.cn/mw690/81f8a509gy1fnl28f66wjj20v90j3qed.jpg">
-<meta property="og:updated_time" content="2018-01-22T15:07:05.233Z">
+<meta property="og:updated_time" content="2018-03-16T09:07:25.238Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017，我的年终总结">
 <meta name="twitter:description" content="已经是第三个年头写总结了，感觉写总结是对自己人生计划的一个负责，毕竟每个人都有自己的理想计划，总结这一年来自己成长了多少，完成了多少年前计划，漏掉忽略了多少，是否有什么成就或者遗憾，来年的计划等等。写总结也不能像记流水账一样草草了事，不然就没有任何意义。">
@@ -212,6 +212,10 @@ var _hmt = _hmt || [];
 <li>改用HTTPS请求方式(阻挡住新手级别的抓包方式)</li>
 <li>获取服务器时间戳作为参数之一，所有参数MD5，并用RSA进行签名之后传输给服务器(阻挡住大部分的攻击者，因为破解成本很高)</li>
 </ol>
+<p><strong>补充更新：2018年03月16日</strong></p>
+<blockquote>
+<p>上面方案第二点改为：将提交的参数连同时间戳这个参数组成的JSON进行排序(根据参数名)，之后将整个JSON字符串进行MD5加密，并用RSA进行签名之后传输给服务器。</p>
+</blockquote>
 <p>在最终方案确认之前，参数并非使用MD5加密，而是直接URL编码，这样的坏处在于不同语言的兼容性问题。相同内容在 <strong>iOS</strong> 跟 <strong>Android</strong> 还有 <strong>C#</strong> 上面 <strong>URL编码</strong> 的结果会有所不同。这样就导致客户端需要针对部分特殊字符进行转换之后再传输，一来浪费太多时间在兼容上，每发现一处不同就得对应做兼容。二来考虑到该方案会用在目前所有项目以及往后项目开发中。所以最终决定使用MD5进行参数加密。</p>
 <p>虽然服务器验签过程会消耗一点点性能，但是可以忽略不计，总的来说可以接受。至少数据传输上保证了安全性。</p>
 <h3 id="开源精神"><a href="#开源精神" class="headerlink" title="开源精神"></a>开源精神</h3><p>这一年里，我对自己说过最多的一句话就是，“工作上，要求自己一定要做好每一件事，不给自己找任何借口”。</p>
@@ -554,15 +558,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">brew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -590,15 +594,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,10 +622,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
               </li>
              
@@ -630,7 +630,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -638,11 +638,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -651,6 +651,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -678,11 +682,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -702,11 +706,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
+                <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
+                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -746,11 +750,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -794,11 +798,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -871,10 +875,6 @@ MathJax.Hub.Queue(function() {
           
             <li class="search-li">
               <a href="http://georgeyang.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>GeorgeYang</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://cococ.qiniudn.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>3Zero</a>
             </li>
           
             <li class="search-li">
