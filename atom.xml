@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="superdanny.link/"/>
-  <updated>2018-03-16T09:07:25.238Z</updated>
+  <updated>2018-03-16T09:07:25.000Z</updated>
   <id>superdanny.link/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="superdanny.link/2018/01/02/2017-Year-end-summary/"/>
     <id>superdanny.link/2018/01/02/2017-Year-end-summary/</id>
     <published>2018-01-02T11:49:00.000Z</published>
-    <updated>2018-03-16T09:07:25.238Z</updated>
+    <updated>2018-03-16T09:07:25.000Z</updated>
     
     <content type="html"><![CDATA[<p>已经是第三个年头写总结了，感觉写总结是对自己人生计划的一个负责，毕竟每个人都有自己的理想计划，总结这一年来自己成长了多少，完成了多少年前计划，漏掉忽略了多少，是否有什么成就或者遗憾，来年的计划等等。写总结也不能像记流水账一样草草了事，不然就没有任何意义。</p>
 <a id="more"></a>
@@ -270,7 +270,7 @@
     <link href="superdanny.link/2017/03/10/iOS-UITableView-UICollectionView-Skill/"/>
     <id>superdanny.link/2017/03/10/iOS-UITableView-UICollectionView-Skill/</id>
     <published>2017-03-10T08:42:00.000Z</published>
-    <updated>2018-02-01T01:40:12.860Z</updated>
+    <updated>2018-02-01T01:40:12.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>知识是无穷无尽，技术需要积累，记录一点一滴，让成长的时间轴上变得充实一些。<br>今天就讲讲UITableView/UICollectionView的一些使用技巧。结合自己项目情况进行展开。</p>
 <a id="more"></a>
