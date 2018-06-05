@@ -30,8 +30,9 @@
 <meta property="og:image" content="http://ww3.sinaimg.cn/mw690/81f8a509gw1ewe0h39trgj213k0ow7al.jpg">
 <meta property="og:image" content="http://ww4.sinaimg.cn/mw690/81f8a509gw1ewe0gwmrp4j21300syq6q.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/81f8a509gw1ezqda52mmej20uk08s76e.jpg">
+<meta property="og:image" content="http://wx2.sinaimg.cn/large/81f8a509gy1frwle4382tj20y0088q53.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/81f8a509gw1ezqetrs90nj20m80afq4r.jpg">
-<meta property="og:updated_time" content="2017-07-14T02:23:31.000Z">
+<meta property="og:updated_time" content="2018-06-05T01:19:25.091Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS开发者证书的那些事">
 <meta name="twitter:description" content="👉苹果官方文档 Certificates 证书 我们从开发者中心了解到，开发者证书分为两种类型：Development Certificate(开发证书)和Production Certificate(发布证书)。两种证书都有对应的附属证书，包括推送证书、Apple Pay证书、Pass Type ID证书等等一系列附属证书。  需要注意的是，当我们发布应用到 AppStore 时，发布的电脑必">
@@ -270,6 +271,12 @@ var _hmt = _hmt || [];
 <p><strong>疑问二：证书过期了/即将过期怎么办？</strong></p>
 <blockquote>
 <p>答：首先，打开密钥中心，生成一个CSR（证书请求）。然后，到Apple Center把证书revoke，然后新建一个，新建的将会默认是刚刚revoke的证书的所有设置的。把下载回来的证书导出一份p12格式的保存起来（因为如果其他人需要的时候，只能跟你拿了，在Apple Center下载的用不了的。原因是还需要你电脑的密钥）然后去provision profile edit 一下，从新下载，替换掉原来的。你就可以继续开发了。不需要提交新 App 到 AppStore。</p>
+</blockquote>
+<p><strong>疑问三：revoke证书对APP的影响</strong></p>
+<blockquote>
+<p><strong>revoke证书对生产、测试环境的影响</strong><br>（1）revoke生产环境证书是不会影响已上架的APP。<br>（2）revoke开发环境证书，则安装过该证书的APP的用户将无法打开该APP了，并且一点击APP会出现闪退现象。这时就需要开发人员重新生成开发证书后打包APP了。</p>
+<p><strong>Missing private key出现的原因</strong><br>（1）忘记Mac开机密码，在开机时进入终端重设密码，会导致私有key丢失。<br>（2）证书生成的源电脑不是你所用的电脑，要向源电脑请求p12文件和描述文件。具体可见“<strong>在团队中，证书文件管理</strong>”。</p>
+<p><strong>在团队中，证书文件管理</strong><br>用Xcode打包时，有时系统会提示“missing private key”等错误。打开钥匙串，在“登录”选项查看种类为“证书”的名称，是否含有三角符号，没有代表缺失private key 。如下图：<br><img src="http://wx2.sinaimg.cn/large/81f8a509gy1frwle4382tj20y0088q53.jpg" alt=""></p>
 </blockquote>
 <p>👉<a href="https://developer.apple.com/support/certificates/" target="_blank" rel="external"><strong>官方资料</strong></a></p>
 <h2 id="Provisioning-Profiles-描述文件"><a href="#Provisioning-Profiles-描述文件" class="headerlink" title="Provisioning Profiles 描述文件"></a>Provisioning Profiles 描述文件</h2><p>在这里，我引用别人的一段话，因为觉得写得很喜感，但又很实在。</p>
@@ -634,7 +641,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -646,23 +665,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -671,10 +678,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -690,6 +693,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
@@ -698,7 +705,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -706,11 +713,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -726,15 +737,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -746,14 +757,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Autolayout</a>
               </li>
              
@@ -762,11 +765,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
+                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -778,19 +789,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">KVC</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">KVO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -802,6 +809,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
               </li>
              
@@ -810,15 +821,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件预览</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -835,10 +846,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -870,11 +877,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
