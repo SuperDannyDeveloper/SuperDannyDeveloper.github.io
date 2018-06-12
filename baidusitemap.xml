@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>superdanny.link/2017/03/03/App-Thinning/</loc>
+    <lastmod>2018-06-12T10:02:31.840Z</lastmod>
+    <data>
+        <display>
+        <title>为自己的 APP 瘦身</title>
+        <pubTime>2017-03-03T06:17:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2015/09/25/iOS-production-certificate-and-use/</loc>
     <lastmod>2018-06-05T01:19:25.091Z</lastmod>
     <data>
@@ -214,26 +234,6 @@
         <tag>iOS</tag>
          
         <tag>GCD</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2017/03/03/App-Thinning/</loc>
-    <lastmod>2017-10-12T02:01:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>为自己的 APP 瘦身</title>
-        <pubTime>2017-03-03T06:17:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
          
          
            
@@ -1401,9 +1401,9 @@
         <title>GitHub无法访问或访问缓慢解决办法</title>
         <pubTime>2015-09-09T15:16:00.000Z</pubTime>
         
-        <tag>GitHub</tag>
-         
         <tag>Mac</tag>
+         
+        <tag>GitHub</tag>
          
          
            
@@ -1423,9 +1423,9 @@
         <title>MacOS X隐藏和显示隐藏文件</title>
         <pubTime>2015-09-09T19:02:00.000Z</pubTime>
         
-        <tag>Mac</tag>
-         
         <tag>文件操作</tag>
+         
+        <tag>Mac</tag>
          
          
            

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>superdanny.link/2017/03/03/App-Thinning/</loc>
+    
+    <lastmod>2018-06-12T10:02:31.840Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>superdanny.link/2015/09/25/iOS-production-certificate-and-use/</loc>
     
     <lastmod>2018-06-05T01:19:25.091Z</lastmod>
@@ -82,13 +89,6 @@
     <loc>superdanny.link/2015/07/15/iOS-Grand-Central-Dispatch/</loc>
     
     <lastmod>2017-11-14T06:23:30.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2017/03/03/App-Thinning/</loc>
-    
-    <lastmod>2017-10-12T02:01:13.000Z</lastmod>
     
   </url>
   
