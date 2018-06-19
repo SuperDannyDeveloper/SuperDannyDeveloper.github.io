@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="superdanny.link/"/>
-  <updated>2018-03-16T09:07:25.000Z</updated>
+  <updated>2018-06-19T09:21:45.329Z</updated>
   <id>superdanny.link/</id>
   
   <author>
@@ -14,6 +14,188 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用AppleDoc快速生成iOS开发文档</title>
+    <link href="superdanny.link/2018/06/19/iOS-AppleDoc/"/>
+    <id>superdanny.link/2018/06/19/iOS-AppleDoc/</id>
+    <published>2018-06-19T02:30:00.000Z</published>
+    <updated>2018-06-19T09:21:45.329Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>一个公司随着时间的推移会慢慢的成长起来，这也就意味着公司的队伍也会不断的壮大。在壮大的同时需要保证团队开发的规范性。这样有益于后期维护，同时也能够培养团队的协作能力。软件开发一直是公司的核心部门，那么作为 <strong>iOS开发部</strong> 的成员之一，就更应该积极做好各项工作。这次我就啰里啰嗦的整理一下网上的关于 <strong>AppleDoc</strong> 生成开发文档的相关知识点。此文章需要有一定的指令基础的童鞋学习，不然看了会比较吃力。有不懂的需要自行脑补一下，这里就不再累赘。</p>
+<a id="more"></a> 
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>打开终端，执行指令进行下载安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> git://github.com/tomaz/appledoc.git</div><div class="line">$ <span class="built_in">cd</span> ./appledoc</div><div class="line">$ sudo sh install-appledoc.sh</div></pre></td></tr></table></figure>
+<p>当出现 <strong>INSTALL SUCCEEDED</strong> 时说明成功了，你也可以用appledoc –version查看验证下。如果可以正常执行下面指令则证明安装成功，否则需要查看报错说明。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 查看版本号</span></div><div class="line">$ appledoc --version</div><div class="line"><span class="comment"># 查看更多文档信息</span></div><div class="line">$ appledoc --help</div></pre></td></tr></table></figure>
+<p><img src="http://wx3.sinaimg.cn/large/81f8a509gy1fsg8y26p5kj20m80h77fr.jpg" alt="查看版本号"></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ol>
+<li>使用终端进入代码目录<blockquote>
+<p>直接拖拽我们的工程文件夹到终端，然后按回车键<br>或者使用 cd+”项目名字目录”，然后按回车键<br>以上两种方法都可以进入到我们的工程根目录</p>
+</blockquote>
+</li>
+<li>指令用法及参数说明</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 参考指令写法1(不生成docset文件)</span></div><div class="line">$ appledoc --no-create-docset --output ./doc --project-name <span class="string">"QQ"</span> --company-id <span class="string">"com.tencent.QQ"</span> --project-company <span class="string">"Tencent Inc."</span> /Users/superdanny/Desktop/QQ-Project/QQ/Views</div><div class="line"></div><div class="line"><span class="comment"># 参考指令写法2(不生成docset文件，参数使用“=”等号写法)</span></div><div class="line">$ appledoc --no-create-docset --output=<span class="string">"./doc"</span> --project-name=<span class="string">"QQ"</span> --company-id=<span class="string">"com.tencent.QQ"</span> --project-company=<span class="string">"Tencent Inc."</span> /Users/superdanny/Desktop/QQ-Project/QQ/Views</div><div class="line"></div><div class="line"><span class="comment"># 参考指令写法3(生成docset文件并指定生成路径)</span></div><div class="line">$ appledoc --output ./doc --project-name <span class="string">"QQ"</span> --company-id <span class="string">"com.tencent.QQ"</span> --project-company <span class="string">"Tencent Inc."</span> /Users/superdanny/Desktop/QQ-Project/QQ/Views --docset-install-path ./doc</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">–no-create-docset</td>
+<td>(<strong>选填参数</strong>)只生成html，不生成docset文件。如果需要生成，则去掉该参数即可</td>
+</tr>
+<tr>
+<td style="text-align:center">–output</td>
+<td>(<strong>必填参数</strong>)生成结果输出路径，如“./doc”，会在工程目录下创建一个doc文件夹存放生成的文档。当然你可以指定一个完整的目录路径存放生成的文档</td>
+</tr>
+<tr>
+<td style="text-align:center">–project-name</td>
+<td>(<strong>必填参数</strong>)工程名字，如“QQ”</td>
+</tr>
+<tr>
+<td style="text-align:center">–project-company</td>
+<td>(<strong>必填参数</strong>)公司名字，如“Tencent Inc.”</td>
+</tr>
+<tr>
+<td style="text-align:center">–company-id</td>
+<td>(<strong>选填参数</strong>)公司ID，如“com.tencent.QQ”，会生成文件名为<strong>companyID.projectName.docset</strong>的docset文件。如果不设置，则文件名为<strong>com.companyname.projectname.projectName.docset</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">–docset-install-path</td>
+<td>(<strong>选填参数</strong>)生成docset文件的目录。如果此目录不设置，默认会在~/Library/Developer/Shared/Documentation/DocSets/目录生成</td>
+</tr>
+<tr>
+<td style="text-align:center">/Users/superdanny/Desktop/QQ-Project/QQ/Views</td>
+<td>扫描对应路径下的类</td>
+</tr>
+</tbody>
+</table>
+<p>如果是生成docset文件，则<code>--output</code>参数对应的目录会生成一个 <strong>docset-installed.txt</strong> 文件，里面记录docset存放的目录。<br>如果是不生成docset文件，则<code>--output</code>参数对应的目录会生成html文件。直接打开 <strong>index.html</strong> 文件即可查看。</p>
+<h2 id="支持的注释"><a href="#支持的注释" class="headerlink" title="支持的注释"></a>支持的注释</h2><p>下面是一些常用的语法示意:</p>
+<h3 id="单行注释"><a href="#单行注释" class="headerlink" title="单行注释"></a>单行注释</h3><pre><code>/// 这是单行注释。
+
+/** 这也是单行注释 */
+
+/*! 同样是单行注释 */
+
+/** 这也是单行注释，
+*  第二行会接上第一行。
+*/
+</code></pre><h3 id="多行注释"><a href="#多行注释" class="headerlink" title="多行注释"></a>多行注释</h3><pre><code>/** 
+ @brief 这里是方法的简介。仅对属性、方法有效，对类、协议 无效，会造成后续内容解析失败。所以该指令不能放到类注释里。
+ @param string 参数描述。
+ @return 返回值描述。
+ @exception NSException 可能抛出的异常。
+ @warning 这里是警告描述。
+ @bug 这里是缺陷描述。
+ @see 用它来指明其他相关的method或function。你可以使用多个这种标签。
+ @sa 同@see。
+ */
+</code></pre><p><strong> 注意事项</strong></p>
+<pre><code>@brief、@see、@sa仅对属性、方法有效，对类、协议 无效，会造成后续内容解析失败。所以该指令不能放到类注释里。
+
+@see &lt;name&gt;
+@sa &lt;name&gt;
+其中&lt;name&gt;为：
+1) 当前类（或协议）中的属性或方法。（注意Objective-C方法签名的写法，一般为“方法名:参数1:参数2:⋯⋯”的格式）
+2) 类（或协议）名。（注意AppleDoc不支持当前类）
+3) 将@see或@sa指令放在注释的最后面，避免内容丢失
+</code></pre><h3 id="类注释"><a href="#类注释" class="headerlink" title="类注释"></a>类注释</h3><pre><code>/** 第一行是类的简介
+
+在简介的下面,就是类的详细介绍了。
+没有间隔换行会被消除，就像HTML那样。
+
+下面是常用的markdown语法
+
+分割线：
+
+- - -
+
+无序列表: (每行以 &apos;*&apos;、&apos;-&apos;、&apos;+&apos; 开头):
+
+* this is the first line
+* this is the second line
+* this is the third line
+
+有序列表: (每行以 1.2.3、a.b.c 开头):
+
+a. this is the first line
+b. this is the secode line
+
+多级列表:
+
+* this is the first line
+a. this is line a
+b. this is line b
+* this is the second line
+1. this in line 1
+2. this is line 2
+
+标题:
+
+# This is an H1
+## This is an H2
+### This is an H3
+#### This is an h4
+##### This is an h5
+###### This is an H6
+
+链接:
+
+普通URL直接写上，appledoc会自动翻译成链接: http://superdanny.link
+这个 [链接](http://example.net/) 会隐藏实际URL.
+
+表格:
+
+| header1(默认) | header2(居中) | header3(左对齐) | header4(右对齐) |
+|---------|:-------:|:--------|--------:|
+| normal  |  center |  left  |  right  |
+| cell    | cell    | cell    | cell    |
+引用:
+
+这里会引用到方法 `someMethod:`，这里会引用到类 `YYColor`
+
+这里会引用到一个代码块
+
+void CMYK2RGB(float c, float m, float y, float k, float *r, float *g, float *b) {
+    *r = (1 - c) * (1 - k);
+    *g = (1 - m) * (1 - k);
+    *b = (1 - y) * (1 - k);
+}
+
+@since iOS5.0
+
+*/
+</code></pre><p>最后我们来看看效果怎么样吧😁</p>
+<p><img src="http://wx2.sinaimg.cn/large/81f8a509gy1fsgfaqtm5tj21jg1fqdi0.jpg" alt="主页效果"><br><img src="http://wx4.sinaimg.cn/large/81f8a509gy1fsgfared45j21lj1u0dht.jpg" alt="类说明详情"><br><img src="http://wx1.sinaimg.cn/large/81f8a509gy1fsglassz2oj21km3s0n1z.jpg" alt="注释"></p>
+<hr>
+<p>再一次感谢您花费时间阅读这篇文章！</p>
+<p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h2&gt;&lt;p&gt;一个公司随着时间的推移会慢慢的成长起来，这也就意味着公司的队伍也会不断的壮大。在壮大的同时需要保证团队开发的规范性。这样有益于后期维护，同时也能够培养团队的协作能力。软件开发一直是公司的核心部门，那么作为 &lt;strong&gt;iOS开发部&lt;/strong&gt; 的成员之一，就更应该积极做好各项工作。这次我就啰里啰嗦的整理一下网上的关于 &lt;strong&gt;AppleDoc&lt;/strong&gt; 生成开发文档的相关知识点。此文章需要有一定的指令基础的童鞋学习，不然看了会比较吃力。有不懂的需要自行脑补一下，这里就不再累赘。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Mac端" scheme="superdanny.link/categories/Mac%E7%AB%AF/"/>
+    
+    
+      <category term="iOS" scheme="superdanny.link/tags/iOS/"/>
+    
+      <category term="Xcode" scheme="superdanny.link/tags/Xcode/"/>
+    
+      <category term="工具" scheme="superdanny.link/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="AppleDoc" scheme="superdanny.link/tags/AppleDoc/"/>
+    
+  </entry>
   
   <entry>
     <title>2017，我的年终总结</title>
@@ -1119,50 +1301,6 @@
       <category term="iOS" scheme="superdanny.link/tags/iOS/"/>
     
       <category term="导航栏" scheme="superdanny.link/tags/%E5%AF%BC%E8%88%AA%E6%A0%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CocoaPods切换国内镜像源以及镜像源制作</title>
-    <link href="superdanny.link/2016/04/20/Change-CocoaPods-Source/"/>
-    <id>superdanny.link/2016/04/20/Change-CocoaPods-Source/</id>
-    <published>2016-04-20T12:13:00.000Z</published>
-    <updated>2017-07-14T02:21:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>很多时候我们需要借助CocoaPods管理第三方开源类库，但是由于国内开发者直接使用CocoaPods是经常速度缓慢导致更新或者安装时候需要等待非常长的时间。</p>
-<a id="more"></a>
-<p>方法有几种：</p>
-<ol>
-<li>借助VPN来解决</li>
-<li>很多时候是通过切换成国内的镜像源来达到目的。</li>
-<li>在pod install、pod update的时候不升级specs库</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ pod install --verbose --no-repo-update</div><div class="line">$ pod update --verbose --no-repo-update</div></pre></td></tr></table></figure>
-<h2 id="切换镜像源"><a href="#切换镜像源" class="headerlink" title="切换镜像源"></a>切换镜像源</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">pod repo remove master</div><div class="line">pod repo add master 镜像源地址</div><div class="line">pod repo update</div><div class="line">pod setup</div></pre></td></tr></table></figure>
-<h2 id="镜像源制作"><a href="#镜像源制作" class="headerlink" title="镜像源制作"></a>镜像源制作</h2><p>当然，以来与别人的镜像源也不是最好的办法。我们也可以尝试自己制作属于自己的镜像源。</p>
-<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> --mirror https://github.com/CocoaPods/Specs.git</div></pre></td></tr></table></figure>
-<h3 id="编辑config文件"><a href="#编辑config文件" class="headerlink" title="编辑config文件"></a>编辑config文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">[core]</div><div class="line">        repositoryformatversion = 0</div><div class="line">        filemode = true</div><div class="line">        bare = true</div><div class="line">[remote &quot;origin&quot;]</div><div class="line">        fetch = +refs/heads/*:refs/heads/*</div><div class="line">        fetch = +refs/tags/*:refs/tags/*</div><div class="line">        mirror = true</div><div class="line">        url = https://github.com/CocoaPods/Specs.git</div><div class="line">[remote &quot;mirrors&quot;]</div><div class="line">        url = git@gitcafe.com:lloydsheng/Specs.git</div><div class="line">        mirror = true</div><div class="line">        skipDefaultUpdate = true</div></pre></td></tr></table></figure>
-<h3 id="定期同步"><a href="#定期同步" class="headerlink" title="定期同步"></a>定期同步</h3><p>编辑同步脚本specssync.sh，添加：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git fetch remote</div><div class="line">git push mirrors</div></pre></td></tr></table></figure>
-<p>设置cronjob每半个小时同步一次</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">30 * * * * /home/git/specssync.sh  &gt; /var/log/</div><div class="line">specssync.log 2&gt;&amp;1</div></pre></td></tr></table></figure>
-<hr>
-<p>再一次感谢您花费时间阅读这篇文章！</p>
-<p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h2&gt;&lt;p&gt;很多时候我们需要借助CocoaPods管理第三方开源类库，但是由于国内开发者直接使用CocoaPods是经常速度缓慢导致更新或者安装时候需要等待非常长的时间。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Mac端" scheme="superdanny.link/categories/Mac%E7%AB%AF/"/>
-    
-    
-      <category term="终端" scheme="superdanny.link/tags/%E7%BB%88%E7%AB%AF/"/>
-    
-      <category term="CocoaPods" scheme="superdanny.link/tags/CocoaPods/"/>
     
   </entry>
   

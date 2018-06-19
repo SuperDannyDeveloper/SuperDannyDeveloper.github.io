@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>superdanny.link/2018/06/19/iOS-AppleDoc/</loc>
+    <lastmod>2018-06-19T09:21:45.329Z</lastmod>
+    <data>
+        <display>
+        <title>使用AppleDoc快速生成iOS开发文档</title>
+        <pubTime>2018-06-19T02:30:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>Xcode</tag>
+         
+        <tag>工具</tag>
+         
+        <tag>AppleDoc</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2017/03/03/App-Thinning/</loc>
     <lastmod>2018-06-12T10:02:31.840Z</lastmod>
     <data>
@@ -1574,26 +1600,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
-    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>关于开发中遇到问题处理思路</title>
-        <pubTime>2015-09-18T05:56:00.000Z</pubTime>
-        
-        <tag>解决方式</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2015/09/17/Fix-svn-directory-is-out-of-date/</loc>
     <lastmod>2016-11-30T01:56:39.000Z</lastmod>
     <data>
@@ -1607,6 +1613,26 @@
            
              
               <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
+    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>关于开发中遇到问题处理思路</title>
+        <pubTime>2015-09-18T05:56:00.000Z</pubTime>
+        
+        <tag>解决方式</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
           
         </display>
     </data>
