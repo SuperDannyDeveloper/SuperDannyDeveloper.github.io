@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="superdanny.link/"/>
-  <updated>2018-06-20T16:12:22.714Z</updated>
+  <updated>2018-06-21T01:10:39.732Z</updated>
   <id>superdanny.link/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="superdanny.link/2018/06/19/iOS-AppleDoc/"/>
     <id>superdanny.link/2018/06/19/iOS-AppleDoc/</id>
     <published>2018-06-19T02:30:00.000Z</published>
-    <updated>2018-06-20T16:12:22.714Z</updated>
+    <updated>2018-06-21T01:10:39.732Z</updated>
     
     <content type="html"><![CDATA[<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>一个公司随着时间的推移会慢慢的成长起来，这也就意味着公司的队伍也会不断的壮大。在壮大的同时需要保证团队开发的规范性。这样有益于后期维护，同时也能够培养团队的协作能力。软件开发一直是公司的核心部门，那么作为 <strong>iOS开发部</strong> 的成员之一，就更应该积极做好各项工作。这次我就啰里啰嗦的整理一下网上的关于 <strong>AppleDoc</strong> 生成开发文档的相关知识点。此文章需要有一定的指令基础的童鞋学习，不然看了会比较吃力。有不懂的需要自行脑补一下，这里就不再累赘。</p>
 <a id="more"></a> 
@@ -147,6 +147,7 @@ b. this is line b
 链接:
 
 普通URL直接写上，appledoc会自动翻译成链接: http://superdanny.link
+
 这个 [链接](http://example.net/) 会隐藏实际URL.
 
 表格:
@@ -155,20 +156,18 @@ b. this is line b
 |---------|:-------:|:--------|--------:|
 | normal  |  center |  left  |  right  |
 | cell    | cell    | cell    | cell    |
+
 引用:
 
-这里会引用到方法 `someMethod:`，这里会引用到类 `YYColor`
+这里会引用到方法 `pinyinFromChiniseString:`，这里会引用到类 `AreaListViewController`
 
-这里会引用到一个代码块
+这里会引用到一个代码块。具体办法是在每行内容的前面按tab键进行缩进，不然会无法正常识别。
 
-void CMYK2RGB(float c, float m, float y, float k, float *r, float *g, float *b) {
-    *r = (1 - c) * (1 - k);
-    *g = (1 - m) * (1 - k);
-    *b = (1 - y) * (1 - k);
-}
-
-@since iOS5.0
-
+   void CMYK2RGB(float c, float m, float y, float k, float *r, float *g, float *b) {
+       *r = (1 - c) * (1 - k);
+       *g = (1 - m) * (1 - k);
+       *b = (1 - y) * (1 - k);
+   }
 */
 </code></pre><p>最后我们来看看效果怎么样吧😁</p>
 <p><img src="http://wx2.sinaimg.cn/large/81f8a509gy1fsgfaqtm5tj21jg1fqdi0.jpg" alt="主页效果"><br><img src="http://wx4.sinaimg.cn/large/81f8a509gy1fsgfared45j21lj1u0dht.jpg" alt="类说明详情"><br><img src="http://wx1.sinaimg.cn/large/81f8a509gy1fsglassz2oj21km3s0n1z.jpg" alt="注释"></p>
