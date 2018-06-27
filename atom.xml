@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="superdanny.link/"/>
-  <updated>2018-06-27T09:32:24.484Z</updated>
+  <updated>2018-06-27T09:36:26.838Z</updated>
   <id>superdanny.link/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="superdanny.link/2018/06/26/iOS-StaticLibrary-Framework/"/>
     <id>superdanny.link/2018/06/26/iOS-StaticLibrary-Framework/</id>
     <published>2018-06-26T14:55:00.000Z</published>
-    <updated>2018-06-27T09:32:24.484Z</updated>
+    <updated>2018-06-27T09:36:26.838Z</updated>
     
     <content type="html"><![CDATA[<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>由于喜欢琢磨一些技术，这块领域其实已经好多年就有人发表相关的技术文章，但是自己没有亲手实战一次还真不能说是自己学到这门技术。前段时间研究了一下并动手做了一个静态库。效果挺好，也达到了我想要的预期结果并运用到了我实际项目中。今天重新翻看了一些资料，发现还有完善的地方，特意记录一下，方便后期查阅。</p>
 <a id="more"></a> 
 <h2 id="战前准备之-a与-framework库的区别"><a href="#战前准备之-a与-framework库的区别" class="headerlink" title="战前准备之.a与.framework库的区别"></a>战前准备之.a与.framework库的区别</h2><p><img src="http://wx1.sinaimg.cn/large/81f8a509gy1fspjgx42enj20rs16w442.jpg" alt=".a与.framework库的区别"></p>
 <p>总结：同一个静态库在不同程序中使用时，每一个程序中都得导入一次，打包时也被打包进去，形成一个程序。而动态库在不同程序中，打包时并没有被打包进去，只在程序运行使用时，才链接载入（如系统的框架如UIKit、Foundation等），所以程序体积会小很多，但是苹果不让使用自己的动态库，否则审核就无法通过。</p>
 <p>好了，已经了解了两种类型库的区别之后我们就开始动手制作自己的静态库吧。😄</p>
-<h2 id="制作Framework静态库"><a href="#制作Framework静态库" class="headerlink" title="制作Framework静态库"></a>制作Framework静态库</h2><h3 id="第一步-创建一个项目"><a href="#第一步-创建一个项目" class="headerlink" title="第一步 创建一个项目"></a>第一步 创建一个项目</h3><p><img src="http://wx2.sinaimg.cn/large/81f8a509gy1fspi5gz05tj20rs0k4jsb.jpg" alt="创建Framework项目"></p>
+<h2 id="制作Framework静态库"><a href="#制作Framework静态库" class="headerlink" title="制作Framework静态库"></a>制作Framework静态库</h2><h3 id="第一步-创建项目"><a href="#第一步-创建项目" class="headerlink" title="第一步 创建项目"></a>第一步 创建项目</h3><p><img src="http://wx2.sinaimg.cn/large/81f8a509gy1fspi5gz05tj20rs0k4jsb.jpg" alt="创建Framework项目"></p>
 <h3 id="第二步-创建需要封装的类或者将需要封装的第三方类加进项目里面"><a href="#第二步-创建需要封装的类或者将需要封装的第三方类加进项目里面" class="headerlink" title="第二步 创建需要封装的类或者将需要封装的第三方类加进项目里面"></a>第二步 创建需要封装的类或者将需要封装的第三方类加进项目里面</h3><p><img src="http://wx1.sinaimg.cn/large/81f8a509gy1fspi5hjlhsj20fa08iaai.jpg" alt="添加或创建封装类"></p>
 <h3 id="第三步-修改项目配置"><a href="#第三步-修改项目配置" class="headerlink" title="第三步 修改项目配置"></a>第三步 修改项目配置</h3><p>1、设置需要公开的头文件<br><img src="http://wx4.sinaimg.cn/large/81f8a509gy1fspi5jippcj20rs0efmxm.jpg" alt="公开的头文件"></p>
 <p>2、修改生成的Mach-O格式<br><img src="http://wx3.sinaimg.cn/large/81f8a509gy1fspi5ikz4oj20rs04pmxp.jpg" alt="Mach-O格式"></p>
