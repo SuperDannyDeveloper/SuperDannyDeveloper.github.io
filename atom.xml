@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="superdanny.link/"/>
-  <updated>2018-06-21T01:10:39.732Z</updated>
+  <updated>2018-06-27T09:32:24.484Z</updated>
   <id>superdanny.link/</id>
   
   <author>
@@ -14,6 +14,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iOS静态库实战之Framework</title>
+    <link href="superdanny.link/2018/06/26/iOS-StaticLibrary-Framework/"/>
+    <id>superdanny.link/2018/06/26/iOS-StaticLibrary-Framework/</id>
+    <published>2018-06-26T14:55:00.000Z</published>
+    <updated>2018-06-27T09:32:24.484Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>由于喜欢琢磨一些技术，这块领域其实已经好多年就有人发表相关的技术文章，但是自己没有亲手实战一次还真不能说是自己学到这门技术。前段时间研究了一下并动手做了一个静态库。效果挺好，也达到了我想要的预期结果并运用到了我实际项目中。今天重新翻看了一些资料，发现还有完善的地方，特意记录一下，方便后期查阅。</p>
+<a id="more"></a> 
+<h2 id="战前准备之-a与-framework库的区别"><a href="#战前准备之-a与-framework库的区别" class="headerlink" title="战前准备之.a与.framework库的区别"></a>战前准备之.a与.framework库的区别</h2><p><img src="http://wx1.sinaimg.cn/large/81f8a509gy1fspjgx42enj20rs16w442.jpg" alt=".a与.framework库的区别"></p>
+<p>总结：同一个静态库在不同程序中使用时，每一个程序中都得导入一次，打包时也被打包进去，形成一个程序。而动态库在不同程序中，打包时并没有被打包进去，只在程序运行使用时，才链接载入（如系统的框架如UIKit、Foundation等），所以程序体积会小很多，但是苹果不让使用自己的动态库，否则审核就无法通过。</p>
+<p>好了，已经了解了两种类型库的区别之后我们就开始动手制作自己的静态库吧。😄</p>
+<h2 id="制作Framework静态库"><a href="#制作Framework静态库" class="headerlink" title="制作Framework静态库"></a>制作Framework静态库</h2><h3 id="第一步-创建一个项目"><a href="#第一步-创建一个项目" class="headerlink" title="第一步 创建一个项目"></a>第一步 创建一个项目</h3><p><img src="http://wx2.sinaimg.cn/large/81f8a509gy1fspi5gz05tj20rs0k4jsb.jpg" alt="创建Framework项目"></p>
+<h3 id="第二步-创建需要封装的类或者将需要封装的第三方类加进项目里面"><a href="#第二步-创建需要封装的类或者将需要封装的第三方类加进项目里面" class="headerlink" title="第二步 创建需要封装的类或者将需要封装的第三方类加进项目里面"></a>第二步 创建需要封装的类或者将需要封装的第三方类加进项目里面</h3><p><img src="http://wx1.sinaimg.cn/large/81f8a509gy1fspi5hjlhsj20fa08iaai.jpg" alt="添加或创建封装类"></p>
+<h3 id="第三步-修改项目配置"><a href="#第三步-修改项目配置" class="headerlink" title="第三步 修改项目配置"></a>第三步 修改项目配置</h3><p>1、设置需要公开的头文件<br><img src="http://wx4.sinaimg.cn/large/81f8a509gy1fspi5jippcj20rs0efmxm.jpg" alt="公开的头文件"></p>
+<p>2、修改生成的Mach-O格式<br><img src="http://wx3.sinaimg.cn/large/81f8a509gy1fspi5ikz4oj20rs04pmxp.jpg" alt="Mach-O格式"></p>
+<p>3、将项目的最低支持系统版本设置成<strong>iOS 8</strong>，可根据自己实际情况设置<br><img src="http://wx4.sinaimg.cn/large/81f8a509gy1fspi5j25ppj20rs0i80tj.jpg" alt="最低支持系统版本"></p>
+<blockquote>
+<ul>
+<li><p>这里需要注意的是公开的头文件里 <strong>import</strong> 了其他类也得添加到 <strong>public</strong> 中公开出来。如果不想将 <strong>import</strong> 的类公开出来，那么在头文件中用<strong>@class</strong>然后在对应的 <strong>.m</strong> 文件中再 <strong>import</strong>。</p>
+</li>
+<li><p>需要注意的是默认的Architectures是不包含armv7s，如果需要支持该架构，需要配置一下<br><img src="http://wx4.sinaimg.cn/large/81f8a509gy1fspixbpfucj20rs0bkmz3.jpg" alt="增加armv7s支持"></p>
+</li>
+</ul>
+</blockquote>
+<h3 id="第四步-创建通用静态库执行脚本"><a href="#第四步-创建通用静态库执行脚本" class="headerlink" title="第四步 创建通用静态库执行脚本"></a>第四步 创建通用静态库执行脚本</h3><p>1、创建Target<br><img src="http://wx3.sinaimg.cn/large/81f8a509gy1fspk30jlzqj20rs0jyjs2.jpg" alt="创建Target"></p>
+<p>2、创建<strong>Run Script</strong>脚本<br><img src="http://wx2.sinaimg.cn/large/81f8a509gy1fspi5i713aj20rs0dlmy1.jpg" alt="创建Run Script脚本"></p>
+<p>3、编写执行脚本</p>
+<pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Sets the target folders and the final framework product.</span></div><div class="line"><span class="comment"># 如果工程名称和Framework的Target名称不一样的话，要自定义FMKNAME</span></div><div class="line"><span class="comment"># 例如: FMK_NAME = "MyFramework"</span></div><div class="line">FMK_NAME=<span class="variable">$&#123;PROJECT_NAME&#125;</span></div><div class="line"><span class="comment"># Install dir will be the final output to the framework.</span></div><div class="line"><span class="comment"># The following line create it in the root folder of the current project.</span></div><div class="line">INSTALL_DIR=<span class="variable">$&#123;SRCROOT&#125;</span>/Products/<span class="variable">$&#123;FMK_NAME&#125;</span>.framework</div><div class="line"><span class="comment"># Working dir will be deleted after the framework creation.</span></div><div class="line">WRK_DIR=build</div><div class="line">DEVICE_DIR=<span class="variable">$&#123;WRK_DIR&#125;</span>/Release-iphoneos/<span class="variable">$&#123;FMK_NAME&#125;</span>.framework</div><div class="line">SIMULATOR_DIR=<span class="variable">$&#123;WRK_DIR&#125;</span>/Release-iphonesimulator/<span class="variable">$&#123;FMK_NAME&#125;</span>.framework</div><div class="line"><span class="comment"># -configuration $&#123;CONFIGURATION&#125;</span></div><div class="line"><span class="comment"># Clean and Building both architectures.</span></div><div class="line">xcodebuild -configuration <span class="string">"Release"</span> -target <span class="string">"<span class="variable">$&#123;FMK_NAME&#125;</span>"</span> -sdk iphoneos clean build</div><div class="line">xcodebuild -configuration <span class="string">"Release"</span> -target <span class="string">"<span class="variable">$&#123;FMK_NAME&#125;</span>"</span> -sdk iphonesimulator clean build</div><div class="line"><span class="comment"># Cleaning the oldest.</span></div><div class="line"><span class="keyword">if</span> [ <span class="_">-d</span> <span class="string">"<span class="variable">$&#123;INSTALL_DIR&#125;</span>"</span> ]</div><div class="line"><span class="keyword">then</span></div><div class="line">rm -rf <span class="string">"<span class="variable">$&#123;INSTALL_DIR&#125;</span>"</span></div><div class="line"><span class="keyword">fi</span></div><div class="line">mkdir -p <span class="string">"<span class="variable">$&#123;INSTALL_DIR&#125;</span>"</span></div><div class="line">cp -R <span class="string">"<span class="variable">$&#123;DEVICE_DIR&#125;</span>/"</span> <span class="string">"<span class="variable">$&#123;INSTALL_DIR&#125;</span>/"</span></div><div class="line"><span class="comment"># Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.</span></div><div class="line">lipo -create <span class="string">"<span class="variable">$&#123;DEVICE_DIR&#125;</span>/<span class="variable">$&#123;FMK_NAME&#125;</span>"</span> <span class="string">"<span class="variable">$&#123;SIMULATOR_DIR&#125;</span>/<span class="variable">$&#123;FMK_NAME&#125;</span>"</span> -output <span class="string">"<span class="variable">$&#123;INSTALL_DIR&#125;</span>/<span class="variable">$&#123;FMK_NAME&#125;</span>"</span></div><div class="line">rm -r <span class="string">"<span class="variable">$&#123;WRK_DIR&#125;</span>"</span></div><div class="line">open <span class="string">"<span class="variable">$&#123;INSTALL_DIR&#125;</span>"</span></div></pre></td></tr></table></figure>
+</code></pre><h3 id="第五步-选中新建的Target，Run，如果没有异常的话，会自动弹出生成的Framework文件"><a href="#第五步-选中新建的Target，Run，如果没有异常的话，会自动弹出生成的Framework文件" class="headerlink" title="第五步 选中新建的Target，Run，如果没有异常的话，会自动弹出生成的Framework文件"></a>第五步 选中新建的Target，Run，如果没有异常的话，会自动弹出生成的Framework文件</h3><p><img src="http://wx1.sinaimg.cn/large/81f8a509gy1fspikzyzi3j20mm0500t7.jpg" alt="生成静态库"></p>
+<p><strong>大功告成！</strong>🎉</p>
+<p>最后我们来验证下Framework支持哪些架构，相关指令格式如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 验证Framework</span></div><div class="line">$ lipo -info /Users/.../xFramework.framework/xFramework</div><div class="line"><span class="comment"># 验证.a</span></div><div class="line">$ lipo -info /Users/.../libXYPlatform.a</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 没有添加armv7s之前的支持架构</span></div><div class="line">$ lipo -info /Users/superdanny/Out/动态包/CoreAppStatus/Products/CoreAppStatus.framework/CoreAppStatus</div><div class="line">$ Architectures <span class="keyword">in</span> the fat file: /Users/superdanny/Out/动态包/CoreAppStatus/Products/CoreAppStatus.framework/CoreAppStatus are: armv7 i386 x86_64 arm64</div><div class="line"><span class="comment"># 添加armv7s之后的支持架构</span></div><div class="line">$ lipo -info /Users/superdanny/Out/动态包/CoreAppStatus/Products/CoreAppStatus.framework/CoreAppStatus</div><div class="line">$ Architectures <span class="keyword">in</span> the fat file: /Users/superdanny/Out/动态包/CoreAppStatus/Products/CoreAppStatus.framework/CoreAppStatus are: armv7 armv7s i386 x86_64 arm64</div></pre></td></tr></table></figure>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://www.cocoachina.com/ios/20161012/17730.html" target="_blank" rel="external">iOS中.a与.framework库的区别</a><br><a href="http://www.cocoachina.com/ios/20141126/10322.html" target="_blank" rel="external">Xcode 6制作动态及静态Framework</a><br><a href="https://www.jianshu.com/p/99a5ac602123" target="_blank" rel="external">关于ios开发framework及.a文件支持架构判断以及合并</a></p>
+<hr>
+<p>再一次感谢您花费时间阅读这篇文章！</p>
+<p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h2&gt;&lt;p&gt;由于喜欢琢磨一些技术，这块领域其实已经好多年就有人发表相关的技术文章，但是自己没有亲手实战一次还真不能说是自己学到这门技术。前段时间研究了一下并动手做了一个静态库。效果挺好，也达到了我想要的预期结果并运用到了我实际项目中。今天重新翻看了一些资料，发现还有完善的地方，特意记录一下，方便后期查阅。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="移动端" scheme="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    
+    
+      <category term="iOS" scheme="superdanny.link/tags/iOS/"/>
+    
+      <category term="Xcode" scheme="superdanny.link/tags/Xcode/"/>
+    
+      <category term="Framework" scheme="superdanny.link/tags/Framework/"/>
+    
+  </entry>
   
   <entry>
     <title>使用AppleDoc快速生成iOS开发文档</title>
@@ -1269,36 +1326,6 @@ b. this is line b
       <category term="终端" scheme="superdanny.link/tags/%E7%BB%88%E7%AB%AF/"/>
     
       <category term="CocoaPods" scheme="superdanny.link/tags/CocoaPods/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS修改导航堆栈视图</title>
-    <link href="superdanny.link/2016/04/26/iOS-Change-navigation-stack/"/>
-    <id>superdanny.link/2016/04/26/iOS-Change-navigation-stack/</id>
-    <published>2016-04-26T09:46:00.000Z</published>
-    <updated>2017-01-11T03:54:13.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>有时候我们需要在视图跳转时，或者某些操作时需要将导航堆栈中的某个视图或多个视图移除堆栈中，目的是为了让返回过程中不会经过需要移除的视图。</p>
-<a id="more"></a>
-<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//比如：vc1 push vc2。vc2 push vc3。然后vc2从导航堆栈中移除。</span></div><div class="line"><span class="comment">//可以在vc2中实现如下代码</span></div><div class="line"><span class="comment">//跳转到vc3</span></div><div class="line">ViewController *vc3 = [[ViewController alloc] init];</div><div class="line">[<span class="keyword">self</span>.navigationController pushViewController:vc3 animated:<span class="literal">YES</span>];</div><div class="line">    </div><div class="line"><span class="built_in">NSMutableArray</span> *arr = <span class="keyword">self</span>.navigationController.viewControllers.mutableCopy;</div><div class="line"><span class="comment">//操作arr</span></div><div class="line">[arr removeObject:weakSelf];</div><div class="line"><span class="keyword">self</span>.navigationController.viewControllers = arr;</div></pre></td></tr></table></figure>
-<hr>
-<p>再一次感谢您花费时间阅读这篇文章！</p>
-<p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h3&gt;&lt;p&gt;有时候我们需要在视图跳转时，或者某些操作时需要将导航堆栈中的某个视图或多个视图移除堆栈中，目的是为了让返回过程中不会经过需要移除的视图。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="移动端" scheme="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-    
-    
-      <category term="iOS" scheme="superdanny.link/tags/iOS/"/>
-    
-      <category term="导航栏" scheme="superdanny.link/tags/%E5%AF%BC%E8%88%AA%E6%A0%8F/"/>
     
   </entry>
   

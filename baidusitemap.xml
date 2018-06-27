@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>superdanny.link/2018/06/26/iOS-StaticLibrary-Framework/</loc>
+    <lastmod>2018-06-27T09:32:24.484Z</lastmod>
+    <data>
+        <display>
+        <title>iOS静态库实战之Framework</title>
+        <pubTime>2018-06-26T14:55:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>Xcode</tag>
+         
+        <tag>Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2018/06/19/iOS-AppleDoc/</loc>
     <lastmod>2018-06-21T01:10:39.732Z</lastmod>
     <data>
@@ -528,9 +552,9 @@
         
         <tag>iOS</tag>
          
-        <tag>iOS9</tag>
-         
         <tag>In-House</tag>
+         
+        <tag>iOS9</tag>
          
         <tag>企业级证书打包</tag>
          
@@ -1600,6 +1624,26 @@
 
     
   <url>
+    <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
+    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>关于开发中遇到问题处理思路</title>
+        <pubTime>2015-09-18T05:56:00.000Z</pubTime>
+        
+        <tag>解决方式</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2015/09/17/Fix-svn-directory-is-out-of-date/</loc>
     <lastmod>2016-11-30T01:56:39.000Z</lastmod>
     <data>
@@ -1620,14 +1664,14 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
-    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
+    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
+    <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>关于开发中遇到问题处理思路</title>
-        <pubTime>2015-09-18T05:56:00.000Z</pubTime>
+        <title>指定UIView的特定角为圆角</title>
+        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
         
-        <tag>解决方式</tag>
+        <tag>iOS</tag>
          
          
            
@@ -1650,26 +1694,6 @@
         <tag>iOS</tag>
          
         <tag>长按文本框</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
-    <lastmod>2016-11-30T01:56:38.000Z</lastmod>
-    <data>
-        <display>
-        <title>指定UIView的特定角为圆角</title>
-        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
          
          
            
