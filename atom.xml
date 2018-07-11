@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="superdanny.link/"/>
-  <updated>2018-06-27T09:36:26.838Z</updated>
+  <updated>2018-07-09T03:12:29.382Z</updated>
   <id>superdanny.link/</id>
   
   <author>
@@ -16,11 +16,70 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2018，我的年中工作总结</title>
+    <link href="superdanny.link/2018/07/03/2018-Mid-year-work-summary/"/>
+    <id>superdanny.link/2018/07/03/2018-Mid-year-work-summary/</id>
+    <published>2018-07-03T15:10:00.000Z</published>
+    <updated>2018-07-09T03:12:29.382Z</updated>
+    
+    <content type="html"><![CDATA[<p>出于公司的战略发展原因，今年的总结将改为半年一次工作总结。年中年底各一次小结，同时年底一次全方面总结。18年，一个特殊之年，也是我第四个年头写总结了，每一年的总结都有所收获，有所成长。本次重点在总结上半年工作情况以及下半年的计划。</p>
+<a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>回首3年前刚入职那会，我还只是一个项目的开发者，到现在可以参与项目的探讨、评估与开发并且独自承担起一个项目的重任。这对于我来说是一个莫大的进步。虽然工作量大了，但是我却乐此不疲，因为这让我的开发水平与开发速度有了质的提升。以前我只会盲目的按照需求打代码，而现如今，我能根据功能的合理性判定是否应该按照需求来开发。这看起来不起眼，但是却体现了我从以往只会以开发的角度思考问题到现在能够站在用户使用习惯和体验的角度多方面思考问题。虽然自身角色没有转变，但是思考的层面却有所不同。我也不再仅仅只是为了开发而开发。</p>
+<p>在这最近的半年来，有过收获与喜悦，也有过遗憾与无奈。在工作上虽然无法保证每件事都能百分之百做到最好，但是对待每一件事我都是全身心投入。俗话说金无足赤，人无完人。但是这不能成为我往后工作的借口，因为人总要学会成长。</p>
+<h2 id="参与其中，乐此不疲"><a href="#参与其中，乐此不疲" class="headerlink" title="参与其中，乐此不疲"></a>参与其中，乐此不疲</h2><p>这半年来，我工作上的重心就是将云澳门项目重新整改与优化。在增加“招聘”版块和“活动”板块等新功能的同时，我也开始对其他现有模块进行了彻底重构。其中包括了“商家”模块、“会员汇”模块、“卡券”模块、“订单”模块、“我的”模块以及“登录注册”模块。<br>在这过程中，一开始会觉得有趣和自信，但随着项目的开展，慢慢的也会出现疲倦。因为随着项目的开展，会遇到各种各样的问题，不管是沟通也好，业务意见不统一也罢，都会将一个原本信心十足的人逐渐击垮。为此，我特意给自己定了一些小目标来强制自己认真对待并重新调整态度做事。比如，当你开发的比较疲乏又突然提不起兴趣的时候。先暂停当前手头上的工作，选一个你感兴趣的技术领域并能够运用到现有项目中进行优化，这样不仅可以提升自己的能力水平，而且能够激起你工作的热情，两全其美，何乐而不为之。</p>
+<h2 id="角色转变，换位思考"><a href="#角色转变，换位思考" class="headerlink" title="角色转变，换位思考"></a>角色转变，换位思考</h2><p>我感到高兴的是，公司领导对所有部门都广开言路，每一个部门都有了表达自己想法与观点的发言权。现在的云澳门项目，说广泛一些包括之后的很多项目，也越来越多同事愿意表达自己的观点。先不说对项目起到多大的作用，相比以往的确认需求和功能点后立马着手开发的行云流水式开发流程而言，这种先讨论再确定方向和可行性分析的方式是值得赞赏的。因为它可以有效降低新需求失败的风险，将公司的资源更有效的整合并应用到更值得开展的领域上。</p>
+<p>因为每个同事有了更多发言权，探讨项目以及方向的会议也就变得越来越频繁。大家的观点和想法也就越来越多，每个人在激烈的讨论中擦出灵感的火花。而我也置身其中，站在对方的角度思考对方的观点。这让我对部门间考虑问题的层次不同有了新的认识。经过几番探讨与自身体验了一把项目之后，有以下几点是导致以往项目失败的直接原因：</p>
+<ol>
+<li>广撒网战略导致功能杂而不实<br> 就比如云澳门项目，虽然功能点很多，也是市场普遍需求的功能，但是里面却很少有一个功能能够做到既简单又实用，有时候甚至没办法用起来。所以以往的广撒网战略还是有些行不通。</li>
+<li>资源少而乱，体验差<br> 很多功能点有了以后，资源成为了一大问题。由于没有资源的支撑，是导致功能无用武之地的致命原因。而即便有了资源，当初的软件体验却无法吸引用户去深入了解并使用它。所以不但需要有资源，体验也是项目成败的一个重要因素。</li>
+<li>项目开发前期缺乏对市场的分析<br> 市场真正需要什么，我的观点并不能代表所有人的观点，需要市场部的同事真正去感受并调查一番。也就是公司CEO常说的抓住用户痛点。找到突破口，直达用户内心最渴望的需求。</li>
+<li>不愿抛弃冗余功能<br> 功能的冗余让项目变得越来越庞大，同时维护起来也变得困难许多。有些功能看起来就像是为了充数放进去。但是真正会用的人确实很少。应该将重心着重放在一两个功能点上，不断的提升其资源量。</li>
+</ol>
+<p>在公司领导的大力支持下，在各部门同事的积极配合下，上面提及的几点问题，在后面项目开展中，领导层都纳入了项目评估标准中，这使得云澳门的发展方向更加的清晰。同时对以后其他项目起到至关重要的带头作用。</p>
+<h2 id="有效合理利用时间"><a href="#有效合理利用时间" class="headerlink" title="有效合理利用时间"></a>有效合理利用时间</h2><p>为了提高在公司的工作效率，我会抽空将一些琐碎的代码整理并封装。因为一天8小时的正常工作时间是很有限的(加班时间除外)，如何将时间更有效的利用，就需要把时间和精力用到刀刃上，而不能将时间浪费在一些繁琐而又枯燥的无需太多思考的重复工作上面。那么如何将这些繁琐的工作时间省下来？</p>
+<ol>
+<li>养成代码封装整理的好习惯<br> 将通用的功能点抽离，做成通用的类库提供给外部调用。既方便了以后的项目开发，又为开发省下不少时间。</li>
+<li>自动化操作<br> 将一些繁琐的打包工作交给计算机执行。平时打包是一件重复而又枯燥且浪费时间的事情，于是我在网上查阅并学习了相关的知识之后，编写了一些打包脚本，实现自动化操作。同时也共享给了部门的同事，方便大家使用。</li>
+<li>善于总结问题<br> 当项目开发过程中经常遇到同样的问题时，就应该总结原因，避免下一次出现类似的事情。这也是节省开发时间的关键。因为同样的问题出现只会让自己浪费一些时间来处理问题。以前刚踏入iOS开发这一行时，我总会遇到一些低级的问题，而且不是一次两次的事情，但是经过追根溯源之后，找到问题所在，在以后的开发过程中规避这种问题。</li>
+</ol>
+<h2 id="存在的不足"><a href="#存在的不足" class="headerlink" title="存在的不足"></a>存在的不足</h2><p>在工作中，我还有有一些不足的地方需要改进，并向同事学习。</p>
+<ol>
+<li>资源共享委员工作做得不够努力<br> 在今年年初的时候，在公司IT部周总监的鼓励和推动下，成立了资源共享委员会。作为委员会的带头人，我觉得我做的不够好。因为发现我的很多时间精力都难以投入到这一块工作上面，虽然偶尔会分享一些零散的技术干货，但是这远远不是我一个人能够完成的事情，需要大家一起共同完成。这也是我需要反思并努力改进的地方。</li>
+<li>管理及专业知识的提升不够快速<br> 工作中我感觉到自己专业知识、管理知识的匮乏，提升的速度并不是很快。一个人在公司要有所成长，唯一的途径就是学习他人的长处，弥补自身的不足。今后我将要在这两个方面加强学习，从同事中学习他们的优点，提升自身综合素质，全面发展。</li>
+<li>集体荣誉感不够强<br> 虽然我每次都很积极的参与公司组织的各项活动，同时也认真对待每一项工作任务。但是在做好工作方面，我仍然欠缺一种集体荣誉感，因为只有保持这种荣誉感，在对待工作和其他事情上面才会多一分心思去思考如何做到更好。</li>
+</ol>
+<h2 id="下半年计划"><a href="#下半年计划" class="headerlink" title="下半年计划"></a>下半年计划</h2><p><strong>在工作上</strong></p>
+<ol>
+<li><strong>务实与拼搏：</strong>保持一股冲劲，认真对待每一项工作任务。认真总结每日工作情况，从中总结问题与经验；</li>
+<li><strong>提升与创新：</strong>提升自身专业知识，使之更有效的运用到项目中并提高程序的执行效率；</li>
+<li><strong>谦虚与上进：</strong>成为管培生之后，应保持一种谦虚的学习态度，认真努力学习更多管理的相关知识；</li>
+<li><strong>共享与互助：</strong>努力推进资源共享委员会的开展，做到“我为人人”的核心宗旨；</li>
+<li><strong>交流与配合：</strong>积极参与公司以及部门团队建设工作，提高自己在团队的默契与责任感。积极配合领导以及相关部门同事的工作安排。</li>
+</ol>
+<p><strong>在生活上</strong></p>
+<ol>
+<li><strong>丰富阅历：</strong>今年读的课外读物还是比较少，应该多读一些相关的书籍，丰富自己的阅历，自我升华；</li>
+<li><strong>身体素质：</strong>继续坚持锻炼。保持良好的身体素质，才能更好的投入到工作中去；</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;出于公司的战略发展原因，今年的总结将改为半年一次工作总结。年中年底各一次小结，同时年底一次全方面总结。18年，一个特殊之年，也是我第四个年头写总结了，每一年的总结都有所收获，有所成长。本次重点在总结上半年工作情况以及下半年的计划。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="年中总结" scheme="superdanny.link/tags/%E5%B9%B4%E4%B8%AD%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
     <title>iOS静态库实战之Framework</title>
     <link href="superdanny.link/2018/06/26/iOS-StaticLibrary-Framework/"/>
     <id>superdanny.link/2018/06/26/iOS-StaticLibrary-Framework/</id>
     <published>2018-06-26T14:55:00.000Z</published>
-    <updated>2018-06-27T09:36:26.838Z</updated>
+    <updated>2018-06-27T09:55:02.945Z</updated>
     
     <content type="html"><![CDATA[<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>由于喜欢琢磨一些技术，这块领域其实已经好多年就有人发表相关的技术文章，但是自己没有亲手实战一次还真不能说是自己学到这门技术。前段时间研究了一下并动手做了一个静态库。效果挺好，也达到了我想要的预期结果并运用到了我实际项目中。今天重新翻看了一些资料，发现还有完善的地方，特意记录一下，方便后期查阅。</p>
 <a id="more"></a> 
@@ -43,8 +102,8 @@
 <h3 id="第四步-创建通用静态库执行脚本"><a href="#第四步-创建通用静态库执行脚本" class="headerlink" title="第四步 创建通用静态库执行脚本"></a>第四步 创建通用静态库执行脚本</h3><p>1、创建Target<br><img src="http://wx3.sinaimg.cn/large/81f8a509gy1fspk30jlzqj20rs0jyjs2.jpg" alt="创建Target"></p>
 <p>2、创建<strong>Run Script</strong>脚本<br><img src="http://wx2.sinaimg.cn/large/81f8a509gy1fspi5i713aj20rs0dlmy1.jpg" alt="创建Run Script脚本"></p>
 <p>3、编写执行脚本</p>
-<pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Sets the target folders and the final framework product.</span></div><div class="line"><span class="comment"># 如果工程名称和Framework的Target名称不一样的话，要自定义FMKNAME</span></div><div class="line"><span class="comment"># 例如: FMK_NAME = "MyFramework"</span></div><div class="line">FMK_NAME=<span class="variable">$&#123;PROJECT_NAME&#125;</span></div><div class="line"><span class="comment"># Install dir will be the final output to the framework.</span></div><div class="line"><span class="comment"># The following line create it in the root folder of the current project.</span></div><div class="line">INSTALL_DIR=<span class="variable">$&#123;SRCROOT&#125;</span>/Products/<span class="variable">$&#123;FMK_NAME&#125;</span>.framework</div><div class="line"><span class="comment"># Working dir will be deleted after the framework creation.</span></div><div class="line">WRK_DIR=build</div><div class="line">DEVICE_DIR=<span class="variable">$&#123;WRK_DIR&#125;</span>/Release-iphoneos/<span class="variable">$&#123;FMK_NAME&#125;</span>.framework</div><div class="line">SIMULATOR_DIR=<span class="variable">$&#123;WRK_DIR&#125;</span>/Release-iphonesimulator/<span class="variable">$&#123;FMK_NAME&#125;</span>.framework</div><div class="line"><span class="comment"># -configuration $&#123;CONFIGURATION&#125;</span></div><div class="line"><span class="comment"># Clean and Building both architectures.</span></div><div class="line">xcodebuild -configuration <span class="string">"Release"</span> -target <span class="string">"<span class="variable">$&#123;FMK_NAME&#125;</span>"</span> -sdk iphoneos clean build</div><div class="line">xcodebuild -configuration <span class="string">"Release"</span> -target <span class="string">"<span class="variable">$&#123;FMK_NAME&#125;</span>"</span> -sdk iphonesimulator clean build</div><div class="line"><span class="comment"># Cleaning the oldest.</span></div><div class="line"><span class="keyword">if</span> [ <span class="_">-d</span> <span class="string">"<span class="variable">$&#123;INSTALL_DIR&#125;</span>"</span> ]</div><div class="line"><span class="keyword">then</span></div><div class="line">rm -rf <span class="string">"<span class="variable">$&#123;INSTALL_DIR&#125;</span>"</span></div><div class="line"><span class="keyword">fi</span></div><div class="line">mkdir -p <span class="string">"<span class="variable">$&#123;INSTALL_DIR&#125;</span>"</span></div><div class="line">cp -R <span class="string">"<span class="variable">$&#123;DEVICE_DIR&#125;</span>/"</span> <span class="string">"<span class="variable">$&#123;INSTALL_DIR&#125;</span>/"</span></div><div class="line"><span class="comment"># Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.</span></div><div class="line">lipo -create <span class="string">"<span class="variable">$&#123;DEVICE_DIR&#125;</span>/<span class="variable">$&#123;FMK_NAME&#125;</span>"</span> <span class="string">"<span class="variable">$&#123;SIMULATOR_DIR&#125;</span>/<span class="variable">$&#123;FMK_NAME&#125;</span>"</span> -output <span class="string">"<span class="variable">$&#123;INSTALL_DIR&#125;</span>/<span class="variable">$&#123;FMK_NAME&#125;</span>"</span></div><div class="line">rm -r <span class="string">"<span class="variable">$&#123;WRK_DIR&#125;</span>"</span></div><div class="line">open <span class="string">"<span class="variable">$&#123;INSTALL_DIR&#125;</span>"</span></div></pre></td></tr></table></figure>
-</code></pre><h3 id="第五步-选中新建的Target，Run，如果没有异常的话，会自动弹出生成的Framework文件"><a href="#第五步-选中新建的Target，Run，如果没有异常的话，会自动弹出生成的Framework文件" class="headerlink" title="第五步 选中新建的Target，Run，如果没有异常的话，会自动弹出生成的Framework文件"></a>第五步 选中新建的Target，Run，如果没有异常的话，会自动弹出生成的Framework文件</h3><p><img src="http://wx1.sinaimg.cn/large/81f8a509gy1fspikzyzi3j20mm0500t7.jpg" alt="生成静态库"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Sets the target folders and the final framework product.</span></div><div class="line"><span class="comment"># 如果工程名称和Framework的Target名称不一样的话，要自定义FMKNAME</span></div><div class="line"><span class="comment"># 例如: FMK_NAME = "MyFramework"</span></div><div class="line">FMK_NAME=<span class="variable">$&#123;PROJECT_NAME&#125;</span></div><div class="line"><span class="comment"># Install dir will be the final output to the framework.</span></div><div class="line"><span class="comment"># The following line create it in the root folder of the current project.</span></div><div class="line">INSTALL_DIR=<span class="variable">$&#123;SRCROOT&#125;</span>/Products/<span class="variable">$&#123;FMK_NAME&#125;</span>.framework</div><div class="line"><span class="comment"># Working dir will be deleted after the framework creation.</span></div><div class="line">WRK_DIR=build</div><div class="line">DEVICE_DIR=<span class="variable">$&#123;WRK_DIR&#125;</span>/Release-iphoneos/<span class="variable">$&#123;FMK_NAME&#125;</span>.framework</div><div class="line">SIMULATOR_DIR=<span class="variable">$&#123;WRK_DIR&#125;</span>/Release-iphonesimulator/<span class="variable">$&#123;FMK_NAME&#125;</span>.framework</div><div class="line"><span class="comment"># -configuration $&#123;CONFIGURATION&#125;</span></div><div class="line"><span class="comment"># Clean and Building both architectures.</span></div><div class="line">xcodebuild -configuration <span class="string">"Release"</span> -target <span class="string">"<span class="variable">$&#123;FMK_NAME&#125;</span>"</span> -sdk iphoneos clean build</div><div class="line">xcodebuild -configuration <span class="string">"Release"</span> -target <span class="string">"<span class="variable">$&#123;FMK_NAME&#125;</span>"</span> -sdk iphonesimulator clean build</div><div class="line"><span class="comment"># Cleaning the oldest.</span></div><div class="line"><span class="keyword">if</span> [ <span class="_">-d</span> <span class="string">"<span class="variable">$&#123;INSTALL_DIR&#125;</span>"</span> ]</div><div class="line"><span class="keyword">then</span></div><div class="line">rm -rf <span class="string">"<span class="variable">$&#123;INSTALL_DIR&#125;</span>"</span></div><div class="line"><span class="keyword">fi</span></div><div class="line">mkdir -p <span class="string">"<span class="variable">$&#123;INSTALL_DIR&#125;</span>"</span></div><div class="line">cp -R <span class="string">"<span class="variable">$&#123;DEVICE_DIR&#125;</span>/"</span> <span class="string">"<span class="variable">$&#123;INSTALL_DIR&#125;</span>/"</span></div><div class="line"><span class="comment"># Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.</span></div><div class="line">lipo -create <span class="string">"<span class="variable">$&#123;DEVICE_DIR&#125;</span>/<span class="variable">$&#123;FMK_NAME&#125;</span>"</span> <span class="string">"<span class="variable">$&#123;SIMULATOR_DIR&#125;</span>/<span class="variable">$&#123;FMK_NAME&#125;</span>"</span> -output <span class="string">"<span class="variable">$&#123;INSTALL_DIR&#125;</span>/<span class="variable">$&#123;FMK_NAME&#125;</span>"</span></div><div class="line">rm -r <span class="string">"<span class="variable">$&#123;WRK_DIR&#125;</span>"</span></div><div class="line">open <span class="string">"<span class="variable">$&#123;INSTALL_DIR&#125;</span>"</span></div></pre></td></tr></table></figure>
+<h3 id="第五步-选中新建的Target，Run，如果没有异常的话，会自动弹出生成的Framework文件"><a href="#第五步-选中新建的Target，Run，如果没有异常的话，会自动弹出生成的Framework文件" class="headerlink" title="第五步 选中新建的Target，Run，如果没有异常的话，会自动弹出生成的Framework文件"></a>第五步 选中新建的Target，Run，如果没有异常的话，会自动弹出生成的Framework文件</h3><p><img src="http://wx1.sinaimg.cn/large/81f8a509gy1fspikzyzi3j20mm0500t7.jpg" alt="生成静态库"></p>
 <p><strong>大功告成！</strong>🎉</p>
 <p>最后我们来验证下Framework支持哪些架构，相关指令格式如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 验证Framework</span></div><div class="line">$ lipo -info /Users/.../xFramework.framework/xFramework</div><div class="line"><span class="comment"># 验证.a</span></div><div class="line">$ lipo -info /Users/.../libXYPlatform.a</div></pre></td></tr></table></figure>
@@ -1288,44 +1347,6 @@ b. this is line b
       <category term="iOS10" scheme="superdanny.link/tags/iOS10/"/>
     
       <category term="Xcode8" scheme="superdanny.link/tags/Xcode8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>升级CocoaPods后存在的问题</title>
-    <link href="superdanny.link/2016/05/16/CocoaPods-concrete-target/"/>
-    <id>superdanny.link/2016/05/16/CocoaPods-concrete-target/</id>
-    <published>2016-05-16T06:19:00.000Z</published>
-    <updated>2016-12-04T07:40:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>今天由于需要，去升级了CocoaPods的版本，更新版本完成之后，在执行<code>pod install</code>指令时出现了问题。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[!] The dependency `AFNetworking` is not used <span class="keyword">in</span> any concrete target.</div><div class="line">The dependency `SDWebImage` is not used <span class="keyword">in</span> any concrete target.</div></pre></td></tr></table></figure>
-<p>根据提示，是说我没有给这些第三方库指明对应的target。<code>Podfile</code>升级之后到最新版本，pod里的内容必须明确指出所用第三方库的target，否则会出现<strong>The dependency `` is not used in any concrete target</strong>这样的错误。</p>
-<a id="more"></a>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>原本我工程里面<code>Podfile</code>是这样写的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">platform :ios, &apos;8.0&apos;</div><div class="line">use_frameworks!</div><div class="line">pod &apos;AFNetworking&apos;</div><div class="line">pod &apos;SDWebImage&apos;</div></pre></td></tr></table></figure>
-<p>现在需要修改<code>Podfile</code>的写法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">platform :ios, &apos;8.0&apos;</div><div class="line">use_frameworks!</div><div class="line">target &quot;Project target&quot; do</div><div class="line">pod &apos;AFNetworking&apos;</div><div class="line">pod &apos;SDWebImage&apos;</div><div class="line">end</div></pre></td></tr></table></figure>
-<p>这样再运行<code>pod install</code>指令就会成功了。</p>
-<hr>
-<p>再一次感谢您花费时间阅读这篇文章！</p>
-<p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;p&gt;今天由于需要，去升级了CocoaPods的版本，更新版本完成之后，在执行&lt;code&gt;pod install&lt;/code&gt;指令时出现了问题。&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;[!] The dependency `AFNetworking` is not used &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; any concrete target.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;The dependency `SDWebImage` is not used &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; any concrete target.&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;根据提示，是说我没有给这些第三方库指明对应的target。&lt;code&gt;Podfile&lt;/code&gt;升级之后到最新版本，pod里的内容必须明确指出所用第三方库的target，否则会出现&lt;strong&gt;The dependency `` is not used in any concrete target&lt;/strong&gt;这样的错误。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Mac端" scheme="superdanny.link/categories/Mac%E7%AB%AF/"/>
-    
-    
-      <category term="终端" scheme="superdanny.link/tags/%E7%BB%88%E7%AB%AF/"/>
-    
-      <category term="CocoaPods" scheme="superdanny.link/tags/CocoaPods/"/>
     
   </entry>
   
