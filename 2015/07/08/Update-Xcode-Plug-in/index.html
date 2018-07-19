@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://ww4.sinaimg.cn/mw690/81f8a509gw1eva0np4ysij20i407vmzj.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/mw690/81f8a509gw1eva0nruklej20bo057wf8.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0ntcgipj20eq02g74o.jpg">
-<meta property="og:updated_time" content="2017-07-14T02:16:19.000Z">
+<meta property="og:updated_time" content="2018-07-19T02:43:38.034Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Xcode更新之后插件失效以及安装失败详解">
 <meta name="twitter:description" content="Xcode的插件对于开发者来说无疑是开发中的一大利器，让开发者能够将更多的时间和精力放在代码上面。但是开发者都会遇到一个问题，就是每次Xcode一更新，之前好不容易装好的插件全部不能用了，需要重新安装一遍，有时候还会因为某种原因导致即便安装了插件也不能使用的情况。在这里，我将跟大家分享我是如何解决这些问题的。当然，我的方案是建立在前人的基础上完善的。">
@@ -211,32 +211,29 @@ var _hmt = _hmt || [];
 <h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><p>首先，我们要先明确我们的插件是要安装到哪个版本的Xcode上面，然后到拿到对应Xcode的<code>DVTPlugInCompatibilityUUID</code></p>
 <p>现在我想在我的Xcode 6.4上面安装这款插件，那么我需要拿到Xcode 6.4的<code>DVTPlugInCompatibilityUUID</code></p>
 <ol>
-<li>右键Xcode，选择<code>显示包内容</code></li>
-</ol>
-<p><img src="http://ww3.sinaimg.cn/mw690/81f8a509gw1eva0ncwg54j208v0bsgn6.jpg" alt=""></p>
-<ol>
-<li>然后找到<code>Contents/Info.plist</code>路径下的 <i class="icon-file"></i> <code>Info.plist</code>文件</li>
-</ol>
-<p><img src="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0nfd2ugj20cn0atjsg.jpg" alt=""></p>
-<ol>
-<li>双击<code>Info.plist</code>文件，找到<code>DVTPlugInCompatibilityUUID</code>，将对应的<code>7FDF5C7A-131F-4ABB-9EDC-8C5F8F0B8A90</code>复制</li>
-</ol>
-<p><img src="http://ww4.sinaimg.cn/mw690/81f8a509gw1eva0ngxk8tj20hm039gmh.jpg" alt=""></p>
-<ol>
-<li>接下来到<code>ColorSense</code>插件所在目录下</li>
-</ol>
-<p><img src="http://ww1.sinaimg.cn/large/81f8a509gw1eva0nj69bhj20u700p74l.jpg" alt="插件路径"></p>
-<ol>
+<li><p>右键Xcode，选择<code>显示包内容</code></p>
+<p> <img src="http://ww3.sinaimg.cn/mw690/81f8a509gw1eva0ncwg54j208v0bsgn6.jpg" alt=""></p>
+</li>
+<li><p>然后找到<code>Contents/Info.plist</code>路径下的 <i class="icon-file"></i> <code>Info.plist</code>文件</p>
+<p> <img src="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0nfd2ugj20cn0atjsg.jpg" alt=""></p>
+</li>
+<li><p>双击<code>Info.plist</code>文件，找到<code>DVTPlugInCompatibilityUUID</code>，将对应的<code>7FDF5C7A-131F-4ABB-9EDC-8C5F8F0B8A90</code>复制</p>
+<p> <img src="http://ww4.sinaimg.cn/mw690/81f8a509gw1eva0ngxk8tj20hm039gmh.jpg" alt=""></p>
+</li>
+<li><p>接下来到<code>ColorSense</code>插件所在目录下</p>
+<p> <img src="http://ww1.sinaimg.cn/large/81f8a509gw1eva0nj69bhj20u700p74l.jpg" alt="插件路径"></p>
+</li>
 <li><p>右键插件，选择<code>显示包内容</code>。然后找到<code>Contents/Info.plist</code>路径下的 <i class="icon-file"></i> <code>Info.plist</code>文件</p>
 </li>
 <li><p>双击<code>Info.plist</code>文件，将刚刚复制的<code>7FDF5C7A-131F-4ABB-9EDC-8C5F8F0B8A90</code>增加到<code>DVTPlugInCompatibilityUUID</code>字段里面。保存</p>
+<p> <img src="http://ww4.sinaimg.cn/mw690/81f8a509gw1eva0np4ysij20i407vmzj.jpg" alt=""></p>
 </li>
 </ol>
-<p><img src="http://ww4.sinaimg.cn/mw690/81f8a509gw1eva0np4ysij20i407vmzj.jpg" alt=""></p>
 <ol>
-<li>重新打开Xcode 6.4，此时会弹窗提示用户是否加载该插件。很多用户就是在这一步因为选择了<code>Skip Bundle</code>导致不能成功使用插件。</li>
+<li><p>重新打开Xcode 6.4，此时会弹窗提示用户是否加载该插件。很多用户就是在这一步因为选择了<code>Skip Bundle</code>导致不能成功使用插件。</p>
+<p> <img src="http://ww3.sinaimg.cn/mw690/81f8a509gw1eva0nruklej20bo057wf8.jpg" alt=""></p>
+</li>
 </ol>
-<p><img src="http://ww3.sinaimg.cn/mw690/81f8a509gw1eva0nruklej20bo057wf8.jpg" alt=""></p>
 <hr>
 <p>【注意】正确的做法应该是选择<code>Load Bundle</code>选项才对</p>
 <hr>
@@ -377,18 +374,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2015/07/08/iTerm_2&&Oh_My_Zsh/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/07/15/iOS-Grand-Central-Dispatch/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          iTerm 2 &amp;&amp; Oh My Zsh「DIY教程」
+          Grand Central Dispatch
         
       </div>
     </a>
   
   
-    <a href="/2015/01/23/iOS-TabBar-hidesBottomBarWhenPushed/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">解决TabBar隐藏与显现hidesBottomBarWhenPushed问题</div>
+    <a href="/2015/07/08/iTerm_2&&Oh_My_Zsh/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iTerm 2 &amp;&amp; Oh My Zsh「DIY教程」</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -584,11 +581,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+                <a href="javascript:void(0)" class="js-tag color5">年中总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -600,14 +601,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">年中总结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">终端</a>
               </li>
              
@@ -616,7 +609,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Gem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -628,7 +629,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -640,15 +641,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -660,19 +661,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -681,6 +674,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -708,6 +705,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Autolayout</a>
               </li>
              
@@ -716,7 +717,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
+                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -724,19 +729,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GCD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -745,6 +738,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -768,11 +765,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件预览</a>
+                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -784,7 +777,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
+                <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件预览</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -800,10 +805,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
               </li>
              
@@ -813,10 +814,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -832,7 +829,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
+                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -852,11 +849,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DIY</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+                <a href="javascript:void(0)" class="js-tag color4">DIY</a>
               </li>
             
             <div class="clearfix"></div>
