@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>superdanny.link/2018/06/26/iOS-StaticLibrary-Framework/</loc>
+    <lastmod>2018-07-28T11:04:35.136Z</lastmod>
+    <data>
+        <display>
+        <title>iOS静态库实战之Framework</title>
+        <pubTime>2018-06-26T14:55:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>Xcode</tag>
+         
+        <tag>Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2015/07/27/Swift-Series-CollectionType/</loc>
     <lastmod>2018-07-19T03:37:23.458Z</lastmod>
     <data>
@@ -77,30 +101,6 @@
          
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2018/06/26/iOS-StaticLibrary-Framework/</loc>
-    <lastmod>2018-06-27T09:55:02.945Z</lastmod>
-    <data>
-        <display>
-        <title>iOS静态库实战之Framework</title>
-        <pubTime>2018-06-26T14:55:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-        <tag>Xcode</tag>
-         
-        <tag>Framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
         </display>
     </data>
     </url>
@@ -611,9 +611,9 @@
         
         <tag>iOS</tag>
          
-        <tag>iOS9</tag>
-         
         <tag>In-House</tag>
+         
+        <tag>iOS9</tag>
          
         <tag>企业级证书打包</tag>
          
@@ -1681,14 +1681,16 @@
 
     
   <url>
-    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
+    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>指定UIView的特定角为圆角</title>
-        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
+        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
+        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
         
         <tag>iOS</tag>
+         
+        <tag>长按文本框</tag>
          
          
            
@@ -1701,16 +1703,14 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
+    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
-        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
+        <title>指定UIView的特定角为圆角</title>
+        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
         
         <tag>iOS</tag>
-         
-        <tag>长按文本框</tag>
          
          
            
