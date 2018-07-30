@@ -79,7 +79,7 @@
     <link href="superdanny.link/2018/06/26/iOS-StaticLibrary-Framework/"/>
     <id>superdanny.link/2018/06/26/iOS-StaticLibrary-Framework/</id>
     <published>2018-06-26T14:55:00.000Z</published>
-    <updated>2018-07-28T11:04:35.136Z</updated>
+    <updated>2018-07-30T03:52:36.839Z</updated>
     
     <content type="html"><![CDATA[<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>由于喜欢琢磨一些技术，这块领域其实已经好多年就有人发表相关的技术文章，但是自己没有亲手实战一次还真不能说是自己学到这门技术。前段时间研究了一下并动手做了一个静态库。效果挺好，也达到了我想要的预期结果并运用到了我实际项目中。今天重新翻看了一些资料，发现还有完善的地方，特意记录一下，方便后期查阅。</p>
 <a id="more"></a> 
@@ -107,22 +107,19 @@
 <h2 id="制作Framework静态库，同时引用第三方类库"><a href="#制作Framework静态库，同时引用第三方类库" class="headerlink" title="制作Framework静态库，同时引用第三方类库"></a>制作Framework静态库，同时引用第三方类库</h2><p>我们有时候封装一个静态库可能会引用到第三方的类库，这个时候，如果我们直接将类库封装进入静态库里面的话，刚好其他工程里面也存在这个类库，那么就容易引起冲突。解决的方案也是有的：<br>方案1：直接修改其中一个类库重命名(这种方式不是很好)<br>方案2：分离类库，不将第三方类库打入静态库类，只保留引用(此方式要求其他工程手动引入第三方类库)</p>
 <p>下面我会以方案2进行实战讲解。</p>
 <p>新建工程的步骤同上面是一样的，这里就不多讲，直接从引入第三方类库开始。</p>
-<h3 id="方式一：直接拖拽第三方类库到工程并生成静态库"><a href="#方式一：直接拖拽第三方类库到工程并生成静态库" class="headerlink" title="方式一：直接拖拽第三方类库到工程并生成静态库"></a>方式一：直接拖拽第三方类库到工程并生成静态库</h3><ol>
-<li>将需要的类库拖拽进工程里面<br> <img src="http://wx1.sinaimg.cn/mw690/81f8a509gy1ftpk6kc2e6j20f00comya.jpg" alt="第三方"></li>
-<li>直接在需要使用的地方导入头文件<br> <img src="http://wx4.sinaimg.cn/mw690/81f8a509gy1ftpk6jxuclj218w0gq774.jpg" alt="导入头文件并实现相关方法"></li>
-<li>接下来就是跟之前一样用脚本打包的方式生成对应的通用静态库</li>
-</ol>
-<h3 id="方式二：通过CocoaPods方式引用第三方类库并生成静态库"><a href="#方式二：通过CocoaPods方式引用第三方类库并生成静态库" class="headerlink" title="方式二：通过CocoaPods方式引用第三方类库并生成静态库"></a>方式二：通过CocoaPods方式引用第三方类库并生成静态库</h3><ol>
-<li><p>跟平时使用CocoaPods方式一样，我们在<code>Podfile</code>文件里面写上需要使用的第三方类库</p>
- <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">platform :ios, "9.0"</div><div class="line"></div><div class="line">target 'TestFramework' do</div><div class="line">    pod 'MBProgressHUD'</div><div class="line">end</div></pre></td></tr></table></figure>
-</li>
-<li><p>之后我们配置下Scheme<br> <img src="http://wx2.sinaimg.cn/large/81f8a509gy1ftpowjwqn6j20rs0fnabk.jpg" alt="配置Scheme"></p>
-</li>
-<li>分别选择模拟器跟真机编译两个不同版本静态库<br> <img src="http://wx4.sinaimg.cn/mw690/81f8a509gy1ftpq61wmpsj20nq0dgmzr.jpg" alt="编译静态库"></li>
-<li><p>将编译好的两个<code>.framework</code>静态库用指令合并成一个</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lipo -create xFramework-iphoneos.framework/xFramework xFramework-iphonesimulator.framework/xFramework -output /Users/superdanny/Downloads/framework/xFramework(xFramework为合成后的静态库名称)</div></pre></td></tr></table></figure>
-</li>
-</ol>
+<h3 id="方式一：直接拖拽第三方类库到工程并生成静态库"><a href="#方式一：直接拖拽第三方类库到工程并生成静态库" class="headerlink" title="方式一：直接拖拽第三方类库到工程并生成静态库"></a>方式一：直接拖拽第三方类库到工程并生成静态库</h3><p>1、将需要的类库拖拽进工程里面<br><img src="http://wx1.sinaimg.cn/mw690/81f8a509gy1ftpk6kc2e6j20f00comya.jpg" alt="第三方"></p>
+<p>2、直接在需要使用的地方导入头文件<code>#import &quot;MBProgressHUD.h&quot;</code><br><img src="http://wx4.sinaimg.cn/mw690/81f8a509gy1ftpk6jxuclj218w0gq774.jpg" alt="导入头文件并实现相关方法"></p>
+<p>3、接下来就是跟之前一样用脚本打包的方式生成对应的通用静态库</p>
+<h3 id="方式二：通过CocoaPods方式引用第三方类库并生成静态库"><a href="#方式二：通过CocoaPods方式引用第三方类库并生成静态库" class="headerlink" title="方式二：通过CocoaPods方式引用第三方类库并生成静态库"></a>方式二：通过CocoaPods方式引用第三方类库并生成静态库</h3><p>1、跟平时使用CocoaPods方式一样，我们在<code>Podfile</code>文件里面写上需要使用的第三方类库</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">platform :ios, "9.0"</div><div class="line">    </div><div class="line">target 'TestFramework' do</div><div class="line">    pod 'MBProgressHUD'</div><div class="line">end</div></pre></td></tr></table></figure>
+<p>2、之后我们配置下Scheme<br><img src="http://wx2.sinaimg.cn/large/81f8a509gy1ftpowjwqn6j20rs0fnabk.jpg" alt="配置Scheme"></p>
+<p>3、分别选择模拟器跟真机编译两个不同版本静态库<br><img src="http://wx4.sinaimg.cn/mw690/81f8a509gy1ftpq61wmpsj20nq0dgmzr.jpg" alt="编译静态库"></p>
+<p>4、将编译好的两个<code>.framework</code>静态库用指令合并成一个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lipo -create xFramework-iphoneos.framework/xFramework xFramework-iphonesimulator.framework/xFramework -output /Users/superdanny/Downloads/framework/xFramework(xFramework为合成后的静态库名称)</div></pre></td></tr></table></figure>
+<p>这里需要注意一点，当我们的<code>-output</code>导出路径参数设置不同时，产生的结果也会不同。</p>
+<p>结果1：比如有<code>/Users/superdanny/Downloads/framework</code>这个目录的时候，将导出路径参数设置为<code>/Users/superdanny/Downloads/framework</code>。那么就会产生一个跟<code>framework</code>文件夹同级且同名的<code>framework.lipo</code>的文件。同时终端也会报一个错误，这种情况，我们只需要将后缀<code>.lipo</code>去掉，并且将文件名改为静态库名称。然后执行下文图片中说到的替换操作。</p>
+<p>结果2：同样有<code>/Users/superdanny/Downloads/framework</code>这个目录的时候，但是我们将导出路径参数设置为<code>/Users/superdanny/Downloads/framework/xFramework</code>。此时就会在<code>framework</code>文件夹下产生一个名为<code>xFramework</code>的文件。之后我们直接执行下文图片中说到的替换操作即可。</p>
+<p>正确的做法应该是用第二种。</p>
 <p><strong>指令参数说明</strong></p>
 <table>
 <thead>
