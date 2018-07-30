@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://wx1.sinaimg.cn/large/81f8a509gy1ftpr2htp1ej20rg0loq7a.jpg">
 <meta property="og:image" content="http://wx3.sinaimg.cn/large/81f8a509gy1ftprw8lsujj21qi17q7e6.jpg">
 <meta property="og:image" content="http://wx3.sinaimg.cn/large/81f8a509gy1ftpry8yj0bj206f0dwq8x.jpg">
-<meta property="og:updated_time" content="2018-07-30T03:52:36.839Z">
+<meta property="og:updated_time" content="2018-07-30T03:54:25.901Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS静态库实战之Framework">
 <meta name="twitter:description" content="需求由于喜欢琢磨一些技术，这块领域其实已经好多年就有人发表相关的技术文章，但是自己没有亲手实战一次还真不能说是自己学到这门技术。前段时间研究了一下并动手做了一个静态库。效果挺好，也达到了我想要的预期结果并运用到了我实际项目中。今天重新翻看了一些资料，发现还有完善的地方，特意记录一下，方便后期查阅。">
@@ -278,7 +278,7 @@ var _hmt = _hmt || [];
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 没有添加armv7s之前的支持架构</span></div><div class="line">$ lipo -info /Users/superdanny/Out/动态包/CoreAppStatus/Products/CoreAppStatus.framework/CoreAppStatus</div><div class="line">$ Architectures <span class="keyword">in</span> the fat file: /Users/superdanny/Out/动态包/CoreAppStatus/Products/CoreAppStatus.framework/CoreAppStatus are: armv7 i386 x86_64 arm64</div><div class="line"><span class="comment"># 添加armv7s之后的支持架构</span></div><div class="line">$ lipo -info /Users/superdanny/Out/动态包/CoreAppStatus/Products/CoreAppStatus.framework/CoreAppStatus</div><div class="line">$ Architectures <span class="keyword">in</span> the fat file: /Users/superdanny/Out/动态包/CoreAppStatus/Products/CoreAppStatus.framework/CoreAppStatus are: armv7 armv7s i386 x86_64 arm64</div></pre></td></tr></table></figure>
 <h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>我们新建一个工程<code>Test-Framework</code>，然后集成我们的静态库，编写测试用例。<br><img src="http://wx3.sinaimg.cn/large/81f8a509gy1ftprw8lsujj21qi17q7e6.jpg" alt="集成并测试"></p>
 <p>来看看最后集成静态库Demo展示效果：<br><img src="http://wx3.sinaimg.cn/large/81f8a509gy1ftpry8yj0bj206f0dwq8x.jpg" alt="效果"></p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://www.cocoachina.com/ios/20161012/17730.html" target="_blank" rel="external">iOS中.a与.framework库的区别</a><br><a href="http://www.cocoachina.com/ios/20141126/10322.html" target="_blank" rel="external">Xcode 6制作动态及静态Framework</a><br><a href="https://www.jianshu.com/p/99a5ac602123" target="_blank" rel="external">关于ios开发framework及.a文件支持架构判断以及合并</a><br><a href="https://www.jianshu.com/p/d643c1368c9d" target="_blank" rel="external">IOS-静态库(.a、framewrok)、动态库(.tbd、framework)、Bundle制作(适用于静态库的)研究</a></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://www.cocoachina.com/ios/20161012/17730.html" target="_blank" rel="external">iOS中.a与.framework库的区别</a><br><a href="http://www.cocoachina.com/ios/20141126/10322.html" target="_blank" rel="external">Xcode 6制作动态及静态Framework</a><br><a href="https://www.jianshu.com/p/99a5ac602123" target="_blank" rel="external">关于ios开发framework及.a文件支持架构判断以及合并</a><br><a href="http://www.code4app.com/blog-873055-3385.html" target="_blank" rel="external">iOS Xcode9 封装生成.framework</a><br><a href="https://www.jianshu.com/p/d643c1368c9d" target="_blank" rel="external">IOS-静态库(.a、framewrok)、动态库(.tbd、framework)、Bundle制作(适用于静态库的)研究</a></p>
 <hr>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
 <p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
@@ -605,23 +605,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">年中总结</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+                <a href="javascript:void(0)" class="js-tag color3">打赏</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -630,6 +622,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">brew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -661,15 +661,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -701,15 +701,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Swift</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -729,6 +729,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Autolayout</a>
               </li>
              
@@ -737,23 +745,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -765,11 +765,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
+                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -781,19 +789,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
+                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -817,6 +817,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打包</a>
               </li>
              
@@ -833,7 +837,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -841,7 +845,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
+                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -857,19 +861,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
               </li>
              
               <li class="article-tag-list-item">
