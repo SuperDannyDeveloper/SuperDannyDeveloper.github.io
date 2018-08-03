@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="superdanny.link/"/>
-  <updated>2018-08-03T07:37:45.065Z</updated>
+  <updated>2018-08-03T10:09:36.758Z</updated>
   <id>superdanny.link/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="superdanny.link/2018/07/31/CocoaPods-private-podspec/"/>
     <id>superdanny.link/2018/07/31/CocoaPods-private-podspec/</id>
     <published>2018-07-31T11:21:00.000Z</published>
-    <updated>2018-08-03T07:37:45.065Z</updated>
+    <updated>2018-08-03T10:09:36.758Z</updated>
     
     <content type="html"><![CDATA[<p>随着公司的发展，团队也越来越庞大，那么随着项目的增多，我们越来越感觉到重复工作越来越频繁，所以封装了很多工具，第三方库等等便于集成。但是集成的方式非常低效，都是直接将需要用到的类添加到工程里面。这样子不便于管理。所以搭建私有库非常有必要。本篇文章需要有一定的知识基础。</p>
 <a id="more"></a>
@@ -77,14 +77,13 @@
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 本地校验</span></div><div class="line">pod lib lint</div><div class="line"><span class="comment"># 远程校验</span></div><div class="line">pod spec lint</div></pre></td></tr></table></figure>
 <p>这里说明下，最好加上参数，便于定位问题。所以应该是如下写法：</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 本地校验--allow-warnings忽略编译警告，--verbose打印日志，--use-libraries(有引用framwork框架或C语言库时，需加入此参数)，XXModule.podspec(指定校验仓库，不指定时会遍历当前目录所有仓库)</span></div><div class="line">pod lib lint --allow-warnings XXModule.podspec --verbose --use-libraries</div><div class="line"><span class="comment"># 远程校验</span></div><div class="line">pod spec lint --allow-warnings XXModule.podspec --verbose --use-libraries</div></pre></td></tr></table></figure>
-<h3 id="上传索引库"><a href="#上传索引库" class="headerlink" title="上传索引库"></a>上传索引库</h3><p>本地跟远程校验都成功之后，我们cd到本地的索引库目录下，执行<code>pod repo update XXModule</code>更新指定索引库。<br>最后更新索引文件到远端私有库上面，执行以下指令</p>
+<h3 id="上传索引库"><a href="#上传索引库" class="headerlink" title="上传索引库"></a>上传索引库</h3><p>本地跟远程校验都成功之后，我们就可以更新索引文件到本地索引库跟远端私有库上面，执行以下指令</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># pod repo push 索引库名 索引文件名 </span></div><div class="line"><span class="comment"># --allow-warnings忽略编译警告，--use-libraries(有引用framwork框架或C语言库时，需加入此参数)</span></div><div class="line">pod repo push XXModule XXModule.podspec --use-libraries --allow-warnings</div></pre></td></tr></table></figure>
-<p>我们在编译类库时，难免存在警告，最好先解决警告，再编译检查。但是，如果需要忽略编译警告，则要添加额外参数<code>--allow-warnings</code>设置。<br><strong>【出现问题】</strong><br>如果执行上面的指令的时候出错，提示<strong>[!] The repo `XXModule` at `../../../.cocoapods/repos/XXModule` is not clean</strong></p>
-<p><strong>网上方法(解决方案对我的情况无效)</strong></p>
 <blockquote>
-<p>方法一：git clean -f<br>方法二：git stash<br>方法三：删除spec repo下的Specs仓库，我这里的是<code>XXModule</code>，然后重新从git上将私有仓库Clone下来。</p>
+<p>说明：这个命令，其实先把索引文件推送到本地CocoaPods的索引库，在由本地的CocoaPods推送到我们的远程私有索引库。所以，这一步操作之后，CocoaPods索引库和我们远程私有索引库都有了这个索引文件，不用再去推送到本地CocoaPods索引库了。</p>
 </blockquote>
-<p>而我的实际情况是，我发现一开始搭建CocoaPods时，使用了官方的模板指令<code>pod lib create 远程仓库名</code>创建的工程，都会帮我们创建两个文件夹。一个是<code>Classes</code>，另一个是<code>Assets</code>，当我们执行<code>pod repo update XXModule</code>更新索引库的指令之后，这两个文件夹也会跟着被下载到索引库里面，这个时候我们不能删除他们，而是直接执行上面的<code>pod repo push 索引库名 索引文件名</code>指令之后再删除即可。</p>
+<p>我们在编译类库时，难免存在警告，最好先解决警告，再编译检查。但是，如果需要忽略编译警告，则要添加额外参数<code>--allow-warnings</code>设置。</p>
+<p>另外一开始搭建CocoaPods时，使用了官方的模板指令<code>pod lib create 远程仓库名</code>创建的工程，都会帮我们创建两个文件夹。一个是<code>Classes</code>，另一个是<code>Assets</code>，当我们执行<code>pod repo push 索引库名 索引文件名 --use-libraries --allow-warnings</code>更新索引库的指令之后，这两个文件夹也会跟着被下载到本地索引库里面，等执行完上面的指令之后再删除即可。不然本地测试会报错。</p>
 <h3 id="测试本地跟远端"><a href="#测试本地跟远端" class="headerlink" title="测试本地跟远端"></a>测试本地跟远端</h3><p>最后我们在以后项目的<code>Podfile</code>文件里面只需要如下写法即可：</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">source <span class="string">'https://xxx@bitbucket.org/xxx/xxmodule.git'</span></div><div class="line">source <span class="string">'https://github.com/CocoaPods/Specs.git'</span></div><div class="line"></div><div class="line">platform <span class="symbol">:ios</span>, <span class="string">'8.0'</span></div><div class="line"></div><div class="line">target <span class="string">'XXModule_Example'</span> <span class="keyword">do</span></div><div class="line">    pod <span class="string">'XXModule/XXScanA'</span>,<span class="string">'~&gt; 0.1.0'</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 <p>终端运行<code>pod install</code>后，会默认从<code>GitHub</code>上搜索公开库，因此，我们需要在<code>Podfile</code>上指明我们的私有库的地址，在<code>Podfile</code>最顶部添加如下代码：</p>
