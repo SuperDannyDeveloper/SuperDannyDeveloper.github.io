@@ -4,8 +4,58 @@
 
     
   <url>
+    <loc>superdanny.link/2018/07/31/CocoaPods-private-podspec/</loc>
+    <lastmod>2018-08-03T07:32:19.277Z</lastmod>
+    <data>
+        <display>
+        <title>CocoaPods之iOS组件化开发:远程私有库</title>
+        <pubTime>2018-07-31T11:21:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>终端</tag>
+         
+        <tag>CocoaPods</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2018/06/19/iOS-AppleDoc/</loc>
+    <lastmod>2018-08-01T07:49:35.400Z</lastmod>
+    <data>
+        <display>
+        <title>使用AppleDoc快速生成iOS开发文档</title>
+        <pubTime>2018-06-19T02:30:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>Xcode</tag>
+         
+        <tag>工具</tag>
+         
+        <tag>AppleDoc</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2018/06/26/iOS-StaticLibrary-Framework/</loc>
-    <lastmod>2018-07-30T03:54:25.901Z</lastmod>
+    <lastmod>2018-07-30T05:54:07.456Z</lastmod>
     <data>
         <display>
         <title>iOS静态库实战之Framework</title>
@@ -101,32 +151,6 @@
          
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2018/06/19/iOS-AppleDoc/</loc>
-    <lastmod>2018-06-21T01:10:39.732Z</lastmod>
-    <data>
-        <display>
-        <title>使用AppleDoc快速生成iOS开发文档</title>
-        <pubTime>2018-06-19T02:30:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-        <tag>Xcode</tag>
-         
-        <tag>工具</tag>
-         
-        <tag>AppleDoc</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
-          
         </display>
     </data>
     </url>
@@ -1681,14 +1705,16 @@
 
     
   <url>
-    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
+    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>指定UIView的特定角为圆角</title>
-        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
+        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
+        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
         
         <tag>iOS</tag>
+         
+        <tag>长按文本框</tag>
          
          
            
@@ -1701,16 +1727,14 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
+    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
-        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
+        <title>指定UIView的特定角为圆角</title>
+        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
         
         <tag>iOS</tag>
-         
-        <tag>长按文本框</tag>
          
          
            

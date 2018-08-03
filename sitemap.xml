@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>superdanny.link/2018/07/31/CocoaPods-private-podspec/</loc>
+    
+    <lastmod>2018-08-03T07:32:19.277Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2018/06/19/iOS-AppleDoc/</loc>
+    
+    <lastmod>2018-08-01T07:49:35.400Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>superdanny.link/2018/06/26/iOS-StaticLibrary-Framework/</loc>
     
-    <lastmod>2018-07-30T03:54:25.901Z</lastmod>
+    <lastmod>2018-07-30T05:54:07.456Z</lastmod>
     
   </url>
   
@@ -33,13 +47,6 @@
     <loc>superdanny.link/2018/07/03/2018-Mid-year-work-summary/</loc>
     
     <lastmod>2018-07-09T03:12:29.382Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2018/06/19/iOS-AppleDoc/</loc>
-    
-    <lastmod>2018-06-21T01:10:39.732Z</lastmod>
     
   </url>
   
@@ -576,14 +583,14 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
+    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
     
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
+    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
     
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     

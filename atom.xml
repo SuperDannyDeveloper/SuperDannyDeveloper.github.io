@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="superdanny.link/"/>
-  <updated>2018-07-09T03:12:29.382Z</updated>
+  <updated>2018-08-03T07:32:19.277Z</updated>
   <id>superdanny.link/</id>
   
   <author>
@@ -14,6 +14,105 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CocoaPods之iOS组件化开发:远程私有库</title>
+    <link href="superdanny.link/2018/07/31/CocoaPods-private-podspec/"/>
+    <id>superdanny.link/2018/07/31/CocoaPods-private-podspec/</id>
+    <published>2018-07-31T11:21:00.000Z</published>
+    <updated>2018-08-03T07:32:19.277Z</updated>
+    
+    <content type="html"><![CDATA[<p>随着公司的发展，团队也越来越庞大，那么随着项目的增多，我们越来越感觉到重复工作越来越频繁，所以封装了很多工具，第三方库等等便于集成。但是集成的方式非常低效，都是直接将需要用到的类添加到工程里面。这样子不便于管理。所以搭建私有库非常有必要。本篇文章需要有一定的知识基础。</p>
+<a id="more"></a>
+<h2 id="创建私有库"><a href="#创建私有库" class="headerlink" title="创建私有库"></a>创建私有库</h2><p>搭建私有库有两种方案：一种是搭建在公司服务器(内网/外网)上，另一种是托管在第三方平台上面。目前我使用的是第二套方案。<br>由于是私有库，GitHub私有库是收费的，加上没资金(<del>穷</del>)所以没办法放在上面，只能选择其他平台，目前可支持免费私有库的平台有<a href="https://coding.net/" target="_blank" rel="external">Coding</a>，<a href="https://gitee.com/" target="_blank" rel="external">码云</a>，<a href="https://bitbucket.org/" target="_blank" rel="external">Bitbucket</a>等。<br>我们先创建一个私有库，我选择的是<a href="https://bitbucket.org/" target="_blank" rel="external">Bitbucket</a>平台。因为私有库数量没有限制，所以暂且选择这个平台。说干就干！<br><img src="http://wx3.sinaimg.cn/large/81f8a509gy1ftu81ipfu8j20yk0p2q64.jpg" alt="创建私有库"><br>然后我们将私有库Clone到本地，本次选用<a href="https://www.sourcetreeapp.com/" target="_blank" rel="external">Sourcetree</a>进行管理。</p>
+<h2 id="创建本地CocoaPods索引库"><a href="#创建本地CocoaPods索引库" class="headerlink" title="创建本地CocoaPods索引库"></a>创建本地CocoaPods索引库</h2><p>关于CocoaPods的，我之前有文章写过相关知识的，需要脑补的童鞋先过一遍。<br><a href="/2014/12/16/CocoaPods/">CocoaPods安装过程</a><br><a href="/2016/12/04/CocoaPods-update-gem-and-repo/">CocoaPods之repo换源和gem换源</a><br><a href="/2016/01/18/Remove-CocoaPods-from-project/">如何从项目中移除CocoaPods(译)</a></p>
+<p>接下来我们继续，一般我们安装CocoaPods之后会在本地有一个仓库，仓库里面会有所有使用CocoaPods的开源项目的索引库。<br><img src="http://wx2.sinaimg.cn/large/81f8a509gy1ftu81j2x77j21vq0qcagi.jpg" alt="CocoaPods索引库"><br>现在，把我们自己的远程索引库下载到本地，和CocoaPods的官方索引库在同一级目录。<br>在终端输入: <code>pod repo add 仓库名 仓库源地址(SSH地址)</code><br>例如我输入的是: <code>$ pod repo add XXModule https://XXX@bitbucket.org/Apple_Developer/xxmodule.git</code></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># pod repo add 仓库名 仓库源地址(SSH地址)</span></div><div class="line">pod repo add XXModule <span class="symbol">https:</span>/<span class="regexp">/XXX@bitbucket.org/</span>Apple_Developer/xxmodule.git</div></pre></td></tr></table></figure>
+<p>创建完后，会在多出一个目录，这个目录就是专门用于当做本地索引库用。我们也可以不创建，直接使用远程的就行。<br><img src="http://wx1.sinaimg.cn/large/81f8a509gy1ftu81i2x42j20y20fswfy.jpg" alt="本地远程索引库"></p>
+<h2 id="后续操作及补充说明"><a href="#后续操作及补充说明" class="headerlink" title="后续操作及补充说明"></a>后续操作及补充说明</h2><p>后续的操作这边直接引用网友写的一篇文章<a href="https://blog.csdn.net/xiaomuchong2016/article/details/78635376" target="_blank" rel="external">iOS组件化开发:远程私有库</a>，写的还算是比较细致的。这边做一个补充说明。<br>里面的大概步骤如下：<br>1、创建远程私有库<br>2、将私有库<code>Clone</code>到本地<br>3、创建本地索引库-指令<code>pod repo add 仓库名 仓库源地址(SSH地址)</code><br>4、创建一个模板库-指令<code>pod lib create 远程仓库名</code><br>5、将需要继承的类库添加到<code>Classes</code>文件夹下面，同时删除里面默认创建的<code>ReplaceMe.m</code>文件<br>6、再cd到测试工程目录，执行<code>pod install</code>指令会安装我们刚才拖入的类库<br>7、打开测试工程，已经有我们的类库了，现在配置<code>xxx.podspec</code>文件(文件具体说明详情见上面的文章)<br>8、本地仓库开发完毕之后，借助<a href="https://www.sourcetreeapp.com/" target="_blank" rel="external">Sourcetree</a>将整个工程push到远端私有库上面同时打一个<code>tag</code><br>10、<a href="/2018/07/31/CocoaPods-private-podspec/#校验">校验</a>操作，分本地跟远端校验<br>11、<a href="/2018/07/31/CocoaPods-private-podspec/#上传索引库">上传索引库</a>并在工程内测试</p>
+<h3 id="subspec子模块化"><a href="#subspec子模块化" class="headerlink" title="subspec子模块化"></a>subspec子模块化</h3><p>当我们封装了大量的组件之后，有时候只想使用其中的某一个组件，不希望一次性导入大量的组件时。子模块的优势就显现出来。<br><img src="http://wx2.sinaimg.cn/large/81f8a509gy1ftu81hnmkqj21c80bkdhs.jpg" alt="举个🌰"><br>比如我们在Classes目录下有<code>XXScanA</code>，<code>XXScanB</code>，<code>XXScanC</code>，<code>XXScanD</code>等多个组件，然后我的新项目只需要引入组件<code>XXScanA</code>，那么就需要在<code>.podspec</code>文件里面配置。具体配置如下：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">s.subspec <span class="string">'XXScanA'</span> <span class="keyword">do</span> <span class="params">|xxScanA|</span></div><div class="line">      xxScanA.source_files = <span class="string">'XXXModuleYModule/Classes/XXScanA/*.&#123;h,m&#125;'</span></div><div class="line">      xxScanA.libraries = <span class="string">'iconv'</span>,<span class="string">'z'</span></div><div class="line">      xxScanA.vendored_libraries  = <span class="string">'XXModule/Classes/ThirdParty/*.&#123;a&#125;'</span></div><div class="line">      xxScanA.resource     = <span class="string">'XXModule/Classes/LBXScan/UI/CodeScan.bundle'</span></div><div class="line">      xxScanA.dependency <span class="string">'ZBarSDK'</span>, <span class="string">'~&gt; 1.3.1'</span></div><div class="line">      xxScanA.dependency <span class="string">'XXModule/XXScanB'</span></div><div class="line">      xxScanA.ios.frameworks = <span class="string">'AVFoundation'</span>, <span class="string">'CoreGraphics'</span>, <span class="string">'CoreMedia'</span>, <span class="string">'CoreVideo'</span>, <span class="string">'ImageIO'</span>, <span class="string">'QuartzCore'</span></div><div class="line">      xxScanA.prefix_header_contents = <span class="string">'#import "xxx.h"'</span>,<span class="string">'#import "xxx.h"'</span></div><div class="line">  <span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p><strong>说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.source_files</td>
+<td>这里的路径是相对于.podspec文件位置的路径</td>
+</tr>
+<tr>
+<td>.libraries</td>
+<td>添加依赖的系统library</td>
+</tr>
+<tr>
+<td>.vendored_libraries</td>
+<td>添加第三方.a文件</td>
+</tr>
+<tr>
+<td>.resource</td>
+<td>如果有包含资源文件，则需要次参数</td>
+</tr>
+<tr>
+<td>.dependency</td>
+<td>添加第三方依赖</td>
+</tr>
+<tr>
+<td>.ios.frameworks</td>
+<td>添加依赖的系统framework</td>
+</tr>
+<tr>
+<td>.prefix_header_contents</td>
+<td>类似于pch文件，多个用逗号隔开</td>
+</tr>
+</tbody>
+</table>
+<h3 id="校验"><a href="#校验" class="headerlink" title="校验"></a>校验</h3><p>在将我们的私有库提交的时候，会先进行校验操作。这里说下我这边出现的情况以及使用对应的校验指令。<br>验证有两种，一种是本地校验<code>.podspec</code>文件，另一种是远程校验<code>.podspec</code>文件。<br>需要注意的是，校验需要cd到<code>.podspec</code>文件所在目录进行。远程校验需要事先将工程push到远端私有库上面，同时打上tag。<br>有时候我们可能在同一个tag上面进行多次修改，比如当前tag版本是<code>0.1.0</code>。这个时候，应该先将tag<code>0.1.0</code>移除，然后给最新的提交点重新打上tag<code>0.1.0</code>。</p>
+<p><strong>删除标签</strong><br><img src="http://wx1.sinaimg.cn/large/81f8a509gy1ftw9xpl454j20ou0bsgmu.jpg" alt="删除标签"></p>
+<p><strong>使用旧标签版本号</strong><br><img src="http://wx4.sinaimg.cn/large/81f8a509gy1ftw9xp3ouyj20q20g6760.jpg" alt="使用旧标签号"></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 本地校验</span></div><div class="line">pod lib lint</div><div class="line"><span class="comment"># 远程校验</span></div><div class="line">pod spec lint</div></pre></td></tr></table></figure>
+<p>这里说明下，最好加上参数，便于定位问题。所以应该是如下写法：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 本地校验--allow-warnings忽略编译警告，--verbose打印日志，--use-libraries(有引用framwork框架或C语言库时，需加入此参数)，XXModule.podspec(指定校验仓库，不指定时会遍历当前目录所有仓库)</span></div><div class="line">pod lib lint --allow-warnings XXModule.podspec --verbose --use-libraries</div><div class="line"><span class="comment"># 远程校验</span></div><div class="line">pod spec lint --allow-warnings XXModule.podspec --verbose --use-libraries</div></pre></td></tr></table></figure>
+<h3 id="上传索引库"><a href="#上传索引库" class="headerlink" title="上传索引库"></a>上传索引库</h3><p>本地跟远程校验都成功之后，我们cd到本地的索引库目录下，执行<code>pod repo update XXModule</code>更新指定索引库。<br>最后更新索引文件到远端私有库上面，执行以下指令</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># pod repo push 索引库名 索引文件名 </span></div><div class="line"><span class="comment"># --allow-warnings忽略编译警告，--use-libraries(有引用framwork框架或C语言库时，需加入此参数)</span></div><div class="line">pod repo push XXModule XXModule.podspec --use-libraries --allow-warnings</div></pre></td></tr></table></figure>
+<p>我们在编译类库时，难免存在警告，最好先解决警告，再编译检查。但是，如果需要忽略编译警告，则要添加额外参数<code>--allow-warnings</code>设置。<br><strong>【出现问题】</strong><br>如果执行上面的指令的时候出错，提示<strong>[!] The repo `XXModule` at `../../../.cocoapods/repos/XXModule` is not clean</strong></p>
+<p>网上方法(解决方案对我的情况无效)</p>
+<blockquote>
+<p>方法一：git clean -f<br>方法二：git stash<br>方法三：删除spec repo下的Specs仓库，我这里的是<code>XXModule</code>，然后重新从git上将私有仓库Clone下来。</p>
+</blockquote>
+<p>而我的实际情况是，我发现一开始搭建CocoaPods时，使用了官方的模板指令<code>pod lib create 远程仓库名</code>创建的工程，都会帮我们创建两个文件夹。一个是<code>Classes</code>，另一个是<code>Assets</code>，当我们执行<code>pod repo update XXModule</code>更新索引库的指令之后，这两个文件夹也会跟着被下载到索引库里面，这个时候我们不能删除他们，而是直接执行上面的<code>pod repo push 索引库名 索引文件名</code>指令之后再删除即可。</p>
+<h3 id="测试本地跟远端"><a href="#测试本地跟远端" class="headerlink" title="测试本地跟远端"></a>测试本地跟远端</h3><p>最后我们在以后项目的<code>Podfile</code>文件里面只需要如下写法即可：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">source <span class="string">'https://xxx@bitbucket.org/xxx/xxmodule.git'</span></div><div class="line">source <span class="string">'https://github.com/CocoaPods/Specs.git'</span></div><div class="line"></div><div class="line">platform <span class="symbol">:ios</span>, <span class="string">'8.0'</span></div><div class="line"></div><div class="line">target <span class="string">'XXModule_Example'</span> <span class="keyword">do</span></div><div class="line">    pod <span class="string">'XXModule/XXScanA'</span>,<span class="string">'~&gt; 0.1.0'</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>终端运行<code>pod install</code>后，会默认从<code>GitHub</code>上搜索公开库，因此，我们需要在<code>Podfile</code>上指明我们的私有库的地址，在<code>Podfile</code>最顶部添加如下代码：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 格式：source '私有/公有库地址'，可以放多个source</span></div><div class="line"></div><div class="line"><span class="comment"># 这个是GitHub上公有库的地址，没有这个，pod就不会去公有库查询，就不能下载公有库的东西</span></div><div class="line">source <span class="string">'https://github.com/CocoaPods/Specs.git'</span></div><div class="line"><span class="comment"># 这个是私有库的地址，如果没有这个，就不能下载私有库的东西</span></div><div class="line">source <span class="string">'https://xxx@bitbucket.org/xxx/xxmodule.git'</span></div></pre></td></tr></table></figure>
+<p><strong>最后大功告成！🎉</strong></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>教程相关：<br><a href="https://blog.csdn.net/xiaomuchong2016/article/details/78635376" target="_blank" rel="external">iOS组件化开发:远程私有库</a><br><a href="https://www.jianshu.com/p/3cd2cce42382" target="_blank" rel="external">CocoaPods集成和使用</a><br><a href="https://www.cnblogs.com/wengzilin/p/4760472.html" target="_blank" rel="external">创建CocoaPods私有podspec</a><br><a href="https://www.cnblogs.com/tufeibo/p/5654268.html" target="_blank" rel="external">COCOAPODS创建私有PODS</a><br><a href="https://www.jianshu.com/p/af29cf2ee69a" target="_blank" rel="external">创建私有CocoaPods仓库</a><br><a href="https://www.jianshu.com/p/d6a592d6fced" target="_blank" rel="external">使用私有Cocoapods仓库 中高级用法</a><br><a href="https://juejin.im/post/5a34eb6f51882572ca2f741b" target="_blank" rel="external">创建属于自己的私有库</a><br><a href="https://www.jianshu.com/p/0c640821b36f" target="_blank" rel="external">CocoaPods 私有仓库的创建（超详细）</a><br><a href="http://www.code4app.com/thread-11117-1-1.html" target="_blank" rel="external">iOS组件化解决方案(私有pod、热更新、个推、友盟等知识点）</a></p>
+<p>问题相关：<br><a href="https://blog.csdn.net/yishengzhiai005/article/details/73558673" target="_blank" rel="external">cocoapods迭代版本时，出现问题</a><br><a href="https://www.jianshu.com/p/9b3bb42652d5" target="_blank" rel="external">The NAME.podspec specification does not validate</a><br><a href="https://www.jianshu.com/p/283584683b0b" target="_blank" rel="external">Cocoapods项目添加Cocoapods支持遇到的坑</a><br><a href="https://www.jianshu.com/p/d0d269b4357c" target="_blank" rel="external">CocoaPods 问题和解决</a></p>
+<hr>
+<p>再一次感谢您花费时间阅读这篇文章！</p>
+<p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;随着公司的发展，团队也越来越庞大，那么随着项目的增多，我们越来越感觉到重复工作越来越频繁，所以封装了很多工具，第三方库等等便于集成。但是集成的方式非常低效，都是直接将需要用到的类添加到工程里面。这样子不便于管理。所以搭建私有库非常有必要。本篇文章需要有一定的知识基础。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Mac端" scheme="superdanny.link/categories/Mac%E7%AB%AF/"/>
+    
+    
+      <category term="iOS" scheme="superdanny.link/tags/iOS/"/>
+    
+      <category term="终端" scheme="superdanny.link/tags/%E7%BB%88%E7%AB%AF/"/>
+    
+      <category term="CocoaPods" scheme="superdanny.link/tags/CocoaPods/"/>
+    
+  </entry>
   
   <entry>
     <title>2018，我的年中工作总结</title>
@@ -79,7 +178,7 @@
     <link href="superdanny.link/2018/06/26/iOS-StaticLibrary-Framework/"/>
     <id>superdanny.link/2018/06/26/iOS-StaticLibrary-Framework/</id>
     <published>2018-06-26T14:55:00.000Z</published>
-    <updated>2018-07-30T03:54:25.901Z</updated>
+    <updated>2018-07-30T05:54:07.456Z</updated>
     
     <content type="html"><![CDATA[<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>由于喜欢琢磨一些技术，这块领域其实已经好多年就有人发表相关的技术文章，但是自己没有亲手实战一次还真不能说是自己学到这门技术。前段时间研究了一下并动手做了一个静态库。效果挺好，也达到了我想要的预期结果并运用到了我实际项目中。今天重新翻看了一些资料，发现还有完善的地方，特意记录一下，方便后期查阅。</p>
 <a id="more"></a> 
@@ -178,7 +277,7 @@
     <link href="superdanny.link/2018/06/19/iOS-AppleDoc/"/>
     <id>superdanny.link/2018/06/19/iOS-AppleDoc/</id>
     <published>2018-06-19T02:30:00.000Z</published>
-    <updated>2018-06-21T01:10:39.732Z</updated>
+    <updated>2018-08-01T07:49:35.400Z</updated>
     
     <content type="html"><![CDATA[<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>一个公司随着时间的推移会慢慢的成长起来，这也就意味着公司的队伍也会不断的壮大。在壮大的同时需要保证团队开发的规范性。这样有益于后期维护，同时也能够培养团队的协作能力。软件开发一直是公司的核心部门，那么作为 <strong>iOS开发部</strong> 的成员之一，就更应该积极做好各项工作。这次我就啰里啰嗦的整理一下网上的关于 <strong>AppleDoc</strong> 生成开发文档的相关知识点。此文章需要有一定的指令基础的童鞋学习，不然看了会比较吃力。有不懂的需要自行脑补一下，这里就不再累赘。</p>
 <a id="more"></a> 
@@ -194,7 +293,7 @@
 </li>
 <li>指令用法及参数说明</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 参考指令写法1(不生成docset文件)</span></div><div class="line">$ appledoc --no-create-docset --output ./doc --project-name <span class="string">"QQ"</span> --company-id <span class="string">"com.tencent.QQ"</span> --project-company <span class="string">"Tencent Inc."</span> /Users/superdanny/Desktop/QQ-Project/QQ/Views</div><div class="line"></div><div class="line"><span class="comment"># 参考指令写法2(不生成docset文件，参数使用“=”等号写法)</span></div><div class="line">$ appledoc --no-create-docset --output=<span class="string">"./doc"</span> --project-name=<span class="string">"QQ"</span> --company-id=<span class="string">"com.tencent.QQ"</span> --project-company=<span class="string">"Tencent Inc."</span> /Users/superdanny/Desktop/QQ-Project/QQ/Views</div><div class="line"></div><div class="line"><span class="comment"># 参考指令写法3(生成docset文件并指定生成路径)</span></div><div class="line">$ appledoc --output ./doc --project-name <span class="string">"QQ"</span> --company-id <span class="string">"com.tencent.QQ"</span> --project-company <span class="string">"Tencent Inc."</span> /Users/superdanny/Desktop/QQ-Project/QQ/Views --docset-install-path ./doc</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 参考指令写法1(不生成docset文件)</span></div><div class="line">$ appledoc --no-create-docset --output ./doc --project-name <span class="string">"QQ"</span> --company-id <span class="string">"com.tencent.QQ"</span> --project-company <span class="string">"Tencent Inc."</span> /Users/superdanny/Desktop/QQ-Project/QQ/Views</div><div class="line"></div><div class="line"><span class="comment"># 参考指令写法2(不生成docset文件，参数使用“=”等号写法)</span></div><div class="line">$ appledoc --no-create-docset --output=<span class="string">"./doc"</span> --project-name=<span class="string">"QQ"</span> --company-id=<span class="string">"com.tencent.QQ"</span> --project-company=<span class="string">"Tencent Inc."</span> /Users/superdanny/Desktop/QQ-Project/QQ/Views</div><div class="line"></div><div class="line"><span class="comment"># 参考指令写法3(生成docset文件并指定生成路径)</span></div><div class="line">$ appledoc --output ./doc --project-name <span class="string">"QQ"</span> --company-id <span class="string">"com.tencent.QQ"</span> --project-company <span class="string">"Tencent Inc."</span> /Users/superdanny/Desktop/QQ-Project/QQ/Views --docset-install-path ./doc</div><div class="line"></div><div class="line"><span class="comment"># 以上都是扫描指定目录下的文件，如果想扫描当前目录所有文件，只需要将指定目录换成"."即可</span></div><div class="line">$ appledoc --no-create-docset --output=<span class="string">"./doc"</span> --project-name=<span class="string">"QQ"</span> --company-id=<span class="string">"com.tencent.QQ"</span> --project-company=<span class="string">"Tencent Inc."</span> .</div></pre></td></tr></table></figure>
 <h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><table>
 <thead>
 <tr>
@@ -229,7 +328,7 @@
 </tr>
 <tr>
 <td style="text-align:center">/Users/superdanny/Desktop/QQ-Project/QQ/Views</td>
-<td>扫描对应路径下的类</td>
+<td>扫描对应路径下的类，如果想扫描当前目录所有文件，则将此路径换成<code>.</code>即可</td>
 </tr>
 </tbody>
 </table>
@@ -1321,63 +1420,6 @@ b. this is line b
     <summary type="html">
     
       &lt;h3 id=&quot;开启吐槽模式&quot;&gt;&lt;a href=&quot;#开启吐槽模式&quot; class=&quot;headerlink&quot; title=&quot;开启吐槽模式&quot;&gt;&lt;/a&gt;开启吐槽模式&lt;/h3&gt;&lt;p&gt;为了迎合Xcode8所带来的更新，我是惊喜万分(&lt;del&gt;奔溃至极&lt;/del&gt;)。丝毫不敢怠慢，生怕跟不上入坑的队伍😂&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Mac端" scheme="superdanny.link/categories/Mac%E7%AB%AF/"/>
-    
-    
-      <category term="Xcode" scheme="superdanny.link/tags/Xcode/"/>
-    
-      <category term="iOS10" scheme="superdanny.link/tags/iOS10/"/>
-    
-      <category term="Xcode8" scheme="superdanny.link/tags/Xcode8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何优雅的使用Xcode8或iOS10 SDK</title>
-    <link href="superdanny.link/2016/09/16/How-to-use-Xcode8-or-iOS10_SDK/"/>
-    <id>superdanny.link/2016/09/16/How-to-use-Xcode8-or-iOS10_SDK/</id>
-    <published>2016-09-16T15:59:00.000Z</published>
-    <updated>2017-07-14T02:20:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>由于Xcode8 不再支持第三方插件，对于大部分开发者来说是一个噩耗！我也不例外，为了能够找到解决方案，我出去外面查阅了很多资料，总的来说有两种方案，一种是重签名Xcode8，另外一种是变相使用Xcode7.3.1运行iOS10 SDK。目前我采用的是方案二。</p>
-<a id="more"></a>
-<h3 id="方案一：重签名Xcode8"><a href="#方案一：重签名Xcode8" class="headerlink" title="方案一：重签名Xcode8"></a>方案一：重签名Xcode8</h3><p>本方案转载至<a href="https://medium.com/@vong9262" target="_blank" rel="external">Vong</a></p>
-<ol>
-<li>编译 MakeXcodeGr8Again 并且导出其 product (关于 MakeXcodeGr8Again，下文会详细说到)。</li>
-<li>退出 Xcode8，同时运行刚刚导出的 MakeXcodeGr8Again，将 Xcode8 拖入其中，等待一段时间(3~10分钟)。</li>
-<li>等菊花转完后，应用程序文件夹下会生成一个 XcodeGr8 的应用，运行命令 sudo xcode-select -s /Applications/XcodeGr8.app/Contents/Developer 将 Xcode 开发路径指向刚生成的 XcodeGr8。</li>
-<li>既然 Xcode8 的签名已被移除，那么就可以继续使用上面的修复插件失效代码。但是上面的脚本要稍微改一下就是把 Xcode.app 换成 XcodeGr8.app 即可。代码如下：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins -name Info.plist -maxdepth 3 | xargs -I&#123;&#125; defaults write &#123;&#125; DVTPlugInCompatibilityUUIDs -array-add `defaults read /Applications/XcodeGr8.app/Contents/Info.plist DVTPlugInCompatibilityUUID`</div></pre></td></tr></table></figure>
-<p>下面我们来看下步骤1提到的 MakeXcodeGr8Again，其 ReadMe 也有对应的介绍。这里大概摘录一下:</p>
-<blockquote>
-<p>苹果为了避免类似 <a href="https://en.wikipedia.org/wiki/XcodeGhost" target="_blank" rel="external">Xcode Ghost 👻</a> 事件的再次发生，Xcode8 禁用了插件机制，而开放了另一种形式：<a href="https://developer.apple.com/videos/play/wwdc2016/414/" target="_blank" rel="external">Source Editor extensions</a>，但是这种形式局限性太大。MakeXcodeGr8Again 只是去除了它的签名，这样使得 Xcode8 也可以继续使用插件了。由于签名被移除，所以它的安全性又重回 Xcode7 时代，也就是还有可能受到类似 Xcode Ghost 的攻击。所以不推荐用 XcodeGr8 来提交应用到 Appstore。Use at your own risk.</p>
-</blockquote>
-<h4 id="可能遇到的问题"><a href="#可能遇到的问题" class="headerlink" title="可能遇到的问题"></a>可能遇到的问题</h4><ol>
-<li>生成了 XcodeGr8 之后，打不开。 解决方法：重启。</li>
-<li>如果之前对其它版本的 Xcode-beat 也有使用这种方式，再对 Xcode8 GM 也是用该方式可能 MakeXcodeGr8Again 这个 APP 会一直闪退。 解决方法：卸载之前生成的 XcodeGr8，再重试。卸载后记得将开发路径重新指回原来的路径，即 sudo xcode-select -s /Applications/Xcode.app/Contents/Developer。如果这种方式还不行，卸载所有版本的 Xcode，然后再安装 GM 版，重复上述步骤。</li>
-<li>如果要卸载 XcodeGr8，记得将重新开发路径置回初始状态。</li>
-</ol>
-<p>最后，重要的事情说三遍：<br> <strong>不要使用 XcodeGr8 打包上传 Appstore，最好使用服务器打包，保证服务器 Xcode 是 Appstore 下载的！！！<br> 不要使用 XcodeGr8 打包上传 Appstore，最好使用服务器打包，保证服务器 Xcode 是 Appstore 下载的！！！<br> 不要使用 XcodeGr8 打包上传 Appstore，最好使用服务器打包，保证服务器 Xcode 是 Appstore 下载的！！！</strong></p>
-<h3 id="方案二：在Xcode7-3-1中使用iOS10-SDK"><a href="#方案二：在Xcode7-3-1中使用iOS10-SDK" class="headerlink" title="方案二：在Xcode7.3.1中使用iOS10 SDK"></a>方案二：在Xcode7.3.1中使用iOS10 SDK</h3><p>本方案来至<a href="http://stackoverflow.com/a/37945377" target="_blank" rel="external">how-use-xcode-7-with-ios-10</a></p>
-<p>文章的意思就是将Xcode8的iOS10 SDK拷贝到Xcode7上面，然后再创建一个软链接即可。</p>
-<p>You need use DeveloperDiskImage from Xcode 8. For this extract Xcode 8 app and copy DeveloperDiskImage for iOS 10 to your Xcode folder.</p>
-<p>Suppose you extract Xcode to /Applications/Xcode8.app</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp -r /Applications/Xcode8.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport/10.0\ \(14A345\) /Applications/Xcode7.3.1.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport</div></pre></td></tr></table></figure>
-<p>After copy DeveloperDiskImage you should start Xcode and connect iOS device to your mac.</p>
-<p>Edit:<br>With a standard Xcode install one can create a soft link:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo ln -s \</div><div class="line">/Applications/Xcode8.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport/10.0\ \(14A345\) \</div><div class="line">/Applications/Xcode7.3.1.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport/10.0</div></pre></td></tr></table></figure>
-<hr>
-<p>再一次感谢您花费时间阅读这篇文章！</p>
-<p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h3&gt;&lt;p&gt;由于Xcode8 不再支持第三方插件，对于大部分开发者来说是一个噩耗！我也不例外，为了能够找到解决方案，我出去外面查阅了很多资料，总的来说有两种方案，一种是重签名Xcode8，另外一种是变相使用Xcode7.3.1运行iOS10 SDK。目前我采用的是方案二。&lt;/p&gt;
     
     </summary>
     

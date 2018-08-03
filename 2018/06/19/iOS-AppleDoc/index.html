@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://wx2.sinaimg.cn/large/81f8a509gy1fsgfaqtm5tj21jg1fqdi0.jpg">
 <meta property="og:image" content="http://wx4.sinaimg.cn/large/81f8a509gy1fsgfared45j21lj1u0dht.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/large/81f8a509gy1fsglassz2oj21km3s0n1z.jpg">
-<meta property="og:updated_time" content="2018-06-21T01:10:39.732Z">
+<meta property="og:updated_time" content="2018-08-01T07:49:35.400Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用AppleDoc快速生成iOS开发文档">
 <meta name="twitter:description" content="需求一个公司随着时间的推移会慢慢的成长起来，这也就意味着公司的队伍也会不断的壮大。在壮大的同时需要保证团队开发的规范性。这样有益于后期维护，同时也能够培养团队的协作能力。软件开发一直是公司的核心部门，那么作为 iOS开发部 的成员之一，就更应该积极做好各项工作。这次我就啰里啰嗦的整理一下网上的关于 AppleDoc 生成开发文档的相关知识点。此文章需要有一定的指令基础的童鞋学习，不然看了会比较吃力">
@@ -210,7 +210,7 @@ var _hmt = _hmt || [];
 </li>
 <li>指令用法及参数说明</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 参考指令写法1(不生成docset文件)</span></div><div class="line">$ appledoc --no-create-docset --output ./doc --project-name <span class="string">"QQ"</span> --company-id <span class="string">"com.tencent.QQ"</span> --project-company <span class="string">"Tencent Inc."</span> /Users/superdanny/Desktop/QQ-Project/QQ/Views</div><div class="line"></div><div class="line"><span class="comment"># 参考指令写法2(不生成docset文件，参数使用“=”等号写法)</span></div><div class="line">$ appledoc --no-create-docset --output=<span class="string">"./doc"</span> --project-name=<span class="string">"QQ"</span> --company-id=<span class="string">"com.tencent.QQ"</span> --project-company=<span class="string">"Tencent Inc."</span> /Users/superdanny/Desktop/QQ-Project/QQ/Views</div><div class="line"></div><div class="line"><span class="comment"># 参考指令写法3(生成docset文件并指定生成路径)</span></div><div class="line">$ appledoc --output ./doc --project-name <span class="string">"QQ"</span> --company-id <span class="string">"com.tencent.QQ"</span> --project-company <span class="string">"Tencent Inc."</span> /Users/superdanny/Desktop/QQ-Project/QQ/Views --docset-install-path ./doc</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 参考指令写法1(不生成docset文件)</span></div><div class="line">$ appledoc --no-create-docset --output ./doc --project-name <span class="string">"QQ"</span> --company-id <span class="string">"com.tencent.QQ"</span> --project-company <span class="string">"Tencent Inc."</span> /Users/superdanny/Desktop/QQ-Project/QQ/Views</div><div class="line"></div><div class="line"><span class="comment"># 参考指令写法2(不生成docset文件，参数使用“=”等号写法)</span></div><div class="line">$ appledoc --no-create-docset --output=<span class="string">"./doc"</span> --project-name=<span class="string">"QQ"</span> --company-id=<span class="string">"com.tencent.QQ"</span> --project-company=<span class="string">"Tencent Inc."</span> /Users/superdanny/Desktop/QQ-Project/QQ/Views</div><div class="line"></div><div class="line"><span class="comment"># 参考指令写法3(生成docset文件并指定生成路径)</span></div><div class="line">$ appledoc --output ./doc --project-name <span class="string">"QQ"</span> --company-id <span class="string">"com.tencent.QQ"</span> --project-company <span class="string">"Tencent Inc."</span> /Users/superdanny/Desktop/QQ-Project/QQ/Views --docset-install-path ./doc</div><div class="line"></div><div class="line"><span class="comment"># 以上都是扫描指定目录下的文件，如果想扫描当前目录所有文件，只需要将指定目录换成"."即可</span></div><div class="line">$ appledoc --no-create-docset --output=<span class="string">"./doc"</span> --project-name=<span class="string">"QQ"</span> --company-id=<span class="string">"com.tencent.QQ"</span> --project-company=<span class="string">"Tencent Inc."</span> .</div></pre></td></tr></table></figure>
 <h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><table>
 <thead>
 <tr>
@@ -245,7 +245,7 @@ var _hmt = _hmt || [];
 </tr>
 <tr>
 <td style="text-align:center">/Users/superdanny/Desktop/QQ-Project/QQ/Views</td>
-<td>扫描对应路径下的类</td>
+<td>扫描对应路径下的类，如果想扫描当前目录所有文件，则将此路径换成<code>.</code>即可</td>
 </tr>
 </tbody>
 </table>
@@ -687,19 +687,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -711,11 +699,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -727,11 +723,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -743,11 +735,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -759,7 +759,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -767,11 +767,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -783,10 +787,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
@@ -795,7 +795,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
+                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -803,7 +803,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
+                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -816,14 +824,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -867,19 +867,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件预览</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">键盘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件预览</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -939,15 +939,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">iOS9</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">企业级证书打包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
               </li>
              
               <li class="article-tag-list-item">
