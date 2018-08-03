@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="superdanny.link/"/>
-  <updated>2018-08-03T07:32:19.277Z</updated>
+  <updated>2018-08-03T07:37:45.065Z</updated>
   <id>superdanny.link/</id>
   
   <author>
@@ -20,13 +20,13 @@
     <link href="superdanny.link/2018/07/31/CocoaPods-private-podspec/"/>
     <id>superdanny.link/2018/07/31/CocoaPods-private-podspec/</id>
     <published>2018-07-31T11:21:00.000Z</published>
-    <updated>2018-08-03T07:32:19.277Z</updated>
+    <updated>2018-08-03T07:37:45.065Z</updated>
     
     <content type="html"><![CDATA[<p>随着公司的发展，团队也越来越庞大，那么随着项目的增多，我们越来越感觉到重复工作越来越频繁，所以封装了很多工具，第三方库等等便于集成。但是集成的方式非常低效，都是直接将需要用到的类添加到工程里面。这样子不便于管理。所以搭建私有库非常有必要。本篇文章需要有一定的知识基础。</p>
 <a id="more"></a>
 <h2 id="创建私有库"><a href="#创建私有库" class="headerlink" title="创建私有库"></a>创建私有库</h2><p>搭建私有库有两种方案：一种是搭建在公司服务器(内网/外网)上，另一种是托管在第三方平台上面。目前我使用的是第二套方案。<br>由于是私有库，GitHub私有库是收费的，加上没资金(<del>穷</del>)所以没办法放在上面，只能选择其他平台，目前可支持免费私有库的平台有<a href="https://coding.net/" target="_blank" rel="external">Coding</a>，<a href="https://gitee.com/" target="_blank" rel="external">码云</a>，<a href="https://bitbucket.org/" target="_blank" rel="external">Bitbucket</a>等。<br>我们先创建一个私有库，我选择的是<a href="https://bitbucket.org/" target="_blank" rel="external">Bitbucket</a>平台。因为私有库数量没有限制，所以暂且选择这个平台。说干就干！<br><img src="http://wx3.sinaimg.cn/large/81f8a509gy1ftu81ipfu8j20yk0p2q64.jpg" alt="创建私有库"><br>然后我们将私有库Clone到本地，本次选用<a href="https://www.sourcetreeapp.com/" target="_blank" rel="external">Sourcetree</a>进行管理。</p>
 <h2 id="创建本地CocoaPods索引库"><a href="#创建本地CocoaPods索引库" class="headerlink" title="创建本地CocoaPods索引库"></a>创建本地CocoaPods索引库</h2><p>关于CocoaPods的，我之前有文章写过相关知识的，需要脑补的童鞋先过一遍。<br><a href="/2014/12/16/CocoaPods/">CocoaPods安装过程</a><br><a href="/2016/12/04/CocoaPods-update-gem-and-repo/">CocoaPods之repo换源和gem换源</a><br><a href="/2016/01/18/Remove-CocoaPods-from-project/">如何从项目中移除CocoaPods(译)</a></p>
-<p>接下来我们继续，一般我们安装CocoaPods之后会在本地有一个仓库，仓库里面会有所有使用CocoaPods的开源项目的索引库。<br><img src="http://wx2.sinaimg.cn/large/81f8a509gy1ftu81j2x77j21vq0qcagi.jpg" alt="CocoaPods索引库"><br>现在，把我们自己的远程索引库下载到本地，和CocoaPods的官方索引库在同一级目录。<br>在终端输入: <code>pod repo add 仓库名 仓库源地址(SSH地址)</code><br>例如我输入的是: <code>$ pod repo add XXModule https://XXX@bitbucket.org/Apple_Developer/xxmodule.git</code></p>
+<p>接下来我们继续，一般我们安装CocoaPods之后会在本地有一个仓库，仓库里面会有所有使用CocoaPods的开源项目的索引库。<br><img src="http://wx2.sinaimg.cn/large/81f8a509gy1ftu81j2x77j21vq0qcagi.jpg" alt="CocoaPods索引库"><br>现在，把我们自己的远程索引库下载到本地，和CocoaPods的官方索引库在同一级目录。<br>在终端输入: <code>pod repo add 仓库名 仓库源地址(SSH地址)</code><br>例如我输入的是: <code>pod repo add XXModule https://XXX@bitbucket.org/Apple_Developer/xxmodule.git</code></p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># pod repo add 仓库名 仓库源地址(SSH地址)</span></div><div class="line">pod repo add XXModule <span class="symbol">https:</span>/<span class="regexp">/XXX@bitbucket.org/</span>Apple_Developer/xxmodule.git</div></pre></td></tr></table></figure>
 <p>创建完后，会在多出一个目录，这个目录就是专门用于当做本地索引库用。我们也可以不创建，直接使用远程的就行。<br><img src="http://wx1.sinaimg.cn/large/81f8a509gy1ftu81i2x42j20y20fswfy.jpg" alt="本地远程索引库"></p>
 <h2 id="后续操作及补充说明"><a href="#后续操作及补充说明" class="headerlink" title="后续操作及补充说明"></a>后续操作及补充说明</h2><p>后续的操作这边直接引用网友写的一篇文章<a href="https://blog.csdn.net/xiaomuchong2016/article/details/78635376" target="_blank" rel="external">iOS组件化开发:远程私有库</a>，写的还算是比较细致的。这边做一个补充说明。<br>里面的大概步骤如下：<br>1、创建远程私有库<br>2、将私有库<code>Clone</code>到本地<br>3、创建本地索引库-指令<code>pod repo add 仓库名 仓库源地址(SSH地址)</code><br>4、创建一个模板库-指令<code>pod lib create 远程仓库名</code><br>5、将需要继承的类库添加到<code>Classes</code>文件夹下面，同时删除里面默认创建的<code>ReplaceMe.m</code>文件<br>6、再cd到测试工程目录，执行<code>pod install</code>指令会安装我们刚才拖入的类库<br>7、打开测试工程，已经有我们的类库了，现在配置<code>xxx.podspec</code>文件(文件具体说明详情见上面的文章)<br>8、本地仓库开发完毕之后，借助<a href="https://www.sourcetreeapp.com/" target="_blank" rel="external">Sourcetree</a>将整个工程push到远端私有库上面同时打一个<code>tag</code><br>10、<a href="/2018/07/31/CocoaPods-private-podspec/#校验">校验</a>操作，分本地跟远端校验<br>11、<a href="/2018/07/31/CocoaPods-private-podspec/#上传索引库">上传索引库</a>并在工程内测试</p>
@@ -80,7 +80,7 @@
 <h3 id="上传索引库"><a href="#上传索引库" class="headerlink" title="上传索引库"></a>上传索引库</h3><p>本地跟远程校验都成功之后，我们cd到本地的索引库目录下，执行<code>pod repo update XXModule</code>更新指定索引库。<br>最后更新索引文件到远端私有库上面，执行以下指令</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># pod repo push 索引库名 索引文件名 </span></div><div class="line"><span class="comment"># --allow-warnings忽略编译警告，--use-libraries(有引用framwork框架或C语言库时，需加入此参数)</span></div><div class="line">pod repo push XXModule XXModule.podspec --use-libraries --allow-warnings</div></pre></td></tr></table></figure>
 <p>我们在编译类库时，难免存在警告，最好先解决警告，再编译检查。但是，如果需要忽略编译警告，则要添加额外参数<code>--allow-warnings</code>设置。<br><strong>【出现问题】</strong><br>如果执行上面的指令的时候出错，提示<strong>[!] The repo `XXModule` at `../../../.cocoapods/repos/XXModule` is not clean</strong></p>
-<p>网上方法(解决方案对我的情况无效)</p>
+<p><strong>网上方法(解决方案对我的情况无效)</strong></p>
 <blockquote>
 <p>方法一：git clean -f<br>方法二：git stash<br>方法三：删除spec repo下的Specs仓库，我这里的是<code>XXModule</code>，然后重新从git上将私有仓库Clone下来。</p>
 </blockquote>
