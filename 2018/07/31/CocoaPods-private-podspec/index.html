@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="superdanny.link">
   <title>CocoaPods之iOS组件化开发:远程私有库 | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="随着公司的发展，团队也越来越庞大，那么随着项目的增多，我们越来越感觉到重复工作越来越频繁，所以封装了很多工具，第三方库等等便于集成。但是集成的方式非常低效，都是直接将需要用到的类添加到工程里面。这样子不便于管理。所以搭建私有库非常有必要。本篇文章需要有一定的知识基础。">
+  <meta name="description" content="随着公司的不断发展，业务领域越来越广泛，团队也在不断壮大，那么随着项目的增多，我们越来越感觉到重复工作的情况越来越频繁，于是封装了很多工具类和第三方库等等便于集成。但是集成的方式却非常低效，都是直接将需要用到的类添加到工程里面。这样子不便于管理。所以搭建私有库非常有必要。本篇文章需要有一定的知识基础。">
 <meta name="keywords" content="iOS,终端,CocoaPods">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CocoaPods之iOS组件化开发:远程私有库">
 <meta property="og:url" content="superdanny.link/2018/07/31/CocoaPods-private-podspec/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
-<meta property="og:description" content="随着公司的发展，团队也越来越庞大，那么随着项目的增多，我们越来越感觉到重复工作越来越频繁，所以封装了很多工具，第三方库等等便于集成。但是集成的方式非常低效，都是直接将需要用到的类添加到工程里面。这样子不便于管理。所以搭建私有库非常有必要。本篇文章需要有一定的知识基础。">
+<meta property="og:description" content="随着公司的不断发展，业务领域越来越广泛，团队也在不断壮大，那么随着项目的增多，我们越来越感觉到重复工作的情况越来越频繁，于是封装了很多工具类和第三方库等等便于集成。但是集成的方式却非常低效，都是直接将需要用到的类添加到工程里面。这样子不便于管理。所以搭建私有库非常有必要。本篇文章需要有一定的知识基础。">
 <meta property="og:image" content="http://wx3.sinaimg.cn/large/81f8a509gy1ftu81ipfu8j20yk0p2q64.jpg">
 <meta property="og:image" content="http://wx2.sinaimg.cn/large/81f8a509gy1ftu81j2x77j21vq0qcagi.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/large/81f8a509gy1ftu81i2x42j20y20fswfy.jpg">
 <meta property="og:image" content="http://wx2.sinaimg.cn/large/81f8a509gy1ftu81hnmkqj21c80bkdhs.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/large/81f8a509gy1ftw9xpl454j20ou0bsgmu.jpg">
 <meta property="og:image" content="http://wx4.sinaimg.cn/large/81f8a509gy1ftw9xp3ouyj20q20g6760.jpg">
-<meta property="og:updated_time" content="2018-08-03T10:09:36.758Z">
+<meta property="og:updated_time" content="2018-08-06T08:30:45.515Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CocoaPods之iOS组件化开发:远程私有库">
-<meta name="twitter:description" content="随着公司的发展，团队也越来越庞大，那么随着项目的增多，我们越来越感觉到重复工作越来越频繁，所以封装了很多工具，第三方库等等便于集成。但是集成的方式非常低效，都是直接将需要用到的类添加到工程里面。这样子不便于管理。所以搭建私有库非常有必要。本篇文章需要有一定的知识基础。">
+<meta name="twitter:description" content="随着公司的不断发展，业务领域越来越广泛，团队也在不断壮大，那么随着项目的增多，我们越来越感觉到重复工作的情况越来越频繁，于是封装了很多工具类和第三方库等等便于集成。但是集成的方式却非常低效，都是直接将需要用到的类添加到工程里面。这样子不便于管理。所以搭建私有库非常有必要。本篇文章需要有一定的知识基础。">
 <meta name="twitter:image" content="http://wx3.sinaimg.cn/large/81f8a509gy1ftu81ipfu8j20yk0p2q64.jpg">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
@@ -198,7 +198,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>随着公司的发展，团队也越来越庞大，那么随着项目的增多，我们越来越感觉到重复工作越来越频繁，所以封装了很多工具，第三方库等等便于集成。但是集成的方式非常低效，都是直接将需要用到的类添加到工程里面。这样子不便于管理。所以搭建私有库非常有必要。本篇文章需要有一定的知识基础。</p>
+        <p>随着公司的不断发展，业务领域越来越广泛，团队也在不断壮大，那么随着项目的增多，我们越来越感觉到重复工作的情况越来越频繁，于是封装了很多工具类和第三方库等等便于集成。但是集成的方式却非常低效，都是直接将需要用到的类添加到工程里面。这样子不便于管理。所以搭建私有库非常有必要。本篇文章需要有一定的知识基础。</p>
 <a id="more"></a>
 <h2 id="创建私有库"><a href="#创建私有库" class="headerlink" title="创建私有库"></a>创建私有库</h2><p>搭建私有库有两种方案：一种是搭建在公司服务器(内网/外网)上，另一种是托管在第三方平台上面。目前我使用的是第二套方案。<br>由于是私有库，GitHub私有库是收费的，加上没资金(<del>穷</del>)所以没办法放在上面，只能选择其他平台，目前可支持免费私有库的平台有<a href="https://coding.net/" target="_blank" rel="external">Coding</a>，<a href="https://gitee.com/" target="_blank" rel="external">码云</a>，<a href="https://bitbucket.org/" target="_blank" rel="external">Bitbucket</a>等。<br>我们先创建一个私有库，我选择的是<a href="https://bitbucket.org/" target="_blank" rel="external">Bitbucket</a>平台。因为私有库数量没有限制，所以暂且选择这个平台。说干就干！<br><img src="http://wx3.sinaimg.cn/large/81f8a509gy1ftu81ipfu8j20yk0p2q64.jpg" alt="创建私有库"><br>然后我们将私有库Clone到本地，本次选用<a href="https://www.sourcetreeapp.com/" target="_blank" rel="external">Sourcetree</a>进行管理。</p>
 <h2 id="创建本地CocoaPods索引库"><a href="#创建本地CocoaPods索引库" class="headerlink" title="创建本地CocoaPods索引库"></a>创建本地CocoaPods索引库</h2><p>关于CocoaPods的，我之前有文章写过相关知识的，需要脑补的童鞋先过一遍。<br><a href="/2014/12/16/CocoaPods/">CocoaPods安装过程</a><br><a href="/2016/12/04/CocoaPods-update-gem-and-repo/">CocoaPods之repo换源和gem换源</a><br><a href="/2016/01/18/Remove-CocoaPods-from-project/">如何从项目中移除CocoaPods(译)</a></p>
@@ -613,15 +613,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">brew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -641,6 +641,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
               </li>
              
@@ -649,11 +653,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -669,10 +673,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
               </li>
              
@@ -681,19 +681,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -705,7 +697,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -713,11 +705,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -729,11 +721,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Autolayout</a>
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">动画</a>
+                <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -745,6 +737,18 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Autolayout</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">动画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
               </li>
              
@@ -753,15 +757,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">应用内购</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -781,19 +781,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件预览</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -805,11 +801,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
+                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -837,10 +829,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">上架</a>
               </li>
              
@@ -853,11 +841,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -869,11 +857,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">企业级证书打包</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DIY</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
             
             <div class="clearfix"></div>
