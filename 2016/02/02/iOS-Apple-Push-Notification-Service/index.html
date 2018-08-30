@@ -17,7 +17,7 @@
 <meta property="og:description" content="关于推送关于苹果的推送网上已经有非常多的资源讲解，我在这里就不再累赘。直接切入主题，讲讲如何模拟推送以及处理推送消息。在进入主题之前，我先说几个关键流程：  创建Push SSL Certification(推送证书) iOS客户端注册Push功能并获得DeviceToken 使用Provider向APNS发送Push消息 iOS客户端接收处理由APNS发来的消息">
 <meta property="og:image" content="https://developer.apple.com/library/prerelease/watchos/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Art/remote_notif_simple_2x.png">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/81f8a509gw1f13ktc92rpj214804ajs6.jpg">
-<meta property="og:updated_time" content="2018-01-31T02:11:03.000Z">
+<meta property="og:updated_time" content="2018-08-29T06:56:21.606Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS推送的那些事">
 <meta name="twitter:description" content="关于推送关于苹果的推送网上已经有非常多的资源讲解，我在这里就不再累赘。直接切入主题，讲讲如何模拟推送以及处理推送消息。在进入主题之前，我先说几个关键流程：  创建Push SSL Certification(推送证书) iOS客户端注册Push功能并获得DeviceToken 使用Provider向APNS发送Push消息 iOS客户端接收处理由APNS发来的消息">
@@ -268,6 +268,10 @@ var _hmt = _hmt || [];
 <p>然后把这个<code>项目名_Production(或项目名_Development).pem</code>给后台基友们，就可以下班啦。</p>
 <p>当然测试推送也比较麻烦，需要模拟真实的推送环境，一般需要后台提供帮助，但是遇到一些后台同事，他们有强烈地信仰着鄙视链的话，很鄙视iOS，心里早就称呼你“死前端”多年了，还那么多事……</p>
 <p>所以关于调试推送，这里有两种方式实现自推！不麻烦别人。</p>
+<blockquote>
+<p>注意：如果出现“unable to load certificates”，把第三条命令的 -certfile CertificateSigningRequest.cerSigningRequest参数去掉即可</p>
+</blockquote>
+<p>另外可参考如下文章：<br><a href="https://blog.csdn.net/superior_yong/article/details/70227154" target="_blank" rel="external">生成服务端推送证书</a></p>
 <h2 id="模拟推送一：通过终端推送"><a href="#模拟推送一：通过终端推送" class="headerlink" title="模拟推送一：通过终端推送"></a>模拟推送一：通过终端推送</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="comment">// devicetoken</span></div><div class="line"> $deviceToken = <span class="string">'你的deviceToken'</span>;</div><div class="line"><span class="comment">// 私钥密码，生成pem的时候输入的</span></div><div class="line">$passphrase = <span class="string">'123456'</span>;</div><div class="line"><span class="comment">// 定制推送内容，有一点的格式要求，详情Apple文档</span></div><div class="line">$message = <span class="keyword">array</span>(</div><div class="line">	<span class="string">'body'</span>=&gt;<span class="string">'你收到一个新订单'</span></div><div class="line">);</div><div class="line">$body[<span class="string">'aps'</span>] = <span class="keyword">array</span>(</div><div class="line">	<span class="string">'alert'</span> =&gt; $message,</div><div class="line">	<span class="string">'sound'</span> =&gt; <span class="string">'default'</span>,</div><div class="line">	<span class="string">'badge'</span> =&gt; <span class="number">100</span>,</div><div class="line">	);</div><div class="line">$body[<span class="string">'type'</span>]=<span class="number">3</span>;</div><div class="line">$body[<span class="string">'msg_type'</span>]=<span class="number">4</span>;</div><div class="line">$body[<span class="string">'title'</span>]=<span class="string">'新订单提醒'</span>;</div><div class="line">$body[<span class="string">'msg'</span>]=<span class="string">'你收到一个新消息'</span>;</div><div class="line"></div><div class="line">$ctx = stream_context_create();</div><div class="line">stream_context_set_option($ctx, <span class="string">'ssl'</span>, <span class="string">'local_cert'</span>, <span class="string">'push.pem'</span>);<span class="comment">//记得把生成的push.pem放在和这个php文件同一个目录</span></div><div class="line">stream_context_set_option($ctx, <span class="string">'ssl'</span>, <span class="string">'passphrase'</span>, $passphrase);</div><div class="line">$fp = stream_socket_client(</div><div class="line">	<span class="comment">//这里需要特别注意，一个是开发推送的沙箱环境，一个是发布推送的正式环境，deviceToken是不通用的</span></div><div class="line">	<span class="string">'ssl://gateway.sandbox.push.apple.com:2195'</span>, $err,</div><div class="line">	<span class="comment">//'ssl://gateway.push.apple.com:2195', $err,</span></div><div class="line">	$errstr, <span class="number">60</span>, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);</div><div class="line"><span class="keyword">if</span> (!$fp)</div><div class="line">	<span class="keyword">exit</span>(<span class="string">"Failed to connect: $err $errstr"</span> . PHP_EOL);</div><div class="line"><span class="keyword">echo</span> <span class="string">'Connected to APNS'</span> . PHP_EOL;</div><div class="line">$payload = json_encode($body);</div><div class="line">$msg = chr(<span class="number">0</span>) . pack(<span class="string">'n'</span>, <span class="number">32</span>) . pack(<span class="string">'H*'</span>, $deviceToken) . pack(<span class="string">'n'</span>, strlen($payload)) . $payload;</div><div class="line">$result = fwrite($fp, $msg, strlen($msg));</div><div class="line"><span class="keyword">if</span> (!$result)</div><div class="line">	<span class="keyword">echo</span> <span class="string">'Message not delivered'</span> . PHP_EOL;</div><div class="line"><span class="keyword">else</span></div><div class="line">	<span class="keyword">echo</span> <span class="string">'Message successfully delivered'</span> . PHP_EOL;</div><div class="line">fclose($fp);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 <p>将上面的代码复制，保存成<code>push.php</code></p>
 <p>然后根据上面<a href="/2016/02/02/iOS-Apple-Push-Notification-Service/#php需要的pem证书">PHP需要的Pem证书</a>的步骤生成<code>push.pem</code></p>
@@ -628,15 +632,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">年中总结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -644,15 +640,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">brew</a>
+                <a href="javascript:void(0)" class="js-tag color5">年中总结</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -664,15 +656,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -684,11 +684,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -700,7 +696,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -712,11 +716,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -728,27 +740,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -756,15 +748,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
+                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -776,11 +776,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -812,6 +816,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
               </li>
              
@@ -820,19 +832,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Realm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">UIKeyboardType</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">键盘</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -848,15 +852,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -872,11 +888,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">银行卡校验</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -888,23 +904,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">企业级证书打包</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DIY</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
             
             <div class="clearfix"></div>
