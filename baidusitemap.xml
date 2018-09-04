@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>superdanny.link/2018/07/31/CocoaPods-private-podspec/</loc>
+    <lastmod>2018-09-04T07:32:28.486Z</lastmod>
+    <data>
+        <display>
+        <title>CocoaPods之iOS组件化开发:远程私有库</title>
+        <pubTime>2018-07-31T11:21:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>终端</tag>
+         
+        <tag>CocoaPods</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2016/02/02/iOS-Apple-Push-Notification-Service/</loc>
     <lastmod>2018-08-29T06:56:21.606Z</lastmod>
     <data>
@@ -22,30 +46,6 @@
           
              
               <breadCrumb title="移动端" url="superdanny.link/categories/Mac%E7%AB%AF/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2018/07/31/CocoaPods-private-podspec/</loc>
-    <lastmod>2018-08-06T08:30:45.515Z</lastmod>
-    <data>
-        <display>
-        <title>CocoaPods之iOS组件化开发:远程私有库</title>
-        <pubTime>2018-07-31T11:21:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-        <tag>终端</tag>
-         
-        <tag>CocoaPods</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -1665,26 +1665,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/17/Fix-svn-directory-is-out-of-date/</loc>
-    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>解决SVN提交代码出现目录过期问题</title>
-        <pubTime>2015-09-17T07:35:00.000Z</pubTime>
-        
-        <tag>SVN</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
     <lastmod>2016-11-30T01:56:39.000Z</lastmod>
     <data>
@@ -1705,19 +1685,19 @@
 
     
   <url>
-    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
-    <lastmod>2016-11-30T01:56:38.000Z</lastmod>
+    <loc>superdanny.link/2015/09/17/Fix-svn-directory-is-out-of-date/</loc>
+    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
     <data>
         <display>
-        <title>指定UIView的特定角为圆角</title>
-        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
+        <title>解决SVN提交代码出现目录过期问题</title>
+        <pubTime>2015-09-17T07:35:00.000Z</pubTime>
         
-        <tag>iOS</tag>
+        <tag>SVN</tag>
          
          
            
              
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -1735,6 +1715,26 @@
         <tag>iOS</tag>
          
         <tag>长按文本框</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
+    <lastmod>2016-11-30T01:56:38.000Z</lastmod>
+    <data>
+        <display>
+        <title>指定UIView的特定角为圆角</title>
+        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
          
          
            
