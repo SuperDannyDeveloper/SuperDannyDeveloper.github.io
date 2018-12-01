@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>superdanny.link/2015/07/21/About-me/</loc>
+    
+    <lastmod>2018-12-01T06:50:39.650Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>superdanny.link/2018/07/31/CocoaPods-private-podspec/</loc>
     
-    <lastmod>2018-09-25T09:21:05.886Z</lastmod>
+    <lastmod>2018-10-26T10:28:19.407Z</lastmod>
     
   </url>
   
@@ -117,13 +124,6 @@
     <loc>superdanny.link/2015/07/08/iTerm_2&&Oh_My_Zsh/</loc>
     
     <lastmod>2018-01-31T02:17:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2015/07/21/About-me/</loc>
-    
-    <lastmod>2017-12-26T02:07:13.000Z</lastmod>
     
   </url>
   

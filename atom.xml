@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="superdanny.link/"/>
-  <updated>2018-09-25T09:21:05.886Z</updated>
+  <updated>2018-10-26T10:28:19.407Z</updated>
   <id>superdanny.link/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="superdanny.link/2018/07/31/CocoaPods-private-podspec/"/>
     <id>superdanny.link/2018/07/31/CocoaPods-private-podspec/</id>
     <published>2018-07-31T11:21:00.000Z</published>
-    <updated>2018-09-25T09:21:05.886Z</updated>
+    <updated>2018-10-26T10:28:19.407Z</updated>
     
     <content type="html"><![CDATA[<p>随着公司的不断发展，业务领域越来越广泛，团队也在不断壮大，那么随着项目的增多，我们越来越感觉到重复工作的情况越来越频繁，于是封装了很多工具类和第三方库等等便于集成。但是集成的方式却非常低效，都是直接将需要用到的类添加到工程里面。这样子不便于管理。所以搭建私有库非常有必要。本篇文章需要有一定的知识基础。</p>
 <a id="more"></a>
@@ -43,7 +43,11 @@
 <tbody>
 <tr>
 <td>.source_files</td>
-<td>这里的路径是相对于.podspec文件位置的路径</td>
+<td>这里的路径是相对于.podspec文件位置的路径，下载该目标路径下的文件</td>
+</tr>
+<tr>
+<td>.exclude_files</td>
+<td>这里的路径是相对于.podspec文件位置的路径，不下载该目标路径下的文件</td>
 </tr>
 <tr>
 <td>.libraries</td>
@@ -55,7 +59,7 @@
 </tr>
 <tr>
 <td>.resource</td>
-<td>如果有包含资源文件，则需要次参数</td>
+<td>如果有包含资源文件，则需要此参数</td>
 </tr>
 <tr>
 <td>.dependency</td>
@@ -68,6 +72,10 @@
 <tr>
 <td>.prefix_header_contents</td>
 <td>类似于pch文件，多个用逗号隔开</td>
+</tr>
+<tr>
+<td>.requires_arc</td>
+<td>设置需要ARC（自动引用计数）</td>
 </tr>
 </tbody>
 </table>
