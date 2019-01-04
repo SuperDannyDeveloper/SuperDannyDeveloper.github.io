@@ -5,7 +5,7 @@
     
   <url>
     <loc>superdanny.link/2015/07/21/About-me/</loc>
-    <lastmod>2018-12-01T06:50:39.650Z</lastmod>
+    <lastmod>2019-01-04T09:59:00.121Z</lastmod>
     <data>
         <display>
         <title>关于我</title>
@@ -1705,14 +1705,16 @@
 
     
   <url>
-    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
+    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>指定UIView的特定角为圆角</title>
-        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
+        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
+        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
         
         <tag>iOS</tag>
+         
+        <tag>长按文本框</tag>
          
          
            
@@ -1725,16 +1727,14 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
+    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
-        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
+        <title>指定UIView的特定角为圆角</title>
+        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
         
         <tag>iOS</tag>
-         
-        <tag>长按文本框</tag>
          
          
            
