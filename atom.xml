@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="superdanny.link/"/>
-  <updated>2018-10-26T10:28:19.407Z</updated>
+  <updated>2019-03-08T03:08:03.517Z</updated>
   <id>superdanny.link/</id>
   
   <author>
@@ -14,6 +14,306 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iOS App图标、启动图尺寸及命名规范</title>
+    <link href="superdanny.link/2019/03/07/iOS-Icon-Launch%20Screen/"/>
+    <id>superdanny.link/2019/03/07/iOS-Icon-Launch Screen/</id>
+    <published>2019-03-07T08:36:00.000Z</published>
+    <updated>2019-03-08T03:08:03.517Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>现在苹果的尺寸越来越多，Xcode的图标配置以及启动图的尺寸又做的不够人性化，没有提示尺寸，所以很多时候都需要网上找相关的资料或者利用第三方生成工具生成对应尺寸的素材。比较麻烦，所以准备自己记录一下相关尺寸，便于以后管理查阅。</p>
+<a id="more"></a> 
+<h2 id="AppIcon"><a href="#AppIcon" class="headerlink" title="AppIcon"></a>AppIcon</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>尺寸</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iPhone Notification</td>
+<td>2x(40x40) 3x(60x60)</td>
+<td>iOS 7-12 20pt</td>
+</tr>
+<tr>
+<td>iPhone Settings</td>
+<td>2x(58x58) 3x(87x87)</td>
+<td>iOS 7-12 29pt</td>
+</tr>
+<tr>
+<td>iPhone Spotlight</td>
+<td>2x(80x80) 3x(120x120)</td>
+<td>iOS 7-12 40pt</td>
+</tr>
+<tr>
+<td>iPhone APP</td>
+<td>2x(120x120) 3x(180x180)</td>
+<td>iOS 7-12 60pt</td>
+</tr>
+<tr>
+<td>iPad Notifications</td>
+<td>1x(20x20) 2x(40x40)</td>
+<td>iOS 7-12 20pt</td>
+</tr>
+<tr>
+<td>iPad Settings</td>
+<td>1x(29x29) 2x(58x58)</td>
+<td>iOS 7-12 29pt</td>
+</tr>
+<tr>
+<td>iPad Spotlight</td>
+<td>1x(40x40) 2x(80x80)</td>
+<td>iOS 7-12 40pt</td>
+</tr>
+<tr>
+<td>iPad APP</td>
+<td>1x(76x76) 2x(152x152)</td>
+<td>iOS 7-12 76pt</td>
+</tr>
+<tr>
+<td>iPad Pro(12.9寸)App</td>
+<td>2x(167x167)</td>
+<td>iOS 9-12 83.5pt</td>
+</tr>
+<tr>
+<td>App Store</td>
+<td>2x(40x40)  1x(1024x1024)</td>
+<td>iOS 1024pt</td>
+</tr>
+</tbody>
+</table>
+<h2 id="LaunchImage"><a href="#LaunchImage" class="headerlink" title="LaunchImage"></a>LaunchImage</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>尺寸</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Portrait</td>
+<td>iPhone XS Max(1242x2688) iPhone XR(828x1792)</td>
+<td>iOS 12+</td>
+</tr>
+<tr>
+<td>Landscape</td>
+<td>iPhone XS Max(2688x1242) iPhone XR(1792x828)</td>
+<td>iOS 12+</td>
+</tr>
+<tr>
+<td>Portrait</td>
+<td>iPhone X(1125x2436) iPhone XS(1125x2436)</td>
+<td>iOS 11+</td>
+</tr>
+<tr>
+<td>Landscape</td>
+<td>iPhone X(2436x1125) iPhone XS(2436x1125)</td>
+<td>iOS 11+</td>
+</tr>
+<tr>
+<td>iPhone Portrait</td>
+<td>RetinaHD 5.5(1242x2208) RetinaHD 4.7(750x1334)</td>
+<td>iOS 8+</td>
+</tr>
+<tr>
+<td>iPhone Landscape</td>
+<td>RetinaHD 5.5(2208x1242)</td>
+<td>iOS 8+</td>
+</tr>
+<tr>
+<td>iPhone Portrait</td>
+<td>2x(640x960) Retina 4(640x1136)</td>
+<td>iOS 7+</td>
+</tr>
+<tr>
+<td>iPad Portrait</td>
+<td>1x(768x1024) 2x(1536x2048)</td>
+<td>iOS 7+</td>
+</tr>
+<tr>
+<td>iPad Landscape</td>
+<td>1x(1024x768) 2x(2048x1356)</td>
+<td>iOS 7+</td>
+</tr>
+<tr>
+<td>iPhone Portrait</td>
+<td>1x(320x480) 2x(640x960) Retina 4(640x1136)</td>
+<td>iOS 5,6</td>
+</tr>
+<tr>
+<td>iPad Portrait Without Status Bar</td>
+<td>1x(768x1004) 2x(1536x2008)</td>
+<td>iOS 5,6</td>
+</tr>
+<tr>
+<td>iPad Portrait</td>
+<td>1x(768x1024) 2x(1536x2048)</td>
+<td>iOS 5,6</td>
+</tr>
+<tr>
+<td>iPad Landscape Without Status Bar</td>
+<td>1x(1024x748) 2x(2048x1496)</td>
+<td>iOS 5,6</td>
+</tr>
+<tr>
+<td>iPad Landscape</td>
+<td>1x(1024x768) 2x(2048x1536)</td>
+<td>iOS 5,6</td>
+</tr>
+</tbody>
+</table>
+<p>关于启动图的，苹果官方是建议使用故事板进行操作，如果实在不想用，就只能用静态图片。针对不同设备尺寸配置不同的静态图。下面列举目前现有设备的尺寸。</p>
+<table>
+<thead>
+<tr>
+<th>设备</th>
+<th>竖屏尺寸</th>
+<th>横屏尺寸</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12.9” iPad Pro</td>
+<td>2048px × 2732px</td>
+<td>2732px × 2048px</td>
+</tr>
+<tr>
+<td>11” iPad Pro</td>
+<td>1668px × 2388px</td>
+<td>2388px × 1668px</td>
+</tr>
+<tr>
+<td>10.5” iPad Pro</td>
+<td>1668px × 2224px</td>
+<td>2224px × 1668px</td>
+</tr>
+<tr>
+<td>9.7” iPad</td>
+<td>1536px × 2048px</td>
+<td>2048px × 1536px</td>
+</tr>
+<tr>
+<td>7.9” iPad mini 4</td>
+<td>1536px × 2048px</td>
+<td>2048px × 1536px</td>
+</tr>
+<tr>
+<td>iPhone XS Max</td>
+<td>1242px × 2688px</td>
+<td>2688px × 1242px</td>
+</tr>
+<tr>
+<td>iPhone XS</td>
+<td>1125px × 2436px</td>
+<td>2436px × 1125px</td>
+</tr>
+<tr>
+<td>iPhone XR</td>
+<td>828px × 1792px</td>
+<td>1792px × 828px</td>
+</tr>
+<tr>
+<td>iPhone X</td>
+<td>1125px × 2436px</td>
+<td>2436px × 1125px</td>
+</tr>
+<tr>
+<td>iPhone 8 Plus</td>
+<td>1242px × 2208px</td>
+<td>2208px × 1242px</td>
+</tr>
+<tr>
+<td>iPhone 8</td>
+<td>750px × 1334px</td>
+<td>1334px × 750px</td>
+</tr>
+<tr>
+<td>iPhone 7 Plus</td>
+<td>1242px × 2208px</td>
+<td>2208px × 1242px</td>
+</tr>
+<tr>
+<td>iPhone 7</td>
+<td>750px × 1334px</td>
+<td>1334px × 750px</td>
+</tr>
+<tr>
+<td>iPhone 6s Plus</td>
+<td>1242px × 2208px</td>
+<td>2208px × 1242px</td>
+</tr>
+<tr>
+<td>iPhone 6s</td>
+<td>750px × 1334px</td>
+<td>1334px × 750px</td>
+</tr>
+<tr>
+<td>iPhone SE</td>
+<td>640px × 1136px</td>
+<td>1136px × 640px</td>
+</tr>
+</tbody>
+</table>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p>关于启动页、UI素材的优化与压缩可见另外的文章，传送门➡️<a href="/2017/03/03/App-Thinning/">为自己的 APP 瘦身</a></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/app-icon/" target="_blank" rel="external">App Icon</a></p>
+<p><a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/launch-screen/" target="_blank" rel="external">Launch Screen</a></p>
+<hr>
+<p>再一次感谢您花费时间阅读这篇文章！</p>
+<p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;p&gt;现在苹果的尺寸越来越多，Xcode的图标配置以及启动图的尺寸又做的不够人性化，没有提示尺寸，所以很多时候都需要网上找相关的资料或者利用第三方生成工具生成对应尺寸的素材。比较麻烦，所以准备自己记录一下相关尺寸，便于以后管理查阅。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="移动端" scheme="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    
+    
+      <category term="iOS" scheme="superdanny.link/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CocoaPods之iOS组件化开发:SVN本地私有库</title>
+    <link href="superdanny.link/2019/01/12/CocoaPods-private-podspec-svn/"/>
+    <id>superdanny.link/2019/01/12/CocoaPods-private-podspec-svn/</id>
+    <published>2019-01-12T11:21:00.000Z</published>
+    <updated>2019-01-12T11:12:41.018Z</updated>
+    
+    <content type="html"><![CDATA[<p>去年写了一篇关于组件化的开发之路，选用了远程私有库，这次采用svn形式进行组件开发。</p>
+<a id="more"></a>
+<h2 id="创建私有库"><a href="#创建私有库" class="headerlink" title="创建私有库"></a>创建私有库</h2><p>我们直接在svn上面创建一个组件仓库，叫XYModule。接下来创建组件工程的方式跟<a href="/2018/07/31/CocoaPods-private-podspec/">CocoaPods之iOS组件化开发:远程私有库</a>类似。</p>
+<h2 id="操作及补充说明"><a href="#操作及补充说明" class="headerlink" title="操作及补充说明"></a>操作及补充说明</h2><p>后续的操作这边直接引用网友写的一篇文章<a href="https://blog.csdn.net/xiaomuchong2016/article/details/78635376" target="_blank" rel="external">iOS组件化开发:远程私有库</a>，写的还算是比较细致的。这边做一个补充说明。<br>里面的大概步骤如下：<br>1、创建本地svn私有库<br>2、将私有库<code>check out</code>到本地<br>3、创建本地索引库-指令<code>pod repo add 仓库名 仓库源地址</code><br>4、创建一个模板库-指令<code>pod lib create svn仓库名</code><br>5、将需要继承的类库添加到<code>Classes</code>文件夹下面，同时删除里面默认创建的<code>ReplaceMe.m</code>文件<br>6、再cd到测试工程目录，执行<code>pod install</code>指令会安装我们刚才拖入的类库<br>7、打开测试工程，已经有我们的类库了，现在配置<code>xxx.podspec</code>文件(文件具体说明详情见上面的文章)<br>8、本地仓库开发完毕之后，借助<a href="https://cornerstone.assembla.com/" target="_blank" rel="external">svn客户端</a>将整个工程commit到svn仓库上面同时打一个<code>tag</code><br>10、<a href="/2018/07/31/CocoaPods-private-podspec/#校验">校验</a>操作，分本地跟远端校验<br>11、<a href="/2018/07/31/CocoaPods-private-podspec/#上传索引库">上传索引库</a>并在工程内测试</p>
+<p>以上流程基本上跟远程方式类似，这里就不累赘，参考<a href="/2018/07/31/CocoaPods-private-podspec/">CocoaPods之iOS组件化开发:远程私有库</a>即可。</p>
+<h2 id="Podfile-文件的写法"><a href="#Podfile-文件的写法" class="headerlink" title="Podfile 文件的写法"></a>Podfile 文件的写法</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod <span class="string">'XYModule'</span>, <span class="symbol">:svn</span> =&gt; <span class="string">'https://xxx/svn/XYModule'</span>,<span class="symbol">:tag</span> =&gt;<span class="string">'0.2.0'</span></div></pre></td></tr></table></figure>
+<p>另外如果组内执行<code>pod update</code>报类似<code>SSL certificate problem: unable to get local issuer certificate</code>的证书错误时。可以尝试一下做法：<br>1、终端执行<code>svn list http://url/to/repository</code><br>2、根据提示选择允许<br>3、再次执行<code>pod update</code>即可</p>
+<hr>
+<p>再一次感谢您花费时间阅读这篇文章！</p>
+<p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;去年写了一篇关于组件化的开发之路，选用了远程私有库，这次采用svn形式进行组件开发。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Mac端" scheme="superdanny.link/categories/Mac%E7%AB%AF/"/>
+    
+    
+      <category term="iOS" scheme="superdanny.link/tags/iOS/"/>
+    
+      <category term="终端" scheme="superdanny.link/tags/%E7%BB%88%E7%AB%AF/"/>
+    
+      <category term="CocoaPods" scheme="superdanny.link/tags/CocoaPods/"/>
+    
+  </entry>
   
   <entry>
     <title>CocoaPods之iOS组件化开发:远程私有库</title>
@@ -1363,89 +1663,6 @@ b. this is line b
       <category term="CocoaPods" scheme="superdanny.link/tags/CocoaPods/"/>
     
       <category term="Gem" scheme="superdanny.link/tags/Gem/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2016，我的年终总结-写给自己的一封信</title>
-    <link href="superdanny.link/2016/11/26/2016-Year-end-summary/"/>
-    <id>superdanny.link/2016/11/26/2016-Year-end-summary/</id>
-    <published>2016-11-26T11:49:00.000Z</published>
-    <updated>2017-07-14T02:21:15.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>今年已经是我第二个年头写总结了，相比去年的工作总结，今年的总结，我侧重说说自己一年来的感悟，工作上的事情会涉及比较少。</p>
-<a id="more"></a>
-<h2 id="能力与责任"><a href="#能力与责任" class="headerlink" title="能力与责任"></a>能力与责任</h2><p>不知不觉，已经在公司呆了快2年，公司的事业也一步步走向正轨，回想起当初兴致勃勃的来到公司时，对比起现在多了几分愁容（愁在买房），少了几分幼稚。我想，这应该是每个人都会经历的事情。随着年龄的增长，考虑的事情也就越来越多，压力也就慢慢随着增大，随之而来的就有可能是这几种结果：</p>
-<blockquote>
-<p>1、身心疲惫，几近瓦解；<br>2、事业有成，踌躇满志；<br>3、平平淡淡，得过且过；</p>
-</blockquote>
-<p>我想，每个人都应该很清楚自己目前的状态。但是，不管是好是坏，只要能够认清自己，明确目标，始终不放弃，我想，再落寞也能够“拨开云雾见青天”。我这个人有一个缺点，就是心态时好时坏，但是我有一个不认输的心。因为我会考虑后果，所以很多事情我都会考虑到后果，哪些应该做，哪些不应该做。当然我不是做的最好，但是我一直在努力。</p>
-<h2 id="低调做事有度，切勿自大"><a href="#低调做事有度，切勿自大" class="headerlink" title="低调做事有度，切勿自大"></a>低调做事有度，切勿自大</h2><p>自打我踏出社会之后，很多事情看破了，也看淡了许多。看待事情的态度也就不会像当初那样较真。年轻那会好胜心强（好像把自己说老了…），什么事情都喜欢较真，一定要分出一个是非对错，孰高孰低，孰优孰略。即便最后自己胜利了，满足了自己的好胜心，结果也只会两败俱伤，吃力不讨好。所以凡事都要有个“度”，既要大度、有度量，又要适可而止，别太较真。回想起以往自己的性格，就是过于较真，所以很多时候总是吃力不讨好。现在想想觉得实在是太幼稚了(৹ᵒ̴̶̷᷄﹏ᵒ̴̶̷᷅৹)。</p>
-<p>另外自大是一个人最致命的弱点，不懂得谦虚的人是成不了大器的，因为这样只会让别人疏远你。梁启超说过，“自信与骄傲有异；自信者常沉着，而骄傲者常浮扬。”。我们每一个人都有自己的弱点，学会隐藏自己的弱点何尝不是一件好事。但是缺点就不一样，我们应该是改掉缺点，而不是将其藏埋于心。一个人之所以能够很出色，很成功，绝大部分原因是这个人能够看清自己的缺点，学习别人的优点，从而弥补自己的不足。正所谓“金无足赤，人无完人”。</p>
-<p>好了，上面扯了一大堆大道理，我只是想表达自己这一年来的感慨以及自己以往幼稚的性格与心态。希望通过总结，反思自己。</p>
-<h2 id="买房风波"><a href="#买房风波" class="headerlink" title="买房风波"></a>买房风波</h2><p>中国有一个很明显的特色，就是每个人到了一定年龄都会操心买房。我也不例外，我今年因为买房的事情可以说是操碎了心，身心疲惫，几近崩溃。不过从那以后我也更加认清自己，凡事都不能太过急于求成。至于中间发生了什么就不多说了。此处省略一万个字…</p>
-<h2 id="健康为本"><a href="#健康为本" class="headerlink" title="健康为本"></a>健康为本</h2><p>俗话说得好，身体是革命的本钱。人再有钱，身体垮了，再多钱也无福消受。尤其是干我们 IT 这一行的更应该清楚的认识到，并且把它看做是第一位。今年我就不再发自己的自拍照，因为我太胖了，身体大不如去年，所以在最近的这段时间，我开始锻炼身体，不想因为由于工作的缘故而把自己的身体搞出毛病。今年我看过最多的就是“某某公司某某员工猝死”之类的新闻，想想都觉得不寒而栗。父母辛辛苦苦把我们养大，不是想看到这种结果。身体是自己的，我希望每个人都应该认真看待。</p>
-<h2 id="未来道路"><a href="#未来道路" class="headerlink" title="未来道路"></a>未来道路</h2><p>2016这一年来，我的能力提升相比去年步调慢下来了，由于种种因素使得我放慢步调，开始思考接下来的人生道路。随着 IT 时代的发展，社会竞争也越来越激烈。以往的技术已经无法再满足需求，企业对新技术新领域的开拓也就越来越强烈，一个人只懂得一门技术已经完全不能满足当前社会的需要。所以职业的发展道路方向的选择也就变得复杂多。是一直平淡无奇的当着一个小码农？还是从技术转管理？亦或者是横向发展？每个人的选择都不同。我的方向一直是明确的，但是要想实现当初的目标，我发现不单单只会一门技术就行，唯有横向发展之后，了解了不同技术领域，之后方可纵观全局，处理问题时才不至于过于片面。</p>
-<p>2016已经接近尾声，即将迎来的是崭新的2017。我希望经过2016这一年的经历与感悟之后，能够给我的2017带来帮助。我也希望能够更加的接近我的目标，一步一个脚印的朝着我的目标前进。不管前路多坎坷，目标也不能有一丝的动摇。</p>
-<p>希望自己不要只是纸上谈兵。还是应该付诸行动，“少壮不努力，老来被唾弃”。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今年已经是我第二个年头写总结了，相比去年的工作总结，今年的总结，我侧重说说自己一年来的感悟，工作上的事情会涉及比较少。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="年终总结" scheme="superdanny.link/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Xcode8，你为什么这么坑</title>
-    <link href="superdanny.link/2016/09/26/Xcode8-pit/"/>
-    <id>superdanny.link/2016/09/26/Xcode8-pit/</id>
-    <published>2016-09-26T08:02:00.000Z</published>
-    <updated>2017-07-14T02:21:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="开启吐槽模式"><a href="#开启吐槽模式" class="headerlink" title="开启吐槽模式"></a>开启吐槽模式</h3><p>为了迎合Xcode8所带来的更新，我是惊喜万分(<del>奔溃至极</del>)。丝毫不敢怠慢，生怕跟不上入坑的队伍😂</p>
-<a id="more"></a>
-<h3 id="坑一：storyboard或xib部分图片真机显示不了"><a href="#坑一：storyboard或xib部分图片真机显示不了" class="headerlink" title="坑一：storyboard或xib部分图片真机显示不了"></a>坑一：storyboard或xib部分图片真机显示不了</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)awakeFromNib &#123;</div><div class="line">    [<span class="keyword">super</span> awakeFromNib];</div><div class="line">    <span class="comment">//加上这句</span></div><div class="line">    [<span class="keyword">self</span> layoutIfNeeded];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="坑二：打包之后无法在开发者中间看到新构建的版本（或iOS10访问相机、相册等闪退）"><a href="#坑二：打包之后无法在开发者中间看到新构建的版本（或iOS10访问相机、相册等闪退）" class="headerlink" title="坑二：打包之后无法在开发者中间看到新构建的版本（或iOS10访问相机、相册等闪退）"></a>坑二：打包之后无法在开发者中间看到新构建的版本（或iOS10访问相机、相册等闪退）</h3><p>原因是iOS10为了保护隐私，需要在 info.plist 里添加配置，包括定位、摄像头、麦克风、相册、相机等等。</p>
-<p><img src="http://ww2.sinaimg.cn/large/81f8a509jw1f872ym5e4yj20wu05cjtu.jpg" alt="plist文件"></p>
-<p>访问权限一览表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 通讯录 --&gt; </div><div class="line">&lt;key&gt;NSContactsUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问通讯录&lt;/string&gt; </div><div class="line">&lt;!-- 相册 --&gt; </div><div class="line">&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问相册&lt;/string&gt; </div><div class="line">&lt;!-- 相机 --&gt; </div><div class="line">&lt;key&gt;NSCameraUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问相机&lt;/string&gt; </div><div class="line">&lt;!-- 麦克风 --&gt; </div><div class="line">&lt;key&gt;NSMicrophoneUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问麦克风&lt;/string&gt; </div><div class="line">&lt;!-- 位置 --&gt; </div><div class="line">&lt;key&gt;NSLocationUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问位置&lt;/string&gt; </div><div class="line">&lt;!-- 在使用期间访问位置 --&gt; </div><div class="line">&lt;key&gt;NSLocationWhenInUseUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能在使用期间访问位置&lt;/string&gt; </div><div class="line">&lt;!-- 始终访问位置 --&gt; </div><div class="line">&lt;key&gt;NSLocationAlwaysUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能始终访问位置&lt;/string&gt; </div><div class="line">&lt;!-- 日历 --&gt; </div><div class="line">&lt;key&gt;NSCalendarsUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问日历&lt;/string&gt; </div><div class="line">&lt;!-- 提醒事项 --&gt; </div><div class="line">&lt;key&gt;NSRemindersUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问提醒事项&lt;/string&gt; </div><div class="line">&lt;!-- 运动与健身 --&gt; </div><div class="line">&lt;key&gt;NSMotionUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问运动与健身&lt;/string&gt; </div><div class="line">&lt;!-- 健康更新 --&gt; </div><div class="line">&lt;key&gt;NSHealthUpdateUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问健康更新 &lt;/string&gt; </div><div class="line">&lt;!-- 健康分享 --&gt; </div><div class="line">&lt;key&gt;NSHealthShareUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问健康分享&lt;/string&gt; </div><div class="line">&lt;!-- 蓝牙 --&gt; </div><div class="line">&lt;key&gt;NSBluetoothPeripheralUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问蓝牙&lt;/string&gt; </div><div class="line">&lt;!-- 媒体资料库 --&gt; </div><div class="line">&lt;key&gt;NSAppleMusicUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问媒体资料库&lt;/string&gt;</div></pre></td></tr></table></figure>
-<p>如果不起作用,可以请求后台权限,类似于这样:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;key&gt;UIBackgroundModes&lt;/key&gt;</div><div class="line">&lt;array&gt; </div><div class="line">&lt;!-- 在这里写上你在后台模式下要使用权限对应的key --&gt; </div><div class="line">&lt;string&gt;location&lt;/string&gt;</div><div class="line">...</div><div class="line">&lt;/array&gt;</div></pre></td></tr></table></figure></p>
-<p>或者在Xcode里选中当前的target，选择 Capabilities ，找到 Background Modes ，打开它，在里面选择对应权限</p>
-<p><img src="http://ww4.sinaimg.cn/large/81f8a509gw1fa8xpyded7j21h80z810j.jpg" alt="Background Modes"></p>
-<h3 id="坑三：控制面板输出不完整"><a href="#坑三：控制面板输出不完整" class="headerlink" title="坑三：控制面板输出不完整"></a>坑三：控制面板输出不完整</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#define NSLog(format, ...) printf(<span class="meta-string">"\n[%s] %s [第%d行] %s\n"</span>, __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);</span></div></pre></td></tr></table></figure>
-<h3 id="坑四：NSUserDefaults问题"><a href="#坑四：NSUserDefaults问题" class="headerlink" title="坑四：NSUserDefaults问题"></a>坑四：NSUserDefaults问题</h3><p><a href="http://stackoverflow.com/a/37841106/6099367" target="_blank" rel="external">NSUserDefaults问题</a></p>
-<h3 id="坑五：插件无法使用问题"><a href="#坑五：插件无法使用问题" class="headerlink" title="坑五：插件无法使用问题"></a>坑五：插件无法使用问题</h3><p><a href="http://superdanny.link/2016/09/16/How-to-use-Xcode8-or-iOS10_SDK/">如何优雅的使用Xcode8或iOS10 SDK</a></p>
-<h3 id="坑六：Xcode8之xib"><a href="#坑六：Xcode8之xib" class="headerlink" title="坑六：Xcode8之xib"></a>坑六：Xcode8之xib</h3><h4 id="Xcode8-打开Xib之后，Xcode7-无法打开"><a href="#Xcode8-打开Xib之后，Xcode7-无法打开" class="headerlink" title="Xcode8 打开Xib之后，Xcode7 无法打开"></a>Xcode8 打开Xib之后，Xcode7 无法打开</h4><p>当我们使用Xcode8打开以前的旧工程的xib文件时，会弹窗提示我们选择设备。</p>
-<p><img src="http://ww3.sinaimg.cn/mw690/81f8a509gw1f96u3aal39j20ou0caq6i.jpg" alt="选择设备"></p>
-<p>当我们选择之后虽然Xcode8可以查看xib文件，但是当我们使用旧版本Xcode打开查看xib文件是就会提示无法查看，需要使用高版本Xcode打开。</p>
-<p><img src="http://ww4.sinaimg.cn/mw690/81f8a509gw1f96u39j5cvj20oa090gnn.jpg" alt="xib报警告"></p>
-<p>想要能够在低版本Xcode查看Xib，需要在Xcode8上面重新选择xib打开的版本为Xcode7.x</p>
-<p><img src="http://ww1.sinaimg.cn/mw690/81f8a509gw1f96u39kfb4j20eg0o8tch.jpg" alt="选择最低版本"></p>
-<h4 id="Xcode8-打开Xib更新之后，约束报警告"><a href="#Xcode8-打开Xib更新之后，约束报警告" class="headerlink" title="Xcode8 打开Xib更新之后，约束报警告"></a>Xcode8 打开Xib更新之后，约束报警告</h4><p>被xib坑完之后，接下来就是崩溃的时刻，所有有涉及约束的视图全部报警告。我们需要更新所有存在警告视图的frame。</p>
-<p><img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1f96uctfxuhj21360x87bf.jpg" alt="更新frame"></p>
-<h3 id="坑七：应用提交AppStore失败"><a href="#坑七：应用提交AppStore失败" class="headerlink" title="坑七：应用提交AppStore失败"></a>坑七：应用提交AppStore失败</h3><p>使用旧版本的Application Loader进行提交。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;开启吐槽模式&quot;&gt;&lt;a href=&quot;#开启吐槽模式&quot; class=&quot;headerlink&quot; title=&quot;开启吐槽模式&quot;&gt;&lt;/a&gt;开启吐槽模式&lt;/h3&gt;&lt;p&gt;为了迎合Xcode8所带来的更新，我是惊喜万分(&lt;del&gt;奔溃至极&lt;/del&gt;)。丝毫不敢怠慢，生怕跟不上入坑的队伍😂&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Mac端" scheme="superdanny.link/categories/Mac%E7%AB%AF/"/>
-    
-    
-      <category term="Xcode" scheme="superdanny.link/tags/Xcode/"/>
-    
-      <category term="iOS10" scheme="superdanny.link/tags/iOS10/"/>
-    
-      <category term="Xcode8" scheme="superdanny.link/tags/Xcode8/"/>
     
   </entry>
   

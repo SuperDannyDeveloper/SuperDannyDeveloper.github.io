@@ -4,6 +4,94 @@
 
     
   <url>
+    <loc>superdanny.link/2019/03/07/iOS-Icon-Launch%20Screen/</loc>
+    <lastmod>2019-03-08T03:08:03.517Z</lastmod>
+    <data>
+        <display>
+        <title>iOS App图标、启动图尺寸及命名规范</title>
+        <pubTime>2019-03-07T08:36:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/08/28/My-projects-introduction/</loc>
+    <lastmod>2019-01-31T06:46:49.471Z</lastmod>
+    <data>
+        <display>
+        <title>项目简介</title>
+        <pubTime>2015-08-27T16:26:00.000Z</pubTime>
+        
+        <tag>项目</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2016/01/28/iOS-Upload-Image/</loc>
+    <lastmod>2019-01-16T03:36:44.916Z</lastmod>
+    <data>
+        <display>
+        <title>iOS图片压缩上传</title>
+        <pubTime>2016-01-28T03:55:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>Swift</tag>
+         
+        <tag>图片上传</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2019/01/12/CocoaPods-private-podspec-svn/</loc>
+    <lastmod>2019-01-12T11:12:41.018Z</lastmod>
+    <data>
+        <display>
+        <title>CocoaPods之iOS组件化开发:SVN本地私有库</title>
+        <pubTime>2019-01-12T11:21:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>终端</tag>
+         
+        <tag>CocoaPods</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2015/07/21/About-me/</loc>
     <lastmod>2019-01-04T09:59:00.121Z</lastmod>
     <data>
@@ -162,26 +250,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/08/28/My-projects-introduction/</loc>
-    <lastmod>2018-07-17T07:00:03.511Z</lastmod>
-    <data>
-        <display>
-        <title>项目简介</title>
-        <pubTime>2015-08-27T16:26:00.000Z</pubTime>
-        
-        <tag>项目</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2018/07/03/2018-Mid-year-work-summary/</loc>
     <lastmod>2018-07-09T03:12:29.382Z</lastmod>
     <data>
@@ -237,30 +305,6 @@
           
              
               <breadCrumb title="Mac端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/Mac%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2016/01/28/iOS-Upload-Image/</loc>
-    <lastmod>2018-05-25T02:40:24.689Z</lastmod>
-    <data>
-        <display>
-        <title>iOS图片压缩上传</title>
-        <pubTime>2016-01-28T03:55:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-        <tag>Swift</tag>
-         
-        <tag>图片上传</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -1492,9 +1536,9 @@
         <title>GitHub无法访问或访问缓慢解决办法</title>
         <pubTime>2015-09-09T15:16:00.000Z</pubTime>
         
-        <tag>GitHub</tag>
-         
         <tag>Mac</tag>
+         
+        <tag>GitHub</tag>
          
          
            
@@ -1514,9 +1558,9 @@
         <title>MacOS X隐藏和显示隐藏文件</title>
         <pubTime>2015-09-09T19:02:00.000Z</pubTime>
         
-        <tag>Mac</tag>
-         
         <tag>文件操作</tag>
+         
+        <tag>Mac</tag>
          
          
            
@@ -1705,16 +1749,14 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
+    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
-        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
+        <title>指定UIView的特定角为圆角</title>
+        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
         
         <tag>iOS</tag>
-         
-        <tag>长按文本框</tag>
          
          
            
@@ -1727,14 +1769,16 @@
 
     
   <url>
-    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
+    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>指定UIView的特定角为圆角</title>
-        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
+        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
+        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
         
         <tag>iOS</tag>
+         
+        <tag>长按文本框</tag>
          
          
            

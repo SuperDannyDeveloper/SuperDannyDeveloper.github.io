@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>superdanny.link/2019/03/07/iOS-Icon-Launch%20Screen/</loc>
+    
+    <lastmod>2019-03-08T03:08:03.517Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/08/28/My-projects-introduction/</loc>
+    
+    <lastmod>2019-01-31T06:46:49.471Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2016/01/28/iOS-Upload-Image/</loc>
+    
+    <lastmod>2019-01-16T03:36:44.916Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2019/01/12/CocoaPods-private-podspec-svn/</loc>
+    
+    <lastmod>2019-01-12T11:12:41.018Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>superdanny.link/2015/07/21/About-me/</loc>
     
     <lastmod>2019-01-04T09:59:00.121Z</lastmod>
@@ -51,13 +79,6 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/08/28/My-projects-introduction/</loc>
-    
-    <lastmod>2018-07-17T07:00:03.511Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/2018/07/03/2018-Mid-year-work-summary/</loc>
     
     <lastmod>2018-07-09T03:12:29.382Z</lastmod>
@@ -75,13 +96,6 @@
     <loc>superdanny.link/2015/09/25/iOS-production-certificate-and-use/</loc>
     
     <lastmod>2018-06-05T01:19:25.091Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>superdanny.link/2016/01/28/iOS-Upload-Image/</loc>
-    
-    <lastmod>2018-05-25T02:40:24.689Z</lastmod>
     
   </url>
   
@@ -569,13 +583,6 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
-    
-    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>superdanny.link/2015/09/17/Fix-svn-directory-is-out-of-date/</loc>
     
     <lastmod>2016-11-30T01:56:39.000Z</lastmod>
@@ -583,14 +590,21 @@
   </url>
   
   <url>
-    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
+    <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
+    
+    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
     
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
+    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
     
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     
