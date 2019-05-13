@@ -316,6 +316,29 @@
   </entry>
   
   <entry>
+    <title>2018，我的年终工作总结</title>
+    <link href="superdanny.link/2018/12/23/2018-Year-end-summary/"/>
+    <id>superdanny.link/2018/12/23/2018-Year-end-summary/</id>
+    <published>2018-12-23T07:48:00.000Z</published>
+    <updated>2019-03-08T03:43:22.598Z</updated>
+    
+    <content type="html"><![CDATA[<p>又到一年年尾，每年这个时候，公司是最忙的，很多项目都在争取尽快收尾。所以大家都忙得不可开交。但是每年的惯例是不能少的，再怎么忙都务必抽出时间来总结，个人觉得这对自身成长是非常有必要的。因为今年年中做过一次总结，所以这次的总结重点主要是下半年的工作情况。就不啰嗦了，直奔主题。</p>
+<a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>成长对于一个人来说是至关重要的，而企业的发展也离不开每一位辛辛苦苦积极进取的员工。在公司里面，做一颗默默无闻的螺丝钉是难能可贵的，而被挖掘出来的金子也是比比皆是的。 </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;又到一年年尾，每年这个时候，公司是最忙的，很多项目都在争取尽快收尾。所以大家都忙得不可开交。但是每年的惯例是不能少的，再怎么忙都务必抽出时间来总结，个人觉得这对自身成长是非常有必要的。因为今年年中做过一次总结，所以这次的总结重点主要是下半年的工作情况。就不啰嗦了，直奔主题。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="年终总结" scheme="superdanny.link/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CocoaPods之iOS组件化开发:远程私有库</title>
     <link href="superdanny.link/2018/07/31/CocoaPods-private-podspec/"/>
     <id>superdanny.link/2018/07/31/CocoaPods-private-podspec/</id>
@@ -1617,52 +1640,6 @@ b. this is line b
       <category term="iOS" scheme="superdanny.link/tags/iOS/"/>
     
       <category term="金额计算" scheme="superdanny.link/tags/%E9%87%91%E9%A2%9D%E8%AE%A1%E7%AE%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CocoaPods之repo换源和gem换源</title>
-    <link href="superdanny.link/2016/12/04/CocoaPods-update-gem-and-repo/"/>
-    <id>superdanny.link/2016/12/04/CocoaPods-update-gem-and-repo/</id>
-    <published>2016-12-04T07:21:00.000Z</published>
-    <updated>2017-07-14T02:25:23.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>由于淘宝gem源维护困难，所以已经不再维护。目前已经有了替代方案。</p>
-<h2 id="安装CocoaPods"><a href="#安装CocoaPods" class="headerlink" title="安装CocoaPods"></a>安装CocoaPods</h2><p>之前的<a href="/2014/12/16/CocoaPods/">CocoaPods安装过程</a>已经提及过，这里就不再累赘。</p>
-<a id="more"></a>
-<h2 id="gem换源"><a href="#gem换源" class="headerlink" title="gem换源"></a>gem换源</h2><p>请尽可能用比较新的 RubyGems 版本，建议 2.6.x 以上。</p>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gem update --system <span class="comment"># 这里请翻墙一下</span></div><div class="line">gem -v</div><div class="line">2.6.6</div></pre></td></tr></table></figure>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gem sources --add https://gems.ruby-china.org/ --remove http://ruby.taobao.org/</div><div class="line">gem sources <span class="_">-l</span></div><div class="line">https://gems.ruby-china.org</div><div class="line"><span class="comment"># 确保只有 gems.ruby-china.org</span></div></pre></td></tr></table></figure>
-<h2 id="pod-repo换源"><a href="#pod-repo换源" class="headerlink" title="pod repo换源"></a>pod repo换源</h2><figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod repo</div></pre></td></tr></table></figure>
-<p>会出现以下的字眼（本人以前有多个源，后来全部去掉了。自己直接使用的官方源）</p>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">artsy</div><div class="line">- Type: git (master)</div><div class="line">- URL:  https://github.com/Artsy/Specs.git</div><div class="line">- Path: /Users/superdanny/.cocoapods/repos/artsy</div><div class="line"></div><div class="line">getuilaboratory</div><div class="line">- Type: git (master)</div><div class="line">- URL:  https://github.com/GetuiLaboratory/Specs.git</div><div class="line">- Path: /Users/superdanny/.cocoapods/repos/getuilaboratory</div><div class="line"></div><div class="line">master</div><div class="line">- Type: git (master)</div><div class="line">- URL:  https://github.com/CocoaPods/Specs.git</div><div class="line">- Path: /Users/superdanny/.cocoapods/repos/master</div><div class="line"></div><div class="line">3 repos</div></pre></td></tr></table></figure>
-<p>如果有出现跟我一样的多个源时，可以删除不需要的源</p>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pod repo remove 源的名字</div><div class="line"><span class="comment"># 比如我上面的‘getuilaboratory’、‘artsy’等</span></div><div class="line">pod repo remove artsy</div></pre></td></tr></table></figure>
-<p>接下来就是更换源</p>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pod repo remove master</div><div class="line">pod repo add master https://gitcafe.com/akuandev/Specs.git</div><div class="line">pod repo update</div></pre></td></tr></table></figure>
-<h2 id="Cocoapods使用技巧"><a href="#Cocoapods使用技巧" class="headerlink" title="Cocoapods使用技巧"></a>Cocoapods使用技巧</h2><p>每次我们执行<code>pod install</code>、<code>pod update</code>时都会更新整个specs库，这样非常费时，所以想在不更新specs库的前提下安装三方库。</p>
-<p>只有当觉得specs库太旧了之后或者specs库里面找不到某个三方库时才进行更新specs库。</p>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pod install --verbose --no-repo-update</div><div class="line">pod update --verbose --no-repo-update</div></pre></td></tr></table></figure>
-<hr>
-<p>再一次感谢您花费时间阅读这篇文章！</p>
-<p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;由于淘宝gem源维护困难，所以已经不再维护。目前已经有了替代方案。&lt;/p&gt;
-&lt;h2 id=&quot;安装CocoaPods&quot;&gt;&lt;a href=&quot;#安装CocoaPods&quot; class=&quot;headerlink&quot; title=&quot;安装CocoaPods&quot;&gt;&lt;/a&gt;安装CocoaPods&lt;/h2&gt;&lt;p&gt;之前的&lt;a href=&quot;/2014/12/16/CocoaPods/&quot;&gt;CocoaPods安装过程&lt;/a&gt;已经提及过，这里就不再累赘。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Mac端" scheme="superdanny.link/categories/Mac%E7%AB%AF/"/>
-    
-    
-      <category term="终端" scheme="superdanny.link/tags/%E7%BB%88%E7%AB%AF/"/>
-    
-      <category term="CocoaPods" scheme="superdanny.link/tags/CocoaPods/"/>
-    
-      <category term="Gem" scheme="superdanny.link/tags/Gem/"/>
     
   </entry>
   

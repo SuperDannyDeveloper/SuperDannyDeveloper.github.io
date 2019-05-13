@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>superdanny.link/2018/12/23/2018-Year-end-summary/</loc>
+    <lastmod>2019-03-08T03:43:22.598Z</lastmod>
+    <data>
+        <display>
+        <title>2018，我的年终工作总结</title>
+        <pubTime>2018-12-23T07:48:00.000Z</pubTime>
+        
+        <tag>年终总结</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2019/03/07/iOS-Icon-Launch%20Screen/</loc>
     <lastmod>2019-03-08T03:11:22.205Z</lastmod>
     <data>
@@ -1709,26 +1726,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
-    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>关于开发中遇到问题处理思路</title>
-        <pubTime>2015-09-18T05:56:00.000Z</pubTime>
-        
-        <tag>解决方式</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2015/09/17/Fix-svn-directory-is-out-of-date/</loc>
     <lastmod>2016-11-30T01:56:39.000Z</lastmod>
     <data>
@@ -1742,6 +1739,26 @@
            
              
               <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
+    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>关于开发中遇到问题处理思路</title>
+        <pubTime>2015-09-18T05:56:00.000Z</pubTime>
+        
+        <tag>解决方式</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
           
         </display>
     </data>
