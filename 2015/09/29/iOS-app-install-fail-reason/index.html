@@ -15,7 +15,7 @@
 <meta property="og:url" content="superdanny.link/2015/09/29/iOS-app-install-fail-reason/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
 <meta property="og:description" content="本文结合蒲公英以及FIR两家应用托管平台的博文进行整理 前言iOS 的内测应用在安装时，很多人都遇到过安装失败的情况，安装失败的原因比较多，下面将一些常见原因总结如下，方便开发者进行排查。">
-<meta property="og:updated_time" content="2017-07-14T02:24:46.000Z">
+<meta property="og:updated_time" content="2019-06-11T10:54:05.721Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS应用安装失败原因排查">
 <meta name="twitter:description" content="本文结合蒲公英以及FIR两家应用托管平台的博文进行整理 前言iOS 的内测应用在安装时，很多人都遇到过安装失败的情况，安装失败的原因比较多，下面将一些常见原因总结如下，方便开发者进行排查。">
@@ -219,7 +219,10 @@ var _hmt = _hmt || [];
 <p>只需要将<code>Info.plist</code>文件中的<code>LSRequiresIPhoneOS</code>设置为<strong>YES</strong>，然后重新打包即可。具体操作为：在 Xcode 中打开<code>Info.plist</code>文件，然后检查 <code>LSRequiresIPhoneOS</code>是否已设置，如果没有设置，就添加一个，然后将<code>LSRequiresIPhoneOS</code>的类型设置为<strong>Boolean</strong>，值设置为 <strong>YES</strong>。</p>
 <p>设置好以后，可以看到<code>Info.plist</code>文件中显示<code>APPlication requires iPhone environment</code>的值为<strong>YES</strong>。</p>
 <h3 id="原因九：网络出现中断或异常。"><a href="#原因九：网络出现中断或异常。" class="headerlink" title="原因九：网络出现中断或异常。"></a><strong>原因九：网络出现中断或异常。</strong></h3><p>遇到这种情况，用户可检查自己手机的所连接的网络是否稳定、速度是否正常等。可以尝试一下其他网站，或者更换一个 Wi-Fi，或者由 Wi-Fi 换成 3G/4G 等，然后重新安装。</p>
-<h2 id="企业证书打包安装失败"><a href="#企业证书打包安装失败" class="headerlink" title="企业证书打包安装失败"></a>企业证书打包安装失败</h2><p>这里推荐<a href="https://fir.im" target="_blank" rel="external">FIR</a>提供的一款可以打印安装失败日志的工具<a href="https://fir.im/tools/log_guru" target="_blank" rel="external">Log Guru</a></p>
+<h2 id="企业证书打包安装失败"><a href="#企业证书打包安装失败" class="headerlink" title="企业证书打包安装失败"></a>企业证书打包安装失败</h2><p>这里推荐两款具备打印安装失败日志的工具：</p>
+<p><a href="https://fir.im" target="_blank" rel="external">FIR</a>旗下的工具<a href="https://fir.im/tools/log_guru" target="_blank" rel="external">Log Guru</a></p>
+<p><a href="https://www.pgyer.com" target="_blank" rel="external">蒲公英</a>旗下的工具<a href="https://www.pgyer.com/apps" target="_blank" rel="external">蒲公英客户端</a></p>
+<p><a href="https://www.pgyer.com/doc/view/ios_install_log" target="_blank" rel="external">日志错误分析</a></p>
 <p>下面的几条是转载至<a href="http://blog.chinaunix.net/uid/29439762.html" target="_blank" rel="external">Sailinghj’s blog</a></p>
 <h3 id="自我检查以下几方面"><a href="#自我检查以下几方面" class="headerlink" title="自我检查以下几方面"></a>自我检查以下几方面</h3><p>1、 若要在网页上安装 APP，则 iOS7.1 及以后的 plist 文件的下载地址要放在https的网址下，而ipa文件下载地址不一定要https。</p>
 <p>2、 ipa文件放到服务器上时，要设置下iis的 ipa 文件下载支持，否则点击下载后会图标一直停留在“等待中”。</p>
@@ -581,19 +584,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">年中总结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打赏</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+                <a href="javascript:void(0)" class="js-tag color5">年中总结</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -633,19 +636,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -657,11 +652,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
+                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -673,14 +680,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Swift</a>
               </li>
              
@@ -689,11 +688,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -713,14 +716,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Autolayout</a>
               </li>
              
@@ -729,11 +724,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -741,7 +740,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
+                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -749,11 +748,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
+                <a href="javascript:void(0)" class="js-tag color5">ijkPlayer</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -769,15 +764,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
+                <a href="javascript:void(0)" class="js-tag color4">KVC</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件预览</a>
+                <a href="javascript:void(0)" class="js-tag color4">KVO</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -789,7 +780,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+                <a href="javascript:void(0)" class="js-tag color5">文件共享</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件预览</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -806,6 +805,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -841,15 +844,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">代码块</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">iOS9</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">
