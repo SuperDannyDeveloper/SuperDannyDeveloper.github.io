@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>superdanny.link/2015/09/29/iOS-app-install-fail-reason/</loc>
+    <lastmod>2019-06-29T02:30:00.831Z</lastmod>
+    <data>
+        <display>
+        <title>iOS应用安装失败原因排查</title>
+        <pubTime>2015-09-29T08:40:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>安装失败</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2019/06/05/Partition-boot-disk/</loc>
     <lastmod>2019-06-18T05:10:09.817Z</lastmod>
     <data>
@@ -19,28 +41,6 @@
            
              
               <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2015/09/29/iOS-app-install-fail-reason/</loc>
-    <lastmod>2019-06-11T10:54:05.721Z</lastmod>
-    <data>
-        <display>
-        <title>iOS应用安装失败原因排查</title>
-        <pubTime>2015-09-29T08:40:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-        <tag>安装失败</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -701,9 +701,9 @@
         
         <tag>iOS</tag>
          
-        <tag>iOS9</tag>
-         
         <tag>In-House</tag>
+         
+        <tag>iOS9</tag>
          
         <tag>企业级证书打包</tag>
          
@@ -1580,9 +1580,9 @@
         <title>MacOS X隐藏和显示隐藏文件</title>
         <pubTime>2015-09-09T19:02:00.000Z</pubTime>
         
-        <tag>Mac</tag>
-         
         <tag>文件操作</tag>
+         
+        <tag>Mac</tag>
          
          
            
@@ -1731,26 +1731,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
-    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>关于开发中遇到问题处理思路</title>
-        <pubTime>2015-09-18T05:56:00.000Z</pubTime>
-        
-        <tag>解决方式</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2015/09/17/Fix-svn-directory-is-out-of-date/</loc>
     <lastmod>2016-11-30T01:56:39.000Z</lastmod>
     <data>
@@ -1771,16 +1751,14 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
-    <lastmod>2016-11-30T01:56:38.000Z</lastmod>
+    <loc>superdanny.link/2015/09/18/Development-solutions/</loc>
+    <lastmod>2016-11-30T01:56:39.000Z</lastmod>
     <data>
         <display>
-        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
-        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
+        <title>关于开发中遇到问题处理思路</title>
+        <pubTime>2015-09-18T05:56:00.000Z</pubTime>
         
-        <tag>iOS</tag>
-         
-        <tag>长按文本框</tag>
+        <tag>解决方式</tag>
          
          
            
@@ -1801,6 +1779,28 @@
         <pubTime>2015-08-20T04:13:00.000Z</pubTime>
         
         <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
+    <lastmod>2016-11-30T01:56:38.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
+        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>长按文本框</tag>
          
          
            
