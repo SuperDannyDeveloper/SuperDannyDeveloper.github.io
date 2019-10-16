@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>superdanny.link/2015/09/24/iOS-about-certification/</loc>
+    <lastmod>2019-10-16T08:31:03.667Z</lastmod>
+    <data>
+        <display>
+        <title>Apple开发者账号相关</title>
+        <pubTime>2015-09-24T14:54:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>开发者账号</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+             
+              <breadCrumb title="Mac端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/Mac%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2015/09/29/iOS-app-install-fail-reason/</loc>
     <lastmod>2019-06-29T02:30:00.831Z</lastmod>
     <data>
@@ -42,6 +67,23 @@
              
               <breadCrumb title="Mac端" url="superdanny.link/categories/Mac%E7%AB%AF/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>superdanny.link/2018/12/23/2018-Year-end-summary/</loc>
+    <lastmod>2019-03-08T03:43:22.598Z</lastmod>
+    <data>
+        <display>
+        <title>2018，我的年终工作总结</title>
+        <pubTime>2018-12-23T07:48:00.000Z</pubTime>
+        
+        <tag>年终总结</tag>
+         
+         
+           
         </display>
     </data>
     </url>
@@ -952,31 +994,6 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/24/iOS-about-certification/</loc>
-    <lastmod>2017-07-14T02:19:50.000Z</lastmod>
-    <data>
-        <display>
-        <title>Apple开发者账号相关</title>
-        <pubTime>2015-09-24T14:54:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-        <tag>开发者账号</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-          
-             
-              <breadCrumb title="Mac端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/Mac%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>superdanny.link/2016/02/20/iOS-Apple-Pay/</loc>
     <lastmod>2017-07-14T02:19:34.000Z</lastmod>
     <data>
@@ -1771,14 +1788,16 @@
 
     
   <url>
-    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
+    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>指定UIView的特定角为圆角</title>
-        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
+        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
+        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
         
         <tag>iOS</tag>
+         
+        <tag>长按文本框</tag>
          
          
            
@@ -1791,16 +1810,14 @@
 
     
   <url>
-    <loc>superdanny.link/2015/09/16/iOS-Custom-UITextField-and-UITextView-function/</loc>
+    <loc>superdanny.link/2015/08/20/iOS-Custom-UIView-fillet/</loc>
     <lastmod>2016-11-30T01:56:38.000Z</lastmod>
     <data>
         <display>
-        <title>如何禁用/解除禁用 复制、剪切、选择、全选</title>
-        <pubTime>2015-09-16T05:31:00.000Z</pubTime>
+        <title>指定UIView的特定角为圆角</title>
+        <pubTime>2015-08-20T04:13:00.000Z</pubTime>
         
         <tag>iOS</tag>
-         
-        <tag>长按文本框</tag>
          
          
            
