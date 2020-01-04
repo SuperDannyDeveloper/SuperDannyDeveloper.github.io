@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="superdanny.link/"/>
-  <updated>2019-06-18T05:10:09.817Z</updated>
+  <updated>2020-01-04T10:32:04.139Z</updated>
   <id>superdanny.link/</id>
   
   <author>
@@ -14,6 +14,64 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2019，我的年终工作总结</title>
+    <link href="superdanny.link/2020/01/05/2019-Year-end-summary/"/>
+    <id>superdanny.link/2020/01/05/2019-Year-end-summary/</id>
+    <published>2020-01-05T07:48:00.000Z</published>
+    <updated>2020-01-04T10:32:04.139Z</updated>
+    
+    <content type="html"><![CDATA[<p>日复一日，年复一年。在无数的日夜里奔波，不为崇高的理想，愿在专业领域学到更多知识与经验。在职场上保持应有的职业素养。——题记</p>
+<a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>成长对于一个人来说至关重要，而企业的发展也离不开每一位辛辛苦苦积极进取的员工。在公司里面，做一颗默默无闻的螺丝钉是难能可贵的，而被挖掘出来的金子也比比皆是。 </p>
+<p>从15年入职到现在，将近五个年头，弹指一挥间。在轩宇这个大家庭里，我从一位普普通通的企业基层员工奋斗到组长一职，再后来到项目经理。这一次次的职位转变，是公司领导的信任与器重，是每一位同事的认可，更是大家对我能力的肯定。几年的磨炼，对我的影响颇为深刻。不管是哪一个部门，对我来讲都有值得学习的地方。以谦卑之心和求知若渴的心态待之，必定能够收获不少。这是我在公司这几年最深切的感受。</p>
+<h2 id="生于忧患，未雨绸缪"><a href="#生于忧患，未雨绸缪" class="headerlink" title="生于忧患，未雨绸缪"></a>生于忧患，未雨绸缪</h2><p>2019年，团队的工作重心主要还是在海外项目上。由于公司很多现有的项目都存在多方面的问题，所以年初的时候就开始进行项目重构计划，主要突出的情况如下：</p>
+<ul>
+<li>项目创建时间比较久，大都是2年左右的陈旧项目，缺乏定期管理；</li>
+<li>项目架构单一，不再适用当今快速迭代的步伐；</li>
+<li>代码机制陈旧，存在太多不确定的性能问题；</li>
+<li>以往开发周期短，导致项目存在太多冗余代码；</li>
+<li>程序包体积庞大，用户下载时间长，体验较差；</li>
+<li>项目处理多渠道方案不周全，导致一旦不同渠道客户提出不同需求，要做的适配工作就非常多；</li>
+<li>缺乏自家托管平台，太多依赖第三方平台，安全性和灵活度低；</li>
+<li>技术的更新迭代速度很快，一旦项目不定期维护，很快将不再适用市场需求，相应的市场份额也会受到很大的影响，最终面临被社会淘汰的命运；</li>
+</ul>
+<p>基于以上存在的问题，同时考虑到开发团队往后会不断壮大，项目架构凌乱会导致协同出现问题。为此，我结合现有项目的松紧度，决定对项目进行整体重构。</p>
+<h3 id="初步计划"><a href="#初步计划" class="headerlink" title="初步计划"></a>初步计划</h3><p>为了解决这些问题，初步制定的计划是：</p>
+<ol>
+<li>将项目中以往冗余的代码抽离并统一封装以供调用</li>
+<li>将第三方工具、类库统一管理，通过配置文件方式动态配置</li>
+<li>严格要求类文件、函数等命名规范，完善注释，便于后期维护</li>
+<li>重新调整项目架构，优化项目目录结构，不同功能类文件分类管理</li>
+<li>改用系统原生建议的”Targets“配合”Scheme“作为多渠道打包方式，同宏定义进行渠道区分</li>
+<li>将占用安装包体积的资源文件以及图片素材根据渠道区分分开处理，这样不会在打包时将无用素材打包进去，同时在使用图片素材前先对图片进行压缩处理，减少安装包体积</li>
+<li>研究托管平台机制，多部门配合学习并尝试搭建部署</li>
+</ol>
+<h3 id="结果成效"><a href="#结果成效" class="headerlink" title="结果成效"></a>结果成效</h3><p>由于公司的项目种类多，功能杂，导致整套方案从计划到实施再到推出使用，周期长达2个月之久，中间实施的时候还专门开了一场内部会议进行技术探讨，前前后后花了不少时间。但是不管中间有多么困难曲折，最后都被完美解决。而且这次重构，带来的效益是非常可观的，主要体现在多方面：</p>
+<ol>
+<li>项目开发方面，最明显的变化是以往一个新项目下来，搭建框架花费的时间大概是3天至少，现如今只需要1天即可搭建完毕。同时同类项目增加渠道方面也有了提升，只需简单几步配置，设计同事提供相应素材，直接替换，一个新渠道的项目即可成型。为开发节省了至少30%的时间成本。</li>
+<li>安装包管理方面，摆脱第三方托管平台依赖，灵活度更高，维护成本低，方便开发以及测试同事进行分包管理。</li>
+<li>程序稳定性方面，相比以往，程序出错率明显降低，同时借助新加入的日志文件功能，很好的帮助我们更快的定位问题。</li>
+</ol>
+<p>接下来，在远程管理、多端控制、日志分析、TestFlight分包等领域还有更多的考虑。我也相信，在部门同事的共同努力下，还会有更多的优质产品产出。到那时，编程将成为一种工作乐趣。</p>
+<h2 id="我们的南方电网"><a href="#我们的南方电网" class="headerlink" title="我们的南方电网"></a>我们的南方电网</h2><p>归功于年初的重构计划，使得今年电网项目在开发方面十分顺利而且高效，代码冗余的情况出现率极低，架构方面也变得清晰，项目整体稳定，iOS端出现问题的情况也减少。但是我们也没有满足于现状，项目优化以及组内协调这条路还很长，随着技术的更新，我们仍然会秉持”活到老，学到了“的态度，在技术的潮流中乘风破浪。<br>今年公司的海外项目在企业签名这块投入了许多时间跟资金成本。超级签名虽然是一个替代方案，但是考虑到因为成本太高，对我们来说不符合实际情况，所以也就迟迟不考虑。但是由于苹果的单方面限制，企业签名也不会是一个长久之计，在这一块领域，可能会考虑另一种方式来替换企业签名方式。在新的一年里，会将这一块纳入重点研究方向。</p>
+<p>热线部是一个同客人直接对接打交道的重要部门，是开发与客户沟通的重要桥梁。我们公司的业务范围逐年增多，新老员工的更新交替也变得频繁，人员再培训的成本也随之加大。而某些技术问题或者业务在热线不清楚的情况下，盲目的找开发人员，而有时候开发人员可能存在踢皮球的情况出现，这个时候是很被动的。我们公司一直欠缺一个类似客服维基百科平台，专门用于存放项目文档以及功能介绍。年中的时候，有尝试部署过一套，不过后面由于其他项目的原因耽搁了。希望在新的一年可以将这个平台尽早推广开，完善热线部的技术盲区。</p>
+<h2 id="起死回生"><a href="#起死回生" class="headerlink" title="起死回生"></a>起死回生</h2><p>以往的线上项目以雲澳門、雲社团、潮为主，都是主打澳门市场，但由于种种原因，项目被全面下线。经历重创之后，项目被回炉再造。而苹果审核机制又十分特殊，多方提交审核都被打下来。再三考虑之后，我们决定采用渠道分包的打包方式结合部分模块修改，经过几个星期的调整之后，终于在11月份的时候将下架的“雲澳門（又名”MCloud“）“项目重新上架App Store。从下架到重新上架，经历了长达半年之久，这背后的心酸不言而喻。与此同时，我们也认真重视这次事件带来的严重后果，对后续的线上项目进行严格的管理，避免再次出现同样的问题。<br>与此同时，我们也将公司的盈利项目”電話充值繳費“项目进行适配，兼容市场最新机型并成功上架。这让我们摆脱了以往使用企业证书签名的困境，为公司节省下一笔不必要的开支。</p>
+<h2 id="项目管理"><a href="#项目管理" class="headerlink" title="项目管理"></a>项目管理</h2><p>在这几年的时间，我的思维有了很大的转变。看待问题不再局限于自身的技术领域，更多的是考虑多方面因素，站在更高的角度全局思考问题。这也给了我一个以前从未有的感受，而这种经历带给我的不仅仅是技能能力的锻炼，更多的是考验我在待人处事、协作沟通以及人员调配方面的处理能力。<br>在管理的道路上，我还有很多要学习的地方。团队管理是一门永远也学不完的课程。在用人以及协调方面学问很多，我还需要投入更多的时间跟精力好好学习，但是这里并不会是我的终点。希望以后戒骄戒躁，处变不惊，这也是我未来发展道路的一堂必修课。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>2019年，对于我们来说是一个转折点。在公司这几年，有旧同事离职带来的伤感与哀叹，也有新同事入职不断壮大公司的队伍。这也是一个企业无法避免的事，但是我们也需要重视看待这种事情，毕竟招人容易，留人难。每每更换一批人员，带来的再培训成本也不低。所以为了避免出现过多的人员培训，在面试岗位上面相比以往，我们部门也开始要求技术领域以及开发经验上面需要有一定的基础，逻辑思维以及沟通方面也更加注重，毕竟在开发过程中沟通是一个很关键的环节，技术再强，不善于沟通会成为一个人的短板。有人说，互联网的寒冬来了，这话听起来挺悲哀的，这是事实，但也不完全正确。这个时期正好是一个筛选人才的好时机。将滥竽充数的人排除在外，为企业注入真正有真材实料的血液。<br>团队的沟通以及默契让我看到了曙光，因为这不是一个人在奋斗，而是大家朝着同样的目标共同努力前行。引用习大大2020年新年贺词：“只争朝夕，不负韶华”。新的一年已经到来，团队还会继续扩充，企业未来可期。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;日复一日，年复一年。在无数的日夜里奔波，不为崇高的理想，愿在专业领域学到更多知识与经验。在职场上保持应有的职业素养。——题记&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="年终总结" scheme="superdanny.link/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>分区制作U启(U盘启动盘)</title>
@@ -69,7 +127,7 @@
     <link href="superdanny.link/2019/03/07/iOS-Icon-Launch%20Screen/"/>
     <id>superdanny.link/2019/03/07/iOS-Icon-Launch Screen/</id>
     <published>2019-03-07T08:36:00.000Z</published>
-    <updated>2019-03-08T03:11:22.205Z</updated>
+    <updated>2019-03-08T03:11:22.206Z</updated>
     
     <content type="html"><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>现在苹果的尺寸越来越多，Xcode的图标配置以及启动图的尺寸又做的不够人性化，没有提示尺寸，所以很多时候都需要网上找相关的资料或者利用第三方生成工具生成对应尺寸的素材。比较麻烦，所以准备自己记录一下相关尺寸，便于以后管理查阅。</p>
 <a id="more"></a> 
@@ -479,7 +537,7 @@
     <link href="superdanny.link/2018/07/03/2018-Mid-year-work-summary/"/>
     <id>superdanny.link/2018/07/03/2018-Mid-year-work-summary/</id>
     <published>2018-07-03T15:10:00.000Z</published>
-    <updated>2018-07-09T03:12:29.382Z</updated>
+    <updated>2018-07-09T03:12:29.383Z</updated>
     
     <content type="html"><![CDATA[<p>出于公司的战略发展原因，今年的总结将改为半年一次工作总结。年中年底各一次小结，同时年底一次全方面总结。18年，一个特殊之年，也是我第四个年头写总结了，每一年的总结都有所收获，有所成长。本次重点在总结上半年工作情况以及下半年的计划。</p>
 <a id="more"></a>
@@ -1510,162 +1568,6 @@ b. this is line b
       <category term="Autolayout" scheme="superdanny.link/tags/Autolayout/"/>
     
       <category term="动画" scheme="superdanny.link/tags/%E5%8A%A8%E7%94%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NSDecimalNumber实现金融类等高精度计算(转改)</title>
-    <link href="superdanny.link/2016/12/14/iOS-High-precision-calculation/"/>
-    <id>superdanny.link/2016/12/14/iOS-High-precision-calculation/</id>
-    <published>2016-12-14T09:43:00.000Z</published>
-    <updated>2017-07-14T02:24:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>平时我们进行数值计算时，使用常用的数据类型进行加减乘除是不会有什么问题的，但是一旦涉及精度高的，特别是计算金额时，就特别容易踩坑，本人就经历过两次，回想起来血淋淋的场面依然历历在目。</p>
-<p>苹果其实很早就推出过计算高精度类型的API。只不过我没发现。感觉自己还是<code>too young too simple</code>。话不多说，直奔主题。</p>
-<a id="more"></a>
-<p>本文转载至<a href="http://www.skyfox.org/" target="_blank" rel="external">天狐博客</a></p>
-<h2 id="NSDecimalNumber"><a href="#NSDecimalNumber" class="headerlink" title="NSDecimalNumber"></a>NSDecimalNumber</h2><p>NSDecimalNumber,不可变NSNumber 的子类,提供了一个面向对象的十进制运算包装器 。实例可以代表任意数值,表示为(mantissa)尾数x 10 ^(exponent)指数,(mantissa)尾数是一个十进制整数到38位长,(exponent)指数是一个整数从-128年到127。</p>
-<p><img src="http://ww4.sinaimg.cn/large/81f8a509gw1faqhzrjguwj20be03cjrd.jpg" alt=""></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">参数名</th>
-<th style="text-align:center">意义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Mantissa</td>
-<td style="text-align:center">十进制整数</td>
-</tr>
-<tr>
-<td style="text-align:center">Exponent</td>
-<td style="text-align:center">小数位数</td>
-</tr>
-<tr>
-<td style="text-align:center">Flag(Sign)</td>
-<td style="text-align:center">是否为负数</td>
-</tr>
-</tbody>
-</table>
-<h3 id="创建Decimal-Number"><a href="#创建Decimal-Number" class="headerlink" title="创建Decimal Number"></a>创建Decimal Number</h3><p><strong>+ (NSDecimalNumber *)decimalNumberWithMantissa:(unsigned long long)mantissa exponent:(short)exponent isNegative:(BOOL)flag</strong></p>
-<p>参数表示 一个number的科学记数法 ,要求(mantissa)尾数是一个整数。例如,如果表示的数是-12.345,它是表示为12345 x10 ^ 3   -mantissa 是12345;(exponent)指数是3;和isNegative(一个布尔值,用于指定number 的(sign)符号是负的)是YES,如下例所示。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSDecimalNumber</span> *number = [<span class="built_in">NSDecimalNumber</span> decimalNumberWithMantissa:<span class="number">12345</span></div><div class="line">                                                            exponent:<span class="number">-3</span></div><div class="line">                                                          isNegative:<span class="literal">YES</span>];</div></pre></td></tr></table></figure>
-<p><strong>+ (NSDecimalNumber *)decimalNumberWithDecimal:(NSDecimal)decimal</strong></p>
-<p>给定一个NSDecimal数据结构,创建并返回一个等价的 NSDecimalNumber对象</p>
-<p><strong>+ (NSDecimalNumber <em>)decimalNumberWithString:(NSString </em>)numericString</strong></p>
-<p>创建并返回一个NSDecimalNumber对象值相当于个给定的数字字符串。</p>
-<p>numericString:除了数字字符串,numericString可以包括一个“+”或“-”,一个“E”或“E”,用科学记数法表示一个数的指数,和一个NSLocaleDecimalSeparator划分的部分数的有效组成部分。</p>
-<p><strong>+ (NSDecimalNumber <em>)decimalNumberWithString:(NSString </em>)numericString  locale:(id)locale</strong></p>
-<p>locale:一个字典定义语言环境(特别是NSLocaleDecimalSeparator),在进行解析numericString的时候</p>
-<p>numericString:除了数字字符串,numericString可以包括一个“+”或“-”,一个“E”或“E”,用科学记数法表示一个数的指数,和一个NSLocaleDecimalSeparator划分的部分数的有效组成部分。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//以","当做分隔符格式</span></div><div class="line"><span class="built_in">NSDictionary</span> *locale = @&#123;<span class="built_in">NSLocaleDecimalSeparator</span> :<span class="string">@","</span>];</div><div class="line"><span class="comment">//123.4</span></div><div class="line"><span class="built_in">NSDecimalNumber</span> *discountAmount = [<span class="built_in">NSDecimalNumber</span> decimalNumberWithString:<span class="string">@"123,40"</span> locale:locale];</div></pre></td></tr></table></figure>
-<p>以下是numericString的一些正确示例:</p>
-<pre><code>“2500.6” (or “2500,6”, 取决于 locale)
-“–2500.6” (or “–2500,6”)
-“–2.5006e3” (or “–2,5006e3”)
-“–2.5006E3” (or “–2,5006E3”)
-</code></pre><p>以下是numericString的一些错误示例:</p>
-<pre><code>“2,500.6”
-“2500 3/5”
-“2.5006x10e3”
-“two thousand five hundred and six tenths”
-</code></pre><p><strong>+ (NSDecimalNumber *)one</strong></p>
-<p>一个 等同于 1.0的NSDecimalNumber对象</p>
-<p><strong>+ (NSDecimalNumber *)zero</strong></p>
-<p>一个 等同于 0.0的NSDecimalNumber对象</p>
-<p><strong>+ (NSDecimalNumber *)notANumber</strong></p>
-<p>没有指定数值的NSDecimalNumber对象</p>
-<p>常用于对比，比如：[[NSDecimalNumber notANumber] isEqualToNumber:myNumber];</p>
-<h3 id="初始化Decimal-Number"><a href="#初始化Decimal-Number" class="headerlink" title="初始化Decimal Number"></a>初始化Decimal Number</h3><p><strong>- (instancetype)initWithDecimal:(NSDecimal)decimal</strong></p>
-<p>一个NSDecimalNumber使用给定decimal对象初始化</p>
-<p><strong>- (instancetype)initWithMantissa:(unsigned long long)mantissa  exponent:(short)exponent  isNegative:(BOOL)flag</strong></p>
-<p>使用(mantissa)尾数, (exponent)指数 number 的(sign)符号,来初始化NSDecimalNumber</p>
-<p><strong>- (instancetype)initWithString:(NSString *)numericString</strong></p>
-<p>创建并返回一个NSDecimalNumber对象值相当于个给定的numericString数字字符串。</p>
-<p>numericString:除了数字字符串,numericString可以包括一个“+”或“-”,一个“E”或“E”,用科学记数法表示一个数的指数,和一个NSLocaleDecimalSeparator划分的部分数的有效组成部分。</p>
-<p><strong>- (instancetype)initWithString:(NSString *)numericString  locale:(id)locale</strong></p>
-<p>以numericString,locale初始化NSDecimalNumber对象</p>
-<p>locale:一个字典定义语言环境(特别是NSLocaleDecimalSeparator),在进行解析numericString的时候</p>
-<p>numericString:除了数字字符串,numericString可以包括一个“+”或“-”,一个“E”或“E”,用科学记数法表示一个数的指数,和一个NSLocaleDecimalSeparator划分的部分数的有效组成部分。</p>
-<h3 id="加法运算"><a href="#加法运算" class="headerlink" title="加法运算"></a>加法运算</h3><p><strong>- (NSDecimalNumber <em>)decimalNumberByAdding:(NSDecimalNumber </em>)decimalNumber</strong></p>
-<p>返回一个新的NSDecimalNumber对象, 值 是接收方与另一个给定NSDecimalNumber对象的总和。</p>
-<p><strong>- (NSDecimalNumber <em>)decimalNumberByAdding:(NSDecimalNumber </em>)decimalNumber withBehavior:(nullable id <nsdecimalnumberbehaviors>)behavior</nsdecimalnumberbehaviors></strong></p>
-<p>加上decimalNumber给接受者并返回一个新创建的NSDecimalNumber对象。</p>
-<p>behavior:指定的如何处理计算错误和舍入行为。</p>
-<h3 id="减法运算"><a href="#减法运算" class="headerlink" title="减法运算"></a>减法运算</h3><p><strong>- (NSDecimalNumber <em>)decimalNumberBySubtracting:(NSDecimalNumber </em>)decimalNumber</strong></p>
-<p>返回一个新的NSDecimalNumber对象,其值是调用者减去另一个给定NSDecimalNumber对象的值。</p>
-<p><strong>- (NSDecimalNumber <em>)decimalNumberBySubtracting:(NSDecimalNumber </em>)decimalNumber withBehavior:(id<nsdecimalnumberbehaviors>)behavior</nsdecimalnumberbehaviors></strong></p>
-<p>返回一个新的NSDecimalNumber对象,其值是调用者减去另一个给定NSDecimalNumber对象的值。</p>
-<p>behavior:指定的如何处理计算错误和舍入行为。</p>
-<h3 id="乘法运算"><a href="#乘法运算" class="headerlink" title="乘法运算"></a>乘法运算</h3><p><strong>- (NSDecimalNumber <em>)decimalNumberByMultiplyingBy:(NSDecimalNumber </em>)decimalNumber</strong></p>
-<p>返回一个新的NSDecimalNumber对象,其值是调用者乘以另一个给定NSDecimalNumber对象的值。</p>
-<p><strong>- (NSDecimalNumber <em>)decimalNumberByMultiplyingBy:(NSDecimalNumber </em>)decimalNumber withBehavior:(nullable id <nsdecimalnumberbehaviors>)behavior</nsdecimalnumberbehaviors></strong></p>
-<p>返回一个新的NSDecimalNumber对象,其值是调用者乘以另一个给定NSDecimalNumber对象的值。</p>
-<p>behavior:指定的如何处理计算错误和舍入行为。</p>
-<h3 id="除法运算"><a href="#除法运算" class="headerlink" title="除法运算"></a>除法运算</h3><p><strong>- (NSDecimalNumber <em>)decimalNumberByDividingBy:(NSDecimalNumber </em>)decimalNumber</strong></p>
-<p>返回一个新的NSDecimalNumber对象,其值是调用者除以另一个给定NSDecimalNumber对象的值。</p>
-<p><strong>- (NSDecimalNumber <em>)decimalNumberByDividingBy:(NSDecimalNumber </em>)decimalNumber withBehavior:(nullable id <nsdecimalnumberbehaviors>)behavior</nsdecimalnumberbehaviors></strong></p>
-<p>返回一个新的NSDecimalNumber对象,其值是调用者除以另一个给定NSDecimalNumber对象的值。</p>
-<p>behavior:指定的如何处理计算错误和舍入行为。</p>
-<h3 id="a的N次方"><a href="#a的N次方" class="headerlink" title="a的N次方"></a>a的N次方</h3><p><strong>- (NSDecimalNumber *)decimalNumberByRaisingToPower:(NSUInteger)power</strong></p>
-<p>返回一个新的NSDecimalNumber对象,其值是调用者 的power次方。</p>
-<p><strong>- (NSDecimalNumber *)decimalNumberByRaisingToPower:(NSUInteger)power withBehavior:(nullable id <nsdecimalnumberbehaviors>)behavior</nsdecimalnumberbehaviors></strong></p>
-<p>返回一个新的NSDecimalNumber对象,其值是调用者 的power次方。</p>
-<p>behavior:指定的如何处理计算错误和舍入行为。</p>
-<h3 id="指数运算"><a href="#指数运算" class="headerlink" title="指数运算"></a>指数运算</h3><p><strong>- (NSDecimalNumber *)decimalNumberByMultiplyingByPowerOf10:(short)power</strong></p>
-<p>返回一个新的NSDecimalNumber对象,其值是调用者乘以10的power次方。</p>
-<p><strong>- (NSDecimalNumber *)decimalNumberByMultiplyingByPowerOf10:(short)power withBehavior:(nullable id <nsdecimalnumberbehaviors>)behavior</nsdecimalnumberbehaviors></strong></p>
-<p>返回一个新的NSDecimalNumber对象,其值是调用者乘以10的power次方。</p>
-<p>behavior:指定的如何处理计算错误和舍入行为。</p>
-<h3 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h3><p><strong>- (NSDecimalNumber *)decimalNumberByRoundingAccordingToBehavior:(nullable id <nsdecimalnumberbehaviors>)behavior</nsdecimalnumberbehaviors></strong></p>
-<p>返回一个新的NSDecimalNumber对象,其值是调用者四舍五入过后的值。</p>
-<p>behavior:指定的如何处理计算错误和舍入行为。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSDecimalNumberHandler</span> * handler =</div><div class="line">[[<span class="built_in">NSDecimalNumberHandler</span> alloc] initWithRoundingMode:<span class="built_in">NSRoundPlain</span></div><div class="line">                                               scale:scale</div><div class="line">                                    raiseOnExactness:<span class="literal">NO</span></div><div class="line">                                     raiseOnOverflow:<span class="literal">YES</span></div><div class="line">                                    raiseOnUnderflow:<span class="literal">YES</span></div><div class="line">                                 raiseOnDivideByZero:<span class="literal">YES</span>];</div><div class="line"><span class="built_in">NSDecimalNumber</span> *result = [number decimalNumberByRoundingAccordingToBehavior:handler];</div></pre></td></tr></table></figure>
-<p>描述不同的舍入方式,查看NSDecimalNumberBehaviors协议规范的roundingMode方法。</p>
-<p><strong>roundingMode四舍五入策略</strong></p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Original</span></div><div class="line"><span class="comment">//    value 1.2  1.21  1.25  1.35  1.27</span></div><div class="line"></div><div class="line"><span class="comment">// NSRoundPlain    1.2  1.2   1.3   1.4   1.3</span></div><div class="line"><span class="comment">// NSRoundDown     1.2  1.2   1.2   1.3   1.2</span></div><div class="line"><span class="comment">// NSRoundUp       1.2  1.3   1.3   1.4   1.3</span></div><div class="line"><span class="comment">// NSRoundBankers  1.2  1.2   1.2   1.4   1.3</span></div></pre></td></tr></table></figure>
-<h3 id="访问值"><a href="#访问值" class="headerlink" title="访问值"></a>访问值</h3><p><strong>@property(readonly) NSDecimal decimalValue</strong></p>
-<p>十进制数最近似的double值。(只读)</p>
-<p><strong>- (NSString *)descriptionWithLocale:(id)locale</strong></p>
-<p>根据给定的locale返回number的字符串</p>
-<p><strong>@property(readonly) const char *objCType</strong></p>
-<p>Objective- C的C字符串类型的数据,包含小数对象。(只读)</p>
-<h3 id="管理-Behavior"><a href="#管理-Behavior" class="headerlink" title="管理 Behavior"></a>管理 Behavior</h3><p><strong>+ (id<nsdecimalnumberbehaviors>)defaultBehavior</nsdecimalnumberbehaviors></strong></p>
-<p>返回的算术的方法、像decimalNumberByAdding:四舍五入和处理错误的条件。默认情况下,算术方法使用NSRoundPlain行为;也就是说,四舍五入最可能的返回值的方法。方法假定你需要精度不超过38个有效数字,当他们试图除以0或产生一个数表示太大或太小的时候发生异常。</p>
-<p>如果这种默认行为不适合您的应用程序,您应该使用这个方法,让您可以指定行为,像decimalNumberByAdding:withBehavior:。如果你发现自己一直使用一个特定的行为,您可以指定一个不同的默认行为setDefaultBehavior:。</p>
-<p>在你的应用程序中默认行为是单独为每个线程维护。</p>
-<h3 id="比较-Decimal-Numbers"><a href="#比较-Decimal-Numbers" class="headerlink" title="比较 Decimal Numbers"></a>比较 Decimal Numbers</h3><p><strong>- (NSComparisonResult)compare:(NSNumber *)decimalNumber</strong></p>
-<p>返回一个NSComparisonResult值表明调用者和另一个给定的数字NSDecimalNumber对象的顺序大小。</p>
-<p>NSOrderedAscending 如果decimalNumber的价值大于调用者;</p>
-<p>NSOrderedSame 如果它们相等;</p>
-<p>NSOrderedDescending 如果decimalNumber小于调用者的值。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSDecimalNumber</span> *discount1 = [<span class="built_in">NSDecimalNumber</span> decimalNumberWithString:<span class="string">@"1.2"</span>];</div><div class="line"><span class="built_in">NSDecimalNumber</span> *discount2 = [<span class="built_in">NSDecimalNumber</span> decimalNumberWithString:<span class="string">@"1.3"</span>];</div><div class="line"><span class="built_in">NSComparisonResult</span> result = [discount1 compare:discount2];</div><div class="line"><span class="keyword">if</span> (result == <span class="built_in">NSOrderedAscending</span>) &#123;</div><div class="line">      <span class="built_in">NSLog</span>(<span class="string">@"1.2 &lt; 1.3"</span>);</div><div class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (result == <span class="built_in">NSOrderedSame</span>) &#123;</div><div class="line">      <span class="built_in">NSLog</span>(<span class="string">@"1.2 == 1.3"</span>);</div><div class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (result == <span class="built_in">NSOrderedDescending</span>) &#123;</div><div class="line">      <span class="built_in">NSLog</span>(<span class="string">@"1.2 &gt; 1.3"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="获取-最大最小可能值"><a href="#获取-最大最小可能值" class="headerlink" title="获取 最大最小可能值"></a>获取 最大最小可能值</h3><p><strong>+ (NSDecimalNumber *)maximumDecimalNumber</strong></p>
-<p>返回一个NSDecimalNumber对象的最大可能值。</p>
-<p><strong>+ (NSDecimalNumber *)minimumDecimalNumber</strong></p>
-<p>返回一个NSDecimalNumber对象的最小可能值。</p>
-<h3 id="常量-Constants"><a href="#常量-Constants" class="headerlink" title="常量 Constants"></a>常量 Constants</h3><p><strong>NSDecimalNumber 异常名称</strong></p>
-<p>列出了各种异常的名字 表明NSDecimalNumber计算错误。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="built_in">NSDecimalNumberExactnessException</span>; <span class="comment">//如果出现一个精确的错误</span></div><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="built_in">NSDecimalNumberOverflowException</span>; <span class="comment">// 溢出</span></div><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="built_in">NSDecimalNumberUnderflowException</span>; <span class="comment">//下溢</span></div><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="built_in">NSDecimalNumberDivideByZeroException</span>; <span class="comment">//除数为0</span></div></pre></td></tr></table></figure>
-<hr>
-<p>再一次感谢您花费时间阅读这篇文章！</p>
-<p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h2&gt;&lt;p&gt;平时我们进行数值计算时，使用常用的数据类型进行加减乘除是不会有什么问题的，但是一旦涉及精度高的，特别是计算金额时，就特别容易踩坑，本人就经历过两次，回想起来血淋淋的场面依然历历在目。&lt;/p&gt;
-&lt;p&gt;苹果其实很早就推出过计算高精度类型的API。只不过我没发现。感觉自己还是&lt;code&gt;too young too simple&lt;/code&gt;。话不多说，直奔主题。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="移动端" scheme="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-    
-    
-      <category term="iOS" scheme="superdanny.link/tags/iOS/"/>
-    
-      <category term="金额计算" scheme="superdanny.link/tags/%E9%87%91%E9%A2%9D%E8%AE%A1%E7%AE%97/"/>
     
   </entry>
   
