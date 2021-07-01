@@ -15,18 +15,18 @@
 <meta property="og:url" content="superdanny.link/2014/08/21/Quickly-master-objective-c-grammar/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
 <meta property="og:description" content="一、函数的对比 二、消息 三、Import 四 、Property和Synthesize 五、头文件中的方法 六、self 指向自己的指针 [self method] 七、继承关系和接口实现 八、空指针 九、 id   很多想开发iOS，或者正在开发iOS的程序员以前都做过Java或者C++，当第一次看到Objective-C的代码时都会头疼，Objective-C的代码在语法上和Java,">
-<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0m256suj20gj07c75g.jpg">
-<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/81f8a509gw1eva0m4i9t7j20c80b4jsn.jpg">
-<meta property="og:updated_time" content="2017-07-14T02:21:59.000Z">
+<meta property="og:image" content="/images/81f8a509gw1eva0m256suj20gj07c75g.jpg">
+<meta property="og:image" content="/images/81f8a509gw1eva0m4i9t7j20c80b4jsn.jpg">
+<meta property="og:updated_time" content="2021-07-01T05:54:46.318Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="十分钟让你明白Objective-C的语法（和Java、C++的对比）">
 <meta name="twitter:description" content="一、函数的对比 二、消息 三、Import 四 、Property和Synthesize 五、头文件中的方法 六、self 指向自己的指针 [self method] 七、继承关系和接口实现 八、空指针 九、 id   很多想开发iOS，或者正在开发iOS的程序员以前都做过Java或者C++，当第一次看到Objective-C的代码时都会头疼，Objective-C的代码在语法上和Java,">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0m256suj20gj07c75g.jpg">
+<meta name="twitter:image" content="/images/81f8a509gw1eva0m256suj20gj07c75g.jpg">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://7xlefh.com1.z0.glb.clouddn.com/Icon_PiKaQiu_small.png">
+    <link rel="icon" href="https://wx2.sinaimg.cn/large/81f8a509gy1gs1iu5evgzj200g00g0nt.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -60,7 +60,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
+			<img src="/images/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">SuperDanny</a></h1>
@@ -120,7 +120,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
+				<img src="/images/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">SuperDanny</h1>
@@ -210,8 +210,8 @@ var _hmt = _hmt || [];
 <p>很多想开发iOS，或者正在开发iOS的程序员以前都做过Java或者C++，当第一次看到Objective-C的代码时都会头疼，Objective-C的代码在语法上和Java, C++有着很大的区别，有的同学会感觉像是看天书一样。不过，语言都是相通的，有很多共性。下面列出Objective-C语言的语法和Java，C++的对比，这样你就会很容易Objective-C的语法是怎么回事了。</p>
 <a id="more"></a> 
 <p>先目睹一下Objective-C头文件和实现文件里都有什么：</p>
-<p>头文件：<br><img src="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0m256suj20gj07c75g.jpg" alt="头文件.png"></p>
-<p>实现文件：<br><img src="http://ww4.sinaimg.cn/mw690/81f8a509gw1eva0m4i9t7j20c80b4jsn.jpg" alt="实现文件.png"></p>
+<p>头文件：<br><img src="/images/81f8a509gw1eva0m256suj20gj07c75g.jpg" alt="头文件.png"></p>
+<p>实现文件：<br><img src="/images/81f8a509gw1eva0m4i9t7j20c80b4jsn.jpg" alt="实现文件.png"></p>
 <h3 id="一、函数的对比"><a href="#一、函数的对比" class="headerlink" title="一、函数的对比"></a>一、函数的对比</h3><p>helloworld方法</p>
 <p><code>Java 语言</code>：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helloWorld</span><span class="params">(bool ishelloworld)</span> </span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//干点啥</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -590,11 +590,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -614,19 +614,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -634,15 +622,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
+                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -654,7 +658,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -678,11 +682,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -694,31 +718,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -754,6 +754,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
@@ -778,6 +782,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打包</a>
               </li>
              
@@ -790,19 +798,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -815,6 +815,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">iTunes Connect</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -835,18 +847,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DIY</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
             
             <div class="clearfix"></div>

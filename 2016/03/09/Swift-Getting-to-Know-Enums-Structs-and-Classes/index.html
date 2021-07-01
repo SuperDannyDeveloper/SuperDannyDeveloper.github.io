@@ -15,17 +15,17 @@
 <meta property="og:url" content="superdanny.link/2016/03/09/Swift-Getting-to-Know-Enums-Structs-and-Classes/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
 <meta property="og:description" content="前言本文将对阅读的国外文章进行自己的理解翻译，有哪些不对的地方还望指正。">
-<meta property="og:image" content="http://wx3.sinaimg.cn/large/81f8a509gy1ffm0nf0b19j219e0coq44.jpg">
-<meta property="og:updated_time" content="2017-07-14T02:21:41.000Z">
+<meta property="og:image" content="/images/81f8a509gy1ffm0nf0b19j219e0coq44.jpg">
+<meta property="og:updated_time" content="2021-07-01T05:53:24.971Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="swift中的枚举,结构体和类(简译)">
 <meta name="twitter:description" content="前言本文将对阅读的国外文章进行自己的理解翻译，有哪些不对的地方还望指正。">
-<meta name="twitter:image" content="http://wx3.sinaimg.cn/large/81f8a509gy1ffm0nf0b19j219e0coq44.jpg">
+<meta name="twitter:image" content="/images/81f8a509gy1ffm0nf0b19j219e0coq44.jpg">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://7xlefh.com1.z0.glb.clouddn.com/Icon_PiKaQiu_small.png">
+    <link rel="icon" href="https://wx2.sinaimg.cn/large/81f8a509gy1gs1iu5evgzj200g00g0nt.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -59,7 +59,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
+			<img src="/images/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">SuperDanny</a></h1>
@@ -119,7 +119,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
+				<img src="/images/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">SuperDanny</h1>
@@ -199,7 +199,7 @@ var _hmt = _hmt || [];
 <p>安全意味着它很难在你编写完程序之后在运行期间出现某些错误，导致你无法捕获。并且在编写代码期间它也能够检测到代码存在的问题并加以提示，而不是等到运行程序之后有问题你才去寻找问题所在。</p>
 <p>此外，Swift可以让你更清楚的知道代码的作用是什么，并且帮助优化你的代码。</p>
 <p>Swift的核心在于简单和高度规范化。实现这个的关键在于Swift的类型系统：</p>
-<p><img src="http://wx3.sinaimg.cn/large/81f8a509gy1ffm0nf0b19j219e0coq44.jpg" alt="六大类型"></p>
+<p><img src="/images/81f8a509gy1ffm0nf0b19j219e0coq44.jpg" alt="六大类型"></p>
 <p>系统由4个命名类型： <code>protocol(协议)</code>, <code>enum(枚举)</code>, <code>struct(结构体)</code>, <code>class(类)</code> 以及2个组合类型：<code>tuple(元组)</code>, <code>function(函数)</code> 组成。</p>
 <p>可能你会觉得还有其他的基本类型：Bool, Int, UInt, Float, Double, Character, String, Array, Set, Dictionary, Optional 等等。其实他们都是建立在命名类型上并且作为Swift标准库中的一部分。</p>
 <p>本文只针对命名类型中的<code>enum(枚举)</code>, <code>struct(结构体)</code>, <code>class(类)</code>进行展开。</p>
@@ -593,11 +593,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -617,19 +617,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -637,15 +625,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
+                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -657,7 +661,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -681,11 +685,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -697,31 +721,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -757,6 +757,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
@@ -781,6 +785,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打包</a>
               </li>
              
@@ -793,19 +801,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -818,6 +818,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">iTunes Connect</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -838,18 +850,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DIY</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
             
             <div class="clearfix"></div>

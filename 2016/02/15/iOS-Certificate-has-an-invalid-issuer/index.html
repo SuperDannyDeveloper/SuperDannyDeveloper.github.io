@@ -15,20 +15,20 @@
 <meta property="og:url" content="superdanny.link/2016/02/15/iOS-Certificate-has-an-invalid-issuer/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
 <meta property="og:description" content="前言哎，每次过完节都要有一个坑给自己跳。逃不过这个魔爪。这不，一过完春节，回来就发现公司证书出现”此证书的签发者无效”。">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/81f8a509gw1f100tg3i59j20eg01lq36.jpg">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/81f8a509gw1f100ti4ritj20jx05sgmo.jpg">
-<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/81f8a509gw1f100tfcdg9j21740gsjv4.jpg">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/81f8a509gw1f100tau6guj20ud0c476j.jpg">
-<meta property="og:updated_time" content="2016-11-30T01:57:36.000Z">
+<meta property="og:image" content="/images/81f8a509gw1f100tg3i59j20eg01lq36.jpg">
+<meta property="og:image" content="/images/81f8a509gw1f100ti4ritj20jx05sgmo.jpg">
+<meta property="og:image" content="/images/81f8a509gw1f100tfcdg9j21740gsjv4.jpg">
+<meta property="og:image" content="/images/81f8a509gw1f100tau6guj20ud0c476j.jpg">
+<meta property="og:updated_time" content="2021-07-01T06:06:03.502Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS开发证书&quot;此证书的签发者无效&quot;解决方法">
 <meta name="twitter:description" content="前言哎，每次过完节都要有一个坑给自己跳。逃不过这个魔爪。这不，一过完春节，回来就发现公司证书出现”此证书的签发者无效”。">
-<meta name="twitter:image" content="http://ww2.sinaimg.cn/large/81f8a509gw1f100tg3i59j20eg01lq36.jpg">
+<meta name="twitter:image" content="/images/81f8a509gw1f100tg3i59j20eg01lq36.jpg">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://7xlefh.com1.z0.glb.clouddn.com/Icon_PiKaQiu_small.png">
+    <link rel="icon" href="https://wx2.sinaimg.cn/large/81f8a509gy1gs1iu5evgzj200g00g0nt.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -62,7 +62,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
+			<img src="/images/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">SuperDanny</a></h1>
@@ -122,7 +122,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
+				<img src="/images/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">SuperDanny</h1>
@@ -196,22 +196,22 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>哎，每次过完节都要有一个坑给自己跳。逃不过这个魔爪。<br>这不，一过完春节，回来就发现公司证书出现”此证书的签发者无效”。<br><img src="http://ww2.sinaimg.cn/large/81f8a509gw1f100tg3i59j20eg01lq36.jpg" alt="证书签发者无效"></p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>哎，每次过完节都要有一个坑给自己跳。逃不过这个魔爪。<br>这不，一过完春节，回来就发现公司证书出现”此证书的签发者无效”。<br><img src="/images/81f8a509gw1f100tg3i59j20eg01lq36.jpg" alt="证书签发者无效"></p>
 <a id="more"></a>
 <h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>经过一番查找，苹果官方给出了回答。</p>
 <blockquote>
 <p>Thanks for bringing this to the attention of the community and apologies for the issues you’ve been having. This issue stems from having a copy of the expired WWDR Intermediate certificate in both your System and Login keychains. To resolve the issue, you should first download and install the new <a href="https://developer.apple.com/certificationauthority/AppleWWDRCA.cer" target="_blank" rel="external">WWDR intermediate certificate</a> (by double-clicking on the file). Next, in the Keychain Access application, select the System keychain. Make sure to select “Show Expired Certificates” in the View menu and then delete the expired version of the Apple Worldwide Developer Relations Certificate Authority Intermediate certificate (expired on February 14, 2016). Your certificates should now appear as valid in Keychain Access and be available to Xcode for submissions to the App Store.</p>
 </blockquote>
-<p>看来是由于苹果系统的安全证书过期问题导致。<br><img src="http://ww4.sinaimg.cn/large/81f8a509gw1f100ti4ritj20jx05sgmo.jpg" alt="过期的安全证书"></p>
+<p>看来是由于苹果系统的安全证书过期问题导致。<br><img src="/images/81f8a509gw1f100ti4ritj20jx05sgmo.jpg" alt="过期的安全证书"></p>
 <p>苹果早在一个多月前就提醒开发者使用新证书。开发者如果不及时更新，不仅会影响到自己的开发工作，还有可能对用户造成困扰。这一份通知面向的是那些开发应用与 Apple Wallet、Safari 推送中心又或者是 Safari 插件相关的开发者。苹果还在通知中表示，开发者需要在 2016 年 2 月 14 日结束之前更新他们的安全证书。更新之后，安全证书的下一个失效期为 2023 年 2 月。</p>
 <h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>既然知道了原因，那么就可以对症下药了。我们通过下载苹果提供的最新的<a href="https://developer.apple.com/certificationauthority/AppleWWDRCA.cer" target="_blank" rel="external">安全证书</a>并双击安装。</p>
 <ol>
-<li>然后打开钥匙串，在导航栏上，依次选择<code>显示</code>-<code>显示已过期的证书</code><br> <img src="http://ww3.sinaimg.cn/mw690/81f8a509gw1f100tfcdg9j21740gsjv4.jpg" alt="显示已过期的证书"> </li>
+<li>然后打开钥匙串，在导航栏上，依次选择<code>显示</code>-<code>显示已过期的证书</code><br> <img src="/images/81f8a509gw1f100tfcdg9j21740gsjv4.jpg" alt="显示已过期的证书"> </li>
 <li>选择<code>登录</code>-<code>所有项目</code></li>
 <li>在搜索栏下输入 apple w</li>
 <li>删除对应过期的安全证书</li>
 </ol>
-<p><img src="http://ww3.sinaimg.cn/large/81f8a509gw1f100tau6guj20ud0c476j.jpg" alt="流程"> </p>
+<p><img src="/images/81f8a509gw1f100tau6guj20ud0c476j.jpg" alt="流程"> </p>
 <hr>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
 <p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
@@ -554,11 +554,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,19 +578,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -598,15 +586,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
+                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,7 +622,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -642,11 +646,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -658,31 +682,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -718,6 +718,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
@@ -742,6 +746,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打包</a>
               </li>
              
@@ -754,19 +762,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -779,6 +779,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">iTunes Connect</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -799,18 +811,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DIY</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
             
             <div class="clearfix"></div>

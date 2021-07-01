@@ -15,22 +15,22 @@
 <meta property="og:url" content="superdanny.link/2015/12/31/iOS-xcode-snippet/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
 <meta property="og:description" content="参考原文地址：Xcode Snippets 前言身为一只开发人猿，在经过漫长的编程历程之后，应该在开发效率上面要提升很多才对得起这么多年的艰苦岁月。所以有必要说说在开发中提升开发效率的方法。今天就讲讲Xcode里面的代码块。其实苹果官方已经帮我们封装了不少代码块，只是我们在开发过程中没有留意而已。下面将一些基本的用法以及使用方法跟大家分享一下。">
-<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/81f8a509gw1eziufp3z9uj20eq0m40vj.jpg">
-<meta property="og:image" content="http://nshipster.s3.amazonaws.com/xcode-snippet-drag-and-drop.gif">
-<meta property="og:image" content="http://nshipster.s3.amazonaws.com/xcode-snippet-text-completion-shortcut.gif">
-<meta property="og:image" content="http://nshipster.s3.amazonaws.com/xcode-snippet-create.gif">
-<meta property="og:image" content="http://nshipster.s3.amazonaws.com/xcode-snippet-editor.png">
-<meta property="og:image" content="http://nshipster.s3.amazonaws.com/xcode-snippet-token.png">
-<meta property="og:updated_time" content="2017-07-14T02:17:21.000Z">
+<meta property="og:image" content="/images/81f8a509gw1eziufp3z9uj20eq0m40vj.jpg">
+<meta property="og:image" content="/images/xcode-snippet-drag-and-drop.gif">
+<meta property="og:image" content="/images/xcode-snippet-text-completion-shortcut.gif">
+<meta property="og:image" content="/images/xcode-snippet-create.gif">
+<meta property="og:image" content="/images/xcode-snippet-editor.png">
+<meta property="og:image" content="/images/xcode-snippet-token.png">
+<meta property="og:updated_time" content="2021-07-01T05:57:17.380Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xcode Snippet（代码块）（转）">
 <meta name="twitter:description" content="参考原文地址：Xcode Snippets 前言身为一只开发人猿，在经过漫长的编程历程之后，应该在开发效率上面要提升很多才对得起这么多年的艰苦岁月。所以有必要说说在开发中提升开发效率的方法。今天就讲讲Xcode里面的代码块。其实苹果官方已经帮我们封装了不少代码块，只是我们在开发过程中没有留意而已。下面将一些基本的用法以及使用方法跟大家分享一下。">
-<meta name="twitter:image" content="http://ww4.sinaimg.cn/mw690/81f8a509gw1eziufp3z9uj20eq0m40vj.jpg">
+<meta name="twitter:image" content="/images/81f8a509gw1eziufp3z9uj20eq0m40vj.jpg">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://7xlefh.com1.z0.glb.clouddn.com/Icon_PiKaQiu_small.png">
+    <link rel="icon" href="https://wx2.sinaimg.cn/large/81f8a509gy1gs1iu5evgzj200g00g0nt.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -64,7 +64,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
+			<img src="/images/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">SuperDanny</a></h1>
@@ -124,7 +124,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
+				<img src="/images/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">SuperDanny</h1>
@@ -202,11 +202,11 @@ var _hmt = _hmt || [];
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>身为一只<strong>开发人猿</strong>，在经过漫长的编程历程之后，应该在开发效率上面要提升很多才对得起这么多年的艰苦岁月。所以有必要说说在开发中提升开发效率的方法。今天就讲讲Xcode里面的<strong><code>代码块</code></strong>。其实苹果官方已经帮我们封装了不少代码块，只是我们在开发过程中没有留意而已。下面将一些基本的用法以及使用方法跟大家分享一下。</p>
 <a id="more"></a>
 <h2 id="使用-Xcode-代码块"><a href="#使用-Xcode-代码块" class="headerlink" title="使用 Xcode 代码块"></a>使用 Xcode 代码块</h2><p>打开编辑器右侧的工具面板，就能看到所有可用的代码块。在工具面板的下方，有 4 个水平分布的小图标。点击<code>{ }</code>图标可以查看代码块仓库。</p>
-<p><img src="http://ww4.sinaimg.cn/mw690/81f8a509gw1eziufp3z9uj20eq0m40vj.jpg" alt="代码块区域"></p>
+<p><img src="/images/81f8a509gw1eziufp3z9uj20eq0m40vj.jpg" alt="代码块区域"></p>
 <p>有两种方法将一个代码块插入你的代码：</p>
 <ol>
-<li>你可以从代码块仓库拖到你的编辑器里面<br><img src="http://nshipster.s3.amazonaws.com/xcode-snippet-drag-and-drop.gif" alt="拖拽代码块"></li>
-<li>亦或那些有快捷输入码的代码块<br><img src="http://nshipster.s3.amazonaws.com/xcode-snippet-text-completion-shortcut.gif" alt="快捷输入"></li>
+<li>你可以从代码块仓库拖到你的编辑器里面<br><img src="/images/xcode-snippet-drag-and-drop.gif" alt="拖拽代码块"></li>
+<li>亦或那些有快捷输入码的代码块<br><img src="/images/xcode-snippet-text-completion-shortcut.gif" alt="快捷输入"></li>
 </ol>
 <p>为了让你能够对代码块的用途有个较直观的印象，下面是 Xcode 内置代码块的概览：</p>
 <ul>
@@ -223,9 +223,9 @@ var _hmt = _hmt || [];
 <li>GCD dispatch_once 和 dispatch_after 惯用语</li>
 </ul>
 <h2 id="创建-Xcode-代码块"><a href="#创建-Xcode-代码块" class="headerlink" title="创建 Xcode 代码块"></a>创建 Xcode 代码块</h2><p>当然，代码块功能之所以强大，是因为你可以创建自定义的代码块。<br>创建代码块的过程不是非常直观，很难用文字去描述。它使用了 OS X 系统中一个比较隐晦的功能，让用户拖拽选中文本生成“剪切文本”。看下实际操作就很好理解：</p>
-<p><img src="http://nshipster.s3.amazonaws.com/xcode-snippet-create.gif" alt="创建代码块"></p>
+<p><img src="/images/xcode-snippet-create.gif" alt="创建代码块"></p>
 <p>用户将自定义的代码块添加到库里面后，可以双击列表中的块去编辑。</p>
-<p><img src="http://nshipster.s3.amazonaws.com/xcode-snippet-editor.png" alt=""></p>
+<p><img src="/images/xcode-snippet-editor.png" alt=""></p>
 <p>每个块都有以下内容：</p>
 <ul>
 <li><code>Title</code> 标题 - 块的名字（出现在代码补全和代码块库列表中）</li>
@@ -250,7 +250,7 @@ var _hmt = _hmt || [];
 <p><strong>~/Library/Developer/Xcode/UserData/CodeSnippets/目录存放了所有 Xcode 代码段的文件表示</strong></p>
 </blockquote>
 <h3 id="占位符"><a href="#占位符" class="headerlink" title="占位符"></a>占位符</h3><p>在你使用其他代码块时你可能已经注意到了这些占位符：</p>
-<p><img src="http://nshipster.s3.amazonaws.com/xcode-snippet-token.png" alt="占位符"></p>
+<p><img src="/images/xcode-snippet-token.png" alt="占位符"></p>
 <p>在 Xcode 中，占位符使用 &lt;# 和 #&gt; 来分隔，中间是占位文本。赶紧打开 Xcode 试试吧，看看井号中间的文本是怎样魔法般的转换到你眼前的。</p>
 <p>赶紧使用占位符给你的代码块添加一点动态效果吧！</p>
 <h3 id="第三方-Xcode-代码块"><a href="#第三方-Xcode-代码块" class="headerlink" title="第三方 Xcode 代码块"></a>第三方 Xcode 代码块</h3><p>你可以在 这个 <a href="https://github.com/mattt/Xcode-Snippets" target="_blank" rel="external">GitHub</a> 项目 找到一些好用的代码块（欢迎提交 PR！）。就算这里没你想要的，它至少提供了一些例子来展示代码块能够做些什么。</p>
@@ -616,11 +616,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -640,19 +640,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -660,15 +648,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
+                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -680,7 +684,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -704,11 +708,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -720,31 +744,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -780,6 +780,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
@@ -804,6 +808,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打包</a>
               </li>
              
@@ -816,19 +824,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -841,6 +841,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">iTunes Connect</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -861,18 +873,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DIY</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
             
             <div class="clearfix"></div>

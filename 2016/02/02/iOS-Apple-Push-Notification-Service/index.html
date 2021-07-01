@@ -15,18 +15,18 @@
 <meta property="og:url" content="superdanny.link/2016/02/02/iOS-Apple-Push-Notification-Service/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
 <meta property="og:description" content="关于推送关于苹果的推送网上已经有非常多的资源讲解，我在这里就不再累赘。直接切入主题，讲讲如何模拟推送以及处理推送消息。在进入主题之前，我先说几个关键流程：  创建Push SSL Certification(推送证书) iOS客户端注册Push功能并获得DeviceToken 使用Provider向APNS发送Push消息 iOS客户端接收处理由APNS发来的消息">
-<meta property="og:image" content="https://developer.apple.com/library/prerelease/watchos/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Art/remote_notif_simple_2x.png">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/81f8a509gw1f13ktc92rpj214804ajs6.jpg">
-<meta property="og:updated_time" content="2018-08-29T06:56:21.606Z">
+<meta property="og:image" content="/images/remote_notif_simple_2x.png">
+<meta property="og:image" content="/images/81f8a509gw1f13ktc92rpj214804ajs6.jpg">
+<meta property="og:updated_time" content="2021-07-01T07:08:13.149Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS推送的那些事">
 <meta name="twitter:description" content="关于推送关于苹果的推送网上已经有非常多的资源讲解，我在这里就不再累赘。直接切入主题，讲讲如何模拟推送以及处理推送消息。在进入主题之前，我先说几个关键流程：  创建Push SSL Certification(推送证书) iOS客户端注册Push功能并获得DeviceToken 使用Provider向APNS发送Push消息 iOS客户端接收处理由APNS发来的消息">
-<meta name="twitter:image" content="https://developer.apple.com/library/prerelease/watchos/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Art/remote_notif_simple_2x.png">
+<meta name="twitter:image" content="/images/remote_notif_simple_2x.png">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://7xlefh.com1.z0.glb.clouddn.com/Icon_PiKaQiu_small.png">
+    <link rel="icon" href="https://wx2.sinaimg.cn/large/81f8a509gy1gs1iu5evgzj200g00g0nt.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -60,7 +60,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
+			<img src="/images/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">SuperDanny</a></h1>
@@ -120,7 +120,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
+				<img src="/images/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">SuperDanny</h1>
@@ -203,7 +203,7 @@ var _hmt = _hmt || [];
 </ol>
 <a id="more"></a>
 <p>推送流程图：</p>
-<p><img src="https://developer.apple.com/library/prerelease/watchos/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Art/remote_notif_simple_2x.png" alt="推送流程图"></p>
+<p><img src="/images/remote_notif_simple_2x.png" alt="推送流程图"></p>
 <p><strong>Provider</strong>：就是为指定iOS设备应用程序提供Push的服务器。如果iOS设备的应用程序是客户端的话，那么Provider可以理解为服务端(<code>推送消息的发起者</code>)<br><strong>APNs</strong>：Apple Push Notification Service(<code>苹果消息推送服务器</code>)<br><strong>Devices</strong>：iOS设备，用来接收APNs下发下来的消息<br><strong>Client App</strong>：iOS设备上的应用程序，用来接收APNs下发的消息到指定的一个客户端app(<code>消息的最终响应者</code>)</p>
 <h1 id="获取Device-token"><a href="#获取Device-token" class="headerlink" title="获取Device token"></a>获取Device token</h1><p>App 必须要向 APNs 请求注册以实现推送功能，在请求成功后，APNs 会返回一个设备的标识符即 DeviceToken 给 App，服务器在推送通知的时候需要指定推送通知目的设备的 DeviceToken。在 iOS 8 以及之后，注册推送服务主要分为四个步骤：</p>
 <ol>
@@ -285,7 +285,7 @@ var _hmt = _hmt || [];
 <p>昨天由于有个应用的推送证书过期了，所以需要重新生成新的推送证书。偶然之间发现苹果的推送证书更新了，一开始还觉得有些跟以前不同，在这里记录一下，方面后人不入坑。</p>
 <blockquote>
 <p><strong>Apple Push Notification Service Update</strong><br>December 17, 2015<br>At WWDC 2015 we announced a new HTTP/2 based provider API and simplified certificate management process for developers using the Apple Push Notification service. You can now take advantage of this new provider API and create a single SSL certificate for each of your iOS apps, allowing you to connect to both APNs environments. To learn more, read the <a href="https://developer.apple.com/go/?id=local-and-remote-notifications" target="_blank" rel="external">Local and Remote Notification Programming Guide</a> and watch <a href="https://developer.apple.com/videos/play/wwdc2015-720/?time=1281/" target="_blank" rel="external">What’s New in Notifications</a>.</p>
-<p><img src="http://ww2.sinaimg.cn/large/81f8a509gw1f13ktc92rpj214804ajs6.jpg" alt="新旧推送证书不同"></p>
+<p><img src="/images/81f8a509gw1f13ktc92rpj214804ajs6.jpg" alt="新旧推送证书不同"></p>
 </blockquote>
 <p><strong>2016年02月20日</strong></p>
 <p>当上线产品推送证书过期时，不要惊慌，我们不需要更新推送证书之后重新提交 AppStore 。只需要替换服务器端的推送证书即可(<strong>记得重启服务器，不然推送在测试环境下有效，但是在真实环境下是无效的</strong>)。</p>
@@ -652,11 +652,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -676,19 +676,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -696,15 +684,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
+                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -716,7 +720,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -740,11 +744,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -756,31 +780,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -816,6 +816,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
@@ -840,6 +844,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打包</a>
               </li>
              
@@ -852,19 +860,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -877,6 +877,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">iTunes Connect</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -897,18 +909,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DIY</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
             
             <div class="clearfix"></div>

@@ -15,23 +15,23 @@
 <meta property="og:url" content="superdanny.link/2015/08/18/iOS-Storyboard/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
 <meta property="og:description" content="创建一个基于Navigation Controller的根视图 绑定跳转事件 修改Navigation Bar标题 ViewController ViewController之间的数据传递 ViewController之间的跳转 Storyboard之间ViewController的跳转   常见问题 学习感悟   以前一直使用xib，后来来到新公司就使用纯代码。从来没有用过Storyboar">
-<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0moknfuj20r60oajw8.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0ms5b6hj20l00v875m.jpg">
-<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/81f8a509gw1eva0mxiadgj20fs0amabi.jpg">
-<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/81f8a509gw1eva0mzeipdj20fi0b4q3q.jpg">
-<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/81f8a509gw1ex9nxmhp09j20ec0sawhk.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0n5zxn2j20eo0mkgof.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0n1tiy3j20di0bowfg.jpg">
-<meta property="og:updated_time" content="2017-07-14T02:18:17.000Z">
+<meta property="og:image" content="/images/81f8a509gw1eva0moknfuj20r60oajw8.jpg">
+<meta property="og:image" content="/images/81f8a509gw1eva0ms5b6hj20l00v875m.jpg">
+<meta property="og:image" content="/images/81f8a509gw1eva0mxiadgj20fs0amabi.jpg">
+<meta property="og:image" content="/images/81f8a509gw1eva0mzeipdj20fi0b4q3q.jpg">
+<meta property="og:image" content="/images/81f8a509gw1ex9nxmhp09j20ec0sawhk.jpg">
+<meta property="og:image" content="/images/81f8a509gw1eva0n5zxn2j20eo0mkgof.jpg">
+<meta property="og:image" content="/images/81f8a509gw1eva0n1tiy3j20di0bowfg.jpg">
+<meta property="og:updated_time" content="2021-07-01T06:00:29.844Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初探Storyboard">
 <meta name="twitter:description" content="创建一个基于Navigation Controller的根视图 绑定跳转事件 修改Navigation Bar标题 ViewController ViewController之间的数据传递 ViewController之间的跳转 Storyboard之间ViewController的跳转   常见问题 学习感悟   以前一直使用xib，后来来到新公司就使用纯代码。从来没有用过Storyboar">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0moknfuj20r60oajw8.jpg">
+<meta name="twitter:image" content="/images/81f8a509gw1eva0moknfuj20r60oajw8.jpg">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://7xlefh.com1.z0.glb.clouddn.com/Icon_PiKaQiu_small.png">
+    <link rel="icon" href="https://wx2.sinaimg.cn/large/81f8a509gy1gs1iu5evgzj200g00g0nt.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -65,7 +65,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
+			<img src="/images/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">SuperDanny</a></h1>
@@ -125,7 +125,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
+				<img src="/images/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">SuperDanny</h1>
@@ -217,11 +217,11 @@ var _hmt = _hmt || [];
 <p>以前一直使用xib，后来来到新公司就使用纯代码。从来没有用过<code>Storyboard</code>（中文称<code>故事板</code>），今天趁有几分兴致，在学习绘图的同时练练<code>故事板</code>。这里做一下笔记，方便以后查看。如果大家有什么Storyboard使用技巧可以留言分享哟！</p>
 <a id="more"></a> 
 <h2 id="创建一个基于Navigation-Controller的根视图"><a href="#创建一个基于Navigation-Controller的根视图" class="headerlink" title="创建一个基于Navigation Controller的根视图"></a>创建一个基于Navigation Controller的根视图</h2><ol>
-<li><p>首先，我们选中默认生成的View Controller，在Editor -&gt; Embed In 中有<code>Navigation Controller</code>和<code>Tab Bar Controller</code>两个选项（图一），我们选择嵌入<code>Navigation Controller</code>。<br><img src="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0moknfuj20r60oajw8.jpg" alt="图一"></p>
+<li><p>首先，我们选中默认生成的View Controller，在Editor -&gt; Embed In 中有<code>Navigation Controller</code>和<code>Tab Bar Controller</code>两个选项（图一），我们选择嵌入<code>Navigation Controller</code>。<br><img src="/images/81f8a509gw1eva0moknfuj20r60oajw8.jpg" alt="图一"></p>
 </li>
 <li><p>另外拖一个Table View Controller到故事板中，选中Table View Controller的Table View。打开<code>Attrbutes inspector</code>，将<code>Content</code>设置为<code>Static Cells</code>，layout area中的Table View上出现了3个Cell。</p>
 </li>
-<li><p>我们依次给每一个Cell设置不同的背景颜色，并依次选中3个Table View Cell，然后在<code>Attributes inspector</code>中将他们的Style改成<code>Basic</code>并给每一个Cell设置标题（图二）。<br><img src="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0ms5b6hj20l00v875m.jpg" alt="图二"></p>
+<li><p>我们依次给每一个Cell设置不同的背景颜色，并依次选中3个Table View Cell，然后在<code>Attributes inspector</code>中将他们的Style改成<code>Basic</code>并给每一个Cell设置标题（图二）。<br><img src="/images/81f8a509gw1eva0ms5b6hj20l00v875m.jpg" alt="图二"></p>
 </li>
 </ol>
 <hr>
@@ -244,9 +244,9 @@ var _hmt = _hmt || [];
 </ol>
 <hr>
 <h2 id="修改Navigation-Bar标题"><a href="#修改Navigation-Bar标题" class="headerlink" title="修改Navigation Bar标题"></a>修改Navigation Bar标题</h2><ol>
-<li><p>在Table View Controller上中选中Navigation Item（图三）。<br><img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1eva0mxiadgj20fs0amabi.jpg" alt="图三"></p>
+<li><p>在Table View Controller上中选中Navigation Item（图三）。<br><img src="/images/81f8a509gw1eva0mxiadgj20fs0amabi.jpg" alt="图三"></p>
 </li>
-<li><p>将<code>Attributes inspector</code>中<code>Title</code>设置为“绘图技术”，将Back Button设值为“绘图”（图四）。<br><img src="http://ww4.sinaimg.cn/mw690/81f8a509gw1eva0mzeipdj20fi0b4q3q.jpg" alt="图四"></p>
+<li><p>将<code>Attributes inspector</code>中<code>Title</code>设置为“绘图技术”，将Back Button设值为“绘图”（图四）。<br><img src="/images/81f8a509gw1eva0mzeipdj20fi0b4q3q.jpg" alt="图四"></p>
 </li>
 </ol>
 <blockquote>
@@ -269,7 +269,7 @@ var _hmt = _hmt || [];
 <li><p><strong>在使用storyboard时，报错：Failed to instantiate the default view controller for UIMainStoryboardFile ‘MainStoryboard’ - perhaps the designated entry point is not set?</strong></p>
 <p> 原因分析：在StoryBoard中没有一个view controller设置了Initial Scene。</p>
 <p> 解决方案：在Storyboard中，选择一个view conroller作为story board的第一启动界面</p>
-<p> <img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1ex9nxmhp09j20ec0sawhk.jpg" alt="图五"></p>
+<p> <img src="/images/81f8a509gw1ex9nxmhp09j20ec0sawhk.jpg" alt="图五"></p>
 </li>
 </ol>
 <hr>
@@ -280,7 +280,7 @@ var _hmt = _hmt || [];
 <li>当Storyboard中如果VC的数量越来越多的时候，可能会出现一种情况就是，用户要定位到某一个VC比较困难。所以我在每一个VC的Title属性都设置成该VC的类名（图五），方便以后可直接在<code>Document Outline</code>界面定位（图六）</li>
 <li>待续…</li>
 </ol>
-<p><img src="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0n5zxn2j20eo0mkgof.jpg" alt="图六"><br><img src="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0n1tiy3j20di0bowfg.jpg" alt="图七"></p>
+<p><img src="/images/81f8a509gw1eva0n5zxn2j20eo0mkgof.jpg" alt="图六"><br><img src="/images/81f8a509gw1eva0n1tiy3j20di0bowfg.jpg" alt="图七"></p>
 <hr>
 <p>暂时就讲这些，后面会将文章补全。</p>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
@@ -633,11 +633,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -657,19 +657,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -677,15 +665,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
+                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -697,7 +701,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -721,11 +725,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -737,31 +761,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -797,6 +797,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
@@ -821,6 +825,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打包</a>
               </li>
              
@@ -833,19 +841,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -858,6 +858,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">iTunes Connect</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -878,18 +890,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DIY</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
             
             <div class="clearfix"></div>

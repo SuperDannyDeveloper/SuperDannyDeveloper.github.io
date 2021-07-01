@@ -9,28 +9,28 @@
   <title>Xcode8，你为什么这么坑 | 皮卡丘♪～(´ε｀　)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="开启吐槽模式为了迎合Xcode8所带来的更新，我是惊喜万分(奔溃至极)。丝毫不敢怠慢，生怕跟不上入坑的队伍😂">
-<meta name="keywords" content="Xcode,iOS10,Xcode8">
+<meta name="keywords" content="iOS10,Xcode,Xcode8">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Xcode8，你为什么这么坑">
 <meta property="og:url" content="superdanny.link/2016/09/26/Xcode8-pit/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
 <meta property="og:description" content="开启吐槽模式为了迎合Xcode8所带来的更新，我是惊喜万分(奔溃至极)。丝毫不敢怠慢，生怕跟不上入坑的队伍😂">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/81f8a509jw1f872ym5e4yj20wu05cjtu.jpg">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/81f8a509gw1fa8xpyded7j21h80z810j.jpg">
-<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/81f8a509gw1f96u3aal39j20ou0caq6i.jpg">
-<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/81f8a509gw1f96u39j5cvj20oa090gnn.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/81f8a509gw1f96u39kfb4j20eg0o8tch.jpg">
-<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/81f8a509gw1f96uctfxuhj21360x87bf.jpg">
-<meta property="og:updated_time" content="2017-07-14T02:21:33.000Z">
+<meta property="og:image" content="/images/81f8a509jw1f872ym5e4yj20wu05cjtu.jpg">
+<meta property="og:image" content="/images/81f8a509gw1fa8xpyded7j21h80z810j.jpg">
+<meta property="og:image" content="/images/81f8a509gw1f96u3aal39j20ou0caq6i.jpg">
+<meta property="og:image" content="/images/81f8a509gw1f96u39j5cvj20oa090gnn.jpg">
+<meta property="og:image" content="/images/81f8a509gw1f96u39kfb4j20eg0o8tch.jpg">
+<meta property="og:image" content="/images/81f8a509gw1f96uctfxuhj21360x87bf.jpg">
+<meta property="og:updated_time" content="2021-07-01T06:11:56.924Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xcode8，你为什么这么坑">
 <meta name="twitter:description" content="开启吐槽模式为了迎合Xcode8所带来的更新，我是惊喜万分(奔溃至极)。丝毫不敢怠慢，生怕跟不上入坑的队伍😂">
-<meta name="twitter:image" content="http://ww2.sinaimg.cn/large/81f8a509jw1f872ym5e4yj20wu05cjtu.jpg">
+<meta name="twitter:image" content="/images/81f8a509jw1f872ym5e4yj20wu05cjtu.jpg">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://7xlefh.com1.z0.glb.clouddn.com/Icon_PiKaQiu_small.png">
+    <link rel="icon" href="https://wx2.sinaimg.cn/large/81f8a509gy1gs1iu5evgzj200g00g0nt.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -64,7 +64,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
+			<img src="/images/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">SuperDanny</a></h1>
@@ -124,7 +124,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
+				<img src="/images/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">SuperDanny</h1>
@@ -202,23 +202,23 @@ var _hmt = _hmt || [];
 <a id="more"></a>
 <h3 id="坑一：storyboard或xib部分图片真机显示不了"><a href="#坑一：storyboard或xib部分图片真机显示不了" class="headerlink" title="坑一：storyboard或xib部分图片真机显示不了"></a>坑一：storyboard或xib部分图片真机显示不了</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)awakeFromNib &#123;</div><div class="line">    [<span class="keyword">super</span> awakeFromNib];</div><div class="line">    <span class="comment">//加上这句</span></div><div class="line">    [<span class="keyword">self</span> layoutIfNeeded];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="坑二：打包之后无法在开发者中间看到新构建的版本（或iOS10访问相机、相册等闪退）"><a href="#坑二：打包之后无法在开发者中间看到新构建的版本（或iOS10访问相机、相册等闪退）" class="headerlink" title="坑二：打包之后无法在开发者中间看到新构建的版本（或iOS10访问相机、相册等闪退）"></a>坑二：打包之后无法在开发者中间看到新构建的版本（或iOS10访问相机、相册等闪退）</h3><p>原因是iOS10为了保护隐私，需要在 info.plist 里添加配置，包括定位、摄像头、麦克风、相册、相机等等。</p>
-<p><img src="http://ww2.sinaimg.cn/large/81f8a509jw1f872ym5e4yj20wu05cjtu.jpg" alt="plist文件"></p>
+<p><img src="/images/81f8a509jw1f872ym5e4yj20wu05cjtu.jpg" alt="plist文件"></p>
 <p>访问权限一览表</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 通讯录 --&gt; </div><div class="line">&lt;key&gt;NSContactsUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问通讯录&lt;/string&gt; </div><div class="line">&lt;!-- 相册 --&gt; </div><div class="line">&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问相册&lt;/string&gt; </div><div class="line">&lt;!-- 相机 --&gt; </div><div class="line">&lt;key&gt;NSCameraUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问相机&lt;/string&gt; </div><div class="line">&lt;!-- 麦克风 --&gt; </div><div class="line">&lt;key&gt;NSMicrophoneUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问麦克风&lt;/string&gt; </div><div class="line">&lt;!-- 位置 --&gt; </div><div class="line">&lt;key&gt;NSLocationUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问位置&lt;/string&gt; </div><div class="line">&lt;!-- 在使用期间访问位置 --&gt; </div><div class="line">&lt;key&gt;NSLocationWhenInUseUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能在使用期间访问位置&lt;/string&gt; </div><div class="line">&lt;!-- 始终访问位置 --&gt; </div><div class="line">&lt;key&gt;NSLocationAlwaysUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能始终访问位置&lt;/string&gt; </div><div class="line">&lt;!-- 日历 --&gt; </div><div class="line">&lt;key&gt;NSCalendarsUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问日历&lt;/string&gt; </div><div class="line">&lt;!-- 提醒事项 --&gt; </div><div class="line">&lt;key&gt;NSRemindersUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问提醒事项&lt;/string&gt; </div><div class="line">&lt;!-- 运动与健身 --&gt; </div><div class="line">&lt;key&gt;NSMotionUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问运动与健身&lt;/string&gt; </div><div class="line">&lt;!-- 健康更新 --&gt; </div><div class="line">&lt;key&gt;NSHealthUpdateUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问健康更新 &lt;/string&gt; </div><div class="line">&lt;!-- 健康分享 --&gt; </div><div class="line">&lt;key&gt;NSHealthShareUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问健康分享&lt;/string&gt; </div><div class="line">&lt;!-- 蓝牙 --&gt; </div><div class="line">&lt;key&gt;NSBluetoothPeripheralUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问蓝牙&lt;/string&gt; </div><div class="line">&lt;!-- 媒体资料库 --&gt; </div><div class="line">&lt;key&gt;NSAppleMusicUsageDescription&lt;/key&gt; </div><div class="line">&lt;string&gt;App需要您的同意,才能访问媒体资料库&lt;/string&gt;</div></pre></td></tr></table></figure>
 <p>如果不起作用,可以请求后台权限,类似于这样:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;key&gt;UIBackgroundModes&lt;/key&gt;</div><div class="line">&lt;array&gt; </div><div class="line">&lt;!-- 在这里写上你在后台模式下要使用权限对应的key --&gt; </div><div class="line">&lt;string&gt;location&lt;/string&gt;</div><div class="line">...</div><div class="line">&lt;/array&gt;</div></pre></td></tr></table></figure></p>
 <p>或者在Xcode里选中当前的target，选择 Capabilities ，找到 Background Modes ，打开它，在里面选择对应权限</p>
-<p><img src="http://ww4.sinaimg.cn/large/81f8a509gw1fa8xpyded7j21h80z810j.jpg" alt="Background Modes"></p>
+<p><img src="/images/81f8a509gw1fa8xpyded7j21h80z810j.jpg" alt="Background Modes"></p>
 <h3 id="坑三：控制面板输出不完整"><a href="#坑三：控制面板输出不完整" class="headerlink" title="坑三：控制面板输出不完整"></a>坑三：控制面板输出不完整</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#define NSLog(format, ...) printf(<span class="meta-string">"\n[%s] %s [第%d行] %s\n"</span>, __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);</span></div></pre></td></tr></table></figure>
 <h3 id="坑四：NSUserDefaults问题"><a href="#坑四：NSUserDefaults问题" class="headerlink" title="坑四：NSUserDefaults问题"></a>坑四：NSUserDefaults问题</h3><p><a href="http://stackoverflow.com/a/37841106/6099367" target="_blank" rel="external">NSUserDefaults问题</a></p>
-<h3 id="坑五：插件无法使用问题"><a href="#坑五：插件无法使用问题" class="headerlink" title="坑五：插件无法使用问题"></a>坑五：插件无法使用问题</h3><p><a href="http://superdanny.link/2016/09/16/How-to-use-Xcode8-or-iOS10_SDK/">如何优雅的使用Xcode8或iOS10 SDK</a></p>
+<h3 id="坑五：插件无法使用问题"><a href="#坑五：插件无法使用问题" class="headerlink" title="坑五：插件无法使用问题"></a>坑五：插件无法使用问题</h3><p><a href="/2016/09/16/How-to-use-Xcode8-or-iOS10_SDK/">如何优雅的使用Xcode8或iOS10 SDK</a></p>
 <h3 id="坑六：Xcode8之xib"><a href="#坑六：Xcode8之xib" class="headerlink" title="坑六：Xcode8之xib"></a>坑六：Xcode8之xib</h3><h4 id="Xcode8-打开Xib之后，Xcode7-无法打开"><a href="#Xcode8-打开Xib之后，Xcode7-无法打开" class="headerlink" title="Xcode8 打开Xib之后，Xcode7 无法打开"></a>Xcode8 打开Xib之后，Xcode7 无法打开</h4><p>当我们使用Xcode8打开以前的旧工程的xib文件时，会弹窗提示我们选择设备。</p>
-<p><img src="http://ww3.sinaimg.cn/mw690/81f8a509gw1f96u3aal39j20ou0caq6i.jpg" alt="选择设备"></p>
+<p><img src="/images/81f8a509gw1f96u3aal39j20ou0caq6i.jpg" alt="选择设备"></p>
 <p>当我们选择之后虽然Xcode8可以查看xib文件，但是当我们使用旧版本Xcode打开查看xib文件是就会提示无法查看，需要使用高版本Xcode打开。</p>
-<p><img src="http://ww4.sinaimg.cn/mw690/81f8a509gw1f96u39j5cvj20oa090gnn.jpg" alt="xib报警告"></p>
+<p><img src="/images/81f8a509gw1f96u39j5cvj20oa090gnn.jpg" alt="xib报警告"></p>
 <p>想要能够在低版本Xcode查看Xib，需要在Xcode8上面重新选择xib打开的版本为Xcode7.x</p>
-<p><img src="http://ww1.sinaimg.cn/mw690/81f8a509gw1f96u39kfb4j20eg0o8tch.jpg" alt="选择最低版本"></p>
+<p><img src="/images/81f8a509gw1f96u39kfb4j20eg0o8tch.jpg" alt="选择最低版本"></p>
 <h4 id="Xcode8-打开Xib更新之后，约束报警告"><a href="#Xcode8-打开Xib更新之后，约束报警告" class="headerlink" title="Xcode8 打开Xib更新之后，约束报警告"></a>Xcode8 打开Xib更新之后，约束报警告</h4><p>被xib坑完之后，接下来就是崩溃的时刻，所有有涉及约束的视图全部报警告。我们需要更新所有存在警告视图的frame。</p>
-<p><img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1f96uctfxuhj21360x87bf.jpg" alt="更新frame"></p>
+<p><img src="/images/81f8a509gw1f96uctfxuhj21360x87bf.jpg" alt="更新frame"></p>
 <h3 id="坑七：应用提交AppStore失败"><a href="#坑七：应用提交AppStore失败" class="headerlink" title="坑七：应用提交AppStore失败"></a>坑七：应用提交AppStore失败</h3><p>使用旧版本的Application Loader进行提交。</p>
 
       
@@ -264,11 +264,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Xcode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">iOS10</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">iOS10</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Xcode</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -576,11 +576,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -600,19 +600,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,15 +608,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
+                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -640,7 +644,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -664,11 +668,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -680,31 +704,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -740,6 +740,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
@@ -764,6 +768,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打包</a>
               </li>
              
@@ -776,19 +784,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -801,6 +801,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">iTunes Connect</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -821,18 +833,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DIY</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
             
             <div class="clearfix"></div>

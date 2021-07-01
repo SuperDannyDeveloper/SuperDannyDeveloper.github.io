@@ -15,23 +15,23 @@
 <meta property="og:url" content="superdanny.link/2015/07/08/Update-Xcode-Plug-in/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
 <meta property="og:description" content="Xcode的插件对于开发者来说无疑是开发中的一大利器，让开发者能够将更多的时间和精力放在代码上面。但是开发者都会遇到一个问题，就是每次Xcode一更新，之前好不容易装好的插件全部不能用了，需要重新安装一遍，有时候还会因为某种原因导致即便安装了插件也不能使用的情况。在这里，我将跟大家分享我是如何解决这些问题的。当然，我的方案是建立在前人的基础上完善的。">
-<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/81f8a509gw1eva0ncwg54j208v0bsgn6.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0nfd2ugj20cn0atjsg.jpg">
-<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/81f8a509gw1eva0ngxk8tj20hm039gmh.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/81f8a509gw1eva0nj69bhj20u700p74l.jpg">
-<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/81f8a509gw1eva0np4ysij20i407vmzj.jpg">
-<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/81f8a509gw1eva0nruklej20bo057wf8.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0ntcgipj20eq02g74o.jpg">
-<meta property="og:updated_time" content="2018-07-19T02:43:38.035Z">
+<meta property="og:image" content="/images/81f8a509gw1eva0ncwg54j208v0bsgn6.jpg">
+<meta property="og:image" content="/images/81f8a509gw1eva0nfd2ugj20cn0atjsg.jpg">
+<meta property="og:image" content="/images/81f8a509gw1eva0ngxk8tj20hm039gmh.jpg">
+<meta property="og:image" content="/images/81f8a509gw1eva0nj69bhj20u700p74l.jpg">
+<meta property="og:image" content="/images/81f8a509gw1eva0np4ysij20i407vmzj.jpg">
+<meta property="og:image" content="/images/81f8a509gw1eva0nruklej20bo057wf8.jpg">
+<meta property="og:image" content="/images/81f8a509gw1eva0ntcgipj20eq02g74o.jpg">
+<meta property="og:updated_time" content="2021-07-01T06:16:00.049Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Xcode更新之后插件失效以及安装失败详解">
 <meta name="twitter:description" content="Xcode的插件对于开发者来说无疑是开发中的一大利器，让开发者能够将更多的时间和精力放在代码上面。但是开发者都会遇到一个问题，就是每次Xcode一更新，之前好不容易装好的插件全部不能用了，需要重新安装一遍，有时候还会因为某种原因导致即便安装了插件也不能使用的情况。在这里，我将跟大家分享我是如何解决这些问题的。当然，我的方案是建立在前人的基础上完善的。">
-<meta name="twitter:image" content="http://ww3.sinaimg.cn/mw690/81f8a509gw1eva0ncwg54j208v0bsgn6.jpg">
+<meta name="twitter:image" content="/images/81f8a509gw1eva0ncwg54j208v0bsgn6.jpg">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://7xlefh.com1.z0.glb.clouddn.com/Icon_PiKaQiu_small.png">
+    <link rel="icon" href="https://wx2.sinaimg.cn/large/81f8a509gy1gs1iu5evgzj200g00g0nt.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -65,7 +65,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
+			<img src="/images/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">SuperDanny</a></h1>
@@ -125,7 +125,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
+				<img src="/images/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">SuperDanny</h1>
@@ -212,33 +212,33 @@ var _hmt = _hmt || [];
 <p>现在我想在我的Xcode 6.4上面安装这款插件，那么我需要拿到Xcode 6.4的<code>DVTPlugInCompatibilityUUID</code></p>
 <ol>
 <li><p>右键Xcode，选择<code>显示包内容</code></p>
-<p> <img src="http://ww3.sinaimg.cn/mw690/81f8a509gw1eva0ncwg54j208v0bsgn6.jpg" alt=""></p>
+<p> <img src="/images/81f8a509gw1eva0ncwg54j208v0bsgn6.jpg" alt=""></p>
 </li>
 <li><p>然后找到<code>Contents/Info.plist</code>路径下的 <i class="icon-file"></i> <code>Info.plist</code>文件</p>
-<p> <img src="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0nfd2ugj20cn0atjsg.jpg" alt=""></p>
+<p> <img src="/images/81f8a509gw1eva0nfd2ugj20cn0atjsg.jpg" alt=""></p>
 </li>
 <li><p>双击<code>Info.plist</code>文件，找到<code>DVTPlugInCompatibilityUUID</code>，将对应的<code>7FDF5C7A-131F-4ABB-9EDC-8C5F8F0B8A90</code>复制</p>
-<p> <img src="http://ww4.sinaimg.cn/mw690/81f8a509gw1eva0ngxk8tj20hm039gmh.jpg" alt=""></p>
+<p> <img src="/images/81f8a509gw1eva0ngxk8tj20hm039gmh.jpg" alt=""></p>
 </li>
 <li><p>接下来到<code>ColorSense</code>插件所在目录下</p>
-<p> <img src="http://ww1.sinaimg.cn/large/81f8a509gw1eva0nj69bhj20u700p74l.jpg" alt="插件路径"></p>
+<p> <img src="/images/81f8a509gw1eva0nj69bhj20u700p74l.jpg" alt="插件路径"></p>
 </li>
 <li><p>右键插件，选择<code>显示包内容</code>。然后找到<code>Contents/Info.plist</code>路径下的 <i class="icon-file"></i> <code>Info.plist</code>文件</p>
 </li>
 <li><p>双击<code>Info.plist</code>文件，将刚刚复制的<code>7FDF5C7A-131F-4ABB-9EDC-8C5F8F0B8A90</code>增加到<code>DVTPlugInCompatibilityUUID</code>字段里面。保存</p>
-<p> <img src="http://ww4.sinaimg.cn/mw690/81f8a509gw1eva0np4ysij20i407vmzj.jpg" alt=""></p>
+<p> <img src="/images/81f8a509gw1eva0np4ysij20i407vmzj.jpg" alt=""></p>
 </li>
 </ol>
 <ol>
 <li><p>重新打开Xcode 6.4，此时会弹窗提示用户是否加载该插件。很多用户就是在这一步因为选择了<code>Skip Bundle</code>导致不能成功使用插件。</p>
-<p> <img src="http://ww3.sinaimg.cn/mw690/81f8a509gw1eva0nruklej20bo057wf8.jpg" alt=""></p>
+<p> <img src="/images/81f8a509gw1eva0nruklej20bo057wf8.jpg" alt=""></p>
 </li>
 </ol>
 <hr>
 <p>【注意】正确的做法应该是选择<code>Load Bundle</code>选项才对</p>
 <hr>
 <p>现在可以Xcode中使用该插件了，是不是很激动！(<em>^__^</em>) 嘻嘻……</p>
-<p><img src="http://ww1.sinaimg.cn/mw690/81f8a509gw1eva0ntcgipj20eq02g74o.jpg" alt="插件效果"></p>
+<p><img src="/images/81f8a509gw1eva0ntcgipj20eq02g74o.jpg" alt="插件效果"></p>
 <p>是不是这样就完了？肯定没有，通过上面的步骤，我想大家已经知道了操作流程。那么接下来，讲解一个高效率做法。</p>
 <h2 id="终端指令实现"><a href="#终端指令实现" class="headerlink" title="终端指令实现"></a>终端指令实现</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//获取DVTPlugInCompatibilityUUID字段</div><div class="line">defaults <span class="keyword">read</span> /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID</div><div class="line"></div><div class="line">//将XXXX替换成刚刚获取的DVTPlugInCompatibilityUUID</div><div class="line"><span class="keyword">find</span> ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins -name Info.plist -maxdepth <span class="number">3</span> | xargs -I&#123;&#125; defaults <span class="keyword">write</span> &#123;&#125; DVTPlugInCompatibilityUUIDs -array-<span class="built_in">add</span> XXXX</div></pre></td></tr></table></figure>
 <p>执行这两个指令，即可实现上面繁琐的过程。是不是更加方便？</p>
@@ -597,11 +597,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -621,19 +621,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -641,15 +629,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
+                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -661,7 +665,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -685,11 +689,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -701,31 +725,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -761,6 +761,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
@@ -785,6 +789,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打包</a>
               </li>
              
@@ -797,19 +805,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -822,6 +822,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">iTunes Connect</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -842,18 +854,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DIY</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
             
             <div class="clearfix"></div>

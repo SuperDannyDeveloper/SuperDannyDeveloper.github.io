@@ -15,18 +15,18 @@
 <meta property="og:url" content="superdanny.link/2016/02/20/iOS-Apple-Pay/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
 <meta property="og:description" content="Pay官方参考资料 概述利用 Apple Pay，用户可以在您的 App 中轻松安全地购买实物商品和服务。客户更喜欢使用 Apple Pay，因为他们在购物时无需输入账单、送货和联系人详细信息。而且，Apple Pay 具有更高的安全性，能让客户和开发者安心使用。Apple 不会存储或共享客户的实际信用卡和借记卡卡号，因此商家和 App 开发者无需负责管理和保护实际的信用卡和借记卡卡号。进一步了">
-<meta property="og:image" content="https://developer.apple.com/apple-pay/images/figure-1-payment-sheet-cn_2x.png">
-<meta property="og:image" content="https://developer.apple.com/apple-pay/images/figure-2-payment-flow-cn_2x.png">
-<meta property="og:updated_time" content="2017-07-14T02:19:34.000Z">
+<meta property="og:image" content="/images/figure-1-payment-sheet-cn_2x.png">
+<meta property="og:image" content="/images/figure-2-payment-flow-cn_2x.png">
+<meta property="og:updated_time" content="2021-07-01T07:12:20.528Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Apple Pay 入门（转）">
 <meta name="twitter:description" content="Pay官方参考资料 概述利用 Apple Pay，用户可以在您的 App 中轻松安全地购买实物商品和服务。客户更喜欢使用 Apple Pay，因为他们在购物时无需输入账单、送货和联系人详细信息。而且，Apple Pay 具有更高的安全性，能让客户和开发者安心使用。Apple 不会存储或共享客户的实际信用卡和借记卡卡号，因此商家和 App 开发者无需负责管理和保护实际的信用卡和借记卡卡号。进一步了">
-<meta name="twitter:image" content="https://developer.apple.com/apple-pay/images/figure-1-payment-sheet-cn_2x.png">
+<meta name="twitter:image" content="/images/figure-1-payment-sheet-cn_2x.png">
   
     <link rel="alternative" href="/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://7xlefh.com1.z0.glb.clouddn.com/Icon_PiKaQiu_small.png">
+    <link rel="icon" href="https://wx2.sinaimg.cn/large/81f8a509gy1gs1iu5evgzj200g00g0nt.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -60,7 +60,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
+			<img src="/images/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">SuperDanny</a></h1>
@@ -120,7 +120,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://ww2.sinaimg.cn/mw690/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
+				<img src="/images/81f8a509gw1fa7ss6t7l7j208c08c74z.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">SuperDanny</h1>
@@ -219,12 +219,12 @@ var _hmt = _hmt || [];
 <h2 id="显示付款单"><a href="#显示付款单" class="headerlink" title="显示付款单"></a>显示付款单</h2><p>在您的用户选择好要购买的商品或服务，并选择 Apple Pay 作为付款方式时，您会创建一个付款请求，并要求 PassKit 向客户显示付款单。请参见图 1。在用户轻点 Apple Pay 按钮后，付款单必须立即显示，中间不能出现任何临时屏幕或弹出窗口。</p>
 <p>您的 App 可以指定付款单的内容，但无法控制用户与其进行的互动。您必须确定，向用户显示送货信息、账单信息、送货方式和其他行项目是否有意义。您只应请求处理交易所需的信息。</p>
 <p>有关为您的 App 整合 Apple Pay 按钮和定制 Apple Pay 付款单的详细信息，请参考<a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/ApplePay.html#//apple_ref/doc/uid/TP40006556-CH69-SW1" target="_blank" rel="external">《iOS 人机界面准则》</a>（“iOS Human Interface Guidelines”）。</p>
-<p><strong>图1</strong><br><img src="https://developer.apple.com/apple-pay/images/figure-1-payment-sheet-cn_2x.png" alt="付款单"></p>
+<p><strong>图1</strong><br><img src="/images/figure-1-payment-sheet-cn_2x.png" alt="付款单"></p>
 <h2 id="付款令牌"><a href="#付款令牌" class="headerlink" title="付款令牌"></a>付款令牌</h2><p>在用户使用 Touch ID 和银行 PIN 码进行授权（必要时）后，您的 App 会从 PassKit 收到一个付款令牌。该付款令牌内含有完成付款交易所需的信息，包括设备特定的帐户编号、金额以及唯一的一次性密码。已加密的付款套装可由商家使用私有密钥证书来解密，也可由付款处理机构使用 SDK 替商家代为解密。</p>
 <p>在有些情况下，开发者可能未被设置为负责记录和处理付款的商家。在这种情况下，开发者可以解密付款令牌，并将解密后的令牌传递给下游合适的商家，以便相应的处理机构进行处理。App 必须清楚表明自己只是一个中介方。更多详细信息，请参考<a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/ApplePay.html#//apple_ref/doc/uid/TP40006556-CH69-SW1" target="_blank" rel="external">《iOS 人机界面准则》</a>（“iOS Human Interface Guidelines”）。</p>
 <p>图 2 展示了一个典型的付款流程。首先，App 会检查其是否支持 Apple Pay 作为付款方式。在本例中，App 需要与所选送货地址相应的邮政编码，以计算送货成本并更新应付的总金额。在用户完成付款授权后，您的 App 会通过 PassKit 从 Secure Element 收到一个付款令牌。</p>
 <p>最后， App 会调用付款处理机构 SDK 中的相应 API，以将付款信息传送至付款处理机构，交由其处理。</p>
-<p><strong>图2</strong><br><img src="https://developer.apple.com/apple-pay/images/figure-2-payment-flow-cn_2x.png" alt="付款流程"></p>
+<p><strong>图2</strong><br><img src="/images/figure-2-payment-flow-cn_2x.png" alt="付款流程"></p>
 <h2 id="支持的交易类型"><a href="#支持的交易类型" class="headerlink" title="支持的交易类型"></a>支持的交易类型</h2><p>要处理以下类型的电子商务交易，必须要有支持 Apple Pay 的付款处理机构 SDK。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">授权	付款处理机构	在客户的帐户上预留资金</div><div class="line">收款	付款处理机构	在订单成功完成后将资金转账到您的银行帐户</div><div class="line">部分发货	付款处理机构	针对无法一同发货的商品将某次购物分成多次付款（在中国不可用）</div><div class="line">重复付款	付款处理机构 - 应在 App 中清楚标出	处理针对服务的重复付款，如按月支付的健身房会费（在中国不可用）</div><div class="line">退单	付款处理机构	处理欺诈性交易或存在争议的交易</div></pre></td></tr></table></figure>
 <p>最佳做法<br>查看<a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/ApplePay.html#//apple_ref/doc/uid/TP40006556-CH69-SW1" target="_blank" rel="external">《iOS 人机界面准则》</a>（“iOS Human Interface Guidelines”）和 WWDC 研讨会视频“<a href="https://developer.apple.com/videos/wwdc/2015/?id=702" target="_blank" rel="external">App 内的 Apple Pay</a>”（“Apple Pay Within Apps”），并按照其中的指南操作。此外，请遵循以下最佳做法，以便让您的 App 呈现最佳效果。</p>
@@ -595,11 +595,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+                <a href="javascript:void(0)" class="js-tag color4">BUG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -619,19 +619,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -639,15 +627,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
+                <a href="javascript:void(0)" class="js-tag color1">iOS10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color1">Xcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Xcode8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">真机调试</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -659,7 +663,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件操作</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -683,11 +687,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">动态icon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">推送</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -699,31 +723,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Apple Pay</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">推送</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书无效</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">长按文本框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">导航栏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AppleDoc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -759,6 +759,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Realm</a>
               </li>
              
@@ -783,6 +787,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打包</a>
               </li>
              
@@ -795,19 +803,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发者账号</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+                <a href="javascript:void(0)" class="js-tag color5">安装失败</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -820,6 +820,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">iTunes Connect</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -840,18 +852,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DIY</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Framework</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图片上传</a>
               </li>
             
             <div class="clearfix"></div>
