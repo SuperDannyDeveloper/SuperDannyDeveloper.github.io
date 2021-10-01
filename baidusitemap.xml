@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>superdanny.link/2015/07/21/About-me/</loc>
+    <lastmod>2021-10-01T09:55:00.677Z</lastmod>
+    <data>
+        <display>
+        <title>关于我</title>
+        <pubTime>2015-07-21T08:44:00.000Z</pubTime>
+        
+        <tag>简历</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2016/02/20/iOS-Apple-Pay/</loc>
     <lastmod>2021-07-01T07:12:20.528Z</lastmod>
     <data>
@@ -20,23 +37,6 @@
              
               <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2015/07/21/About-me/</loc>
-    <lastmod>2021-07-01T07:09:50.488Z</lastmod>
-    <data>
-        <display>
-        <title>关于我</title>
-        <pubTime>2015-07-21T08:44:00.000Z</pubTime>
-        
-        <tag>简历</tag>
-         
-         
-           
         </display>
     </data>
     </url>
@@ -451,9 +451,9 @@
         <title>Xcode8，你为什么这么坑</title>
         <pubTime>2016-09-26T08:02:00.000Z</pubTime>
         
-        <tag>iOS10</tag>
-         
         <tag>Xcode</tag>
+         
+        <tag>iOS10</tag>
          
         <tag>Xcode8</tag>
          
@@ -821,9 +821,9 @@
         
         <tag>iOS</tag>
          
-        <tag>In-House</tag>
-         
         <tag>iOS9</tag>
+         
+        <tag>In-House</tag>
          
         <tag>企业级证书打包</tag>
          
@@ -1294,9 +1294,9 @@
         <title>如何优雅的使用Xcode8或iOS10 SDK</title>
         <pubTime>2016-09-16T15:59:00.000Z</pubTime>
         
-        <tag>iOS10</tag>
-         
         <tag>Xcode</tag>
+         
+        <tag>iOS10</tag>
          
         <tag>Xcode8</tag>
          
