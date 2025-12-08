@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="superdanny.link/"/>
-  <updated>2020-01-07T03:52:38.529Z</updated>
+  <updated>2025-12-08T02:35:50.677Z</updated>
   <id>superdanny.link/</id>
   
   <author>
@@ -14,6 +14,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>QNAP威联通家庭影院</title>
+    <link href="superdanny.link/2025/12/07/QNAP-NAS/"/>
+    <id>superdanny.link/2025/12/07/QNAP-NAS/</id>
+    <published>2025-12-07T14:44:00.000Z</published>
+    <updated>2025-12-08T02:35:50.677Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="实现影片资源国内刮削"><a href="#实现影片资源国内刮削" class="headerlink" title="实现影片资源国内刮削"></a>实现影片资源国内刮削</h2><a id="more"></a> 
+<h3 id="第一步：记着三个地址"><a href="#第一步：记着三个地址" class="headerlink" title="第一步：记着三个地址"></a>第一步：记着三个地址</h3><p><a href="http://api.themoviedb.org，http://www.themoviedb.org，http://image.tmdb.org" target="_blank" rel="external">http://api.themoviedb.org，http://www.themoviedb.org，http://image.tmdb.org</a></p>
+<h3 id="第二步：访问https-dnschecker-org"><a href="#第二步：访问https-dnschecker-org" class="headerlink" title="第二步：访问https://dnschecker.org/"></a>第二步：访问<a href="https://dnschecker.org/" target="_blank" rel="external">https://dnschecker.org/</a></h3><p>在网址左上角DNS Check输入框，依次输入三个地址（一次查一个地址）。搜索后，往下滑，找到china，发现有1到4个ip地址。</p>
+<h3 id="第三步：电脑桌面新建记事本，复制粘贴依次查到的所有ip，记录形式为ip-空格-地址。"><a href="#第三步：电脑桌面新建记事本，复制粘贴依次查到的所有ip，记录形式为ip-空格-地址。" class="headerlink" title="第三步：电脑桌面新建记事本，复制粘贴依次查到的所有ip，记录形式为ip+空格+地址。"></a>第三步：电脑桌面新建记事本，复制粘贴依次查到的所有ip，记录形式为ip+空格+地址。</h3><p>记录结果如下（举例）：</p>
+<blockquote>
+<p>169.150.207.217 image.tmdb.org<br>108.156.46.80 api.themoviedb.org<br>108.157.78.18 www.themoviedb.org<br>108.157.78.116 www.themoviedb.org<br>108.157.78.103 www.themoviedb.org<br>108.157.78.94 www.themoviedb.org</p>
+</blockquote>
+<h3 id="第四步：SSH登录威联通"><a href="#第四步：SSH登录威联通" class="headerlink" title="第四步：SSH登录威联通"></a>第四步：SSH登录威联通</h3><ol>
+<li>打开 QNAP 的控制台-硬件，勾选启动时运行用户自定义的进程</li>
+<li><p>终端执行SSH登录</p>
+</li>
+<li><p>ssh 账号@IP -p 端口</p>
+</li>
+<li>然后回车  输入密码</li>
+<li>挂载 ：/etc/init.d/init_disk.sh mount_flash_config</li>
+<li>编辑：sudo vi /tmp/nasconfig_tmp/autorun.sh     # 加 sudo重要是提升权限 </li>
+<li>按字母i进入编辑状态</li>
+<li>在VI编辑器里面输入以下运行内容(注意把IP地址换成自己对应的)：<blockquote>
+<p>#!/bin/bash<br>sudo sh -c ‘echo “169.150.207.217 image.tmdb.org<br>108.156.46.80 api.themoviedb.org<br>108.157.78.18 www.themoviedb.org<br>108.157.78.116 www.themoviedb.org<br>108.157.78.103 www.themoviedb.org<br>108.157.78.94 www.themoviedb.org” &gt;&gt; /etc/hosts’</p>
+</blockquote>
+</li>
+<li>输入:wq保存</li>
+<li>运行 sudo chmod +x /tmp/nasconfig_tmp/autorun.sh    #增加可执行权限</li>
+<li>卸载：/etc/init.d/init_disk.sh umount_flash_config    </li>
+</ol>
+<hr>
+<p>再一次感谢您花费时间阅读这篇文章！</p>
+<p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;实现影片资源国内刮削&quot;&gt;&lt;a href=&quot;#实现影片资源国内刮削&quot; class=&quot;headerlink&quot; title=&quot;实现影片资源国内刮削&quot;&gt;&lt;/a&gt;实现影片资源国内刮削&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="电脑端" scheme="superdanny.link/categories/%E7%94%B5%E8%84%91%E7%AB%AF/"/>
+    
+    
+      <category term="QNAP威联通" scheme="superdanny.link/tags/QNAP%E5%A8%81%E8%81%94%E9%80%9A/"/>
+    
+      <category term="NAS" scheme="superdanny.link/tags/NAS/"/>
+    
+  </entry>
   
   <entry>
     <title>2019，我的年终工作总结</title>
@@ -1528,46 +1580,6 @@ b. this is line b
     
     
       <category term="iOS" scheme="superdanny.link/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于Autolayout制作动画的坑</title>
-    <link href="superdanny.link/2016/12/22/iOS-Autolayout-and-animation/"/>
-    <id>superdanny.link/2016/12/22/iOS-Autolayout-and-animation/</id>
-    <published>2016-12-22T15:13:00.000Z</published>
-    <updated>2021-07-01T06:06:32.814Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>一直以来iOS的 Autolayout 都是一个很不错的功能，结合第三方 Masonry 可以节省很多工作成本。但是如果使用 Autolayout 来制作动画，那么就需要注意一下。不然就会像我一样，遇坑踩坑，越陷越深。</p>
-<a id="more"></a>
-<h2 id="使用xib实现动画"><a href="#使用xib实现动画" class="headerlink" title="使用xib实现动画"></a>使用xib实现动画</h2><p>使用情景：自定义一个UIView <code>ViewA</code>，实现由下往上弹窗效果。</p>
-<p>效果如下<br><img src="/images/81f8a509gw1fazxgypjh2g207r0dt77f.gif" alt="效果图"></p>
-<p>假如我们是使用xib创建自定义弹窗视图，一般我们都会在xib上做好了约束的条件，之后在.m文件里面实现视图的初始化操作。</p>
-<p><img src="/images/81f8a509gw1fazynz97n0j20dw07tt92.jpg" alt="自定义UIView"></p>
-<p>实现动画的原则是，在<code>ViewA</code>执行动画之前，需要将<code>ViewA</code>最终约束条件设置好，之后在执行动画代码块里面只需要调用<code>layoutIfNeeded</code>即可。</p>
-<p>另外调用<code>layoutIfNeeded</code>方法的对象必须是<code>ViewA</code>的父视图，不然会出现<code>ViewA</code>的子视图跟着执行动画的情况。</p>
-<p>如下面的代码中，<code>ViewA</code>的父视图就是<code>window</code>，所以调用<code>layoutIfNeeded</code>方法的对象是<code>window</code></p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">instancetype</span>)init &#123;</div><div class="line">    <span class="keyword">self</span> = [[[<span class="built_in">NSBundle</span> mainBundle] loadNibNamed:<span class="string">@"DDJoinView"</span> owner:<span class="keyword">self</span> options:<span class="literal">nil</span>] lastObject];</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">self</span>) &#123;</div><div class="line">        <span class="keyword">self</span>.frame = <span class="built_in">CGRectMake</span>(<span class="number">0</span>, kScreenHeight, kScreenWidth, <span class="number">195</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</div><div class="line">&#125;</div><div class="line">- (<span class="keyword">void</span>)show &#123;</div><div class="line">    <span class="built_in">UIWindow</span> *window = [<span class="built_in">UIApplication</span> sharedApplication].keyWindow;</div><div class="line">    _bgView = [[<span class="built_in">UIButton</span> alloc] init];</div><div class="line">    _bgView.backgroundColor = <span class="built_in">UIColorHex</span>(<span class="number">0x000000</span>);</div><div class="line">    _bgView.alpha = <span class="number">0.25</span>;</div><div class="line">    _bgView.frame = <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, kScreenWidth, kScreenHeight);</div><div class="line">    [_bgView addTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(close:) forControlEvents:<span class="built_in">UIControlEventTouchUpInside</span>];</div><div class="line">    [window addSubview:_bgView];</div><div class="line">    [window addSubview:<span class="keyword">self</span>];</div><div class="line">    [<span class="keyword">self</span> mas_updateConstraints:^(MASConstraintMaker *make) &#123;</div><div class="line">        (<span class="keyword">void</span>)make.left;</div><div class="line">        (<span class="keyword">void</span>)make.centerX;</div><div class="line">        make.height.offset(<span class="number">195</span>);</div><div class="line">        make.bottom.offset(<span class="number">0</span>);</div><div class="line">    &#125;];</div><div class="line">    [<span class="built_in">UIView</span> animateWithDuration:<span class="number">0.3</span>f animations:^&#123;</div><div class="line">        [window layoutIfNeeded];</div><div class="line">    &#125;];</div><div class="line">&#125;</div><div class="line"><span class="meta">#pragma mark - 關閉</span></div><div class="line">- (<span class="keyword">void</span>)close:(<span class="keyword">id</span>)sender &#123;</div><div class="line">    <span class="built_in">UIWindow</span> *window = [<span class="built_in">UIApplication</span> sharedApplication].keyWindow;</div><div class="line">    [<span class="keyword">self</span> mas_updateConstraints:^(MASConstraintMaker *make) &#123;</div><div class="line">        (<span class="keyword">void</span>)make.left;</div><div class="line">        (<span class="keyword">void</span>)make.centerX;</div><div class="line">        make.height.offset(<span class="number">195</span>);</div><div class="line">        make.bottom.offset(<span class="number">195</span>);</div><div class="line">    &#125;];</div><div class="line">    [<span class="built_in">UIView</span> animateWithDuration:<span class="number">0.3</span>f animations:^&#123;</div><div class="line">        [window layoutIfNeeded];</div><div class="line">    &#125; completion:^(<span class="built_in">BOOL</span> finished) &#123;</div><div class="line">        <span class="keyword">for</span> (<span class="built_in">UIView</span> *v <span class="keyword">in</span> [<span class="keyword">self</span> subviews]) &#123;</div><div class="line">            [v removeFromSuperview];</div><div class="line">        &#125;</div><div class="line">        [<span class="keyword">self</span> removeFromSuperview];</div><div class="line">        [_bgView removeFromSuperview];</div><div class="line">    &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//...</span></div><div class="line"><span class="comment">//执行下面动画前，设置自定义view的最终位置的约束条件</span></div><div class="line"><span class="comment">//...</span></div><div class="line">[<span class="built_in">UIView</span> animateWithDuration:<span class="number">0.3</span>f animations:^&#123;</div><div class="line">        [xxx layoutIfNeeded];</div><div class="line">    &#125; completion:^(<span class="built_in">BOOL</span> finished) &#123;</div><div class="line">        <span class="comment">//do something</span></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
-<hr>
-<p>再一次感谢您花费时间阅读这篇文章！</p>
-<p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://SuperDannyBlog.farbox.com" target="_blank" rel="external">SuperDanny</a>  </p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h2&gt;&lt;p&gt;一直以来iOS的 Autolayout 都是一个很不错的功能，结合第三方 Masonry 可以节省很多工作成本。但是如果使用 Autolayout 来制作动画，那么就需要注意一下。不然就会像我一样，遇坑踩坑，越陷越深。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="移动端" scheme="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-    
-    
-      <category term="iOS" scheme="superdanny.link/tags/iOS/"/>
-    
-      <category term="Autolayout" scheme="superdanny.link/tags/Autolayout/"/>
-    
-      <category term="动画" scheme="superdanny.link/tags/%E5%8A%A8%E7%94%BB/"/>
     
   </entry>
   
