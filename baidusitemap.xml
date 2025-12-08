@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>superdanny.link/2015/07/21/About-me/</loc>
+    <lastmod>2025-12-08T04:04:45.278Z</lastmod>
+    <data>
+        <display>
+        <title>关于我</title>
+        <pubTime>2015-07-21T08:44:00.000Z</pubTime>
+        
+        <tag>简历</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>superdanny.link/2025/12/07/QNAP-NAS/</loc>
     <lastmod>2025-12-08T03:37:00.238Z</lastmod>
     <data>
@@ -40,23 +57,6 @@
              
               <breadCrumb title="移动端" url="superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>superdanny.link/2015/07/21/About-me/</loc>
-    <lastmod>2021-10-01T09:55:00.677Z</lastmod>
-    <data>
-        <display>
-        <title>关于我</title>
-        <pubTime>2015-07-21T08:44:00.000Z</pubTime>
-        
-        <tag>简历</tag>
-         
-         
-           
         </display>
     </data>
     </url>
@@ -112,11 +112,11 @@
         <title>CocoaPods之iOS组件化开发:远程私有库</title>
         <pubTime>2018-07-31T11:21:00.000Z</pubTime>
         
+        <tag>iOS</tag>
+         
         <tag>终端</tag>
          
         <tag>CocoaPods</tag>
-         
-        <tag>iOS</tag>
          
          
            
@@ -1078,11 +1078,11 @@
         <title>CocoaPods之iOS组件化开发:SVN本地私有库</title>
         <pubTime>2019-01-12T11:21:00.000Z</pubTime>
         
+        <tag>iOS</tag>
+         
         <tag>终端</tag>
          
         <tag>CocoaPods</tag>
-         
-        <tag>iOS</tag>
          
          
            
