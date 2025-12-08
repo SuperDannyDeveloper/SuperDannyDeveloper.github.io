@@ -15,7 +15,7 @@
 <meta property="og:url" content="superdanny.link/2025/12/07/QNAP-NAS/index.html">
 <meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
 <meta property="og:description" content="实现影片资源国内刮削">
-<meta property="og:updated_time" content="2025-12-08T02:53:56.397Z">
+<meta property="og:updated_time" content="2025-12-08T03:37:00.238Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="QNAP威联通家庭影院">
 <meta name="twitter:description" content="实现影片资源国内刮削">
@@ -198,13 +198,11 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>169.150.207.217 image.tmdb.org<br>108.156.46.80 api.themoviedb.org<br>108.157.78.18 www.themoviedb.org<br>108.157.78.116 www.themoviedb.org<br>108.157.78.103 www.themoviedb.org<br>108.157.78.94 www.themoviedb.org</p>
 </blockquote>
-<h3 id="第四步：SSH登录威联通"><a href="#第四步：SSH登录威联通" class="headerlink" title="第四步：SSH登录威联通"></a>第四步：SSH登录威联通</h3><ol>
-<li>打开 QNAP 的控制台-硬件，勾选启动时运行用户自定义的进程</li>
-<li><p>终端执行SSH登录</p>
-</li>
-<li><p>ssh 账号@IP -p 端口</p>
-</li>
-<li>然后回车  输入密码</li>
+<h3 id="第四步：SSH登录威联通"><a href="#第四步：SSH登录威联通" class="headerlink" title="第四步：SSH登录威联通"></a>第四步：SSH登录威联通</h3><p>1、打开 QNAP 的控制台-硬件，勾选启动时运行用户自定义的进程<br>2、打开终端，执行SSH登录</p>
+<blockquote>
+<ol>
+<li>ssh 账号@IP -p 端口</li>
+<li>然后回车，输入密码</li>
 <li>挂载 ：/etc/init.d/init_disk.sh mount_flash_config</li>
 <li>编辑：sudo vi /tmp/nasconfig_tmp/autorun.sh     # 加 sudo重要是提升权限 </li>
 <li>按字母i进入编辑状态</li>
@@ -216,6 +214,7 @@ var _hmt = _hmt || [];
 <li>运行 sudo chmod +x /tmp/nasconfig_tmp/autorun.sh    #增加可执行权限</li>
 <li>卸载：/etc/init.d/init_disk.sh umount_flash_config    </li>
 </ol>
+</blockquote>
 <hr>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
 <p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a></p>
@@ -566,6 +565,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">年中总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">打赏</a>
               </li>
              
@@ -575,10 +578,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">brew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">年中总结</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -602,11 +601,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
+                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Gem</a>
+                <a href="javascript:void(0)" class="js-tag color5">进度控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,11 +617,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -638,11 +637,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解决方式</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color3">QNAP威联通</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">NAS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -662,11 +665,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">QNAP威联通</a>
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">NAS</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -675,10 +678,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发文档</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -726,11 +725,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
+                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">金额计算</a>
+                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -810,6 +809,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">调试技巧</a>
               </li>
              
@@ -826,19 +829,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">获取IP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">开发证书</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">代码块</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">In-House</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="superdanny.link/"/>
-  <updated>2025-12-08T02:53:56.397Z</updated>
+  <updated>2025-12-08T03:37:00.238Z</updated>
   <id>superdanny.link/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="superdanny.link/2025/12/07/QNAP-NAS/"/>
     <id>superdanny.link/2025/12/07/QNAP-NAS/</id>
     <published>2025-12-07T14:44:00.000Z</published>
-    <updated>2025-12-08T02:53:56.397Z</updated>
+    <updated>2025-12-08T03:37:00.238Z</updated>
     
     <content type="html"><![CDATA[<h2 id="实现影片资源国内刮削"><a href="#实现影片资源国内刮削" class="headerlink" title="实现影片资源国内刮削"></a>实现影片资源国内刮削</h2><a id="more"></a> 
 <h3 id="第一步：记着三个地址"><a href="#第一步：记着三个地址" class="headerlink" title="第一步：记着三个地址"></a>第一步：记着三个地址</h3><p><a href="http://api.themoviedb.org，http://www.themoviedb.org，http://image.tmdb.org" target="_blank" rel="external">http://api.themoviedb.org，http://www.themoviedb.org，http://image.tmdb.org</a></p>
@@ -29,13 +29,11 @@
 <blockquote>
 <p>169.150.207.217 image.tmdb.org<br>108.156.46.80 api.themoviedb.org<br>108.157.78.18 www.themoviedb.org<br>108.157.78.116 www.themoviedb.org<br>108.157.78.103 www.themoviedb.org<br>108.157.78.94 www.themoviedb.org</p>
 </blockquote>
-<h3 id="第四步：SSH登录威联通"><a href="#第四步：SSH登录威联通" class="headerlink" title="第四步：SSH登录威联通"></a>第四步：SSH登录威联通</h3><ol>
-<li>打开 QNAP 的控制台-硬件，勾选启动时运行用户自定义的进程</li>
-<li><p>终端执行SSH登录</p>
-</li>
-<li><p>ssh 账号@IP -p 端口</p>
-</li>
-<li>然后回车  输入密码</li>
+<h3 id="第四步：SSH登录威联通"><a href="#第四步：SSH登录威联通" class="headerlink" title="第四步：SSH登录威联通"></a>第四步：SSH登录威联通</h3><p>1、打开 QNAP 的控制台-硬件，勾选启动时运行用户自定义的进程<br>2、打开终端，执行SSH登录</p>
+<blockquote>
+<ol>
+<li>ssh 账号@IP -p 端口</li>
+<li>然后回车，输入密码</li>
 <li>挂载 ：/etc/init.d/init_disk.sh mount_flash_config</li>
 <li>编辑：sudo vi /tmp/nasconfig_tmp/autorun.sh     # 加 sudo重要是提升权限 </li>
 <li>按字母i进入编辑状态</li>
@@ -47,6 +45,7 @@
 <li>运行 sudo chmod +x /tmp/nasconfig_tmp/autorun.sh    #增加可执行权限</li>
 <li>卸载：/etc/init.d/init_disk.sh umount_flash_config    </li>
 </ol>
+</blockquote>
 <hr>
 <p>再一次感谢您花费时间阅读这篇文章！</p>
 <p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a></p>
